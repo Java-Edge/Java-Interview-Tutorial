@@ -1,0 +1,20 @@
+@startuml
+title: ReplicaManager#appendRecords
+
+actor       ReplicaManager as ReplicaManager
+
+alt requiredAcks值合法
+ReplicaManager -> ReplicaManager : 写入消息集到本地日志
+ReplicaManager -> ReplicaManager : 构建写入结果状态
+alt 等待其他副本完成写入
+ReplicaManager -> ReplicaManager : 创建延时请求对象
+ReplicaManager -> ReplicaManager : 交由 Puratory 管理
+else
+ReplicaManager -> ReplicaManager : 调用回调逻辑
+end
+else requiredAcks值非法
+ReplicaManager -> ReplicaManager : 构造特定异常对象
+ReplicaManager -> ReplicaManager : 封装进回调函数执行
+end
+
+@enduml
