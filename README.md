@@ -1,5 +1,3 @@
-点击订阅[JavaEdge](https://xiaozhuanlan.com/JavaEdge)(专为志于成为Java架构师同学准备)。
-
 点击关注[公众号](#公众号)
 
 ## 目录
