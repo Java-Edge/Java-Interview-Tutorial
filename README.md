@@ -19,16 +19,18 @@
 
 ## 目录
 
-- [Java](#java)
-    - [JVM](#jvm)
-    - [Spring](#Spring)
-    - [Spring Boot](#SpringBoot)
-    - [Spring Cloud](#SpringCloud)
-    - [并发编程](#并发编程)
-    - [集合框架](#集合框架)
-- [职业发展](#职业发展)
-- [计算机组成原理](#计算机组成原理)
-- [面试系列](#面试系列)
+- [Java](https://github.com/Wasabi1234/JavaEdge-Tutorial/tree/master/Java)
+    - [JVM](https://github.com/Wasabi1234/JavaEdge-Tutorial/tree/master/Java/JVM)
+    - [Spring](https://github.com/Wasabi1234/JavaEdge-Tutorial/tree/master/Java/Spring)
+    - [Spring Boot](https://github.com/Wasabi1234/JavaEdge-Tutorial/tree/master/Java/SpringBoot)
+    - [Spring Cloud](https://github.com/Wasabi1234/JavaEdge-Tutorial/tree/master/Java/SpringCloud)
+    - [并发编程](https://github.com/Wasabi1234/JavaEdge-Tutorial/tree/master/Java/并发编程)
+    - [集合框架](https://github.com/Wasabi1234/JavaEdge-Tutorial/tree/master/Java/集合框架)
+- [职业发展](https://github.com/Wasabi1234/JavaEdge-Tutorial/tree/master/职业发展)
+- [计算机组成原理](https://github.com/Wasabi1234/JavaEdge-Tutorial/tree/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86)
+- [面试系列](https://github.com/Wasabi1234/JavaEdge-Tutorial/tree/master/面试系列)
+    - [突破Java面试系列](https://github.com/Wasabi1234/JavaEdge-Tutorial/tree/master/面试系列/突破Java面试系列)
+    - [高可用系统架构的设计](https://github.com/Wasabi1234/JavaEdge-Tutorial/tree/master/面试系列/高可用系统架构的设计)
 
 # 公众号
 
