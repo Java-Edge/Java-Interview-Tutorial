@@ -17,19 +17,10 @@
 
 本号系统整理了Java高级工程师必备技能点，帮你理清纷杂面试知识点，有的放矢。
 
-<img src="assets/公众号.png">
-
 ## 3 笔者简介
-
 ### [阿里云栖社区博客专家](https://yq.aliyun.com/users/article?spm=a2c4e.8091938.headeruserinfo.3.65993d6eqaQ0O6)
 
-![](https://img-blog.csdnimg.cn/20190712131824494.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_SmF2YUVkZ2U=,size_1,color_FFFFFF,t_70)
-
 ### [腾讯云自媒体邀约计划作者](https://cloud.tencent.com/developer/user/1752328)
-
-![](https://img-blog.csdnimg.cn/20190712140323352.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_SmF2YUVkZ2U=,size_1,color_FFFFFF,t_70)
-
-
 <br>
 
 ## 4 目录结构
