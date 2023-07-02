@@ -83,15 +83,6 @@
 
 ### :memo: 职业规划
 
-## QQ 技术交流群
-
-为大家提供一个学习交流平台，在这里你可以自由地讨论技术问题。
-
-<img src="assets/QQ 群.JPG" width="180px">
-
-## 微信交流群
-<img src="assets/微信群.jpeg" width="180px">
-
 ### 本人微信
 <img src="assets/个人微信.jpeg" width="180px">
 
