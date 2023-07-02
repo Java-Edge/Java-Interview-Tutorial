@@ -115,3 +115,16 @@
 
 - [draw.io](https://www.draw.io/)
 - keynote
+
+再分享我整理汇总的一些 Java 面试相关资料（亲自验证，严谨科学！别再看网上误导人的垃圾面试题！！！），助你拿到更多 offer！
+
+![](https://img-blog.csdnimg.cn/35dcdea77d6d4845a18ef4780309a2a6.png)
+
+[点击获取更多经典必读电子书！](https://mp.weixin.qq.com/s?__biz=MzUzNTY5MzA3MQ==&mid=2247497273&idx=1&sn=b0f1e2e03cd7de3ce5d93cc8793d6d88&chksm=fa832459cdf4ad4fb046c0beb7e87ecea48f338278846679ef65238af45f0a135720e7061002&token=766333302&lang=zh_CN#rd)
+
+2023年最新Java学习路线一条龙：
+
+[![](https://img-blog.csdnimg.cn/0fe00585e984406fbd9c22cedbf4b239.png)](https://www.nowcoder.com/discuss/353159357007339520?sourceSSR=users)
+
+
+再给大家推荐一个学习 前后端软件开发 和准备Java 面试的公众号[【JavaEdge】](https://mp.weixin.qq.com/s?__biz=MzUzNTY5MzA3MQ==&mid=2247498257&idx=1&sn=b09d88691f9bfd715e000b69ef61227e&chksm=fa832871cdf4a1675d4491727399088ca488fa13e0a3cdf2ece3012265e5a3ef273dff540879&token=766333302&lang=zh_CN#rd)（强烈推荐！）
