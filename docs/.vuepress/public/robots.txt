@@ -1,0 +1,2 @@
+Sitemap: https://javaedge.cn/sitemap.xml
+User-agent: *
