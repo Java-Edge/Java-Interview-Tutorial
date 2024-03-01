@@ -116,6 +116,7 @@ module.exports = {
                     {
                         text: 'DDD',
                         items: [
+                            {text: '00-DDD专栏规划', link: '/md/DDD/00-DDD专栏规划.md'},
                             {text: '基于电商履约场景的DDD实战', link: '/md/DDD/基于电商履约场景的DDD实战.md'},
                         ]
                     },
@@ -306,7 +307,9 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
+                                "00-DDD专栏规划.md",
                                 "基于电商履约场景的DDD实战.md",
+
                             ]
                         }
                     ],
