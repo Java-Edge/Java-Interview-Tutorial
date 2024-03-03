@@ -157,6 +157,12 @@ module.exports = {
                         ]
                     },
                     {
+                        text: 'MySQL',
+                        items: [
+                            {text: '00-亿级数据量商品系统的SQL调优实战', link: '/md/mysql/00-亿级数据量商品系统的SQL调优实战.md'}
+                        ]
+                    },
+                    {
                         text: '爬虫',
                         link: '/md/spider/00-爬虫基础.md'
                     },
@@ -314,6 +320,16 @@ module.exports = {
                                 "00-DDD专栏规划.md",
                                 "基于电商履约场景的DDD实战.md",
 
+                            ]
+                        }
+                    ],
+                    "/md/mysql/": [
+                        {
+                            title: "MySQL",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "00-MySQL专栏规划.md",
                             ]
                         }
                     ],
