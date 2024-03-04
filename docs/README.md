@@ -9,7 +9,7 @@ actionLinks:
   text: 知识星球
   class: secondary  
 - link: http://www.javaedge.cn/#/article/76
-  text: Java从入门到P7一条龙学习路线 👣
+  text: 后端技术专家P7学习路线 👣
   class: secondary   
 - link: http://www.javaedge.cn/#/index
   text: 网站 💐
