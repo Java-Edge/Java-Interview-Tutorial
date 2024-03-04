@@ -88,7 +88,7 @@
 
       <div class="option-box" @click="openInNewTab">
         <img src="/images/system/banner.jpg" width="30px" class="nozoom" />
-        <span class="show-txt">导航网站</span>
+        <span class="show-txt">导航站</span>
       </div>
 
       <div class="option-box" v-on:mouseover="showToc($event)" v-on:mouseout="hideToc($event)">
