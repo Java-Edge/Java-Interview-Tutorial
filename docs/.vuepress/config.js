@@ -168,14 +168,7 @@ module.exports = {
                     },
                     {
                         text: '面试题',
-                        items: [
-                            {text: '面试突击', link: '/md/zqy/面试题/面试突击.md'},
-                            {text: '面试题-Java基础', link: '/md/zqy/面试题/面试题-Java基础.md'},
-                            {text: '面试题-MySQL', link: '/md/zqy/面试题/面试题-MySQL.md'},
-                            {text: '面试题-Netty', link: '/md/zqy/面试题/面试题-Netty.md'},
-                            {text: '面试题-Redis', link: '/md/zqy/面试题/面试题-Redis.md'},
-                            {text: '面试题-场景题', link: '/md/zqy/面试题/面试题-场景题.md'},
-                        ]
+                        link: '/md/zqy/面试题/01-分布式技术面试实战.md'
                     }
                 ],
                 // 配置文章的侧边导航栏  新增文章提交前都需要在此处操作！！！
@@ -198,11 +191,30 @@ module.exports = {
                     ],
                     "/md/zqy/面试题/": [
                         {
+                            title: "面试突击",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "01-分布式技术面试实战.md",
+                                "02-注册中心和网关面试实战.md",
+                                "03-生产部署面试实战.md",
+                                "04-分布式锁、幂等性问题实战.md",
+                                "05-Java基础面试实战.md",
+                                "06-Spring面试实战.md",
+                                "07-计算机网络面试实战.md",
+                                "08-数据库面试实战.md",
+                                "09-网络通信及可见性面试实战.md",
+                                "10-Java 系统架构安全面试实战.md",
+                                "11-深挖网络 IO 面试实战.md",
+                                "12-分布式架构、性能优化、场景设计面试实战.md",
+                            ]
+                        },
+                        {
+
                             title: "面试大全",
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
-                                "面试突击.md",
                                 "面试题-Java基础.md",
                                 "面试题-MySQL.md",
                                 "面试题-Netty.md",
