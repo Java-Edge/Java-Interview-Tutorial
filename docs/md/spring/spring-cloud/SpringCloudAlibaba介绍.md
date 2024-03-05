@@ -1,5 +1,4 @@
 # SpringCloudAlibaba介绍
-
 > 大家好，我叫阿明。下面我会为大家准备Spring Cloud Alibaba系列知识体系，结合实战输出案列，让大家一眼就能明白得技术原理，应用于各公司得各种项目和生活中。让我们得生活越来越美好。
 ## SpringCloudAlibaba介绍
 ### Spring Cloud Alibaba 是什么？

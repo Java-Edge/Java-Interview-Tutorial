@@ -146,9 +146,7 @@ module.exports = {
                         text: 'Spring Cloud',
                         items: [
                             {text: 'SpringCloudAlibaba介绍', link: '/md/spring/spring-cloud/SpringCloudAlibaba介绍.md'},
-                            {text: 'SpringCloudAlibaba技术栈介绍', link: '/md/spring/spring-cloud/SpringCloudAlibaba技术栈介绍.md'},
-                            {text: '第二代SpringCloudAlibaba主流时代', link: '/md/spring/spring-cloud/第二代SpringCloudAlibaba主流时代.md'},
-                            {text: 'SpringCloudAlibaba版本介绍', link: '/md/spring/spring-cloud/SpringCloudAlibaba版本介绍.md'}
+                            {text: 'SpringCloudGateway工作原理与链路图', link: '/md/spring/spring-cloud/SpringCloudGateway工作原理与链路图.md'}
                         ]
                     },
                     {
@@ -325,9 +323,7 @@ module.exports = {
                             sidebarDepth: 0,
                             children: [
                                 "SpringCloudAlibaba介绍.md",
-                                "SpringCloudAlibaba技术栈介绍.md",
-                                "第二代SpringCloudAlibaba主流时代.md",
-                                "SpringCloudAlibaba版本介绍.md"
+                                "SpringCloudGateway工作原理与链路图.md"
                             ]
                         }
                     ],
