@@ -76,7 +76,7 @@ module.exports = {
             "/": {
                 label: "简体中文",
                 selectText: "Languages",
-                editLinkText: "在 GitHub 上编辑此页",
+                editLinkText: "关注GitHub知识库",
                 lastUpdated: "上次更新",
                 nav: [
                     {
@@ -122,12 +122,6 @@ module.exports = {
                         ]
                     },
                     {
-                        text: '计算机网络',
-                        items: [
-                            {text: '00-计算机网络-网络层原理', link: '/md/network/计算机网络-网络层原理.md'},
-                        ]
-                    },
-                    {
                         text: 'MQTT',
                         items: [
                             {text: '07-MQTT发布订阅模式介绍', link: '/md/MQTT/07-MQTT发布订阅模式介绍.md'},
@@ -161,6 +155,18 @@ module.exports = {
                         text: 'MySQL',
                         items: [
                             {text: '00-亿级数据量商品系统的SQL调优实战', link: '/md/mysql/00-亿级数据量商品系统的SQL调优实战.md'}
+                        ]
+                    },
+                    {
+                        text: 'Docker',
+                        items: [
+                            {text: '00-Docker基础命令大全', link: '/md/docker/00-Docker基础命令大全.md'}
+                        ]
+                    },
+                    {
+                        text: '计算机网络',
+                        items: [
+                            {text: '00-计算机网络-网络层原理', link: '/md/network/计算机网络-网络层原理.md'},
                         ]
                     },
                     {
@@ -344,6 +350,16 @@ module.exports = {
                             sidebarDepth: 0,
                             children: [
                                 "00-MySQL专栏规划.md",
+                            ]
+                        }
+                    ],
+                    "/md/docker/": [
+                        {
+                            title: "Docker",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "00-Docker基础命令大全.md",
                             ]
                         }
                     ],
