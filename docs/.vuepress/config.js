@@ -89,7 +89,7 @@ module.exports = {
                         ]
                     },
                     {
-                        text: '业务架构',
+                        text: '架构',
                         items: [
                             {text: '00-聚合支付架构', link: '/md/biz-arch/00-聚合支付架构从零到一.md'},
                             {text: '01-供应链域数据中台设计', link: '/md/biz-arch/01-供应链域数据中台设计.md'},
@@ -108,7 +108,7 @@ module.exports = {
                         ]
                     },
                     {
-                        text: '大数据平台',
+                        text: '大数据',
                         items: [
                             {text: '00-互联网大厂的大数据平台架构', link: '/md/bigdata/大数据平台架构.md'},
                             {text: '01-数据库的下一站：对象存储', link: '/md/bigdata/数据库的下一站：对象存储.md'},
@@ -133,7 +133,7 @@ module.exports = {
                         ]
                     },
                     {
-                        text: '并发编程',
+                        text: '并发',
                         items: [
                             {text: '00-Java并发编程', link: '/md/concurrency/00-Java并发编程.md'},
                         ]
@@ -143,7 +143,7 @@ module.exports = {
                         link: '/md/Dubbo/01-互联网架构的发展历程.md'
                     },
                     {
-                        text: 'Spring Cloud',
+                        text: 'SpringCloud',
                         items: [
                             {text: 'SpringCloudAlibaba介绍', link: '/md/spring/spring-cloud/SpringCloudAlibaba介绍.md'},
                             {text: 'SpringCloudGateway工作原理与链路图', link: '/md/spring/spring-cloud/SpringCloudGateway工作原理与链路图.md'}
@@ -162,7 +162,7 @@ module.exports = {
                         ]
                     },
                     {
-                        text: '计算机网络',
+                        text: '计网',
                         items: [
                             {text: '00-计算机网络-网络层原理', link: '/md/network/计算机网络-网络层原理.md'},
                         ]
@@ -172,7 +172,7 @@ module.exports = {
                         link: '/md/spider/00-爬虫基础.md'
                     },
                     {
-                        text: '面试题',
+                        text: '面试',
                         link: '/md/zqy/面试题/01-分布式技术面试实战.md'
                     },
                     {
@@ -275,7 +275,7 @@ module.exports = {
                     ],
                     "/md/bigdata/": [
                         {
-                            title: "大数据平台",
+                            title: "大数据",
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
@@ -296,7 +296,7 @@ module.exports = {
                     ],
                     "/md/network/": [
                         {
-                            title: "计算机网络",
+                            title: "计网",
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
@@ -316,7 +316,7 @@ module.exports = {
                     ],
                     "/md/spider/": [
                         {
-                            title: "MQTT",
+                            title: "爬虫",
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
