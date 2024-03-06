@@ -146,7 +146,8 @@ module.exports = {
                         text: 'Spring Cloud',
                         items: [
                             {text: 'SpringCloudAlibaba介绍', link: '/md/spring/spring-cloud/SpringCloudAlibaba介绍.md'},
-                            {text: 'SpringCloudGateway工作原理与链路图', link: '/md/spring/spring-cloud/SpringCloudGateway工作原理与链路图.md'}
+                            {text: 'SpringCloudGateway工作原理与链路图', link: '/md/spring/spring-cloud/SpringCloudGateway工作原理与链路图.md'},
+                            {text: 'SpringCloudGateway核心之Predicate', link: '/md/spring/spring-cloud/SpringCloudGateway核心之Predicate.md'}
                         ]
                     },
                     {
@@ -341,7 +342,8 @@ module.exports = {
                             sidebarDepth: 0,
                             children: [
                                 "SpringCloudAlibaba介绍.md",
-                                "SpringCloudGateway工作原理与链路图.md"
+                                "SpringCloudGateway工作原理与链路图.md",
+                                "SpringCloudGateway核心之Predicate.md"
                             ]
                         }
                     ],
