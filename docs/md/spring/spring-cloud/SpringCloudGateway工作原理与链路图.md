@@ -16,12 +16,12 @@
 8. 路径重写
 
 ### Spring Cloud网关请求链路图
-![在这里插入图片描述](http://124.222.54.192:4000/public/upload/2024/03/05/202403051401375667.png)
-> Route：一个 Route 由路由 ID，转发 URI，多个 Predicates 以及多个 Filters 构成。Gateway 上可以配置多个 Routes。处理请求时会按优先级排序，找到第一个满足所有 Predicates 的 Route；
-Predicate：表示路由的匹配条件，可以用来匹配请求的各种属性，如请求路径、方法、header 等。一个 Route 可以包含多个子 Predicates，多个子 Predicates 最终会合并成一个；
-Filter：过滤器包括了处理请求和响应的逻辑，可以分为 pre 和 post 两个阶段。多个 Filter 在 pre 阶段会按优先级高到低顺序执行，post 阶段则是反向执行。Gateway 包括两类 Filter。
-全局 Filter：每种全局 Filter 全局只会有一个实例，会对所有的 Route 都生效。
-路由 Filter：路由 Filter 是针对 Route 进行配置的，不同的 Route 可以使用不同的参数，因此会创建不同的实例。
+![在这里插入图片描述](http://124.222.54.192:4000/public/upload/2024/03/06/202403061427488662.png)
+1. Route：一个 Route 由路由 ID，转发 URI，多个 Predicates 以及多个 Filters 构成。Gateway 上可以配置多个 Routes。处理请求时会按优先级排序，找到第一个满足所有 Predicates 的 Route；
+2. Predicate：表示路由的匹配条件，可以用来匹配请求的各种属性，如请求路径、方法、header 等。一个 Route 可以包含多个子 Predicates，多个子 Predicates 最终会合并成一个；
+3. Filter：过滤器包括了处理请求和响应的逻辑，可以分为 pre 和 post 两个阶段。多个 Filter 在 pre 阶段会按优先级高到低顺序执行，post 阶段则是反向执行。Gateway 包括两类 Filter。
+4. 全局 Filter：每种全局 Filter 全局只会有一个实例，会对所有的 Route 都生效。
+5. 路由 Filter：路由 Filter 是针对 Route 进行配置的，不同的 Route 可以使用不同的参数，因此会创建不同的实例。
 
 ```java
 调试Demo局部code
@@ -57,11 +57,11 @@ public class DemogatewayApplication {
 ## SpringCloudGateway运行结构图
 ![在这里插入图片描述](http://124.222.54.192:4000/public/upload/2024/03/05/202403051401372859.png)
 
-> 1、客户端向 Spring Cloud Gateway 发出请求。
-> 2、如果网关处理程序映射确定请求与路由匹配，则会将其发送到网关 Web 处理程序。
-> 3、此处理程序运行通过特定于请求的过滤器链发送请求。
-> 4、过滤器被虚线分开的原因是过滤器可能在发送代理请求之前或之后执行逻辑。
-> 5、执行所有“预”过滤器逻辑，然后发出代理请求。
-> 6、发出代理请求后，执行“post”过滤器逻辑。
+1. 客户端向 Spring Cloud Gateway 发出请求。
+2. 如果网关处理程序映射确定请求与路由匹配，则会将其发送到网关 Web 处理程序。
+3. 此处理程序运行通过特定于请求的过滤器链发送请求。
+4. 过滤器被虚线分开的原因是过滤器可能在发送代理请求之前或之后执行逻辑。
+5. 执行所有“预”过滤器逻辑，然后发出代理请求。
+6. 发出代理请求后，执行“post”过滤器逻辑。
 
 *在没有端口的路由中定义的 URI 将分别为 HTTP 和 HTTPS URI 设置为 80 和 443 的默认端口。*

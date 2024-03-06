@@ -374,6 +374,7 @@ module.exports = {
                             sidebarDepth: 0,
                             children: [
                                 "00-Docker基础命令大全.md",
+                                "01-标准化打包技术.md",
                             ]
                         }
                     ],
