@@ -98,7 +98,7 @@ module.exports = {
                         text: '大数据',
                         items: [
                             {text: '00-互联网大厂的大数据平台架构', link: '/md/bigdata/大数据平台架构.md'},
-                            {text: '01-数据库的下一站：对象存储', link: '/md/bigdata/数据库的下一站：对象存储.md'},
+                            {text: '01-数据库的下一站-对象存储', link: '/md/bigdata/数据库的下一站-对象存储.md'},
                         ]
                     },
                     {
@@ -284,7 +284,7 @@ module.exports = {
                             sidebarDepth: 0,
                             children: [
                                 "大数据平台架构.md",
-                                "数据库的下一站：对象存储.md",
+                                "数据库的下一站-对象存储.md",
                             ]
                         }
                     ],
