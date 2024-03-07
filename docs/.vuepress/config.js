@@ -167,10 +167,6 @@ module.exports = {
                         text: '12306',
                         items: [
                             {text: '项目介绍', link: '/md/12306/项目介绍.md'},
-                            {text: '项目架构', items: [
-                                {text: '技术架构',link: '/md/12306/技术架构.md'}
-    
-                            ]},
                             {text: '快速开始', items: [
                                 {text: '环境搭建',link: '/md/12306/环境搭建.md'}
     
@@ -376,6 +372,32 @@ module.exports = {
                             sidebarDepth: 0,
                             children: [
                                 "ChannelPipeline接口.md"
+                            ]
+                        }
+                    ],
+                    "/md/12306/": [
+                        {
+                            title: "项目介绍",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "项目介绍.md",                                
+                            ]
+                        },
+                        {
+                            title: "快速开始",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "环境搭建.md",                                
+                            ]
+                        },
+                        {
+                            title: "核心技术文档",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "如何生成分布式ID.md",                                
                             ]
                         }
                     ],
