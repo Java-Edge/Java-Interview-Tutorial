@@ -114,17 +114,25 @@ module.exports = {
                             {text: '基础篇', link: '/md/netty/base/ChannelPipeline接口.md'},
                         ]
                     },
-                    // {
-                    //     text: '设计模式',
-                    //     items: [
-                    //     ]
-                    // },
-                    // {
-                    //     text: '并发',
-                    //     items: [
-                    //         {text: '00-Java并发编程', link: '/md/concurrency/00-Java并发编程.md'},
-                    //     ]
-                    // },
+                    {
+                        text: '消息队列',
+                        items: [
+                            {text: 'Kafka', items: [
+                                {text: '基于kafka实现延迟队列',link: '/md/kafka/15-基于kafka实现延迟队列.md'},
+
+                            ]},
+                            {text: 'RocketMQ', items: [
+                                {text: '00-RocketMQ',link: '/md/kafka/15-基于kafka实现延迟队列.md'},
+                                
+                            ]},
+                        ]
+                    },
+                    {
+                        text: '并发',
+                        items: [
+                            {text: '00-Java并发编程', link: '/md/concurrency/00-Java并发编程.md'},
+                        ]
+                    },
                     {
                         text: 'Dubbo',
                         link: '/md/Dubbo/01-互联网架构的发展历程.md'
@@ -141,6 +149,12 @@ module.exports = {
                         text: 'MySQL',
                         items: [
                             {text: '00-亿级数据量商品系统的SQL调优实战', link: '/md/mysql/00-亿级数据量商品系统的SQL调优实战.md'}
+                        ]
+                    },
+                    {
+                        text: 'Redis',
+                        items: [
+                            {text: '00-数据结构的最佳实践', link: '/md/redis/00-数据结构的最佳实践.md'}
                         ]
                     },
                     {
@@ -376,6 +390,26 @@ module.exports = {
                             sidebarDepth: 0,
                             children: [
                                 "ChannelPipeline接口.md"
+                            ]
+                        }
+                    ],
+                    "/md/kafka": [
+                        {
+                            title: "Kafka",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "15-基于kafka实现延迟队列.md"
+                            ]
+                        }
+                    ],
+                    "/md/redis": [
+                        {
+                            title: "Redis",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "00-数据结构的最佳实践.md"
                             ]
                         }
                     ],
