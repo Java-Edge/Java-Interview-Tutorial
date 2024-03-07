@@ -54,3 +54,6 @@ docs/.vuepress/public/images 存储网站本身展示所需宣传营销图片。
 ## 3 Git GUI 工具
 建议下载 Github Desktop，可视化提交文章相关数据。
 注意本仓库分为 master、main两个分支，只在 main 分支操作文章，勿碰 master 分支！
+
+## FAQ
+文章名称不要带有括号等特色字符！

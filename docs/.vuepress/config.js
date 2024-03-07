@@ -95,12 +95,6 @@ module.exports = {
                         ]
                     },
                     {
-                        text: '交易中台',
-                        items: [
-                            {text: '00-如何防止订单二次重复支付？', link: '/md/trade/00-如何防止订单二次重复支付？.md'},
-                        ]
-                    },
-                    {
                         text: '大数据',
                         items: [
                             {text: '00-互联网大厂的大数据平台架构', link: '/md/bigdata/大数据平台架构.md'},
@@ -115,22 +109,22 @@ module.exports = {
                         ]
                     },
                     {
-                        text: 'MQTT',
+                        text: 'Netty',
                         items: [
-                            {text: '07-MQTT发布订阅模式介绍', link: '/md/MQTT/07-MQTT发布订阅模式介绍.md'},
+                            {text: '基础篇', link: '/md/netty/base/ChannelPipeline接口.md'},
                         ]
                     },
-                    {
-                        text: '设计模式',
-                        items: [
-                        ]
-                    },
-                    {
-                        text: '并发',
-                        items: [
-                            {text: '00-Java并发编程', link: '/md/concurrency/00-Java并发编程.md'},
-                        ]
-                    },
+                    // {
+                    //     text: '设计模式',
+                    //     items: [
+                    //     ]
+                    // },
+                    // {
+                    //     text: '并发',
+                    //     items: [
+                    //         {text: '00-Java并发编程', link: '/md/concurrency/00-Java并发编程.md'},
+                    //     ]
+                    // },
                     {
                         text: 'Dubbo',
                         link: '/md/Dubbo/01-互联网架构的发展历程.md'
@@ -255,6 +249,7 @@ module.exports = {
                                 "06-运营后台系统设计.md",
                                 "07-大厂报价查询系统性能优化之道.md",
                                 "08-视频推荐索引构建.md",
+                                "09-交易中台-如何防止订单二次重复支付？.md",
                             ]
                         }
                     ],
@@ -374,9 +369,18 @@ module.exports = {
                             ]
                         }
                     ],
+                    "/md/netty/base": [
+                        {
+                            title: "Netty",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "ChannelPipeline接口.md"
+                            ]
+                        }
+                    ],
                 }
             }
         }
     }
 };
-
