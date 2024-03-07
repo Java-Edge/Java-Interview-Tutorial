@@ -12,7 +12,7 @@ https://www.bilibili.com/video/BV1vb411m7NY
 ## 1 图片调整路径
 docs/.vuepress/public/images 存储网站本身展示所需宣传营销图片。
 
-文章中的绘图不建议存储源文件，请直接使用阿里云 oos 对象存储来存储图片。
+文章中的绘图不建议存储源文件，请直接使用阿里云 oos 对象存储来存储图片或者白嫖使用 CSDN 的博客图床
 
 ## 2 提交文章
 
