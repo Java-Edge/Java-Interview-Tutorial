@@ -151,9 +151,14 @@ module.exports = {
                     {
                         text: 'SpringCloud',
                         items: [
-                            {text: 'SpringCloudAlibaba介绍', link: '/md/spring/spring-cloud/SpringCloudAlibaba介绍.md'},
-                            {text: 'SpringCloudGateway工作原理与链路图', link: '/md/spring/spring-cloud/SpringCloudGateway工作原理与链路图.md'},
-                            {text: 'SpringCloudGateway核心之Predicate', link: '/md/spring/spring-cloud/SpringCloudGateway核心之Predicate.md'}
+                            {text: 'SpringCloudAlibaba', link: '/md/spring/spring-cloud/SpringCloudAlibaba介绍.md'},
+                            {text: 'SpringCloudGateway组件', items:
+                                 [
+                                    {text: 'SpringCloudGateway工作原理与链路图',link: '/md/spring/spring-cloud/SpringCloudGateway工作原理与链路图.md'},
+                                    {text: 'SpringCloudGateway核心之Predicate', link: '/md/spring/spring-cloud/SpringCloudGateway核心之Predicate.md'},
+                                    {text: 'SpringCloudGateway核心之Filter-自定义全局Filter-自定义局部Filter介绍', link: '/md/spring/spring-cloud/SpringCloudGateway核心之Filter自定义全局Filter自定义局部Filter介绍.md'}
+                                ]
+                            }
                         ]
                     },
                     {
@@ -365,13 +370,21 @@ module.exports = {
                     ],
                     "/md/spring/spring-cloud/": [
                         {
-                            title: "Spring Cloud",
+                            title: "SpringCloudAlibaba",
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
                                 "SpringCloudAlibaba介绍.md",
+                            ]
+                        },
+                        {
+                            title: "SpringCloudGateway组件",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
                                 "SpringCloudGateway工作原理与链路图.md",
-                                "SpringCloudGateway核心之Predicate.md"
+                                "SpringCloudGateway核心之Predicate.md",
+                                "SpringCloudGateway核心之Filter自定义全局Filter自定义局部Filter介绍.md"
                             ]
                         }
                     ],
