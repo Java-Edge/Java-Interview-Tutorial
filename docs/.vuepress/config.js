@@ -97,8 +97,19 @@ module.exports = {
                     {
                         text: '大数据',
                         items: [
-                            {text: '00-互联网大厂的大数据平台架构', link: '/md/bigdata/大数据平台架构.md'},
-                            {text: '01-数据库的下一站-对象存储', link: '/md/bigdata/数据库的下一站-对象存储.md'},
+                            {text: '大数据平台', items: [
+                                {text: '00-互联网大厂的大数据平台架构', link: '/md/bigdata/大数据平台架构.md'},
+                                {text: '01-对象存储', link: '/md/bigdata/对象存储.md'},
+                            ]},
+
+                            {text: 'Hadoop', items: [
+                                {text: '00-安装下载Hadoop',link: '/md/bigdata/安装下载Hadoop.md'},
+                                {text: '01-HDFS',link: '/md/bigdata/HDFS.md'},
+                            ]},                            
+                            
+                            {text: 'Hive', items: [
+                                {text: '01-macOS下 Hive 2.x 的安装与配置',link: '/md/bigdata/01-macOS下 Hive 2.x 的安装与配置.md'},
+                            ]},
                         ]
                     },
                     {
@@ -275,14 +286,32 @@ module.exports = {
                     ],
                     "/md/bigdata/": [
                         {
-                            title: "大数据",
+                            title: "大数据平台",
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
                                 "大数据平台架构.md",
-                                "数据库的下一站-对象存储.md",
+                                "对象存储.md",
                             ]
-                        }
+                        },
+                        {
+                            title: "Hadoop",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "安装下载Hadoop.md",
+                                "HDFS.md",
+                            ]
+                        },                        
+                        {
+                            title: "Hive",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "01-macOS下 Hive 2.x 的安装与配置.md",
+                            ]
+                        },
+
                     ],
                     "/md/rpc/": [
                         {
