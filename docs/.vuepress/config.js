@@ -108,6 +108,7 @@ module.exports = {
                             ]},                            
                             
                             {text: 'Hive', items: [
+                                {text: '00-轻松驾驭Hive数仓',link: '/md/bigdata/轻松驾驭Hive数仓.md'},
                                 {text: '01-macOS下 Hive 2.x 的安装与配置',link: '/md/bigdata/01-macOS下 Hive 2.x 的安装与配置.md'},
                                 {text: '02-Hive执行原理',link: '/md/bigdata/Hive执行原理.md'},
                             ]},
@@ -329,6 +330,7 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
+                                "轻松驾驭Hive数仓.md",
                                 "01-macOS下 Hive 2.x 的安装与配置.md",
                                 "Hive执行原理.md",
                             ]
