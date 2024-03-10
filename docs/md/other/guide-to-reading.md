@@ -24,7 +24,7 @@ title: 目录
 在读研究生，秋招备战中，编程严选星球合伙人，Java 领域新星创作者（CSDN）
 
 > 个人技术公众号：【 **11来了** 】 ，专攻底层源码原理
-> <div align=center><img width="150px" height="150px" src="https://11laile-note-img.oss-cn-beijing.aliyuncs.com/1705922099587.png"></div>
+<!-- > <div align=left><img width="150px" height="150px" src="https://11laile-note-img.oss-cn-beijing.aliyuncs.com/1705922099587.png"></div> -->
 > 个人专栏：
 > - [并发专栏](/md/concurrency/01-synchronized原理.html) | [Redisson分布式锁源码解析](/md/redis/01-Redis和ZK分布式锁优缺点对比以及生产环境使用建议.md)
 > - [面试突击专栏](/md/zqy/面试题/01-分布式技术面试实战.html) | [MySQL面试专栏](/md/zqy/面试题/面试题-MySQL.html) | [Redis面试专栏](/md/zqy/面试题/面试题-Redis.html) | [JVM专栏](/md/jvm/01-JVM虚拟机-上篇.html)
