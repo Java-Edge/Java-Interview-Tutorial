@@ -29,8 +29,12 @@ title: 目录
 > - [并发专栏](/md/concurrency/01-synchronized原理.html) | [Redisson分布式锁源码解析](/md/redis/01-Redis和ZK分布式锁优缺点对比以及生产环境使用建议.md)
 > - [面试突击专栏](/md/zqy/面试题/01-分布式技术面试实战.html) | [MySQL面试专栏](/md/zqy/面试题/面试题-MySQL.html) | [Redis面试专栏](/md/zqy/面试题/面试题-Redis.html) | [JVM专栏](/md/jvm/01-JVM虚拟机-上篇.html)
 
+### Ken
 
+深圳某知名科技公司的Java后端开发，编程严选星球合伙人，有丰富的后端开发经验。
 
+> 个人专栏：
+> - [12306专栏](/md/12306/项目介绍.html) 
 
 参考：
 
