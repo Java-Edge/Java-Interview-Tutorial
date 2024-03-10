@@ -127,7 +127,7 @@ module.exports = {
                         ]
                     },
                     {
-                        text: '消息队列',
+                        text: 'MQ',
                         items: [
                             {text: 'Kafka', items: [
                                 {text: '基于kafka实现延迟队列',link: '/md/kafka/15-基于kafka实现延迟队列.md'},
@@ -181,7 +181,7 @@ module.exports = {
                         ]
                     },
                     {
-                        text: 'Docker',
+                        text: '云原生',
                         items: [
                             {text: '00-Docker基础命令大全', link: '/md/docker/00-Docker基础命令大全.md'}
                         ]
@@ -213,7 +213,11 @@ module.exports = {
     
                             ]}
                         ]
-                    }
+                    },
+                    {
+                        text: '职业规划',
+                        link: '/md/career/Java工程师必读书单.md'
+                    },
                 ],
                 // 配置文章的侧边导航栏  新增文章提交前都需要在此处操作！！！
                 sidebar: {
@@ -502,6 +506,16 @@ module.exports = {
                             sidebarDepth: 0,
                             children: [
                                 "如何生成分布式ID.md",                                
+                            ]
+                        }
+                    ],
+                    "/md/career/": [
+                        {
+                            title: "职业规划",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "Java工程师必读书单.md",                                
                             ]
                         }
                     ],
