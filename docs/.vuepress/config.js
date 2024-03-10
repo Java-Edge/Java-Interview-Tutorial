@@ -141,9 +141,11 @@ module.exports = {
                     },
                     {
                         text: '并发',
-                        items: [
-                            {text: '00-Java并发编程', link: '/md/concurrency/00-Java并发编程.md'},
-                        ]
+                        link: '/md/concurrency/00-Java并发编程.md'
+                    },
+                    {
+                        text: 'JVM',
+                        link: '/md/jvm/01-JVM虚拟机-上篇.md'
                     },
                     {
                         text: 'Dubbo',
@@ -171,7 +173,11 @@ module.exports = {
                     {
                         text: 'Redis',
                         items: [
-                            {text: '00-数据结构的最佳实践', link: '/md/redis/00-数据结构的最佳实践.md'}
+                            {text: '00-数据结构的最佳实践', link: '/md/redis/00-数据结构的最佳实践.md'},
+                            {text: '01-Redis和ZK分布式锁优缺点对比以及生产环境使用建议', link: '/md/redis/01-Redis和ZK分布式锁优缺点对比以及生产环境使用建议.md'},
+                            {text: '02-Redisson可重入锁加锁源码分析', link: '/md/redis/02-Redisson可重入锁加锁源码分析.md'},
+                            {text: '03-Redisson公平锁加锁源码分析', link: '/md/redis/03-Redisson公平锁加锁源码分析.md'},
+                            {text: '04-Redisson读写锁加锁机制分析', link: '/md/redis/04-Redisson读写锁加锁机制分析.md'}
                         ]
                     },
                     {
@@ -367,6 +373,22 @@ module.exports = {
                             sidebarDepth: 0,
                             children: [
                                 "00-Java并发编程.md",
+                                "01-synchronized原理.md",
+                                "02-volatile原理.md",
+                                "03-ReentrantLock与AQS.md",
+                                "04-线程池以及生产环境使用.md",
+                                "05-京东并行框架asyncTool如何针对高并发场景进行优化？.md",
+                            ]
+                        }
+                    ],
+                    "/md/jvm/": [
+                        {
+                            title: "JVM",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "01-JVM虚拟机-上篇.md",
+                                "02-JVM虚拟机-下篇.md",
                             ]
                         }
                     ],
@@ -443,13 +465,17 @@ module.exports = {
                             ]
                         }
                     ],
-                    "/md/redis": [
+                    "/md/redis/": [
                         {
                             title: "Redis",
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
-                                "00-数据结构的最佳实践.md"
+                                "00-数据结构的最佳实践.md",
+                                "01-Redis和ZK分布式锁优缺点对比以及生产环境使用建议.md",
+                                "02-Redisson可重入锁加锁源码分析.md",
+                                "03-Redisson公平锁加锁源码分析.md",
+                                "04-Redisson读写锁加锁机制分析.md"
                             ]
                         }
                     ],
