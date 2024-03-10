@@ -17,7 +17,7 @@ GROUP BY pageid, age;
 
 统计不同年龄用户访问不同网页的兴趣偏好：
 
-![img](https://static001.geekbang.org/resource/image/0a/37/0ade10e49216575962e071d6fe9a7137.jpg)
+![](https://codeselect.oss-cn-shanghai.aliyuncs.com/0ade10e49216575962e071d6fe9a7137.jpg)
 
 - 左边，要分析的数据表
 - 右边，分析结果
@@ -39,7 +39,7 @@ map函数的输出shuffle后，相同K及对应V放在一起，组成一个<K, V
 
 在reduce函数内部，V集合里所有的数字被相加，然后输出。所以reduce输出就是<<2, 25>, 2>
 
-![img](https://static001.geekbang.org/resource/image/bc/57/bc088edf00478c835003272696c44c57.jpg)
+![](https://codeselect.oss-cn-shanghai.aliyuncs.com/bc088edf00478c835003272696c44c57.jpg)
 
 如此，一条SQL就被MapReduce计算完成。
 
@@ -49,7 +49,7 @@ map函数的输出shuffle后，相同K及对应V放在一起，组成一个<K, V
 
 Hive能直接处理我们输的SQL，调用MapReduce计算框架完成数据分析操作。
 
-![](https://learning.oreilly.com/api/v2/epubs/urn:orm:book:9781491901687/files/images/hddg_1701.png)
+![](https://codeselect.oss-cn-shanghai.aliyuncs.com/hddg_1701.png)
 
 通过Hive Client向Hive Server提交SQL命令：
 
@@ -64,7 +64,7 @@ SELECT * FROM status_updates WHERE status LIKE 'michael jackson';
 
 对应的Hive执行计划：
 
-![](https://static001.geekbang.org/resource/image/cb/a6/cb1236ad035ca01cffbb9df47fa88fa6.jpg)
+![](https://codeselect.oss-cn-shanghai.aliyuncs.com/cb1236ad035ca01cffbb9df47fa88fa6.jpg)
 
 Hive内部预置很多函数，Hive执行计划就是根据SQL语句生成这些函数的DAG，然后封装进MapReduce的map、reduce函数。该案例中的map函数调用三个Hive内置函数就完成map计算，且无需reduce。
 
@@ -74,7 +74,7 @@ Hive内部预置很多函数，Hive执行计划就是根据SQL语句生成这些
 
 pv_users表的数据无法直接得到，因为pageid来自用户访问日志，每个用户进行一次页面浏览，就会生成一条访问记录，保存在page_view表。而age年龄信息记录在表user。
 
-![img](https://static001.geekbang.org/resource/image/82/2d/8254710229b1d749d08f7a0bb799ac2d.jpg)
+![](https://codeselect.oss-cn-shanghai.aliyuncs.com/8254710229b1d749d08f7a0bb799ac2d.jpg)
 
 这两张表有相同字段userid，可连接两张表，生成pv_users表：
 
@@ -84,7 +84,7 @@ SELECT pv.pageid, u.age FROM page_view pv JOIN user u ON (pv.userid = u.userid);
 
 该SQL命令也能转化为MapReduce计算，连接过程：
 
-![](https://static001.geekbang.org/resource/image/25/2a/25d62b355c976beb5b26af865ac2b92a.jpg)
+![](https://codeselect.oss-cn-shanghai.aliyuncs.com/25d62b355c976beb5b26af865ac2b92a.jpg)
 
 join的MapReduce计算过程和group by稍不同，因为join涉及两张表，来自两个文件（夹），所以要在map输出时进行标记，如来自第一张表的输出Value就记为<1, X>，这1表示数据来自第一张表。shuffle后，相同Key被输入到同一reduce函数，就可根据表的标记对Value数据求笛卡尔积，用第一张表的每条记录和第二张表的每条记录连接，输出即join结果。
 
