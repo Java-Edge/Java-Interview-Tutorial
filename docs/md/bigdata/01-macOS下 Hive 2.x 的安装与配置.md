@@ -1,6 +1,6 @@
 # 01-macOS下 Hive 2.x 的安装与配置
 
-# 1 简介
+## 1 简介
 
 基于Hadoop的一个数据仓库工具，可将结构化数据文件映射为一张数据库表，并提供简单[SQL]查询，可将SQL语句转换为MapReduce任务进行运行。
 
@@ -197,10 +197,12 @@ FLUSH PRIVILEGES;
 将下好的包解压
 
 解压后，将此文件夹下mysql-connector-java-8.0.15.jar
-![](https://upload-images.jianshu.io/upload_images/16782311-fbd0d44ece0a36b5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![](https://codeselect.oss-cn-shanghai.aliyuncs.com/20240310185522954.png)
 
 复制到../hive/lib：
-![image.png](https://upload-images.jianshu.io/upload_images/16782311-9336f9b6da0dbb5e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![](https://codeselect.oss-cn-shanghai.aliyuncs.com/20240310185603573.png)
 
 需要给/tmp文件夹设置写权限，同时确保 hadoop不在安全模式下，可以执行此命令使hadoop退出安全模式：hadoop dfsadmin -safemode leave
 
@@ -216,7 +218,7 @@ FLUSH PRIVILEGES;
 schematool -dbType mysql -initSchema
 ```
 
-![](https://upload-images.jianshu.io/upload_images/16782311-62391a0223e9c65d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://codeselect.oss-cn-shanghai.aliyuncs.com/20240310185624312.png)
 
 ### 7.2 启动Hive
 
