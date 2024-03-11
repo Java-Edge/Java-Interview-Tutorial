@@ -35,6 +35,14 @@ title: 目录
 
 > 个人专栏：
 > - [12306专栏](/md/12306/项目介绍.html) 
+>
+
+### 知青先生
+
+现任泛微ecology产品开发经理;曾任国企南方电网深圳数字研究院一线业务开发;编程严选星球合伙人;有丰富的web端全栈开发经验;CSDN技术博主。
+
+> 个人专栏：
+> - [spring-cloud专栏](/md/spring/spring-cloud/SpringCloudAlibaba介绍.md)
 
 参考：
 

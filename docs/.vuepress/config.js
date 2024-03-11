@@ -158,7 +158,8 @@ module.exports = {
                                  [
                                     {text: 'SpringCloudGateway工作原理与链路图',link: '/md/spring/spring-cloud/SpringCloudGateway工作原理与链路图.md'},
                                     {text: 'SpringCloudGateway核心之Predicate', link: '/md/spring/spring-cloud/SpringCloudGateway核心之Predicate.md'},
-                                    {text: 'SpringCloudGateway之Filter多过程介绍', link: '/md/spring/spring-cloud/SpringCloudGateway之Filter多过程介绍.md'}
+                                    {text: 'SpringCloudGateway之Filter多过程介绍', link: '/md/spring/spring-cloud/SpringCloudGateway之Filter多过程介绍.md'},
+                                     {text: 'SpringCloudGateway之熔断集成篇', link: '/md/spring/spring-cloud/SpringCloudGateway之熔断集成篇.md'},
                                 ]
                             }
                         ]
@@ -421,7 +422,8 @@ module.exports = {
                             children: [
                                 "SpringCloudGateway工作原理与链路图.md",
                                 "SpringCloudGateway核心之Predicate.md",
-                                "SpringCloudGateway之Filter多过程介绍.md"
+                                "SpringCloudGateway之Filter多过程介绍.md",
+                                "SpringCloudGateway之熔断集成篇.md"
                             ]
                         }
                     ],
