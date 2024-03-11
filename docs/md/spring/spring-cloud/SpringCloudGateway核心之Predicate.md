@@ -1,7 +1,8 @@
-# SpringCloudGateway核心之Predicate路由工厂
+# SpringCloudGateway核心之Predicate
+
 
 ![在这里插入图片描述](http://124.222.54.192:4000/public/upload/2024/03/06/202403061626275771.png)
-
+## Predicate路由工厂
 > Spring Cloud Gateway 将路由作为 Spring WebFluxHandlerMapping基础设施的一部分进行匹配。Spring Cloud Gateway 包含许多内置的路由Predicate 工厂。所有这些谓词都匹配 HTTP 请求的不同属性。多个 Route Predicate Factory 可以组合，并通过逻辑组合and。
 ##  After Route Predicate Factory
 > After Route Predicate Factory 采用一个参数，即日期时间。此谓词匹配当前日期时间之后发生的请求。
