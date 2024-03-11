@@ -109,8 +109,6 @@ module.exports = {
                             
                             {text: 'Hive', items: [
                                 {text: '00-轻松驾驭Hive数仓',link: '/md/bigdata/轻松驾驭Hive数仓.md'},
-                                {text: '01-macOS下 Hive 2.x 的安装与配置',link: '/md/bigdata/01-macOS下 Hive 2.x 的安装与配置.md'},
-                                {text: '02-Hive执行原理',link: '/md/bigdata/Hive执行原理.md'},
                             ]},
                         ]
                     },
@@ -222,7 +220,9 @@ module.exports = {
                     },
                     {
                         text: '职业规划',
-                        link: '/md/career/Java工程师必读书单.md'
+                        items: [
+                            {text: '00-Java工程师必读书单', link: '/md/career/Java工程师必读书单.md'},
+                        ]
                     },
                 ],
                 // 配置文章的侧边导航栏  新增文章提交前都需要在此处操作！！！
@@ -331,8 +331,10 @@ module.exports = {
                             sidebarDepth: 0,
                             children: [
                                 "轻松驾驭Hive数仓.md",
+                                "数仓分层和数仓建模.md",
                                 "01-macOS下 Hive 2.x 的安装与配置.md",
                                 "Hive执行原理.md",
+                                "Hive修复分区.md",
                             ]
                         },
 
@@ -441,7 +443,8 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
-                                "00-MySQL专栏规划.md",
+                                "00-亿级数据量商品系统的SQL调优实战.md",
+                                "MySQL查询优化.md",
                             ]
                         }
                     ],
@@ -526,7 +529,8 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
-                                "Java工程师必读书单.md",                                
+                                "Java工程师必读书单.md",                             
+                                "为什么中国的程序员有35岁危机.md",                             
                             ]
                         }
                     ],
