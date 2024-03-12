@@ -294,7 +294,7 @@ module.exports = {
                         }]
                     },
                     {
-                        text: '计网',
+                        text: '计基',
                         items: [{
                             text: '00-计算机网络-网络层原理',
                             link: '/md/network/计算机网络-网络层原理.md'
@@ -486,7 +486,7 @@ module.exports = {
                         ]
                     }],
                     "/md/network/": [{
-                        title: "计基",
+                        title: "计算机基础",
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
