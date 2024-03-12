@@ -468,11 +468,13 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
-                                "轻松驾驭Hive数仓.md",
                                 "数仓分层和数仓建模.md",
+                                "数仓开发之DIM层",
+                                "轻松驾驭Hive数仓.md",
                                 "01-macOS下 Hive 2.x 的安装与配置.md",
                                 "Hive执行原理.md",
                                 "Hive修复分区.md",
+                                
                             ]
                         },
 
@@ -572,6 +574,7 @@ module.exports = {
                             "00-亿级数据量商品系统的SQL调优实战.md",
                             "MySQL查询优化.md",
                             "InnoDB架构设计.md",
+                            "为什么临时表可以重名？.md",
                         ]
                     }],
                     "/md/docker/": [{
