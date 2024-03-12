@@ -49,7 +49,7 @@ module.exports = {
         }],
         ["meta", {
             name: "keywords",
-            content: "JavaEdge, DDD抽奖系统，数据结构，重学Java设计模式, 字节码编程, 中间件, 手写Spring, 手写MyBatis，Java基础, 面经手册，Java面试题，API网关，SpringBoot Stater, ChatGPT"
+            content: "JavaEdge,数据结构，重学设计模式, 中间件, Java基础, 面经手册，Java面试题，API网关"
         }],
         ["meta", {
             name: "apple-mobile-web-app-capable",
@@ -128,6 +128,14 @@ module.exports = {
                                     link: '/md/DDD/00-DDD专栏规划.md'
                                 }, ]
                             },
+                            
+                            {
+                                text: '数据中台',
+                                items: [{
+                                    text: '00-新一代数据栈将逐步替代国内单一“数据中台”',
+                                    link: '/md/biz-arch/00-新一代数据栈将逐步替代国内单一“数据中台”.md'
+                                }, ]
+                            },
                         ]
                     },
                     {
@@ -161,8 +169,16 @@ module.exports = {
                             {
                                 text: 'Hive',
                                 items: [{
-                                    text: '00-轻松驾驭Hive数仓',
+                                    text: '00-Hive执行原理',
                                     link: '/md/bigdata/轻松驾驭Hive数仓.md'
+                                }, ]
+                            },
+
+                            {
+                                text: '数据仓库',
+                                items: [{
+                                    text: '00-数仓分层和数仓建模',
+                                    link: '/md/bigdata/数仓分层和数仓建模.md'
                                 }, ]
                             },
                         ]
@@ -426,7 +442,6 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "00-聚合支付架构从零到一.md",
-                            "01-供应链域数据中台设计.md",
                             "02-供应链采购视角的业务系统架构.md",
                             "03-客服平台架构实践.md",
                             "04-数据质量中心系统设计.md",
@@ -468,13 +483,20 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
-                                "数仓分层和数仓建模.md",
-                                "数仓开发之DIM层",
-                                "轻松驾驭Hive数仓.md",
                                 "01-macOS下 Hive 2.x 的安装与配置.md",
                                 "Hive执行原理.md",
                                 "Hive修复分区.md",
                                 
+                            ]
+                        },
+                        {
+                            title: "数据仓库",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "数仓分层和数仓建模.md",
+                                "数仓开发之DIM层",
+                                "轻松驾驭Hive数仓.md",
                             ]
                         },
 
@@ -564,6 +586,16 @@ module.exports = {
                             "00-DDD专栏规划.md",
                             "基于电商履约场景的DDD实战.md",
 
+                        ]
+                    }],
+                    "/md/biz-arch/": [{
+                        title: "数据中台",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "00-新一代数据栈将逐步替代国内单一“数据中台”.md",
+                            "01-供应链域数据中台设计.md",
+                            "03-构建数据中台的三要素：方法论、组织和技术.md",
                         ]
                     }],
                     "/md/mysql/": [{
