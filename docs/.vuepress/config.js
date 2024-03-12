@@ -139,12 +139,16 @@ module.exports = {
                         ]
                     },
                     {
-                        text: '并发',
-                        link: '/md/concurrency/00-Java并发编程.md'
-                    },
-                    {
-                        text: 'JVM',
-                        link: '/md/jvm/01-JVM虚拟机-上篇.md'
+                        text: ' Java',
+                        items: [
+                            {text: ' 并发', items: [
+                                {text: '00-Java并发编程', link: '/md/java/00-Java并发编程.md'},
+                            ]},
+
+                            {text: ' JVM', items: [
+                                {text: '01-JVM虚拟机-上篇',link: '/md/java/01-JVM虚拟机-上篇.md'},
+                            ]},
+                        ]
                     },
                     {
                         text: 'Dubbo',
@@ -217,6 +221,18 @@ module.exports = {
                                        {text: '策略模式在项目设计中的应用',link: '/md/12306/策略模式在项目设计中的应用.md'},
                                     ]
                             }
+                        ]
+                    },
+                    {
+                        text: 'Vue',
+                        items: [
+                            {text: '01-Vue开发实战', link: '/md/vue/01-Vue开发实战.md'},
+                        ]
+                    },
+                    {
+                        text: 'AI',
+                        items: [
+                            {text: 'Claude3到底多强', link: '/md/AI/Claude3到底多强.md'},
                         ]
                     },
                     {
@@ -352,7 +368,7 @@ module.exports = {
                     ],
                     "/md/network/": [
                         {
-                            title: "计网",
+                            title: "计基",
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
@@ -360,16 +376,16 @@ module.exports = {
                             ]
                         }
                     ],
-                    "/md/MQTT/": [
-                        {
-                            title: "MQTT",
-                            collapsable: false,
-                            sidebarDepth: 0,
-                            children: [
-                                "07-MQTT发布订阅模式介绍.md"
-                            ]
-                        }
-                    ],
+                    // "/md/MQTT/": [
+                    //     {
+                    //         title: "MQTT",
+                    //         collapsable: false,
+                    //         sidebarDepth: 0,
+                    //         children: [
+                    //             "07-MQTT发布订阅模式介绍.md"
+                    //         ]
+                    //     }
+                    // ],
                     "/md/spider/": [
                         {
                             title: "爬虫",
@@ -380,9 +396,9 @@ module.exports = {
                             ]
                         }
                     ],
-                    "/md/concurrency/": [
+                    "/md/java/": [
                         {
-                            title: "并发编程",
+                            title: "并发",
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
@@ -393,9 +409,7 @@ module.exports = {
                                 "04-线程池以及生产环境使用.md",
                                 "05-京东并行框架asyncTool如何针对高并发场景进行优化？.md",
                             ]
-                        }
-                    ],
-                    "/md/jvm/": [
+                        },
                         {
                             title: "JVM",
                             collapsable: false,
@@ -404,7 +418,7 @@ module.exports = {
                                 "01-JVM虚拟机-上篇.md",
                                 "02-JVM虚拟机-下篇.md",
                             ]
-                        }
+                        },                
                     ],
                     "/md/spring/spring-cloud/": [
                         {
@@ -447,6 +461,7 @@ module.exports = {
                             children: [
                                 "00-亿级数据量商品系统的SQL调优实战.md",
                                 "MySQL查询优化.md",
+                                "InnoDB架构设计.md",
                             ]
                         }
                     ],
@@ -533,6 +548,26 @@ module.exports = {
                             children: [
                                 "Java工程师必读书单.md",                             
                                 "为什么中国的程序员有35岁危机.md",                             
+                            ]
+                        }
+                    ],
+                    "/md/vue/": [
+                        {
+                            title: "Vue",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "01-Vue开发实战.md",                                                      
+                            ]
+                        }
+                    ],
+                    "/md/AI/": [
+                        {
+                            title: "AI",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "Claude3到底多强.md",                                                      
                             ]
                         }
                     ],
