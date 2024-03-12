@@ -256,10 +256,6 @@ module.exports = {
                         ]
                     },
                     {
-                        text: '',
-
-                    },
-                    {
                         text: 'MySQL',
                         items: [{
                             text: '00-亿级数据量商品系统的SQL调优实战',
