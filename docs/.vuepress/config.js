@@ -91,8 +91,16 @@ module.exports = {
                     {
                         text: '架构',
                         items: [
+                        {text: '业务架构', items: [
                             {text: '00-聚合支付架构', link: '/md/biz-arch/00-聚合支付架构从零到一.md'},
-                        ]
+                        ]},
+
+                        {
+                            text: 'DDD',
+                            items: [
+                                {text: '00-DDD专栏规划', link: '/md/DDD/00-DDD专栏规划.md'},
+                        ]},
+                    ]
                     },
                     {
                         text: '大数据',
@@ -110,13 +118,6 @@ module.exports = {
                             {text: 'Hive', items: [
                                 {text: '00-轻松驾驭Hive数仓',link: '/md/bigdata/轻松驾驭Hive数仓.md'},
                             ]},
-                        ]
-                    },
-                    {
-                        text: 'DDD',
-                        items: [
-                            {text: '00-DDD专栏规划', link: '/md/DDD/00-DDD专栏规划.md'},
-                            {text: '基于电商履约场景的DDD实战', link: '/md/DDD/基于电商履约场景的DDD实战.md'},
                         ]
                     },
                     {
