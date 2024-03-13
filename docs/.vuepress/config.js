@@ -494,6 +494,7 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
+                                "数仓业务调研.md",
                                 "数仓分层和数仓建模.md",
                                 "数仓开发之DIM层",
                                 "轻松驾驭Hive数仓.md",
