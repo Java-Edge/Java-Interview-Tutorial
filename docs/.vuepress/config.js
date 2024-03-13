@@ -177,8 +177,8 @@ module.exports = {
                             {
                                 text: '数据仓库',
                                 items: [{
-                                    text: '00-数仓分层和数仓建模',
-                                    link: '/md/bigdata/数仓分层和数仓建模.md'
+                                    text: 'Spark+ClickHouse实战企业级数据仓库专栏',
+                                    link: '/md/bigdata/Spark+ClickHouse实战企业级数据仓库专栏.md'
                                 }, ]
                             },
                         ]
@@ -304,10 +304,19 @@ module.exports = {
                     },
                     {
                         text: '云原生',
-                        items: [{
-                            text: '00-Docker基础命令大全',
+                        items: [
+                        {
+                            text: 'Docker',
                             link: '/md/docker/00-Docker基础命令大全.md'
-                        }]
+                        },
+                        
+                        {
+                            text: 'k8s',
+                            items: [{
+                                text: 'kubectl命令',
+                                link: '/md/k8s/kubectl命令.md'
+                            }, ]
+                        },]
                     },
                     {
                         text: '计基',
@@ -494,10 +503,12 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
-                                "数仓业务调研.md",
-                                "数仓分层和数仓建模.md",
+                                "数仓业务调研",
+                                "数仓分层和数仓建模",
+                                "轻松驾驭Hive数仓",
+                                "数仓开发之ODS层",
                                 "数仓开发之DIM层",
-                                "轻松驾驭Hive数仓.md",
+
                             ]
                         },
 
@@ -617,6 +628,14 @@ module.exports = {
                         children: [
                             "00-Docker基础命令大全.md",
                             "01-标准化打包技术.md",
+                        ]
+                    }],
+                    "/md/k8s/": [{
+                        title: "Kubernetes",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "kubectl命令",
                         ]
                     }],
                     "/md/netty/base": [{
