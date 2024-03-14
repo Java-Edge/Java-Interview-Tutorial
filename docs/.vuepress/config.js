@@ -265,6 +265,14 @@ module.exports = {
                                                 text: 'SpringCloudGateway之熔断集成篇',
                                                 link: '/md/spring/spring-cloud/SpringCloudGateway之熔断集成篇.md'
                                             },
+                                            {
+                                                text: 'SpringCloudGateway之限流集成篇',
+                                                link: '/md/spring/spring-cloud/SpringCloudGateway之限流集成篇.md'
+                                            },
+                                            {
+                                                text: 'SpringCloudGateway之统一鉴权篇',
+                                                link: '/md/spring/spring-cloud/SpringCloudGateway之统一鉴权篇.md'
+                                            }
                                         ]
                                     }
                                 ]
@@ -589,7 +597,9 @@ module.exports = {
                                 "SpringCloudGateway工作原理与链路图.md",
                                 "SpringCloudGateway核心之Predicate.md",
                                 "SpringCloudGateway之Filter多过程介绍.md",
-                                "SpringCloudGateway之熔断集成篇.md"
+                                "SpringCloudGateway之熔断集成篇.md",
+                                "SpringCloudGateway之限流集成篇.md",
+                                "SpringCloudGateway之统一鉴权篇.md"
                             ]
                         }
                     ],
