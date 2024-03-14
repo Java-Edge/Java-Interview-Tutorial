@@ -169,8 +169,8 @@ module.exports = {
                             {
                                 text: 'Hive',
                                 items: [{
-                                    text: '00-Hive执行原理',
-                                    link: '/md/bigdata/轻松驾驭Hive数仓.md'
+                                    text: 'Hive专栏概述',
+                                    link: '/md/bigdata/Hive专栏概述.md'
                                 }, ]
                             },
 
@@ -492,10 +492,12 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
-                                "01-macOS下 Hive 2.x 的安装与配置.md",
-                                "Hive执行原理.md",
-                                "Hive修复分区.md",
-                                
+                                "Hive专栏概述",
+                                "Hive 2.x 的安装与配置",
+                                "Hive执行原理",
+                                "Hive分区和分桶",
+                                "Hive修复分区",
+                                "hive的严格模式",
                             ]
                         },
                         {
