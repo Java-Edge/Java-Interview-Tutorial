@@ -17,7 +17,7 @@ module.exports = {
         "/": {
             lang: "zh-CN",
             title: "编程严选网",
-            description: "Java求职面经手册和攻略，大厂设计模式、DDD实践，大厂各大中台系统设计真实案例...集全网干货于一站！"
+            description: "Java、前端、大数据求职面经手册和攻略，大厂设计模式、DDD实践以及各大中台业务系统设计真实案例...程序员的一站式终身学习网站！"
         }
     },
     head: [
@@ -179,6 +179,14 @@ module.exports = {
                                 items: [{
                                     text: 'Spark+ClickHouse实战企业级数据仓库专栏',
                                     link: '/md/bigdata/Spark+ClickHouse实战企业级数据仓库专栏.md'
+                                }, ]
+                            },
+
+                            {
+                                text: 'DolphinScheduler',
+                                items: [{
+                                    text: 'DolphinScheduler专栏',
+                                    link: '/md/bigdata/作业帮基于 DolphinScheduler 的数据开发平台实践.md'
                                 }, ]
                             },
                         ]
@@ -506,6 +514,7 @@ module.exports = {
                                 "Hive分区和分桶",
                                 "Hive修复分区",
                                 "hive的严格模式",
+                                "hiveserver2",
                             ]
                         },
                         {
@@ -520,6 +529,15 @@ module.exports = {
                                 "轻松驾驭Hive数仓",
                                 "数仓开发之ODS层",
                                 "数仓开发之DIM层",
+                                "数仓开发之DWD层",
+                            ]
+                        },
+                        {
+                            title: "DolphinScheduler",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "作业帮基于 DolphinScheduler 的数据开发平台实践",
                             ]
                         },
 
