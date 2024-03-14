@@ -505,12 +505,13 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
+                                "维度建模理论之事实表",
+                                "数仓逻辑模型",
                                 "数仓业务调研",
                                 "数仓分层和数仓建模",
                                 "轻松驾驭Hive数仓",
                                 "数仓开发之ODS层",
                                 "数仓开发之DIM层",
-
                             ]
                         },
 
