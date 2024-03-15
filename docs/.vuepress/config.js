@@ -240,25 +240,6 @@ module.exports = {
                         ]
                     },
                     {
-                        text: '算法',
-                        items: [{
-                            text: '阿里秋招算法',
-                            items: [{
-                                text: '00-阿里秋招高频算法题汇总(基础篇)',
-                                link: '/md/algorithm/logic/leetcode/00-阿里秋招高频算法题汇总(基础篇).md'
-                            },
-                            {
-                                text: '01-阿里秋招高频算法题汇总(中级篇)',
-                                link: '/md/algorithm/logic/leetcode/01-阿里秋招高频算法题汇总(中级篇).md'
-                            },
-                            {
-                                text: '03-阿里秋招高频算法题汇总(进阶篇)',
-                                link: '/md/algorithm/logic/leetcode/03-阿里秋招高频算法题汇总(进阶篇).md'
-                            }
-                        ]
-                        }]
-                    },
-                    {
                         text: '微服务',
                         items: [{
                                 text: 'Dubbo',
@@ -358,7 +339,24 @@ module.exports = {
                         items: [{
                             text: '00-计算机网络-网络层原理',
                             link: '/md/network/计算机网络-网络层原理.md'
-                        }, ]
+                        },
+                        {
+                            text: '阿里秋招算法',
+                            items: [
+                            {
+                                text: '00-阿里秋招高频算法题汇总-基础篇',
+                                link: '/md/algorithm/logic/leetcode/00-阿里秋招高频算法题汇总-基础篇.md'
+                            },
+                            {
+                                text: '01-阿里秋招高频算法题汇总-中级篇',
+                                link: '/md/algorithm/logic/leetcode/01-阿里秋招高频算法题汇总-中级篇.md'
+                            },
+                            {
+                                text: '03-阿里秋招高频算法题汇总-进阶篇',
+                                link: '/md/algorithm/logic/leetcode/03-阿里秋招高频算法题汇总-进阶篇.md'
+                            }
+                        ]
+                        }]
                     },
                     {
                         text: '爬虫',
@@ -623,9 +621,9 @@ module.exports = {
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
-                            "00-阿里秋招高频算法题汇总(基础篇)",
-                            "01-阿里秋招高频算法题汇总(中级篇)",
-                            "02-阿里秋招高频算法题汇总(进阶篇)",
+                            "00-阿里秋招高频算法题汇总-基础篇",
+                            "01-阿里秋招高频算法题汇总-中级篇",
+                            "02-阿里秋招高频算法题汇总-进阶篇",
                         ]
                     },
                 ], 
