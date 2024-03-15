@@ -249,18 +249,20 @@ module.exports = {
                                 }, ]
                             },
 
-                            {
-                                text: 'SpringCloud',
+                            {text: 'SpringCloud',
                                 items: [{
-                                        text: 'SpringCloudAlibaba',
-                                        link: '/md/spring/spring-cloud/SpringCloudAlibaba介绍.md'
-                                    },
+                                    text: 'SpringCloudAlibaba',
+                                    link: '/md/spring/spring-cloud/SpringCloudAlibaba介绍.md'
+                                },{
+                                    text: 'SpringCloudGateway工作原理与链路图',
+                                    link: '/md/spring/spring-cloud/SpringCloudGateway工作原理与链路图.md'
+                                },
                                     {
                                         text: 'SpringCloudGateway组件',
                                         items: [{
-                                                text: 'SpringCloudGateway工作原理与链路图',
-                                                link: '/md/spring/spring-cloud/SpringCloudGateway工作原理与链路图.md'
-                                            },
+                                            text: 'SpringCloudGateway工作原理与链路图',
+                                            link: '/md/spring/spring-cloud/SpringCloudGateway工作原理与链路图.md'
+                                        },
                                             {
                                                 text: 'SpringCloudGateway核心之Predicate',
                                                 link: '/md/spring/spring-cloud/SpringCloudGateway核心之Predicate.md'
@@ -280,11 +282,14 @@ module.exports = {
                                             {
                                                 text: 'SpringCloudGateway之统一鉴权篇',
                                                 link: '/md/spring/spring-cloud/SpringCloudGateway之统一鉴权篇.md'
+                                            },
+                                            {
+                                                text: 'SpringCloudGateway之灰度发布篇',
+                                                link: '/md/spring/spring-cloud/SpringCloudGateway之灰度发布篇.md'
                                             }
                                         ]
                                     }
-                                ]
-                            },
+                                ] },
                         ]
                     },
                     {
