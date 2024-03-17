@@ -183,6 +183,14 @@ module.exports = {
                             },
 
                             {
+                                text: 'DataX',
+                                items: [{
+                                    text: 'DataX专栏',
+                                    link: '/md/bigdata/阿里云开源离线同步工具DataX3.0介绍.md'
+                                }, ]
+                            },
+
+                            {
                                 text: 'DolphinScheduler',
                                 items: [{
                                     text: 'DolphinScheduler专栏',
@@ -363,10 +371,10 @@ module.exports = {
                         ]
                         }]
                     },
-                    {
-                        text: '爬虫',
-                        link: '/md/spider/00-爬虫基础.md'
-                    },
+                    // {
+                    //     text: '爬虫',
+                    //     link: '/md/spider/00-爬虫基础.md'
+                    // },
                     {
                         text: '面试',
                         link: '/md/zqy/面试题/01-分布式技术面试实战.md'
@@ -542,6 +550,17 @@ module.exports = {
                                 "数仓开发之ADS层",
                             ]
                         },
+
+                        {
+                            title: "DataX",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "阿里云开源离线同步工具DataX3.0介绍",
+                                "数仓数据导出",
+                            ]
+                        },
+
                         {
                             title: "DolphinScheduler",
                             collapsable: false,
@@ -550,7 +569,6 @@ module.exports = {
                                 "作业帮基于 DolphinScheduler 的数据开发平台实践",
                             ]
                         },
-
                     ],
                     "/md/rpc/": [{
                         title: "RPC",
