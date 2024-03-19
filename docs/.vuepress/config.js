@@ -113,8 +113,7 @@ module.exports = {
                     },
                     {
                         text: '架构',
-                        items: [
-                            {
+                        items: [{
                                 text: '业务架构',
                                 items: [{
                                     text: '00-聚合支付架构',
@@ -129,7 +128,7 @@ module.exports = {
                                     link: '/md/DDD/00-DDD专栏规划.md'
                                 }, ]
                             },
-                            
+
                             {
                                 text: '数据中台',
                                 items: [{
@@ -234,16 +233,16 @@ module.exports = {
                         items: [{
                                 text: '并发',
                                 items: [{
-                                    text: '00-Java并发编程',
-                                    link: '/md/java/00-Java并发编程.md'
+                                    text: '并发编程专栏概述',
+                                    link: '/md/java/并发编程专栏概述.md'
                                 }, ]
                             },
 
                             {
                                 text: 'JVM',
                                 items: [{
-                                    text: '01-JVM虚拟机-上篇',
-                                    link: '/md/java/01-JVM虚拟机-上篇.md'
+                                    text: 'JVM专栏概述',
+                                    link: '/md/java/JVM专栏概述.md'
                                 }, ]
                             },
                         ]
@@ -258,20 +257,21 @@ module.exports = {
                                 }, ]
                             },
 
-                            {text: 'SpringCloud',
+                            {
+                                text: 'SpringCloud',
                                 items: [{
-                                    text: 'SpringCloudAlibaba',
-                                    link: '/md/spring/spring-cloud/SpringCloudAlibaba介绍.md'
-                                },{
-                                    text: 'SpringCloudGateway工作原理与链路图',
-                                    link: '/md/spring/spring-cloud/SpringCloudGateway工作原理与链路图.md'
-                                },
+                                        text: 'SpringCloudAlibaba',
+                                        link: '/md/spring/spring-cloud/SpringCloudAlibaba介绍.md'
+                                    }, {
+                                        text: 'SpringCloudGateway工作原理与链路图',
+                                        link: '/md/spring/spring-cloud/SpringCloudGateway工作原理与链路图.md'
+                                    },
                                     {
                                         text: 'SpringCloudGateway组件',
                                         items: [{
-                                            text: 'SpringCloudGateway工作原理与链路图',
-                                            link: '/md/spring/spring-cloud/SpringCloudGateway工作原理与链路图.md'
-                                        },
+                                                text: 'SpringCloudGateway工作原理与链路图',
+                                                link: '/md/spring/spring-cloud/SpringCloudGateway工作原理与链路图.md'
+                                            },
                                             {
                                                 text: 'SpringCloudGateway核心之Predicate',
                                                 link: '/md/spring/spring-cloud/SpringCloudGateway核心之Predicate.md'
@@ -298,79 +298,78 @@ module.exports = {
                                             }
                                         ]
                                     }
-                                ] },
+                                ]
+                            },
                         ]
                     },
+
                     {
-                        text: 'MySQL',
+                        text: '数据库',
                         items: [{
-                            text: '00-亿级数据量商品系统的SQL调优实战',
-                            link: '/md/mysql/00-亿级数据量商品系统的SQL调优实战.md'
-                        }]
-                    },
-                    {
-                        text: 'Redis',
-                        items: [{
-                                text: '00-数据结构的最佳实践',
-                                link: '/md/redis/00-数据结构的最佳实践.md'
+                                text: 'MySQL',
+                                items: [{
+                                    text: '亿级数据量商品系统的SQL调优实战',
+                                    link: '/md/mysql/00-亿级数据量商品系统的SQL调优实战.md'
+                                }]
                             },
+
                             {
-                                text: '01-Redis和ZK分布式锁优缺点对比以及生产环境使用建议',
-                                link: '/md/redis/01-Redis和ZK分布式锁优缺点对比以及生产环境使用建议.md'
+                                text: 'Redis',
+                                items: [{
+                                    text: 'Redis数据结构的最佳实践',
+                                    link: '/md/redis/00-数据结构的最佳实践.md'
+                                }]
                             },
+                            
                             {
-                                text: '02-Redisson可重入锁加锁源码分析',
-                                link: '/md/redis/02-Redisson可重入锁加锁源码分析.md'
+                                text: 'ElasticSearch',
+                                items: [{
+                                    text: 'ES基本概念',
+                                    link: '/md/es/ES基本概念.md'
+                                }]
                             },
-                            {
-                                text: '03-Redisson公平锁加锁源码分析',
-                                link: '/md/redis/03-Redisson公平锁加锁源码分析.md'
-                            },
-                            {
-                                text: '04-Redisson读写锁加锁机制分析',
-                                link: '/md/redis/04-Redisson读写锁加锁机制分析.md'
-                            }
                         ]
                     },
+
                     {
                         text: '云原生',
-                        items: [
-                        {
-                            text: 'Docker',
-                            link: '/md/docker/00-Docker基础命令大全.md'
-                        },
-                        
-                        {
-                            text: 'k8s',
-                            items: [{
-                                text: 'kubectl命令',
-                                link: '/md/k8s/kubectl命令.md'
-                            }, ]
-                        },]
+                        items: [{
+                                text: 'Docker',
+                                link: '/md/docker/00-Docker基础命令大全.md'
+                            },
+
+                            {
+                                text: 'k8s',
+                                items: [{
+                                    text: 'kubectl命令',
+                                    link: '/md/k8s/kubectl命令.md'
+                                }, ]
+                            },
+                        ]
                     },
                     {
                         text: '计基',
                         items: [{
-                            text: '00-计算机网络-网络层原理',
-                            link: '/md/network/计算机网络-网络层原理.md'
-                        },
-                        {
-                            text: '阿里秋招算法',
-                            items: [
-                            {
-                                text: '00-阿里秋招高频算法题汇总-基础篇',
-                                link: '/md/algorithm/logic/leetcode/00-阿里秋招高频算法题汇总-基础篇.md'
+                                text: '00-计算机网络-网络层原理',
+                                link: '/md/network/计算机网络-网络层原理.md'
                             },
                             {
-                                text: '01-阿里秋招高频算法题汇总-中级篇',
-                                link: '/md/algorithm/logic/leetcode/01-阿里秋招高频算法题汇总-中级篇.md'
-                            },
-                            {
-                                text: '02-阿里秋招高频算法题汇总-进阶篇',
-                                link: '/md/algorithm/logic/leetcode/02-阿里秋招高频算法题汇总-进阶篇.md'
+                                text: '阿里秋招算法',
+                                items: [{
+                                        text: '00-阿里秋招高频算法题汇总-基础篇',
+                                        link: '/md/algorithm/logic/leetcode/00-阿里秋招高频算法题汇总-基础篇.md'
+                                    },
+                                    {
+                                        text: '01-阿里秋招高频算法题汇总-中级篇',
+                                        link: '/md/algorithm/logic/leetcode/01-阿里秋招高频算法题汇总-中级篇.md'
+                                    },
+                                    {
+                                        text: '02-阿里秋招高频算法题汇总-进阶篇',
+                                        link: '/md/algorithm/logic/leetcode/02-阿里秋招高频算法题汇总-进阶篇.md'
+                                    }
+                                ]
                             }
                         ]
-                        }]
                     },
                     // {
                     //     text: '爬虫',
@@ -382,28 +381,23 @@ module.exports = {
                     },
                     {
                         text: '12306',
-                        items: [
-                            {
+                        items: [{
                                 text: '项目介绍',
                                 link: '/md/12306/项目介绍.md'
                             },
                             {
                                 text: '快速开始',
-                                items: [
-                                    {
-                                        text: '环境搭建',
-                                        link: '/md/12306/环境搭建.md'
-                                    }
-                                ]
+                                items: [{
+                                    text: '环境搭建',
+                                    link: '/md/12306/环境搭建.md'
+                                }]
                             },
                             {
                                 text: '核心技术文档',
-                                items: [
-                                    {
-                                        text: '如何生成分布式ID',
-                                        link: '/md/12306/如何生成分布式ID.md'
-                                    },
-                                ]
+                                items: [{
+                                    text: '如何生成分布式ID',
+                                    link: '/md/12306/如何生成分布式ID.md'
+                                }, ]
                             }
                         ]
                     },
@@ -479,32 +473,32 @@ module.exports = {
                         }
                     ],
                     "/md/biz-arch/": [{
-                        title: "业务架构",
-                        collapsable: false,
-                        sidebarDepth: 0,
-                        children: [
-                            "00-聚合支付架构从零到一.md",
-                            "02-供应链采购视角的业务系统架构.md",
-                            "03-客服平台架构实践.md",
-                            "04-数据质量中心系统设计.md",
-                            "05-大厂CRM系统架构优化实战.md",
-                            "06-运营后台系统设计.md",
-                            "07-大厂报价查询系统性能优化之道.md",
-                            "08-视频推荐索引构建.md",
-                            "09-交易中台-如何防止订单二次重复支付？.md",
-                        ]
-                    },
-                    {
-                        title: "数据中台",
-                        collapsable: false,
-                        sidebarDepth: 0,
-                        children: [
-                            "00-新一代数据栈将逐步替代国内单一“数据中台”.md",
-                            "01-供应链域数据中台设计.md",
-                            "03-构建数据中台的三要素：方法论、组织和技术.md",
-                        ]
-                    },
-                ],
+                            title: "业务架构",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "00-聚合支付架构从零到一.md",
+                                "02-供应链采购视角的业务系统架构.md",
+                                "03-客服平台架构实践.md",
+                                "04-数据质量中心系统设计.md",
+                                "05-大厂CRM系统架构优化实战.md",
+                                "06-运营后台系统设计.md",
+                                "07-大厂报价查询系统性能优化之道.md",
+                                "08-视频推荐索引构建.md",
+                                "09-交易中台-如何防止订单二次重复支付？.md",
+                            ]
+                        },
+                        {
+                            title: "数据中台",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "00-新一代数据栈将逐步替代国内单一“数据中台”.md",
+                                "01-供应链域数据中台设计.md",
+                                "03-构建数据中台的三要素：方法论、组织和技术.md",
+                            ]
+                        },
+                    ],
                     "/md/trade/": [{
                         title: "交易中台",
                         collapsable: false,
@@ -639,8 +633,10 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
-                                "01-JVM虚拟机-上篇.md",
-                                "02-JVM虚拟机-下篇.md",
+                                "JVM专栏概述",
+                                "01-JVM虚拟机-上篇",
+                                "02-JVM虚拟机-下篇",
+                                "高并发BI系统避免频繁Y-GC",
                             ]
                         },
                     ],
@@ -653,8 +649,7 @@ module.exports = {
                             "01-阿里秋招高频算法题汇总-中级篇",
                             "02-阿里秋招高频算法题汇总-进阶篇",
                         ]
-                    },
-                ], 
+                    }, ],
                     "/md/spring/spring-cloud/": [{
                             title: "SpringCloudAlibaba",
                             collapsable: false,
@@ -742,9 +737,16 @@ module.exports = {
                             "03-Redisson公平锁加锁源码分析.md",
                             "04-Redisson读写锁加锁机制分析.md"
                         ]
+                    }],                    
+                    "/md/es/": [{
+                        title: "ElasticSearch",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "ES基本概念.md",
+                        ]
                     }],
-                    "/md/12306/": [
-                        {
+                    "/md/12306/": [{
                             title: "项目介绍",
                             collapsable: false,
                             sidebarDepth: 0,
