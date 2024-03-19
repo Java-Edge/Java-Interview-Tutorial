@@ -113,7 +113,8 @@ module.exports = {
                     },
                     {
                         text: '架构',
-                        items: [{
+                        items: [
+                            {
                                 text: '业务架构',
                                 items: [{
                                     text: '00-聚合支付架构',
@@ -478,7 +479,7 @@ module.exports = {
                         }
                     ],
                     "/md/biz-arch/": [{
-                        title: "业务架构设计",
+                        title: "业务架构",
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
@@ -492,7 +493,18 @@ module.exports = {
                             "08-视频推荐索引构建.md",
                             "09-交易中台-如何防止订单二次重复支付？.md",
                         ]
-                    }],
+                    },
+                    {
+                        title: "数据中台",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "00-新一代数据栈将逐步替代国内单一“数据中台”.md",
+                            "01-供应链域数据中台设计.md",
+                            "03-构建数据中台的三要素：方法论、组织和技术.md",
+                        ]
+                    },
+                ],
                     "/md/trade/": [{
                         title: "交易中台",
                         collapsable: false,
@@ -671,16 +683,6 @@ module.exports = {
                             "00-DDD专栏规划.md",
                             "基于电商履约场景的DDD实战.md",
 
-                        ]
-                    }],
-                    "/md/biz-arch/": [{
-                        title: "数据中台",
-                        collapsable: false,
-                        sidebarDepth: 0,
-                        children: [
-                            "00-新一代数据栈将逐步替代国内单一“数据中台”.md",
-                            "01-供应链域数据中台设计.md",
-                            "03-构建数据中台的三要素：方法论、组织和技术.md",
                         ]
                     }],
                     "/md/mysql/": [{
