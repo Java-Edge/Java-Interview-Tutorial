@@ -208,13 +208,13 @@ module.exports = {
                     },
                     {
                         text: 'MQ',
-                        items: [{
+                        items: [
+                            {
                                 text: 'Kafka',
                                 items: [{
-                                        text: '基于kafka实现延迟队列',
-                                        link: '/md/kafka/15-基于kafka实现延迟队列.md'
+                                        text: 'Kafka门派知多少',
+                                        link: '/md/kafka/Kafka门派知多少.md'
                                     },
-
                                 ]
                             },
                             {
@@ -223,7 +223,6 @@ module.exports = {
                                         text: '00-RocketMQ',
                                         link: '/md/kafka/15-基于kafka实现延迟队列.md'
                                     },
-
                                 ]
                             },
                         ]
@@ -727,6 +726,7 @@ module.exports = {
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
+                            "Kafka门派知多少.md",
                             "15-基于kafka实现延迟队列.md"
                         ]
                     }],
