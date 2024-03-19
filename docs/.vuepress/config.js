@@ -581,6 +581,8 @@ module.exports = {
                                 "DolphinScheduler简介",
                                 "DolphinScheduler部署",
                                 "DolphinScheduler参数",
+                                "DolphinScheduler资源中心",
+                                "DolphinScheduler告警通知",
                                 "作业帮基于 DolphinScheduler 的数据开发平台实践",
                             ]
                         },
