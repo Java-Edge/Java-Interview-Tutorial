@@ -324,8 +324,8 @@ module.exports = {
                             {
                                 text: 'ElasticSearch',
                                 items: [{
-                                    text: 'ES基本概念',
-                                    link: '/md/es/ES基本概念.md'
+                                    text: 'ES专栏大纲',
+                                    link: '/md/es/ES专栏大纲.md'
                                 }]
                             },
                         ]
@@ -333,9 +333,13 @@ module.exports = {
 
                     {
                         text: '云原生',
-                        items: [{
+                        items: [
+                            {
                                 text: 'Docker',
-                                link: '/md/docker/00-Docker基础命令大全.md'
+                                items: [{
+                                    text: 'Docker基础命令大全',
+                                    link: '/md/docker/00-Docker基础命令大全.md'
+                                }]
                             },
 
                             {
@@ -343,7 +347,7 @@ module.exports = {
                                 items: [{
                                     text: 'kubectl命令',
                                     link: '/md/k8s/kubectl命令.md'
-                                }, ]
+                                }]
                             },
                         ]
                     },
