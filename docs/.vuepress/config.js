@@ -787,8 +787,9 @@ module.exports = {
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
-                            "Java工程师必读书单.md",
-                            "为什么中国的程序员有35岁危机.md",
+                            "Java工程师必读书单",
+                            "为什么中国的程序员有35岁危机",
+                            "新人程序员入行忠告",
                         ]
                     }],
                     "/md/vue/": [{
