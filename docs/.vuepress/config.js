@@ -566,6 +566,9 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
+                                "DolphinScheduler简介",
+                                "DolphinScheduler部署",
+                                "DolphinScheduler参数",
                                 "作业帮基于 DolphinScheduler 的数据开发平台实践",
                             ]
                         },
@@ -790,7 +793,8 @@ module.exports = {
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
-                            "Claude3到底多强.md",
+                            "Claude3到底多强",
+                            "GPTs推荐",
                         ]
                     }],
                 }
