@@ -251,8 +251,8 @@ module.exports = {
                             {
                                 text: '设计模式',
                                 items: [{
-                                        text: '00-RocketMQ',
-                                        link: '/md/kafka/15-基于kafka实现延迟队列.md'
+                                        text: '模板方法设计模式（Template Pattern）',
+                                        link: '/md/design/模板方法设计模式（Template Pattern）.md'
                                     },
                                 ]
                             },
@@ -357,6 +357,14 @@ module.exports = {
                                 items: [{
                                     text: 'ES专栏大纲',
                                     link: '/md/es/ES专栏大纲.md'
+                                }]
+                            },
+                            
+                            {
+                                text: 'ClickHouse',
+                                items: [{
+                                    text: '为啥要学习ClickHouse',
+                                    link: '/md/ck/为啥要学习ClickHouse.md'
                                 }]
                             },
                         ]
@@ -771,7 +779,8 @@ module.exports = {
                             "01-Redis和ZK分布式锁优缺点对比以及生产环境使用建议.md",
                             "02-Redisson可重入锁加锁源码分析.md",
                             "03-Redisson公平锁加锁源码分析.md",
-                            "04-Redisson读写锁加锁机制分析.md"
+                            "04-Redisson读写锁加锁机制分析.md",
+                            "缓存读写策略模式详解"
                         ]
                     }],                    
                     "/md/es/": [{
@@ -781,6 +790,15 @@ module.exports = {
                         children: [
                             "ES专栏大纲",
                             "ES基本概念",
+                        ]
+                    }],
+                    "/md/ck/": [{
+                        title: "ClickHouse",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "为啥要学习ClickHouse",
+                            "学习基础",
                         ]
                     }],
                     "/md/12306/": [{
@@ -847,6 +865,8 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "代码的坏味道",
+                            "模板方法设计模式（Template Pattern）",
+                            "策略模式Strategy Pattern",
                         ]
                     }],
                 }
