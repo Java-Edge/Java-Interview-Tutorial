@@ -206,6 +206,7 @@ module.exports = {
                             link: '/md/netty/base/ChannelPipeline接口.md'
                         }, ]
                     },
+
                     {
                         text: 'MQ',
                         items: [
@@ -226,7 +227,38 @@ module.exports = {
                                 ]
                             },
                         ]
+                    },                    
+                    
+                    {
+                        text: '重构',
+                        items: [
+                            {
+                                text: '重构',
+                                items: [{
+                                        text: '代码的坏味道',
+                                        link: '/md/design/代码的坏味道.md'
+                                    },
+                                ]
+                            },                            
+                            {
+                                text: '设计原则',
+                                items: [{
+                                        text: 'Kafka门派知多少',
+                                        link: '/md/kafka/Kafka门派知多少.md'
+                                    },
+                                ]
+                            },
+                            {
+                                text: '设计模式',
+                                items: [{
+                                        text: '00-RocketMQ',
+                                        link: '/md/kafka/15-基于kafka实现延迟队列.md'
+                                    },
+                                ]
+                            },
+                        ]
                     },
+
                     {
                         text: 'Java',
                         items: [{
@@ -807,6 +839,14 @@ module.exports = {
                         children: [
                             "Claude3到底多强",
                             "GPTs推荐",
+                        ]
+                    }],                    
+                    "/md/design/": [{
+                        title: "重构",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "代码的坏味道",
                         ]
                     }],
                 }
