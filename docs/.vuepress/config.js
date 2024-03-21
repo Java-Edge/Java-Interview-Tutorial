@@ -218,11 +218,21 @@ module.exports = {
                                     },
                                 ]
                             },
+
                             {
                                 text: 'RocketMQ',
                                 items: [{
                                         text: '00-RocketMQ',
                                         link: '/md/kafka/15-基于kafka实现延迟队列.md'
+                                    },
+                                ]
+                            },
+                            
+                            {
+                                text: 'RabbitMQ',
+                                items: [{
+                                        text: '00-RabbitMQ',
+                                        link: '/md/rabbitmq/00-RabbitMQ实战下载与安装.md'
                                     },
                                 ]
                             },
@@ -401,24 +411,28 @@ module.exports = {
                     {
                         text: '计基',
                         items: [{
+                            text: '计算机网络',
+                            items: [{
                                 text: '00-计算机网络-网络层原理',
                                 link: '/md/network/计算机网络-网络层原理.md'
-                            },
-                            {
-                                text: '阿里秋招算法',
-                                items: [{
-                                        text: '00-阿里秋招高频算法题汇总-基础篇',
-                                        link: '/md/algorithm/logic/leetcode/00-阿里秋招高频算法题汇总-基础篇.md'
-                                    },
-                                    {
-                                        text: '01-阿里秋招高频算法题汇总-中级篇',
-                                        link: '/md/algorithm/logic/leetcode/01-阿里秋招高频算法题汇总-中级篇.md'
-                                    },
-                                    {
-                                        text: '02-阿里秋招高频算法题汇总-进阶篇',
-                                        link: '/md/algorithm/logic/leetcode/02-阿里秋招高频算法题汇总-进阶篇.md'
-                                    }
-                                ]
+                            }, ]
+                        },
+                        
+                        {
+                            text: '阿里秋招算法',
+                            items: [{
+                                    text: '00-阿里秋招高频算法题汇总-基础篇',
+                                    link: '/md/algorithm/logic/leetcode/00-阿里秋招高频算法题汇总-基础篇.md'
+                                },
+                                {
+                                    text: '01-阿里秋招高频算法题汇总-中级篇',
+                                    link: '/md/algorithm/logic/leetcode/01-阿里秋招高频算法题汇总-中级篇.md'
+                                },
+                                {
+                                    text: '02-阿里秋招高频算法题汇总-进阶篇',
+                                    link: '/md/algorithm/logic/leetcode/02-阿里秋招高频算法题汇总-进阶篇.md'
+                                }
+                            ]
                             }
                         ]
                     },
@@ -645,7 +659,8 @@ module.exports = {
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
-                            "计算机网络-网络层原理.md"
+                            "计算机网络-网络层原理",
+                            "超线程（Hyper-Threading），单指令多数据流（SIMD）技术"
                         ]
                     }],
                     // "/md/MQTT/": [
@@ -777,6 +792,14 @@ module.exports = {
                             "Kafka门派知多少.md",
                             "15-基于kafka实现延迟队列.md"
                         ]
+                    }],                    
+                    "/md/rabbitmq": [{
+                        title: "RabbitMQ",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "00-RabbitMQ实战下载与安装.md",
+                        ]
                     }],
                     "/md/redis/": [{
                         title: "Redis",
@@ -805,6 +828,7 @@ module.exports = {
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
+                            "clickhouse概述",
                             "为啥要学习ClickHouse",
                             "学习基础",
                         ]
