@@ -197,6 +197,14 @@ module.exports = {
                                     link: '/md/bigdata/作业帮基于 DolphinScheduler 的数据开发平台实践.md'
                                 }, ]
                             },
+                            
+                            {
+                                text: 'Spark',
+                                items: [{
+                                    text: '为啥要学习Spark？',
+                                    link: '/md/spark/为啥要学习Spark？.md'
+                                }, ]
+                            },
                         ]
                     },
                     {
@@ -377,8 +385,8 @@ module.exports = {
                             {
                                 text: 'ClickHouse',
                                 items: [{
-                                    text: '为啥要学习ClickHouse',
-                                    link: '/md/ck/为啥要学习ClickHouse.md'
+                                    text: 'clickhouse概述',
+                                    link: '/md/ck/clickhouse概述.md'
                                 }]
                             },                            
                             
@@ -658,6 +666,15 @@ module.exports = {
                                 "作业帮基于 DolphinScheduler 的数据开发平台实践",
                             ]
                         },
+                        
+                        {
+                            title: "Spark",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "00-Spark安装及启动",
+                            ]
+                        },
                     ],
                     "/md/rpc/": [{
                         title: "RPC",
@@ -851,8 +868,10 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "clickhouse概述",
+                            "单机安装部署",
+                            "客户端基本操作",
                             "为啥要学习ClickHouse",
-                            "学习基础",
+                            "为啥适合OLAP？",
                         ]
                     }],
                     "/md/distdb/": [{
