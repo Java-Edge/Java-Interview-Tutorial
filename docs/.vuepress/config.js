@@ -410,11 +410,20 @@ module.exports = {
                     },
                     {
                         text: '计基',
-                        items: [{
+                        items: [
+                        {
                             text: '计算机网络',
                             items: [{
                                 text: '00-计算机网络-网络层原理',
                                 link: '/md/network/计算机网络-网络层原理.md'
+                            }, ]
+                        },                        
+                        
+                        {
+                            text: 'Linux操作系统',
+                            items: [{
+                                text: '00-操作系统专栏大纲',
+                                link: '/md/linux/00-操作系统专栏大纲.md'
                             }, ]
                         },
                         
@@ -655,11 +664,19 @@ module.exports = {
                         ]
                     }],
                     "/md/network/": [{
-                        title: "计算机基础",
+                        title: "计算机网络",
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
                             "计算机网络-网络层原理",
+                        ]
+                    }],                    
+                    "/md/linux/": [{
+                        title: "Linux操作系统",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "00-操作系统专栏大纲",
                             "超线程（Hyper-Threading），单指令多数据流（SIMD）技术"
                         ]
                     }],
