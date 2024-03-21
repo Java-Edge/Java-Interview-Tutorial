@@ -16,7 +16,7 @@
 8. 路径重写
 
 ### Spring Cloud网关请求链路图
-![在这里插入图片描述](http://124.222.54.192:4000/public/upload/2024/03/06/202403061427488662.png)
+![在这里插入图片描述](https://yhmx.oss-rg-china-mainland.aliyuncs.com/springcloud/49b86f6877774a47987830f99758d597.png)
 1. Route：一个 Route 由路由 ID，转发 URI，多个 Predicates 以及多个 Filters 构成。Gateway 上可以配置多个 Routes。处理请求时会按优先级排序，找到第一个满足所有 Predicates 的 Route；
 2. Predicate：表示路由的匹配条件，可以用来匹配请求的各种属性，如请求路径、方法、header 等。一个 Route 可以包含多个子 Predicates，多个子 Predicates 最终会合并成一个；
 3. Filter：过滤器包括了处理请求和响应的逻辑，可以分为 pre 和 post 两个阶段。多个 Filter 在 pre 阶段会按优先级高到低顺序执行，post 阶段则是反向执行。Gateway 包括两类 Filter。
@@ -52,10 +52,10 @@ public class DemogatewayApplication {
 }
 ```
 ## SpringCloudGateway版本介绍
-![在这里插入图片描述](http://124.222.54.192:4000/public/upload/2024/03/05/202403051401373075.png)
+![在这里插入图片描述](https://yhmx.oss-rg-china-mainland.aliyuncs.com/springcloud/183e65f97dfd453e98b130d117ec3b55.png)
 
 ## SpringCloudGateway运行结构图
-![在这里插入图片描述](http://124.222.54.192:4000/public/upload/2024/03/05/202403051401372859.png)
+![在这里插入图片描述](https://yhmx.oss-rg-china-mainland.aliyuncs.com/springcloud/39037a78fbbb41a79f16d39d9ede717b.png)
 
 1. 客户端向 Spring Cloud Gateway 发出请求。
 2. 如果网关处理程序映射确定请求与路由匹配，则会将其发送到网关 Web 处理程序。

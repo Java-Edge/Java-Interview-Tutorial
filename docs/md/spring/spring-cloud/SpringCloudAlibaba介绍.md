@@ -3,9 +3,9 @@
 ## SpringCloudAlibaba介绍
 ### Spring Cloud Alibaba 是什么？
 *Spring Cloud Alibaba 为分布式应用开发提供一站式解决方案。它包含开发分布式应用程序所需的所有组件，使您可以轻松地使用 Spring Cloud 微服务框架开发应用程序。*
-![服务模型](http://124.222.54.192:4000/public/upload/2024/02/28/202402281720261903.png)
+![服务模型](https://yhmx.oss-rg-china-mainland.aliyuncs.com/springcloud/202403191528154527.png)
 ### 微服务全景图
-![服务链路](http://124.222.54.192:4000/public/upload/2024/02/28/202402281721334975.png)
+![服务链路](https://yhmx.oss-rg-china-mainland.aliyuncs.com/springcloud/202403191531248325.png)
 ### 核心特色
 1. 简单易用：Spring Cloud Alibaba 作为一站式的微服务构建方案，用户只需要添加一些注解和少量配置，就可以通过阿里中间件来迅速搭建分布式应用系统。
 2. 扩展性强：Spring Cloud Alibaba 基于 Spring Cloud 微服务解决方案规范，可便捷地对其中的组件进行扩展和替换。
@@ -17,36 +17,36 @@
 
 
 ### Spring Cloud Alibaba
-![](http://124.222.54.192:4000/public/upload/2024/02/29/202402291714045405.png)
+![](https://yhmx.oss-rg-china-mainland.aliyuncs.com/springcloud/202403191539229447.png)
 >Spring Cloud Alibaba 致力于提供微服务开发的一站式解决方案。
 ### Nacos
-![](http://124.222.54.192:4000/public/upload/2024/02/29/202402291559062416.png)
+![](https://yhmx.oss-rg-china-mainland.aliyuncs.com/springcloud/202403191541113847.png)
 
 
 > 作为服务发现与配置中心，提供了一站式的分布式系统服务发现、配置管理以及动态配置推送等功能。
 
 ### Sentinel
-![](http://124.222.54.192:4000/public/upload/2024/02/29/202402291559061148.png)
+![](https://yhmx.oss-rg-china-mainland.aliyuncs.com/springcloud/202403191541366393.png)
 
 > 提供服务容错能力，包括流量控制、熔断降级、系统负载保护、热点key限流等多个维度的防护，保障微服务在异常情况下仍能稳定运行。
 
 ### RocketMQ
-![](http://124.222.54.192:4000/public/upload/2024/02/29/202402291559069296.png)
+![](https://yhmx.oss-rg-china-mainland.aliyuncs.com/springcloud/202403191542119293.png)
 
 > 阿里巴巴开源的消息队列产品，用于处理高并发、高可用的消息传递，支持发布/订阅、顺序消息、事务消息等多种消息模型。
 
 ### Dubbo
-![ ](http://124.222.54.192:4000/public/upload/2024/02/29/202402291559065988.png)
+![ ](https://yhmx.oss-rg-china-mainland.aliyuncs.com/springcloud/202403191542571883.png)
 
 > 高性能、轻量级的RPC框架，使得服务间的通信更为高效，并提供了丰富的服务治理功能。
 
 ### Seata
-![ ](http://124.222.54.192:4000/public/upload/2024/02/29/202402291613447851.png)
+![ ](https://yhmx.oss-rg-china-mainland.aliyuncs.com/springcloud/202403191543286316.png)
 
 > 分布式事务解决方案，旨在解决分布式环境下的事务一致性问题，支持AT、TCC、Saga等模式。
 
 ### Higress
-![ ](http://124.222.54.192:4000/public/upload/2024/02/29/202402291559069065.png)
+![](https://yhmx.oss-rg-china-mainland.aliyuncs.com/springcloud/202403191543414442.png)
 
 > Higress是基于阿里内部的Envoy Gateway实践沉淀、以开源Istio + Envoy为核心构建的下一代云原生网关，实现了流量网关 + 微服务网关 + 安全网关三合一的高集成能力，深度集成Dubbo、Nacos、Sentinel等微服务技术栈，能够帮助用户极大的降低网关的部署及运维成本且能力不打折；在标准上全面支持Ingress与Gateway API，积极拥抱云原生下的标准API规范；同时，Higress Controller也支持Nginx Ingress平滑迁移，帮助用户零成本快速迁移到Higress。
 

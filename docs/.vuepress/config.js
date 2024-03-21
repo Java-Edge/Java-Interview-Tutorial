@@ -336,6 +336,10 @@ module.exports = {
                                             {
                                                 text: 'SpringCloudGateway之灰度发布篇',
                                                 link: '/md/spring/spring-cloud/SpringCloudGateway之灰度发布篇.md'
+                                            },
+                                            {
+                                                text: 'SpringCloudGateway之高性能篇',
+                                                link: '/md/spring/spring-cloud/SpringCloudGateway之高性能篇.md'
                                             }
                                         ]
                                     }
@@ -751,7 +755,8 @@ module.exports = {
                                 "SpringCloudGateway之Filter多过程介绍.md",
                                 "SpringCloudGateway之熔断集成篇.md",
                                 "SpringCloudGateway之限流集成篇.md",
-                                "SpringCloudGateway之统一鉴权篇.md"
+                                "SpringCloudGateway之统一鉴权篇.md",
+                                "SpringCloudGateway之高性能篇.md"
                             ]
                         }
                     ],
