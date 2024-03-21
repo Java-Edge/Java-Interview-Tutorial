@@ -366,6 +366,14 @@ module.exports = {
                                     text: '为啥要学习ClickHouse',
                                     link: '/md/ck/为啥要学习ClickHouse.md'
                                 }]
+                            },                            
+                            
+                            {
+                                text: '分布式数据库',
+                                items: [{
+                                    text: '查询执行引擎：如何让聚合计算加速？',
+                                    link: '/md/distdb/查询执行引擎：如何让聚合计算加速？.md'
+                                }]
                             },
                         ]
                     },
@@ -799,6 +807,14 @@ module.exports = {
                         children: [
                             "为啥要学习ClickHouse",
                             "学习基础",
+                        ]
+                    }],
+                    "/md/distdb/": [{
+                        title: "分布式数据库",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "查询执行引擎：如何让聚合计算加速？",
                         ]
                     }],
                     "/md/12306/": [{
