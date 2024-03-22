@@ -666,15 +666,6 @@ module.exports = {
                                 "作业帮基于 DolphinScheduler 的数据开发平台实践",
                             ]
                         },
-                        
-                        {
-                            title: "Spark",
-                            collapsable: false,
-                            sidebarDepth: 0,
-                            children: [
-                                "00-Spark安装及启动",
-                            ]
-                        },
                     ],
                     "/md/rpc/": [{
                         title: "RPC",
@@ -950,6 +941,17 @@ module.exports = {
                             "策略模式Strategy Pattern",
                         ]
                     }],
+                    
+                    "/md/spark/": [{
+                            title: "Spark",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "为啥要学习Spark？",
+                                "00-Spark安装及启动",
+                            ]
+                        },
+                    ],
                 }
             }
         }
