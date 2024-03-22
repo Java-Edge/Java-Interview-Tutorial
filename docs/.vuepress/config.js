@@ -950,6 +950,7 @@ module.exports = {
                             children: [
                                 "为啥要学习Spark？",
                                 "00-Spark安装及启动",
+                                "01-Spark的Local模式与应用开发入门",
                             ]
                         },
                     ],

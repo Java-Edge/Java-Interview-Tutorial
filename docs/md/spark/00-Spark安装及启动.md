@@ -112,15 +112,9 @@ To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLeve
 
 ### 3.3 项目搭建
 
-![](https://codeselect.oss-cn-shanghai.aliyuncs.com/80485d092f4d437b8c86ee2750f3a40e~tplv-k3u1fbpfcp-zoom-1.png) 
+新建项目，命名Spark-MLlib-Tutorial。添加spark jar包：
 
-
-
-![](https://codeselect.oss-cn-shanghai.aliyuncs.com/97c0295ac56146e499e47388f152788b~tplv-k3u1fbpfcp-zoom-1.png)
-
-添加spark jar包：
-
-![](https://codeselect.oss-cn-shanghai.aliyuncs.com/db73d86d46f14c4e9339c23fc5215e2d~tplv-k3u1fbpfcp-zoom-1.png)
+![](https://codeselect.oss-cn-shanghai.aliyuncs.com/image-20240322151840640.png)
 
 全选jar包（先左键选中第一个，再拉到最后shift，再左键最后一个实现全选）：
 
@@ -128,58 +122,85 @@ To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLeve
 
 
 
-![](https://codeselect.oss-cn-shanghai.aliyuncs.com/4c14c25e0d2840deadee977ca5dd2b27~tplv-k3u1fbpfcp-zoom-1.png) 
+![](https://codeselect.oss-cn-shanghai.aliyuncs.com/image-20240322153542613.png) 
 
 
 
-![](https://codeselect.oss-cn-shanghai.aliyuncs.com/ab29a4734cca47f6afe096b932b11ae5~tplv-k3u1fbpfcp-zoom-1.png)
+![](https://codeselect.oss-cn-shanghai.aliyuncs.com/image-20240322153616467.png)
 
-新建WordCount类和测试文件。
+#### 新建WordCount类和测试文件
 
 编写函数：
 
-![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9d660824a8ca4c69a0a3f0766b963e0b~tplv-k3u1fbpfcp-zoom-1.image)
+```scala
+import org.apache.spark.SparkContext
 
-运行：
+/**
+  * @author JavaEdge
+  * @date 2019-04-09
+  */
+object WordCount {
 
-![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bb68364e985d42d1ac575e88dbe59515~tplv-k3u1fbpfcp-zoom-1.image)
+  def main(args: Array[String]): Unit = {
+    val sc = new SparkContext("local", "WordCount")
+
+    val file = sc.textFile("/Volumes/doc/spark-2.4.1-bin-hadoop2.7/LICENSE")
+
+    // 先分割成单词数组，然后合并，再与1形成KV映射
+    val result = file.flatMap(_.split(" ")).map((_, 1)).reduceByKey((a, b) => a + b).sortBy(_._2)
+    result.foreach(println(_))
+  }
+}
+```
+
+运行即可看到单词统计结果。
+
+### 3.4 提交任务
+
+#### ① 打包
 
 本地调试没问题后，打包：
 
-![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/020fd00c34894d83a9157d2802934c49~tplv-k3u1fbpfcp-zoom-1.image) 
+![](https://codeselect.oss-cn-shanghai.aliyuncs.com/image-20240322153742793.png) 
 
 
 
-![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a1a75ce188f448a78f8e3558159cec7b~tplv-k3u1fbpfcp-zoom-1.image)
+![](https://codeselect.oss-cn-shanghai.aliyuncs.com/image-20240322160808861.png)
 
 移除多余jar包：
 
-![](https://codeselect.oss-cn-shanghai.aliyuncs.com/b5b872daf836409a9654d85c0b8639ed~tplv-k3u1fbpfcp-zoom-1.png)
+![](https://codeselect.oss-cn-shanghai.aliyuncs.com/image-20240322163346414.png)
 
 
 
 ![](https://codeselect.oss-cn-shanghai.aliyuncs.com/459911cbdb4042d8b1d383ba9770261c~tplv-k3u1fbpfcp-zoom-1.png)
 
+仅需项目 jar 包：
 
+![](/Users/javaedge/Downloads/IDEAProjects/java-edge-master/assets/image-20240322163643739.png)
 
-![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/de61de2cfd724a43b64ba278a41f31b7~tplv-k3u1fbpfcp-zoom-1.image)
+![](https://codeselect.oss-cn-shanghai.aliyuncs.com/de61de2cfd724a43b64ba278a41f31b7~tplv-k3u1fbpfcp-zoom-1.png)
 
-构建：
+#### ② 构建
 
-![](https://codeselect.oss-cn-shanghai.aliyuncs.com/a0b8c7af920344a8bb3bc7fa28111b60~tplv-k3u1fbpfcp-zoom-1.png)
+Build Artifacts：
 
+![](https://codeselect.oss-cn-shanghai.aliyuncs.com/image-20240322162433035.png)
 
+Build：
 
-![](https://codeselect.oss-cn-shanghai.aliyuncs.com/456a8cad1f904e1ea015046e3cb812e5~tplv-k3u1fbpfcp-zoom-1.png)
+![](https://codeselect.oss-cn-shanghai.aliyuncs.com/image-20240322162456902.png)
 
+看到生成的 jar 包了：
 
-
-![](https://codeselect.oss-cn-shanghai.aliyuncs.com/22dcf11442634aba9bb65b958496025a~tplv-k3u1fbpfcp-zoom-1.png)
+![](https://codeselect.oss-cn-shanghai.aliyuncs.com/image-20240322162743464.png)
 
 jar包放到spark/bin目录，使用 Spark-submit 运行：
 
-![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b55c3a4091d34796a5eccee4c61710df~tplv-k3u1fbpfcp-zoom-1.image)
+![](https://codeselect.oss-cn-shanghai.aliyuncs.com/b55c3a4091d34796a5eccee4c61710df~tplv-k3u1fbpfcp-zoom-1.png)
 
-[WebUI](http://localhost:8081/#running-app)
+### 3.5 WebUI
+
+根据 spark-shell 里任务输出的端口号进行访问即可，如当前任务是 http://localhost:port/#running-app ：
 
 ![](https://codeselect.oss-cn-shanghai.aliyuncs.com/344aa0da9f1a454f88b354b10e2290d2~tplv-k3u1fbpfcp-zoom-1.png)
