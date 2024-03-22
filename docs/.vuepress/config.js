@@ -689,6 +689,7 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "00-操作系统专栏大纲",
+                            "01-Linux命令",
                             "超线程（Hyper-Threading），单指令多数据流（SIMD）技术"
                         ]
                     }],
