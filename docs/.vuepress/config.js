@@ -299,7 +299,7 @@ module.exports = {
                                 text: 'JDK',
                                 items: [{
                                     text: 'JDK22新特性',
-                                    link: '/md/java/jdk/JDK22新特性.md'
+                                    link: '/md/java/JDK22新特性.md'
                                 }, ]
                             },
                         ]
@@ -743,27 +743,15 @@ module.exports = {
                                 "高并发BI系统避免频繁Y-GC",
                             ]
                         },
-                    ],
-                    "/md/java/jdk/": [
                         {
-                            title: "JDK22新特性",
+                            title: "JDK新特性",
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
+                                "JDK21新特性.md",
                                 "JDK22新特性.md",
                             ]
-                        },
-                        {
-                            title: "JDK8新特性",
-                            collapsable: false,
-                            sidebarDepth: 0,
-                            children: [
-                                "JVM专栏概述",
-                                "01-JVM虚拟机-上篇",
-                                "02-JVM虚拟机-下篇",
-                                "高并发BI系统避免频繁Y-GC",
-                            ]
-                        },
+                        },   
                     ],
                     "/md/algorithm/logic/leetcode/": [{
                         title: "阿里秋招算法",
