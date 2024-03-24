@@ -1,7 +1,5 @@
 # JDK22新特性
 
-[工程](https://spring.io/blog/category/engineering) | [JOSH LONG](https://spring.io/team/joshlong)  | [0条评论](https://spring.io/blog/2024/03/19/hello-java-22#disqus_thread)
-
 [Java 22](https://blogs.oracle.com/java/post/the-arrival-of-java-22)发布快乐！
 
 ![](https://codeselect.oss-cn-shanghai.aliyuncs.com/image-20240323221123636.png)

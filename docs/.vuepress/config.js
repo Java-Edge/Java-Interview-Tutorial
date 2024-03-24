@@ -969,6 +969,7 @@ module.exports = {
                                 "00-Spark安装及启动",
                                 "01-Spark的Local模式与应用开发入门",
                                 "03-SparkSQL入门",
+                                "04-SparkSQL的API编程之DataFrame",
                             ]
                         },
                     ],
