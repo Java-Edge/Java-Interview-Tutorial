@@ -973,6 +973,7 @@ module.exports = {
                                 "05-快速理解SparkSQL的DataSet",
                                 "06-RDD与DataFrame的互操作",
                                 "07-Spark的Data Sources",
+                                "08-Spark SQL整合Hive",
                             ]
                         },
                     ],
