@@ -971,6 +971,8 @@ module.exports = {
                                 "03-SparkSQL入门",
                                 "04-SparkSQL的API编程之DataFrame",
                                 "05-快速理解SparkSQL的DataSet",
+                                "06-RDD与DataFrame的互操作",
+                                "07-Spark的Data Sources",
                             ]
                         },
                     ],
