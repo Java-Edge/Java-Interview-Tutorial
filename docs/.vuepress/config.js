@@ -981,7 +981,9 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
-                                "00-为啥要学习Spark Streaming.md",
+                                "00-为啥要学习Spark Streaming",
+                                "01-Spark Streaming专栏概述",
+                                "02-Spark Streaming小试流式处理",
                             ]
                         },
                     ],
