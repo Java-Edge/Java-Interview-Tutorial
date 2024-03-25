@@ -59,3 +59,10 @@ docs/.vuepress/public/images 存储网站本身展示所需宣传营销图片。
 
 ## FAQ
 文章名称不要带有括号等特色字符！
+文章内容不要带有尖括号等特殊字符，如
+```
+- Java API中，用户需要使用Dataset<Row>表示DataFrame
+```
+会导致整篇文章不显示！对此，需将其包进一个代码块里，如：
+`Dataset<Row>`
+这样就能正常显示了。

@@ -141,7 +141,7 @@ DataFrame，具有命名列的Dataset，类似：
 DataFrame API 在 Scala、Java、Python 和 R 都可用。在Scala和Java中，DataFrame由一组Rows组成的Dataset表示：
 
 - Scala API中，DataFrame只是Dataset[Row]的类型别名
-- Java API中，用户需要使用Dataset<Row>表示DataFrame
+- Java API中，用户需要使用`Dataset<Row>`表示DataFrame
 
 通常将Scala/Java中的Dataset of Rows称为DataFrame。
 
