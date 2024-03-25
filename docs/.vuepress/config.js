@@ -448,7 +448,7 @@ module.exports = {
                         },
                         
                         {
-                            text: '阿里秋招算法',
+                            text: '数据结构与算法',
                             items: [{
                                     text: '00-阿里秋招高频算法题汇总-基础篇',
                                     link: '/md/algorithm/logic/leetcode/00-阿里秋招高频算法题汇总-基础篇.md'
@@ -460,6 +460,18 @@ module.exports = {
                                 {
                                     text: '02-阿里秋招高频算法题汇总-进阶篇',
                                     link: '/md/algorithm/logic/leetcode/02-阿里秋招高频算法题汇总-进阶篇.md'
+                                },
+                                {
+                                    text: '03-字节秋招高频算法题汇总-基础篇',
+                                    link: '/md/algorithm/logic/leetcode/03-字节秋招高频算法题汇总-基础篇.md'
+                                },
+                                {
+                                    text: '04-字节秋招高频算法题汇总-中级篇',
+                                    link: '/md/algorithm/logic/leetcode/04-字节秋招高频算法题汇总-中级篇.md'
+                                },
+                                {
+                                    text: '05-字节秋招高频算法题汇总-进阶篇',
+                                    link: '/md/algorithm/logic/leetcode/05-字节秋招高频算法题汇总-进阶篇.md'
                                 }
                             ]
                             }
@@ -754,13 +766,16 @@ module.exports = {
                         },   
                     ],
                     "/md/algorithm/logic/leetcode/": [{
-                        title: "阿里秋招算法",
+                        title: "数据结构与算法",
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
                             "00-阿里秋招高频算法题汇总-基础篇",
                             "01-阿里秋招高频算法题汇总-中级篇",
                             "02-阿里秋招高频算法题汇总-进阶篇",
+                            "03-字节秋招高频算法题汇总-基础篇",
+                            "04-字节秋招高频算法题汇总-中级篇",
+                            "05-字节秋招高频算法题汇总-进阶篇",
                         ]
                     }, ],
                     "/md/spring/spring-cloud/": [{
@@ -965,7 +980,7 @@ module.exports = {
                     }],
                     
                     "/md/spark/": [{
-                            title: "Spark",
+                            title: "Spark SQL",
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
@@ -974,6 +989,20 @@ module.exports = {
                                 "01-Spark的Local模式与应用开发入门",
                                 "03-SparkSQL入门",
                                 "04-SparkSQL的API编程之DataFrame",
+                                "05-快速理解SparkSQL的DataSet",
+                                "06-RDD与DataFrame的互操作",
+                                "07-Spark的Data Sources",
+                                "08-Spark SQL整合Hive",
+                            ]
+                        },
+                        {
+                            title: "Spark Streaming",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "00-为啥要学习Spark Streaming",
+                                "01-Spark Streaming专栏概述",
+                                "02-Spark Streaming小试流式处理",
                             ]
                         },
                     ],
