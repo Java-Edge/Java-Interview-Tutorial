@@ -961,7 +961,7 @@ module.exports = {
                     }],
                     
                     "/md/spark/": [{
-                            title: "Spark",
+                            title: "Spark SQL",
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
@@ -974,6 +974,14 @@ module.exports = {
                                 "06-RDD与DataFrame的互操作",
                                 "07-Spark的Data Sources",
                                 "08-Spark SQL整合Hive",
+                            ]
+                        },
+                        {
+                            title: "Spark Streaming",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "00-为啥要学习Spark Streaming.md",
                             ]
                         },
                     ],
