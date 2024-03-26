@@ -136,6 +136,14 @@ module.exports = {
                                     link: '/md/biz-arch/00-新一代数据栈将逐步替代国内单一“数据中台”.md'
                                 }, ]
                             },
+                            
+                            {
+                                text: '用户画像',
+                                items: [{
+                                    text: '01-DMP系统简介.md',
+                                    link: '/md/biz-arch/01-DMP系统简介.md'
+                                }, ]
+                            },
                         ]
                     },
                     {
@@ -603,6 +611,16 @@ module.exports = {
                                 "00-新一代数据栈将逐步替代国内单一“数据中台”",
                                 "01-大数据的尽头是数据中台吗？",
                                 "03-构建数据中台的三要素：方法论、组织和技术",
+                                "05-如何统一管理纷繁杂乱的数据指标？",
+                            ]
+                        },
+                        
+                        {
+                            title: "用户画像",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "01-DMP系统简介",
                             ]
                         },
                     ],
@@ -652,6 +670,7 @@ module.exports = {
                             sidebarDepth: 0,
                             children: [
                                 "维度建模理论之事实表",
+                                "维度建模理论之维度表",
                                 "数仓逻辑模型",
                                 "数仓业务调研",
                                 "数仓分层和数仓建模",
@@ -961,14 +980,25 @@ module.exports = {
                         ]
                     }],
                     "/md/AI/": [{
-                        title: "AI",
+                        title: "GPT发展",
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
                             "Claude3到底多强",
                             "GPTs推荐",
                         ]
-                    }],                    
+                    },
+                    {
+                        title: "机器学习",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "01-人工智能概要",
+                            "GPTs推荐",
+                        ]
+                    }
+                
+                    ],                    
                     "/md/design/": [{
                         title: "重构",
                         collapsable: false,
