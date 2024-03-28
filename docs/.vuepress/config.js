@@ -458,6 +458,14 @@ module.exports = {
                         {
                             text: '数据结构与算法',
                             items: [{
+                                text: '数据结构与算法专栏大纲',
+                                link: '/md/algorithm/logic/basic/00-数据结构与算法专栏大纲.md'
+                            }, ]
+                        },
+                        
+                        {
+                            text: '大厂算法面试',
+                            items: [{
                                     text: '00-阿里秋招高频算法题汇总-基础篇',
                                     link: '/md/algorithm/logic/leetcode/00-阿里秋招高频算法题汇总-基础篇.md'
                                 },
@@ -621,6 +629,9 @@ module.exports = {
                             sidebarDepth: 0,
                             children: [
                                 "01-DMP系统简介",
+                                "05-用户画像是什么？",
+                                "06-构建高质量的用户画像",
+                                "07-用户画像和特征工程",
                             ]
                         },
                     ],
@@ -786,7 +797,7 @@ module.exports = {
                         },   
                     ],
                     "/md/algorithm/logic/leetcode/": [{
-                        title: "数据结构与算法",
+                        title: "大厂算法面试",
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
@@ -798,6 +809,17 @@ module.exports = {
                             "05-字节秋招高频算法题汇总-进阶篇",
                         ]
                     }, ],
+                    
+                    "/md/algorithm/logic/basic/": [{
+                        title: "数据结构与算法",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "00-数据结构与算法专栏大纲",
+                            "【图解数据结构与算法】LRU缓存淘汰算法面试时到底该怎么写",
+                        ]
+                    }],
+
                     "/md/spring/spring-cloud/": [{
                             title: "SpringCloudAlibaba",
                             collapsable: false,
