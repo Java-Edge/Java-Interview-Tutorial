@@ -216,11 +216,26 @@ module.exports = {
                         ]
                     },
                     {
-                        text: 'Netty',
-                        items: [{
-                            text: '基础篇',
-                            link: '/md/netty/base/ChannelPipeline接口.md'
-                        }, ]
+                        text: 'Web安全',
+                        items: [
+
+                            {
+                                text: '常见攻击手段',
+                                items: [{
+                                    text: '常见攻击手段概述',
+                                    link: '/md/security/01-OAuth 2.0实战-为什么要先获取授权码code.md'
+                                }, ]
+                            },
+
+                            {
+                                text: 'Oauth2.0',
+                                items: [{
+                                    text: 'Oauth2.0专栏概述',
+                                    link: '/md/security/01-OAuth 2.0实战-为什么要先获取授权码code.md'
+                                }, ]
+                            },
+                            
+                        ]
                     },
 
                     {
@@ -308,6 +323,14 @@ module.exports = {
                                 items: [{
                                     text: 'JDK22新特性',
                                     link: '/md/java/JDK22新特性.md'
+                                }, ]
+                            },
+                            
+                            {
+                                text: 'Netty',
+                                items: [{
+                                    text: 'Netty入门',
+                                    link: '/md/netty/ChannelPipeline接口.md'
                                 }, ]
                             },
                         ]
@@ -881,7 +904,7 @@ module.exports = {
                             "kubectl命令",
                         ]
                     }],
-                    "/md/netty/base": [{
+                    "/md/netty/": [{
                         title: "Netty",
                         collapsable: false,
                         sidebarDepth: 0,
@@ -1056,6 +1079,24 @@ module.exports = {
                                 "00-为啥要学习Spark Streaming",
                                 "01-Spark Streaming专栏概述",
                                 "02-Spark Streaming小试流式处理",
+                            ]
+                        },
+                    ],
+                    
+                    "/md/security/": [{
+                            title: "常见攻击手段",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                
+                            ]
+                        },
+                        {
+                            title: "OAuth 2.0实战",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "01-OAuth 2.0实战-为什么要先获取授权码code.md",
                             ]
                         },
                     ],
