@@ -909,7 +909,8 @@ module.exports = {
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
-                            "ChannelPipeline接口.md"
+                            "ChannelPipeline接口",
+                            "(18)-检测新连接"
                         ]
                     }],
                     "/md/kafka": [{
