@@ -620,6 +620,25 @@ module.exports = {
                                 "面试题-Redis.md",
                                 "面试题-场景题.md"
                             ]
+                        }, 
+                        {
+                            title: "面试高频考点",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "gaopin/00-RocketMQ可靠性、重复消费解决方案.md",
+                                "gaopin/01-RocketMQ有序性、消息积压解决方案.md",
+                                "gaopin/02-Redis的IO多路复用.md",
+                                "gaopin/03-ZooKeeper运行原理.md"
+                            ]
+                        },
+                        {
+                            title: "互联网大厂面经",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "mianjing/00-淘天提前批面试.md",
+                            ]
                         }
                     ],
                     "/md/biz-arch/": [{
@@ -822,7 +841,7 @@ module.exports = {
                                 "JDK21新特性.md",
                                 "JDK22新特性.md",
                             ]
-                        },   
+                        },    
                     ],
                     "/md/algorithm/logic/leetcode/": [{
                         title: "大厂算法面试",
@@ -1009,9 +1028,7 @@ module.exports = {
                                 "死磕设计模式之抽象策略模式.md",
                                 // "Builder模式在项目设计中的应用.md",
                                 "单例+简单工厂模式在项目设计中的应用.md",
-                
-                               
-
+                                "12306架构设计难点.md"
                             ]
                         }
                     ],
