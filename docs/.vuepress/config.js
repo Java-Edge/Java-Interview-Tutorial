@@ -243,9 +243,14 @@ module.exports = {
                         items: [
                             {
                                 text: 'Kafka',
-                                items: [{
+                                items: [
+                                    {
                                         text: 'Kafka门派知多少',
                                         link: '/md/kafka/Kafka门派知多少.md'
+                                    }, 
+                                    {
+                                        text: '08-全网最全图解Kafka适用场景',
+                                        link: '/md/kafka/08-全网最全图解Kafka适用场景.md'
                                     },
                                 ]
                             },
@@ -284,7 +289,7 @@ module.exports = {
                             {
                                 text: '设计原则',
                                 items: [{
-                                        text: 'Kafka门派知多少',
+                                        text: '设计原则概述',
                                         link: '/md/kafka/Kafka门派知多少.md'
                                     },
                                 ]
@@ -840,6 +845,7 @@ module.exports = {
                         children: [
                             "00-数据结构与算法专栏大纲",
                             "【图解数据结构与算法】LRU缓存淘汰算法面试时到底该怎么写",
+                            "【图解数据结构】外行人也能看懂的哈希表",
                         ]
                     }],
 
@@ -918,8 +924,9 @@ module.exports = {
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
-                            "Kafka门派知多少.md",
-                            "15-基于kafka实现延迟队列.md"
+                            // "Kafka门派知多少",
+                            "08-全网最全图解Kafka适用场景",
+                            // "15-基于kafka实现延迟队列"
                         ]
                     }],                    
                     "/md/rabbitmq": [{
@@ -970,6 +977,7 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "查询执行引擎：如何让聚合计算加速？",
+                            "18-分布式数据库的HTAP能统一OLTP和 OLAP吗？",
                         ]
                     }],
                     "/md/12306/": [{
