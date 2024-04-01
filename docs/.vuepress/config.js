@@ -1090,7 +1090,16 @@ module.exports = {
                         ]
                     }],
                     
-                    "/md/spark/": [{
+                    "/md/spark/": [
+                        {
+                            title: "Spark",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "Spark架构",
+                            ]
+                        },
+                        {
                             title: "Spark SQL",
                             collapsable: false,
                             sidebarDepth: 0,
