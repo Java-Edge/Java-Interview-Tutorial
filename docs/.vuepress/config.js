@@ -940,6 +940,8 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "ChannelPipeline接口",
+                            "(06-1)-ChannelHandler 家族",
+                            "(08)-学习Netty BootStrap的核心知识，成为网络编程高手！",
                             "(18)-检测新连接"
                         ]
                     }],
@@ -1081,6 +1083,8 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "代码的坏味道",
+                            "分离关注点的意义",
+                            "架构之美：教你如何分析一个接口？",
                             "模板方法设计模式（Template Pattern）",
                             "策略模式Strategy Pattern",
                         ]
