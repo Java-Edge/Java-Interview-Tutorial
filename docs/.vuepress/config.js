@@ -55,6 +55,10 @@ module.exports = {
             name: "apple-mobile-web-app-capable",
             content: "yes"
         }],
+        [
+            'script',
+            { charset: 'utf-8', src: 'https://my.openwrite.cn/js/readmore.js' },
+        ],
     ],
     plugins: [
         // [
