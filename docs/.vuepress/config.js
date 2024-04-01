@@ -1072,7 +1072,7 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "01-人工智能概要",
-                            "GPTs推荐",
+                            "MapReduce分治思想",
                         ]
                     }
                 
@@ -1123,6 +1123,14 @@ module.exports = {
                                 "00-为啥要学习Spark Streaming",
                                 "01-Spark Streaming专栏概述",
                                 "02-Spark Streaming小试流式处理",
+                            ]
+                        },
+                        {
+                            title: "Spark MLlib",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "基于Spark的机器学习实践(七)-回归算法",
                             ]
                         },
                     ],
