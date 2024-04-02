@@ -525,10 +525,6 @@ module.exports = {
                             }
                         ]
                     },
-                    // {
-                    //     text: '爬虫',
-                    //     link: '/md/spider/00-爬虫基础.md'
-                    // },
                     {
                         text: '面试',
                         link: '/md/zqy/面试题/01-分布式技术面试实战.md'
@@ -564,10 +560,16 @@ module.exports = {
                     },
                     {
                         text: 'AI',
-                        items: [{
-                            text: 'Claude3到底多强',
-                            link: '/md/AI/Claude3到底多强.md'
-                        }, ]
+                        items: [
+                            {
+                                text: 'GPT发展',
+                                link: '/md/AI/Claude3到底多强'
+                            },
+                            {
+                                text: '机器学习',
+                                link: '/md/AI/01-人工智能概要'
+                            },
+                        ]
                     },
                     {
                         text: '职业规划',
