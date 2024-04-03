@@ -61,9 +61,9 @@ module.exports = {
         ],
     ],
     plugins: [
-        // [
-        //     {globalUIComponents: ['LockArticle', 'PayArticle']}
-        // ],
+        [
+            {globalUIComponents: ['LockArticle', 'PayArticle']}
+        ],
         // ['@vuepress/medium-zoom', {
         //     selector: 'img:not(.nozoom)',
         //     // See: https://github.com/francoischalifour/medium-zoom#options
@@ -261,9 +261,14 @@ module.exports = {
 
                             {
                                 text: 'RocketMQ',
-                                items: [{
-                                        text: '00-RocketMQ',
-                                        link: '/md/kafka/15-基于kafka实现延迟队列.md'
+                                items: [
+                                    {
+                                        text: '01-RocketMQ核心内容',
+                                        link: '/md/RocketMQ/01-RocketMQ核心内容.md'
+                                    },
+                                    {
+                                        text: '02-基于电商场景的高并发RocketMQ实战',
+                                        link: '/md/RocketMQ/02-基于电商场景的高并发RocketMQ实战.md'
                                     },
                                 ]
                             },
@@ -956,7 +961,18 @@ module.exports = {
                             "08-全网最全图解Kafka适用场景",
                             // "15-基于kafka实现延迟队列"
                         ]
-                    }],                    
+                    }],      
+                    "/md/RocketMQ/": [
+                        {
+                            title: "RocketMQ",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "01-RocketMQ核心内容",
+                                "02-基于电商场景的高并发RocketMQ实战"
+                            ]
+                        }
+                    ],              
                     "/md/rabbitmq": [{
                         title: "RabbitMQ",
                         collapsable: false,

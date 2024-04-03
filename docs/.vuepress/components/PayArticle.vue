@@ -59,7 +59,7 @@
                 if ($article.length <= 0) return;
 
                 // 文章隐藏后的高度
-                let halfHeight = height * 0.9;
+                let halfHeight = height * 0.3;
 
                 // 判断是否已加锁
                 if ($article.hasClass("lock-pay")) {
