@@ -574,6 +574,10 @@ module.exports = {
                                 text: '机器学习',
                                 link: '/md/AI/01-人工智能概要'
                             },
+                            {
+                                text: 'LLM应用开发',
+                                link: '/md/AI/00-为什么要学习大模型'
+                            },
                         ]
                     },
                     {
@@ -1092,7 +1096,15 @@ module.exports = {
                             "01-人工智能概要",
                             "MapReduce分治思想",
                         ]
-                    }
+                    },
+                    {
+                        title: "LLM应用开发",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "00-为什么要学习大模型",
+                        ]
+                    },
                 
                     ],                    
                     "/md/design/": [{
