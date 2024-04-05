@@ -25,10 +25,12 @@ which [文件...]
 
 #### 参数
 
+```bash
 -n<文件名长度> 　指定文件名长度，指定的长度必须大于或等于所有文件中最长的文件名。
 -p<文件名长度> 　与-n参数相同，但此处的<文件名长度>包括了文件的路径。
 -w 　指定输出时栏位的宽度。
 -V 　显示版本信息。
+```
 
 #### 实例
 
@@ -431,9 +433,8 @@ awk -f cal.awk log.txt
 Linux tree命令用于以树状图列出目录的内容。
 执行tree指令，它会列出指定目录下的所有文件，包括子目录里的文件。
 
- ```
+```bash
 tree [-aACdDfFgilnNpqstux][-I <范本样式>][-P <范本样式>][目录...]
- ```
 ```
 参数说明：
 
@@ -519,8 +520,6 @@ locate [-d ][--help][--version][范本样式...]
 #### 参数
 
 ```bash
-#### 
-
 - -b, --basename -- 仅匹配路径名的基本名称
 - -c, --count -- 只输出找到的数量
 - -d, --database DBPATH -- 使用 DBPATH 指定的数据库，而不是默认数据库 /var/lib/mlocate/mlocate.db
@@ -1325,7 +1324,7 @@ mv 目录名 文件名	:出错
 
 递归删除， -f 表示 force
 
->somefile
+somefile
 清空文件内容
 
 which java
@@ -1371,10 +1370,12 @@ ps auxwww|sort -n -r -k 5|head -5
 是用来建立，还原备份文件的工具程序，它可以加入，解开备份文件内的文件。
 
 #### 参数
+```
 -f<备份文件>或--file=<备份文件> 指定备份文件。
 -v或--verbose 显示指令执行过程。
 -x或--extract或--get 从备份文件中还原文件。
 -z或--gzip或--ungzip 通过gzip指令处理备份文件。
+```
 
 #### 实例
 压缩文件 非打包
@@ -1466,7 +1467,11 @@ last
 ### Ctrl + R （推荐）
 
 快速的方法是使用"ctrl+r"快捷键，在命令行使用ctrl+r，ctrl+r是反向搜索 (reverse-i-search )
-输入要查找命令的关键字，会显示在第二个红色标记位置，如果找到对应的命令，会显示在第三个标记位置，  如果不是自己期望的命令，可以多次使用“ctrl+r”切换显示命令，然后按键enter或者->即执行命令。
+输入要查找命令的关键字，会显示在第二个红色标记位置，如果找到对应的命令，会显示在第三个标记位置，  如果不是自己期望的命令，可以多次使用“ctrl+r”切换显示命令，然后按键
+```
+enter或者->
+```
+即执行命令。
 
 ![](https://img-blog.csdn.net/20170922100623103?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMDg2NTEzNg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
 
@@ -1612,6 +1617,7 @@ cat /proc/cpuinfo|grep processor|wc – l
 ```
 
 ###  6.2 service 
+```
 
 service <service>
 打印指定服务<service>的命令行使用帮助。
@@ -1627,6 +1633,7 @@ chkconfig <service> on
 设置指定服务<service>开机时自动启动。
 chkconfig <service> off
 设置指定服务<service>开机时不自动启动。
+```
 
 ntsysv
 
