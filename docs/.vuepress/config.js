@@ -17,7 +17,7 @@ module.exports = {
         "/": {
             lang: "zh-CN",
             title: "编程严选网",
-            description: "Java、前端、大数据求职必备技能：大厂设计模式、DDD实践以及各大中台业务系统设计真实案例...程序员的一站式终身学习网站！"
+            description: "Java、前端、大数据、AI应用开发求职必备技能：计算机基础，大厂设计模式、DDD以及各大中台和业务系统设计真实案例...软件工程师的一站式终身学习网站！"
         }
     },
     head: [
@@ -471,6 +471,14 @@ module.exports = {
                                     link: '/md/k8s/kubectl命令.md'
                                 }]
                             },
+                            
+                            {
+                                text: '监控',
+                                items: [{
+                                    text: '00-你居然还去服务器上捞日志，搭个日志收集系统难道不香么！',
+                                    link: '/md/monitor/00-你居然还去服务器上捞日志，搭个日志收集系统难道不香么！.md'
+                                }]
+                            },
                         ]
                     },
                     {
@@ -804,6 +812,7 @@ module.exports = {
                         children: [
                             "00-操作系统专栏大纲",
                             "01-Linux命令",
+                            "02-进程管理",
                             "超线程（Hyper-Threading），单指令多数据流（SIMD）技术"
                         ]
                     }],
@@ -945,6 +954,16 @@ module.exports = {
                             "kubectl命令",
                         ]
                     }],
+                    
+                    "/md/monitor/": [{
+                        title: "监控",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "00-你居然还去服务器上捞日志，搭个日志收集系统难道不香么！",
+                            "03-Loki 日志监控",
+                        ]
+                    }],
                     "/md/netty/": [{
                         title: "Netty",
                         collapsable: false,
@@ -973,7 +992,12 @@ module.exports = {
                             sidebarDepth: 0,
                             children: [
                                 "01-RocketMQ核心内容",
-                                "02-基于电商场景的高并发RocketMQ实战"
+                                "RocketMQ实战(01)-基本概念",
+                                "RocketMQ实战(02)-下载安装",
+                                "RocketMQ实战(03)-消息的有序性",
+                                "RocketMQ实战(04) - 订阅机制和定时消息",
+                                "RocketMQ实战(05) - 批量消息和事务消息",
+                                "02-基于电商场景的高并发RocketMQ实战",
                             ]
                         }
                     ],              
