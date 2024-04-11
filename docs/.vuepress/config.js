@@ -863,8 +863,9 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
-                                "JDK21新特性.md",
-                                "JDK22新特性.md",
+                                "JDK21新特性",
+                                "JDK22新特性",
+                                "IntelliJ IDEA 2024.1 最新变化",
                             ]
                         },    
                     ],
@@ -1127,6 +1128,7 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "00-为什么要学习大模型",
+                            "00-“消灭”LLM幻觉的利器 - RAG介绍",
                         ]
                     },
                 
