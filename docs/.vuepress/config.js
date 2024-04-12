@@ -151,6 +151,18 @@ module.exports = {
                         ]
                     },
                     {
+                        text: '管理',
+                        items: [
+                            {
+                                text: '项目管理',
+                                items: [{
+                                    text: '00-如何学习项目管理专栏',
+                                    link: '/md/mgr/00-如何学习项目管理专栏.md'
+                                }, ]
+                            },
+                        ]
+                    },
+                    {
                         text: '大数据',
                         items: [{
                                 text: '大数据平台',
@@ -702,6 +714,26 @@ module.exports = {
                                 "05-用户画像是什么？",
                                 "06-构建高质量的用户画像",
                                 "07-用户画像和特征工程",
+                            ]
+                        },
+                    ],
+                    
+                    "/md/mgr/": [{
+                            title: "项目管理",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "00-如何学习项目管理专栏",
+                                "00-咋带领团队做成事？",
+                                "01-避免新手常犯的项目管理错误",
+                            ]
+                        },
+                        {
+                            title: "技术管理",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "00-新一代数据栈将逐步替代国内单一“数据中台”",
                             ]
                         },
                     ],
