@@ -956,8 +956,9 @@ module.exports = {
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
-                            "00-DDD专栏规划.md",
-                            "基于电商履约场景的DDD实战.md",
+                            "00-DDD专栏规划",
+                            "基于电商履约场景的DDD实战",
+                            "13-DDD分层架构及代码目录结构",
 
                         ]
                     }],
@@ -1162,6 +1163,14 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "00-为什么要学习大模型",
+                            "01-大语言模型发展",
+                        ]
+                    },
+                    {
+                        title: "RAG",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
                             "00-“消灭”LLM幻觉的利器 - RAG介绍",
                             "01-RAG应用框架和解析器",
                             "02-相似性检索的关键 - Embedding",
