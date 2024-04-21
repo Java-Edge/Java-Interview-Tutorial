@@ -675,6 +675,8 @@ module.exports = {
                                 "mianjing/00-淘天提前批面试.md",
                                 "mianjing/01-饿了么一面.md",
                                 "mianjing/02-美团优选后端一面.md",
+                                "mianjing/03.腾讯后端一面.md",
+                                "mianjing/04.美团优选后端一面.md",
                             ]
                         }
                     ],
