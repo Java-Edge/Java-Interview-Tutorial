@@ -677,6 +677,8 @@ module.exports = {
                                 "mianjing/02-美团优选后端一面.md",
                                 "mianjing/03.腾讯后端一面.md",
                                 "mianjing/04.美团优选后端一面.md",
+                                "mianjing/05.携程暑期实习一面.md",
+                                "mianjing/06.携程暑期实习二面.md",
                             ]
                         }
                     ],
