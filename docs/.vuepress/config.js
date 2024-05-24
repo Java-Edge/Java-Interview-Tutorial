@@ -17,7 +17,7 @@ module.exports = {
         "/": {
             lang: "zh-CN",
             title: "编程严选网",
-            description: "Java、前端、大数据、AI应用开发求职必备技能：计算机基础，大厂设计模式、DDD以及各大中台和业务系统设计真实案例...软件工程师的一站式终身学习网站！"
+            description: "Java、大数据、AI应用开发求职必备技能：计算机基础，大厂设计模式、DDD以及各大中台和业务系统设计真实案例...软件工程师的一站式终身学习网站！"
         }
     },
     head: [
@@ -117,11 +117,19 @@ module.exports = {
                     },
                     {
                         text: '架构',
-                        items: [{
+                        items: [
+                            {
                                 text: '业务架构',
                                 items: [{
                                     text: '00-聚合支付架构',
-                                    link: '/md/biz-arch/00-聚合支付架构从零到一.md'
+                                    link: '/md/biz-arch/00-聚合支付架构从零到一'
+                                }, ]
+                            },
+                            {
+                                text: '系统设计',
+                                items: [{
+                                    text: '00-优惠券系统设计',
+                                    link: '/md/biz-arch/00-优惠券系统设计 Coupon System'
                                 }, ]
                             },
 
@@ -138,6 +146,14 @@ module.exports = {
                                 items: [{
                                     text: '00-新一代数据栈将逐步替代国内单一“数据中台”',
                                     link: '/md/biz-arch/00-新一代数据栈将逐步替代国内单一“数据中台”.md'
+                                }, ]
+                            },
+                            
+                            {
+                                text: '商品中心',
+                                items: [{
+                                    text: '00-商品中心的spu、sku设计.md',
+                                    link: '/md/product-center/00-商品中心的spu、sku设计.md'
                                 }, ]
                             },
                             
@@ -363,7 +379,8 @@ module.exports = {
                     },
                     {
                         text: '微服务',
-                        items: [{
+                        items: [
+                            {
                                 text: 'Dubbo',
                                 items: [{
                                     text: '01-互联网架构的发展历程',
@@ -418,6 +435,15 @@ module.exports = {
                                     }
                                 ]
                             },
+
+                            {
+                                text: '大厂实践',
+                                items: [{
+                                    text: '01-Segment为何永别微服务了？',
+                                    link: '/md/spring/spring-cloud/practise/01-Segment为何永别微服务了？.md'
+                                }, ]
+                            },
+
                         ]
                     },
 
@@ -700,6 +726,14 @@ module.exports = {
                             ]
                         },
                         {
+                            title: "系统设计",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "00-优惠券系统设计 Coupon System",
+                            ]
+                        },
+                        {
                             title: "数据中台",
                             collapsable: false,
                             sidebarDepth: 0,
@@ -751,6 +785,18 @@ module.exports = {
                             "00-如何防止订单二次重复支付？.md",
                         ]
                     }],
+                    
+                    "/md/product-center/": [{
+                        title: "商品中心",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "00-商品中心的spu、sku设计",
+                            "01-电商商品中心解密：仅凭SKU真的足够吗？",
+                            "02-大厂电商设计解析之商品管理系统",
+                        ]
+                    }],
+
                     "/md/bigdata/": [{
                             title: "大数据平台",
                             collapsable: false,
@@ -932,7 +978,8 @@ module.exports = {
                         ]
                     }],
 
-                    "/md/spring/spring-cloud/": [{
+                    "/md/spring/spring-cloud/": [
+                        {
                             title: "SpringCloudAlibaba",
                             collapsable: false,
                             sidebarDepth: 0,
@@ -940,6 +987,7 @@ module.exports = {
                                 "SpringCloudAlibaba介绍.md",
                             ]
                         },
+
                         {
                             title: "SpringCloudGateway组件",
                             collapsable: false,
@@ -955,6 +1003,18 @@ module.exports = {
                             ]
                         }
                     ],
+
+                    "/md/spring/spring-cloud/practise": [
+                        {
+                            title: "大厂实践",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "01-Segment为何永别微服务了？",
+                            ]
+                        },
+                    ],
+
                     "/md/DDD/": [{
                         title: "DDD领域驱动设计",
                         collapsable: false,
@@ -1185,18 +1245,30 @@ module.exports = {
                     },
                 
                     ],                    
-                    "/md/design/": [{
-                        title: "重构",
-                        collapsable: false,
-                        sidebarDepth: 0,
-                        children: [
-                            "代码的坏味道",
-                            "分离关注点的意义",
-                            "架构之美：教你如何分析一个接口？",
-                            "模板方法设计模式（Template Pattern）",
-                            "策略模式Strategy Pattern",
-                        ]
-                    }],
+                    "/md/design/": [
+                        {
+                            title: "重构",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "代码的坏味道",
+                                "分离关注点的意义",
+                                "架构之美：教你如何分析一个接口？",
+                                "模板方法设计模式（Template Pattern）",
+                                "策略模式Strategy Pattern",
+                                "业务代码如何才能不再写出大串的if else？",
+                            ]
+                        },
+                        {
+                            title: "设计模式",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "模板方法设计模式（Template Pattern）",
+                                "策略模式Strategy Pattern",
+                            ]
+                        },
+                    ],
                     
                     "/md/spark/": [
                         {
