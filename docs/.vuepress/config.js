@@ -135,10 +135,17 @@ module.exports = {
 
                             {
                                 text: 'DDD',
-                                items: [{
-                                    text: '00-DDD专栏规划',
-                                    link: '/md/DDD/00-DDD专栏规划.md'
-                                }, ]
+                                items: [
+                                    {
+                                        text: '00-DDD专栏规划',
+                                        link: '/md/DDD/00-DDD专栏规划.md'
+                                    },
+                                    {
+                                        text: '00-大厂实践',
+                                        link: '/md/DDD/02-领域驱动设计DDD在B端营销系统的实践.md'
+                                    },
+                                
+                                ]
                             },
 
                             {
@@ -248,7 +255,7 @@ module.exports = {
                         ]
                     },
                     {
-                        text: 'Web安全',
+                        text: '安全',
                         items: [
 
                             {
@@ -495,6 +502,14 @@ module.exports = {
                         text: '云原生',
                         items: [
                             {
+                                text: 'Go',
+                                items: [{
+                                    text: '00-Go实战(一)-概述',
+                                    link: '/md/go/00-Go实战(一)-概述.md'
+                                }]
+                            },
+
+                            {
                                 text: 'Docker',
                                 items: [{
                                     text: 'Docker基础命令大全',
@@ -602,11 +617,18 @@ module.exports = {
                             }
                         ]
                     },
+                    // {
+                    //     text: 'Vue',
+                    //     items: [{
+                    //         text: '01-Vue开发实战',
+                    //         link: '/md/vue/01-Vue开发实战.md'
+                    //     }, ]
+                    // },
                     {
-                        text: 'Vue',
+                        text: '区块链',
                         items: [{
-                            text: '01-Vue开发实战',
-                            link: '/md/vue/01-Vue开发实战.md'
+                            text: '00-区块链专栏概述',
+                            link: '/md/chain/00-区块链专栏概述.md'
                         }, ]
                     },
                     {
@@ -1015,17 +1037,30 @@ module.exports = {
                         },
                     ],
 
-                    "/md/DDD/": [{
-                        title: "DDD领域驱动设计",
+                    "/md/DDD/": [
+                        {
+                        title: "DDD基础知识",
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
                             "00-DDD专栏规划",
                             "基于电商履约场景的DDD实战",
+                            "11-上下文映射",
                             "13-DDD分层架构及代码目录结构",
 
+                                ]
+                        },
+                        {
+                        title: "DDD大厂实践",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "02-领域驱动设计DDD在B端营销系统的实践",
+                            "09-DDD在大厂交易系统演进的应用",
                         ]
-                    }],
+                        },
+                    ],
+
                     "/md/mysql/": [{
                         title: "MySQL",
                         collapsable: false,
@@ -1037,6 +1072,19 @@ module.exports = {
                             "为什么临时表可以重名？.md",
                         ]
                     }],
+
+                    "/md/go/": [{
+                        title: "Go",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "00-Go实战(一)-概述",
+                            "01-macOS 安装go配置GOROOT GOPATH",
+                            "02-Go基本语法",
+                            "03-Go的数组array和切片slice语法详解",
+                        ]
+                    }],
+
                     "/md/docker/": [{
                         title: "Docker",
                         collapsable: false,
@@ -1193,7 +1241,11 @@ module.exports = {
                             "Java工程师必读书单",
                             "为什么中国的程序员有35岁危机",
                             "新人程序员入行忠告",
-                            "04-外企也半夜发布上线吗？"
+                            "04-外企也半夜发布上线吗？",
+                            "05-中外程序员到底有啥区别？",
+                            "06-全球顶级架构师推荐的书单",
+                            "07-经常被压缩开发时间，延期还要背锅，如何破局？",
+                            "08-程序员为何一直被唱衰？",
                         ]
                     }],
                     "/md/vue/": [{
@@ -1202,6 +1254,20 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "01-Vue开发实战.md",
+                        ]
+                    }],
+                    "/md/chain/": [{
+                        title: "区块链",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "00-区块链专栏概述",
+                            "01-联盟链入门",
+                            "03-联盟链入门讲解+Xuperchain介绍 XuperChain 核心模块",
+                            "04-XuperChain核心流程",
+                            "05-账本模型",
+                            "06-智能合约",
+                            "07-网络与共识",
                         ]
                     }],
                     "/md/AI/": [{
@@ -1220,6 +1286,7 @@ module.exports = {
                         children: [
                             "01-人工智能概要",
                             "MapReduce分治思想",
+                            "05-开发环境安装",
                         ]
                     },
                     {
@@ -1231,6 +1298,9 @@ module.exports = {
                             "01-大语言模型发展",
                             "02-国内外LLM的多模型，强应用",
                             "03-为啥LLM还没能完全替代你？",
+                            "04-产业拆解",
+                            "05-应用级开发者 AI 时代破局点",
+                            "06-智能体(agent)命理大师虚拟项目（需求分析、技术选型、技术分解）",
                         ]
                     },
                     {
@@ -1255,9 +1325,8 @@ module.exports = {
                                 "代码的坏味道",
                                 "分离关注点的意义",
                                 "架构之美：教你如何分析一个接口？",
-                                "模板方法设计模式（Template Pattern）",
-                                "策略模式Strategy Pattern",
                                 "业务代码如何才能不再写出大串的if else？",
+                                "阿里P8架构师都是怎么分析软件模型的？",
                             ]
                         },
                         {
@@ -1267,6 +1336,7 @@ module.exports = {
                             children: [
                                 "模板方法设计模式（Template Pattern）",
                                 "策略模式Strategy Pattern",
+                                "建造者模式",
                             ]
                         },
                     ],
