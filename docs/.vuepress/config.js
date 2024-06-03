@@ -21,12 +21,10 @@ module.exports = {
         }
     },
     head: [
-        // ico
         ["link", {
             rel: "icon",
             href: `/favicon.ico`
         }],
-        // meta
         ["meta", {
             name: "robots",
             content: "all"
@@ -94,7 +92,6 @@ module.exports = {
         docsDir: 'docs',
         // 文档放在一个特定的分支下：
         docsBranch: 'main',
-        //logo: "/logo.png",
         editLinks: true,
         sidebarDepth: 0,
         //smoothScroll: true,
@@ -107,13 +104,6 @@ module.exports = {
                 nav: [{
                         text: '导读',
                         link: '/md/other/guide-to-reading.md'
-                    },
-                    {
-                        text: 'RPC',
-                        items: [{
-                            text: '熔断限流',
-                            link: '/md/rpc/熔断限流.md'
-                        }, ]
                     },
                     {
                         text: '架构',
@@ -173,6 +163,37 @@ module.exports = {
                             },
                         ]
                     },
+
+                    {
+                        text: '重构',
+                        items: [
+                            {
+                                text: '重构',
+                                items: [{
+                                        text: '00-我们为什么以及如何进行权衡？',
+                                        link: '/md/design/00-我们为什么以及如何进行权衡？.md'
+                                    },
+                                ]
+                            },                            
+                            {
+                                text: '设计原则',
+                                items: [{
+                                        text: '设计原则概述',
+                                        link: '/md/kafka/Kafka门派知多少.md'
+                                    },
+                                ]
+                            },
+                            {
+                                text: '设计模式',
+                                items: [{
+                                        text: '模板方法设计模式（Template Pattern）',
+                                        link: '/md/design/模板方法设计模式（Template Pattern）.md'
+                                    },
+                                ]
+                            },
+                        ]
+                    },
+
                     {
                         text: '管理',
                         items: [
@@ -205,11 +226,7 @@ module.exports = {
                                 items: [{
                                         text: '00-安装下载Hadoop',
                                         link: '/md/bigdata/安装下载Hadoop.md'
-                                    },
-                                    {
-                                        text: '01-HDFS',
-                                        link: '/md/bigdata/HDFS.md'
-                                    },
+                                    }
                                 ]
                             },
 
@@ -316,37 +333,24 @@ module.exports = {
                                     },
                                 ]
                             },
+                            
+                            {
+                                text: 'MQTT',
+                                items: [{
+                                        text: '00-MQTT',
+                                        link: '/md/MQTT/07-MQTT发布订阅模式介绍.md'
+                                    },
+                                ]
+                            },
                         ]
                     },                    
-                    
+
                     {
-                        text: '重构',
-                        items: [
-                            {
-                                text: '重构',
-                                items: [{
-                                        text: '代码的坏味道',
-                                        link: '/md/design/代码的坏味道.md'
-                                    },
-                                ]
-                            },                            
-                            {
-                                text: '设计原则',
-                                items: [{
-                                        text: '设计原则概述',
-                                        link: '/md/kafka/Kafka门派知多少.md'
-                                    },
-                                ]
-                            },
-                            {
-                                text: '设计模式',
-                                items: [{
-                                        text: '模板方法设计模式（Template Pattern）',
-                                        link: '/md/design/模板方法设计模式（Template Pattern）.md'
-                                    },
-                                ]
-                            },
-                        ]
+                        text: 'RPC',
+                        items: [{
+                            text: '熔断限流',
+                            link: '/md/rpc/熔断限流.md'
+                        }, ]
                     },
 
                     {
@@ -624,15 +628,9 @@ module.exports = {
                     //         link: '/md/vue/01-Vue开发实战.md'
                     //     }, ]
                     // },
+
                     {
-                        text: '区块链',
-                        items: [{
-                            text: '00-区块链专栏概述',
-                            link: '/md/chain/00-区块链专栏概述.md'
-                        }, ]
-                    },
-                    {
-                        text: 'AI',
+                        text: 'AI前沿',
                         items: [
                             {
                                 text: 'GPT发展',
@@ -646,6 +644,10 @@ module.exports = {
                                 text: 'LLM应用开发',
                                 link: '/md/AI/00-为什么要学习大模型'
                             },
+                            {
+                                text: '区块链',
+                                link: '/md/chain/00-区块链专栏概述.md'
+                            },
                         ]
                     },
                     {
@@ -656,7 +658,7 @@ module.exports = {
                         }, ]
                     },
                 ],
-                // 配置文章的侧边导航栏  新增文章提交前都需要在此处操作！！！
+                // 文章详情页的侧边导航栏
                 sidebar: {
                     "/md/Dubbo/": [{
                         title: "Dubbo深入理解系列",
@@ -824,8 +826,9 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
-                                "大数据平台架构.md",
-                                "对象存储.md",
+                                "大数据平台架构",
+                                "对象存储",
+                                "02-分布式对象存储设计原理",
                             ]
                         },
                         {
@@ -833,8 +836,11 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
-                                "安装下载Hadoop.md",
-                                "HDFS.md",
+                                "安装下载Hadoop",
+                                "01-Hadoop",
+                                "HDFS",
+                                "03-HDFS伪分布式环境搭建",
+                                "04-hdfs dfs命令详解",
                             ]
                         },
                         {
@@ -922,16 +928,16 @@ module.exports = {
                             "超线程（Hyper-Threading），单指令多数据流（SIMD）技术"
                         ]
                     }],
-                    // "/md/MQTT/": [
-                    //     {
-                    //         title: "MQTT",
-                    //         collapsable: false,
-                    //         sidebarDepth: 0,
-                    //         children: [
-                    //             "07-MQTT发布订阅模式介绍.md"
-                    //         ]
-                    //     }
-                    // ],
+                    "/md/MQTT/": [
+                        {
+                            title: "MQTT",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "07-MQTT发布订阅模式介绍.md"
+                            ]
+                        }
+                    ],
                     "/md/spider/": [{
                         title: "爬虫",
                         collapsable: false,
@@ -1246,6 +1252,7 @@ module.exports = {
                             "06-全球顶级架构师推荐的书单",
                             "07-经常被压缩开发时间，延期还要背锅，如何破局？",
                             "08-程序员为何一直被唱衰？",
+                            "09-程序员的“三步走”发展战略",
                         ]
                     }],
                     "/md/vue/": [{
@@ -1322,6 +1329,7 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
+                                "00-我们为什么以及如何进行权衡？",
                                 "代码的坏味道",
                                 "分离关注点的意义",
                                 "架构之美：教你如何分析一个接口？",
