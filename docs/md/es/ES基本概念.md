@@ -32,7 +32,8 @@ Elasticsearch，分布式，高性能，高可用，可伸缩的搜索、分析�
 - 在数据库中商品名称字段中存储有关键字
 
 不考虑数据库的全文索引，假如商品有 1000 万个，得查找 1000 万次，且每次都需要加载商品的名称字段的整段字符串，并挨个寻找：
-![](https://img-blog.csdnimg.cn/201910220054339.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_SmF2YUVkZ2U=,size_1,color_FFFFFF,t_70)
+
+![](https://my-img.javaedge.com.cn/javaedge-blog/2024/06/a61053f42f9306a6f1ed463c4af7aaf5.png)
 
 - 每条记录的指定字段的文本，可能很长
   如“商品描述”字段的长度，有长达数千个，甚至数万字符。每次都对每条记录的所有文本进行扫描，难以判断，你包不包含我指定的这个关键词（如“牙膏”）
@@ -48,7 +49,8 @@ Elasticsearch，分布式，高性能，高可用，可伸缩的搜索、分析�
 #### 4.1.1 场景：搜索“生化机”
 
 全文检索：
-![](https://img-blog.csdnimg.cn/20191022114619954.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_SmF2YUVkZ2U=,size_1,color_FFFFFF,t_70)
+
+![](https://my-img.javaedge.com.cn/javaedge-blog/2024/06/9ffd30c886b678e8bc32d63c885b2a4a.png)
 
 但期望出来右侧的4条记录。将每条数据进行词条拆分。如“生化危机电影”拆成：生化、危机、电影等关键词（拆分结果取决于具体的策略算法）。
 每个关键词将对应包含此关键词的数据ID。搜索时，直接匹配这些关键词，就能拿到包含关键词的数据。该过程即全文检索。
@@ -67,27 +69,31 @@ DB的数据共100万条，按之前思路，就要扫描100万次，且每次扫
 
 一个jar包，包含封装好的各种建立倒排索引及进行搜索的算法。用lucene，就能将已有数据建立索引，lucene会在本地磁盘上面，给我们组织索引的数据结构。
 
-## 1 基本概念
+lucene，最先进、功能最强大的Java搜索类库：
 
-![](https://img-blog.csdnimg.cn/79cf42fd234b4eeab236160fa9034317.png)
+![](https://my-img.javaedge.com.cn/javaedge-blog/2024/06/381960b5b5d0eb62206c66c78162ab96.png)
 
-### segment file（Lucene）
+####  lucene是真恶心
 
-存储倒排索引的文件，每个segment本质上就是个倒排索引，每s都会生成一个segment文件。
+##### ① API复杂
 
-当文件过多时，ES会自动segment merge（合并文件），合并时会同时将已标注删除的文档物理删除。
+实现简单功能，就要写大量Java代码！
 
-###  commit point
+![](https://my-img.javaedge.com.cn/javaedge-blog/2024/06/013f2d5b602d1dc24a9382d9d83081a7.png)
 
-记录当前所有可用的segment，每个commit point都会维护一个.del文件（ES删除数据本质不属于物理删除）。
+##### ② 需深入理解原理
 
-当ES删改操作时，先在.del文件声明某个document已被删除，文件内记录了在某个segment内某个文档已被删除。
+比如各种索引结构！
 
-当查询请求过来时，在segment中被删除的文件是能够查出来的，但当返回结果时会根据commit point维护的那个.del文件，将已删除的文档过滤。
+#### ES的优势
 
-### translog日志文件
+而ES基于lucene，隐藏其复杂性，提供简单易用restful api接口、Java api接口
 
-为防止ES宕机造成数据丢失保证可靠存储，ES会将每次写入数据同时写到translog日志。
+- 分布式的文档存储引擎
+- 分布式的搜索引擎和分析引擎
+- 分布式，支持PB级数据
+
+开箱即用，优秀的默认参数，无需额外设置，完全开源！
 
 ## 5 Elasticsearch的适用场景
 
@@ -104,7 +110,7 @@ DB的数据共100万条，按之前思路，就要扫描100万次，且每次扫
 ## 6 特点
 
 （1）可以作为一个大型分布式集群（数百台服务器）技术，处理PB级数据，服务大公司；也可以运行在单机上，服务小公司
-（2）不是新技术，主要将全文检索、数据分析以及分布式技术合并，才形成独一无二ES；lucene（全文检索），商用的数据分析软件（也是有的），分布式数据库（mycat）
+（2）不是新技术，主要将全文检索、数据分析以及分布式技术合并，才形成独一无二ES；lucene（全文检索），商用数据分析软件（也是有的），分布式数据库（mycat）
 （3）对用户开箱即用，简单，作为中小型应用，直接3min部署ES，就可作为生产环境系统来使用，数据量不大，操作不太复杂
 （4）数据库的功能面对很多领域不够用；特殊的功能，比如全文检索，同义词处理，相关度排名，复杂数据分析，海量数据的近实时处理；Elasticsearch作为传统数据库的一个补充
 
@@ -147,7 +153,7 @@ select category_id,count(*) from products group by category_id
 
 ## 8 意义
 
-![](https://img-blog.csdnimg.cn/20191022114857908.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_SmF2YUVkZ2U=,size_1,color_FFFFFF,t_70)
+![](https://my-img.javaedge.com.cn/javaedge-blog/2024/06/b2ee9fc1b0e16c7125b21fcf746bd91e.png)
 
 
 使用 lucene 开发搜索服务，部署在一台机器上面，但是无法解决当数据量增大的时候出现的问题（图上右侧）。对此，ES就是利器：

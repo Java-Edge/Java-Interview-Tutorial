@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /images/system/blog-02.png
+heroImage: /images/system/logo.jpg
 actionLinks:
 - link: /md/other/guide-to-reading.md
   text: 开始阅读 →

@@ -346,12 +346,26 @@ module.exports = {
                     },                    
 
                     {
-                        text: 'RPC',
-                        items: [{
-                            text: '熔断限流',
-                            link: '/md/rpc/熔断限流.md'
-                        }, ]
+                        text: '中间件',
+                        items: [
+                            {
+                                text: 'RPC',
+                                items: [{
+                                    text: '熔断限流',
+                                    link: '/md/rpc/熔断限流.md'
+                                }, ]
+                            },
+
+                            {
+                                text: 'ShardingSphere',
+                                items: [{
+                                    text: 'ShardingSphere',
+                                    link: '/md/ShardingSphere/14-ShardingSphere的分布式主键实现.md'
+                                }]
+                            },
+                        ]
                     },
+
 
                     {
                         text: 'Java',
@@ -538,6 +552,7 @@ module.exports = {
                             },
                         ]
                     },
+
                     {
                         text: '计基',
                         items: [
@@ -633,6 +648,10 @@ module.exports = {
                         text: 'AI前沿',
                         items: [
                             {
+                                text: 'Python基础',
+                                link: '/md/python/00-macOS和Linux安装和管理多个Python版本'
+                            },
+                            {
                                 text: 'GPT发展',
                                 link: '/md/AI/Claude3到底多强'
                             },
@@ -653,8 +672,8 @@ module.exports = {
                     {
                         text: '职业规划',
                         items: [{
-                            text: '00-Java工程师必读书单',
-                            link: '/md/career/Java工程师必读书单.md'
+                            text: '01-Java工程师必读书单',
+                            link: '/md/career/01-Java工程师必读书单.md'
                         }, ]
                     },
                 ],
@@ -901,12 +920,22 @@ module.exports = {
                             ]
                         },
                     ],
+
                     "/md/rpc/": [{
                         title: "RPC",
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
-                            "熔断限流.md",
+                            "熔断限流",
+                        ]
+                    }],
+                    
+                    "/md/ShardingSphere/": [{
+                        title: "ShardingSphere",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "14-ShardingSphere的分布式主键实现",
                         ]
                     }],
                     "/md/network/": [{
@@ -916,7 +945,8 @@ module.exports = {
                         children: [
                             "计算机网络-网络层原理",
                         ]
-                    }],                    
+                    }],
+
                     "/md/linux/": [{
                         title: "Linux操作系统",
                         collapsable: false,
@@ -1183,6 +1213,9 @@ module.exports = {
                         children: [
                             "ES专栏大纲",
                             "ES基本概念",
+                            "02-MacOS下载安装启动ES和Kibana",
+                            "03-核心概念之NRT Document Index 分片 副本",
+                            "04-Kibana常见RESTful API操作",
                         ]
                     }],
                     "/md/ck/": [{
@@ -1244,15 +1277,17 @@ module.exports = {
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
-                            "Java工程师必读书单",
-                            "为什么中国的程序员有35岁危机",
-                            "新人程序员入行忠告",
+                            "01-Java工程师必读书单",
+                            "02-为什么中国的程序员有35岁危机",
+                            "03-新人程序员入行忠告",
                             "04-外企也半夜发布上线吗？",
                             "05-中外程序员到底有啥区别？",
                             "06-全球顶级架构师推荐的书单",
                             "07-经常被压缩开发时间，延期还要背锅，如何破局？",
                             "08-程序员为何一直被唱衰？",
                             "09-程序员的“三步走”发展战略",
+                            "10-为何我建议你学会抄代码",
+                            "11-计师能去哪些央国企？",
                         ]
                     }],
                     "/md/vue/": [{
@@ -1277,7 +1312,21 @@ module.exports = {
                             "07-网络与共识",
                         ]
                     }],
-                    "/md/AI/": [{
+
+                    "/md/python/": [                       
+                        {
+                            title: "Python基础",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "00-macOS和Linux安装和管理多个Python版本",
+                            ]
+                        },
+                    ],
+
+                    "/md/AI/": [
+                    
+                    {
                         title: "GPT发展",
                         collapsable: false,
                         sidebarDepth: 0,
@@ -1308,6 +1357,7 @@ module.exports = {
                             "04-产业拆解",
                             "05-应用级开发者 AI 时代破局点",
                             "06-智能体(agent)命理大师虚拟项目（需求分析、技术选型、技术分解）",
+                            "01-LangChain的Hello World项目",
                         ]
                     },
                     {
