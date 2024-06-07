@@ -55,13 +55,16 @@ module.exports = {
         }],
         [
             'script',
-            { charset: 'utf-8', src: 'https://my.openwrite.cn/js/readmore.js' },
+            {
+                charset: 'utf-8',
+                src: 'https://my.openwrite.cn/js/readmore.js'
+            },
         ],
     ],
     plugins: [
-        [
-            {globalUIComponents: ['LockArticle', 'PayArticle']}
-        ],
+        [{
+            globalUIComponents: ['LockArticle', 'PayArticle']
+        }],
         // ['@vuepress/medium-zoom', {
         //     selector: 'img:not(.nozoom)',
         //     // See: https://github.com/francoischalifour/medium-zoom#options
@@ -107,8 +110,7 @@ module.exports = {
                     },
                     {
                         text: '架构',
-                        items: [
-                            {
+                        items: [{
                                 text: '业务架构',
                                 items: [{
                                     text: '00-聚合支付架构',
@@ -125,8 +127,7 @@ module.exports = {
 
                             {
                                 text: 'DDD',
-                                items: [
-                                    {
+                                items: [{
                                         text: '00-DDD专栏规划',
                                         link: '/md/DDD/00-DDD专栏规划.md'
                                     },
@@ -134,7 +135,7 @@ module.exports = {
                                         text: '00-大厂实践',
                                         link: '/md/DDD/02-领域驱动设计DDD在B端营销系统的实践.md'
                                     },
-                                
+
                                 ]
                             },
 
@@ -145,7 +146,7 @@ module.exports = {
                                     link: '/md/biz-arch/00-新一代数据栈将逐步替代国内单一“数据中台”.md'
                                 }, ]
                             },
-                            
+
                             {
                                 text: '商品中心',
                                 items: [{
@@ -153,7 +154,7 @@ module.exports = {
                                     link: '/md/product-center/00-商品中心的spu、sku设计.md'
                                 }, ]
                             },
-                            
+
                             {
                                 text: '用户画像',
                                 items: [{
@@ -166,45 +167,39 @@ module.exports = {
 
                     {
                         text: '重构',
-                        items: [
-                            {
+                        items: [{
                                 text: '重构',
                                 items: [{
-                                        text: '00-软件架构权衡-我们为什么以及如何进行权衡？',
-                                        link: '/md/design/00-软件架构权衡-我们为什么以及如何进行权衡？.md'
-                                    },
-                                ]
-                            },                            
+                                    text: '00-软件架构权衡-我们为什么以及如何进行权衡？',
+                                    link: '/md/design/00-软件架构权衡-我们为什么以及如何进行权衡？.md'
+                                }, ]
+                            },
                             {
                                 text: '设计原则',
                                 items: [{
-                                        text: '设计原则概述',
-                                        link: '/md/kafka/Kafka门派知多少.md'
-                                    },
-                                ]
+                                    text: '设计原则概述',
+                                    link: '/md/kafka/Kafka门派知多少.md'
+                                }, ]
                             },
                             {
                                 text: '设计模式',
                                 items: [{
-                                        text: '模板方法设计模式（Template Pattern）',
-                                        link: '/md/design/模板方法设计模式（Template Pattern）.md'
-                                    },
-                                ]
+                                    text: '模板方法设计模式（Template Pattern）',
+                                    link: '/md/design/模板方法设计模式（Template Pattern）.md'
+                                }, ]
                             },
                         ]
                     },
 
                     {
                         text: '管理',
-                        items: [
-                            {
-                                text: '项目管理',
-                                items: [{
-                                    text: '00-如何学习项目管理专栏',
-                                    link: '/md/mgr/00-如何学习项目管理专栏.md'
-                                }, ]
-                            },
-                        ]
+                        items: [{
+                            text: '项目管理',
+                            items: [{
+                                text: '00-如何学习项目管理专栏',
+                                link: '/md/mgr/00-如何学习项目管理专栏.md'
+                            }, ]
+                        }, ]
                     },
                     {
                         text: '大数据',
@@ -224,10 +219,9 @@ module.exports = {
                             {
                                 text: 'Hadoop',
                                 items: [{
-                                        text: '00-安装下载Hadoop',
-                                        link: '/md/bigdata/安装下载Hadoop.md'
-                                    }
-                                ]
+                                    text: '00-安装下载Hadoop',
+                                    link: '/md/bigdata/安装下载Hadoop.md'
+                                }]
                             },
 
                             {
@@ -261,7 +255,7 @@ module.exports = {
                                     link: '/md/bigdata/作业帮基于 DolphinScheduler 的数据开发平台实践.md'
                                 }, ]
                             },
-                            
+
                             {
                                 text: 'Spark',
                                 items: [{
@@ -290,20 +284,18 @@ module.exports = {
                                     link: '/md/security/01-OAuth 2.0实战-为什么要先获取授权码code.md'
                                 }, ]
                             },
-                            
+
                         ]
                     },
 
                     {
                         text: 'MQ',
-                        items: [
-                            {
+                        items: [{
                                 text: 'Kafka',
-                                items: [
-                                    {
+                                items: [{
                                         text: 'Kafka门派知多少',
                                         link: '/md/kafka/Kafka门派知多少.md'
-                                    }, 
+                                    },
                                     {
                                         text: '08-全网最全图解Kafka适用场景',
                                         link: '/md/kafka/08-全网最全图解Kafka适用场景.md'
@@ -313,8 +305,7 @@ module.exports = {
 
                             {
                                 text: 'RocketMQ',
-                                items: [
-                                    {
+                                items: [{
                                         text: '01-RocketMQ核心内容',
                                         link: '/md/RocketMQ/01-RocketMQ核心内容.md'
                                     },
@@ -324,31 +315,28 @@ module.exports = {
                                     },
                                 ]
                             },
-                            
+
                             {
                                 text: 'RabbitMQ',
                                 items: [{
-                                        text: '00-RabbitMQ',
-                                        link: '/md/rabbitmq/00-RabbitMQ实战下载与安装.md'
-                                    },
-                                ]
+                                    text: '00-RabbitMQ',
+                                    link: '/md/rabbitmq/00-RabbitMQ实战下载与安装.md'
+                                }, ]
                             },
-                            
+
                             {
                                 text: 'MQTT',
                                 items: [{
-                                        text: '00-MQTT',
-                                        link: '/md/MQTT/07-MQTT发布订阅模式介绍.md'
-                                    },
-                                ]
+                                    text: '00-MQTT',
+                                    link: '/md/MQTT/07-MQTT发布订阅模式介绍.md'
+                                }, ]
                             },
                         ]
-                    },                    
+                    },
 
                     {
                         text: '中间件',
-                        items: [
-                            {
+                        items: [{
                                 text: 'RPC',
                                 items: [{
                                     text: '熔断限流',
@@ -384,7 +372,7 @@ module.exports = {
                                     link: '/md/java/JVM专栏概述.md'
                                 }, ]
                             },
-                            
+
                             {
                                 text: 'JDK',
                                 items: [{
@@ -392,7 +380,7 @@ module.exports = {
                                     link: '/md/java/JDK22新特性.md'
                                 }, ]
                             },
-                            
+
                             {
                                 text: 'Netty',
                                 items: [{
@@ -404,8 +392,7 @@ module.exports = {
                     },
                     {
                         text: '微服务',
-                        items: [
-                            {
+                        items: [{
                                 text: 'Dubbo',
                                 items: [{
                                     text: '01-互联网架构的发展历程',
@@ -489,7 +476,7 @@ module.exports = {
                                     link: '/md/redis/00-数据结构的最佳实践.md'
                                 }]
                             },
-                            
+
                             {
                                 text: 'ElasticSearch',
                                 items: [{
@@ -497,15 +484,15 @@ module.exports = {
                                     link: '/md/es/ES专栏大纲.md'
                                 }]
                             },
-                            
+
                             {
                                 text: 'ClickHouse',
                                 items: [{
                                     text: 'clickhouse概述',
                                     link: '/md/ck/clickhouse概述.md'
                                 }]
-                            },                            
-                            
+                            },
+
                             {
                                 text: '分布式数据库',
                                 items: [{
@@ -518,8 +505,7 @@ module.exports = {
 
                     {
                         text: '云原生',
-                        items: [
-                            {
+                        items: [{
                                 text: 'Go',
                                 items: [{
                                     text: '00-Go实战(一)-概述',
@@ -542,7 +528,7 @@ module.exports = {
                                     link: '/md/k8s/kubectl命令.md'
                                 }]
                             },
-                            
+
                             {
                                 text: '监控',
                                 items: [{
@@ -555,58 +541,57 @@ module.exports = {
 
                     {
                         text: '计基',
-                        items: [
-                        {
-                            text: '计算机网络',
-                            items: [{
-                                text: '00-计算机网络-网络层原理',
-                                link: '/md/network/计算机网络-网络层原理.md'
-                            }, ]
-                        },                        
-                        
-                        {
-                            text: 'Linux操作系统',
-                            items: [{
-                                text: '00-操作系统专栏大纲',
-                                link: '/md/linux/00-操作系统专栏大纲.md'
-                            }, ]
-                        },
-                        
-                        {
-                            text: '数据结构与算法',
-                            items: [{
-                                text: '数据结构与算法专栏大纲',
-                                link: '/md/algorithm/logic/basic/00-数据结构与算法专栏大纲.md'
-                            }, ]
-                        },
-                        
-                        {
-                            text: '大厂算法面试',
-                            items: [{
-                                    text: '00-阿里秋招高频算法题汇总-基础篇',
-                                    link: '/md/algorithm/logic/leetcode/00-阿里秋招高频算法题汇总-基础篇.md'
-                                },
-                                {
-                                    text: '01-阿里秋招高频算法题汇总-中级篇',
-                                    link: '/md/algorithm/logic/leetcode/01-阿里秋招高频算法题汇总-中级篇.md'
-                                },
-                                {
-                                    text: '02-阿里秋招高频算法题汇总-进阶篇',
-                                    link: '/md/algorithm/logic/leetcode/02-阿里秋招高频算法题汇总-进阶篇.md'
-                                },
-                                {
-                                    text: '03-字节秋招高频算法题汇总-基础篇',
-                                    link: '/md/algorithm/logic/leetcode/03-字节秋招高频算法题汇总-基础篇.md'
-                                },
-                                {
-                                    text: '04-字节秋招高频算法题汇总-中级篇',
-                                    link: '/md/algorithm/logic/leetcode/04-字节秋招高频算法题汇总-中级篇.md'
-                                },
-                                {
-                                    text: '05-字节秋招高频算法题汇总-进阶篇',
-                                    link: '/md/algorithm/logic/leetcode/05-字节秋招高频算法题汇总-进阶篇.md'
-                                }
-                            ]
+                        items: [{
+                                text: '计算机网络',
+                                items: [{
+                                    text: '00-计算机网络-网络层原理',
+                                    link: '/md/network/计算机网络-网络层原理.md'
+                                }, ]
+                            },
+
+                            {
+                                text: 'Linux操作系统',
+                                items: [{
+                                    text: '00-操作系统专栏大纲',
+                                    link: '/md/linux/00-操作系统专栏大纲.md'
+                                }, ]
+                            },
+
+                            {
+                                text: '数据结构与算法',
+                                items: [{
+                                    text: '数据结构与算法专栏大纲',
+                                    link: '/md/algorithm/logic/basic/00-数据结构与算法专栏大纲.md'
+                                }, ]
+                            },
+
+                            {
+                                text: '大厂算法面试',
+                                items: [{
+                                        text: '00-阿里秋招高频算法题汇总-基础篇',
+                                        link: '/md/algorithm/logic/leetcode/00-阿里秋招高频算法题汇总-基础篇.md'
+                                    },
+                                    {
+                                        text: '01-阿里秋招高频算法题汇总-中级篇',
+                                        link: '/md/algorithm/logic/leetcode/01-阿里秋招高频算法题汇总-中级篇.md'
+                                    },
+                                    {
+                                        text: '02-阿里秋招高频算法题汇总-进阶篇',
+                                        link: '/md/algorithm/logic/leetcode/02-阿里秋招高频算法题汇总-进阶篇.md'
+                                    },
+                                    {
+                                        text: '03-字节秋招高频算法题汇总-基础篇',
+                                        link: '/md/algorithm/logic/leetcode/03-字节秋招高频算法题汇总-基础篇.md'
+                                    },
+                                    {
+                                        text: '04-字节秋招高频算法题汇总-中级篇',
+                                        link: '/md/algorithm/logic/leetcode/04-字节秋招高频算法题汇总-中级篇.md'
+                                    },
+                                    {
+                                        text: '05-字节秋招高频算法题汇总-进阶篇',
+                                        link: '/md/algorithm/logic/leetcode/05-字节秋招高频算法题汇总-进阶篇.md'
+                                    }
+                                ]
                             }
                         ]
                     },
@@ -646,8 +631,7 @@ module.exports = {
 
                     {
                         text: 'AI前沿',
-                        items: [
-                            {
+                        items: [{
                                 text: 'Python基础',
                                 link: '/md/python/00-macOS和Linux安装和管理多个Python版本'
                             },
@@ -662,6 +646,14 @@ module.exports = {
                             {
                                 text: 'LLM应用开发',
                                 link: '/md/AI/00-为什么要学习大模型'
+                            },
+                            {
+                                text: 'LangChain',
+                                link: '/md/AI/01-LangChain的Hello World项目'
+                            },
+                            {
+                                text: 'RAG',
+                                link: '/md/AI/00-“消灭”LLM幻觉的利器 - RAG介绍'
                             },
                             {
                                 text: '区块链',
@@ -724,7 +716,7 @@ module.exports = {
                                 "面试题-Redis.md",
                                 "面试题-场景题.md"
                             ]
-                        }, 
+                        },
                         {
                             title: "面试高频考点",
                             collapsable: false,
@@ -787,7 +779,7 @@ module.exports = {
                                 "05-如何统一管理纷繁杂乱的数据指标？",
                             ]
                         },
-                        
+
                         {
                             title: "用户画像",
                             collapsable: false,
@@ -800,7 +792,7 @@ module.exports = {
                             ]
                         },
                     ],
-                    
+
                     "/md/mgr/": [{
                             title: "项目管理",
                             collapsable: false,
@@ -828,7 +820,7 @@ module.exports = {
                             "00-如何防止订单二次重复支付？.md",
                         ]
                     }],
-                    
+
                     "/md/product-center/": [{
                         title: "商品中心",
                         collapsable: false,
@@ -929,7 +921,7 @@ module.exports = {
                             "熔断限流",
                         ]
                     }],
-                    
+
                     "/md/ShardingSphere/": [{
                         title: "ShardingSphere",
                         collapsable: false,
@@ -958,16 +950,14 @@ module.exports = {
                             "超线程（Hyper-Threading），单指令多数据流（SIMD）技术"
                         ]
                     }],
-                    "/md/MQTT/": [
-                        {
-                            title: "MQTT",
-                            collapsable: false,
-                            sidebarDepth: 0,
-                            children: [
-                                "07-MQTT发布订阅模式介绍.md"
-                            ]
-                        }
-                    ],
+                    "/md/MQTT/": [{
+                        title: "MQTT",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "07-MQTT发布订阅模式介绍.md"
+                        ]
+                    }],
                     "/md/spider/": [{
                         title: "爬虫",
                         collapsable: false,
@@ -1009,7 +999,7 @@ module.exports = {
                                 "JDK22新特性",
                                 "IntelliJ IDEA 2024.1 最新变化",
                             ]
-                        },    
+                        },
                     ],
                     "/md/algorithm/logic/leetcode/": [{
                         title: "大厂算法面试",
@@ -1024,7 +1014,7 @@ module.exports = {
                             "05-字节秋招高频算法题汇总-进阶篇",
                         ]
                     }, ],
-                    
+
                     "/md/algorithm/logic/basic/": [{
                         title: "数据结构与算法",
                         collapsable: false,
@@ -1036,8 +1026,7 @@ module.exports = {
                         ]
                     }],
 
-                    "/md/spring/spring-cloud/": [
-                        {
+                    "/md/spring/spring-cloud/": [{
                             title: "SpringCloudAlibaba",
                             collapsable: false,
                             sidebarDepth: 0,
@@ -1062,38 +1051,35 @@ module.exports = {
                         }
                     ],
 
-                    "/md/spring/spring-cloud/practise": [
-                        {
-                            title: "大厂实践",
+                    "/md/spring/spring-cloud/practise": [{
+                        title: "大厂实践",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "01-Segment为何永别微服务了？",
+                        ]
+                    }, ],
+
+                    "/md/DDD/": [{
+                            title: "DDD基础知识",
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
-                                "01-Segment为何永别微服务了？",
+                                "00-DDD专栏规划",
+                                "基于电商履约场景的DDD实战",
+                                "11-上下文映射",
+                                "13-DDD分层架构及代码目录结构",
+
                             ]
                         },
-                    ],
-
-                    "/md/DDD/": [
                         {
-                        title: "DDD基础知识",
-                        collapsable: false,
-                        sidebarDepth: 0,
-                        children: [
-                            "00-DDD专栏规划",
-                            "基于电商履约场景的DDD实战",
-                            "11-上下文映射",
-                            "13-DDD分层架构及代码目录结构",
-
-                                ]
-                        },
-                        {
-                        title: "DDD大厂实践",
-                        collapsable: false,
-                        sidebarDepth: 0,
-                        children: [
-                            "02-领域驱动设计DDD在B端营销系统的实践",
-                            "09-DDD在大厂交易系统演进的应用",
-                        ]
+                            title: "DDD大厂实践",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "02-领域驱动设计DDD在B端营销系统的实践",
+                                "09-DDD在大厂交易系统演进的应用",
+                            ]
                         },
                     ],
 
@@ -1138,7 +1124,7 @@ module.exports = {
                             "kubectl命令",
                         ]
                     }],
-                    
+
                     "/md/monitor/": [{
                         title: "监控",
                         collapsable: false,
@@ -1168,23 +1154,21 @@ module.exports = {
                             "08-全网最全图解Kafka适用场景",
                             // "15-基于kafka实现延迟队列"
                         ]
-                    }],      
-                    "/md/RocketMQ/": [
-                        {
-                            title: "RocketMQ",
-                            collapsable: false,
-                            sidebarDepth: 0,
-                            children: [
-                                "01-RocketMQ核心内容",
-                                "RocketMQ实战(01)-基本概念",
-                                "RocketMQ实战(02)-下载安装",
-                                "RocketMQ实战(03)-消息的有序性",
-                                "RocketMQ实战(04) - 订阅机制和定时消息",
-                                "RocketMQ实战(05) - 批量消息和事务消息",
-                                "02-基于电商场景的高并发RocketMQ实战",
-                            ]
-                        }
-                    ],              
+                    }],
+                    "/md/RocketMQ/": [{
+                        title: "RocketMQ",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "01-RocketMQ核心内容",
+                            "RocketMQ实战(01)-基本概念",
+                            "RocketMQ实战(02)-下载安装",
+                            "RocketMQ实战(03)-消息的有序性",
+                            "RocketMQ实战(04) - 订阅机制和定时消息",
+                            "RocketMQ实战(05) - 批量消息和事务消息",
+                            "02-基于电商场景的高并发RocketMQ实战",
+                        ]
+                    }],
                     "/md/rabbitmq": [{
                         title: "RabbitMQ",
                         collapsable: false,
@@ -1205,7 +1189,7 @@ module.exports = {
                             "04-Redisson读写锁加锁机制分析.md",
                             "缓存读写策略模式详解"
                         ]
-                    }],                    
+                    }],
                     "/md/es/": [{
                         title: "ElasticSearch",
                         collapsable: false,
@@ -1313,68 +1297,74 @@ module.exports = {
                         ]
                     }],
 
-                    "/md/python/": [                       
+                    "/md/python/": [{
+                        title: "Python基础",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "00-macOS和Linux安装和管理多个Python版本",
+                        ]
+                    }, ],
+
+                    "/md/AI/": [
                         {
-                            title: "Python基础",
+                            title: "GPT发展",
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
-                                "00-macOS和Linux安装和管理多个Python版本",
+                                "Claude3到底多强",
+                                "GPTs推荐",
+                            ]
+                        },
+                        {
+                            title: "机器学习",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "01-人工智能概要",
+                                "MapReduce分治思想",
+                                "05-开发环境安装",
+                            ]
+                        },
+                        {
+                            title: "LLM应用开发",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "00-为什么要学习大模型",
+                                "01-大语言模型发展",
+                                "02-国内外LLM的多模型，强应用",
+                                "03-为啥LLM还没能完全替代你？",
+                                "04-产业拆解",
+                                "05-应用级开发者 AI 时代破局点",
+                                "06-智能体(agent)命理大师虚拟项目",
+                            ]
+                        },
+                        {
+                            title: "LangChain",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "00-初识LangChain",
+                                "01-LangChain的Hello World项目",
+                                "02-LangChain实战：用prompts模板调教LLM的输入出",
+                                "03-示例选择器",
+                                "04-LLMs和Chat Models",
+                            ]
+                        },
+                        {
+                            title: "RAG",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "00-“消灭”LLM幻觉的利器 - RAG介绍",
+                                "01-RAG应用框架和解析器",
+                                "02-相似性检索的关键 - Embedding",
+                                "03-RAG的核心 -结果召回和重排序",
                             ]
                         },
                     ],
-
-                    "/md/AI/": [
-                    
-                    {
-                        title: "GPT发展",
-                        collapsable: false,
-                        sidebarDepth: 0,
-                        children: [
-                            "Claude3到底多强",
-                            "GPTs推荐",
-                        ]
-                    },
-                    {
-                        title: "机器学习",
-                        collapsable: false,
-                        sidebarDepth: 0,
-                        children: [
-                            "01-人工智能概要",
-                            "MapReduce分治思想",
-                            "05-开发环境安装",
-                        ]
-                    },
-                    {
-                        title: "LLM应用开发",
-                        collapsable: false,
-                        sidebarDepth: 0,
-                        children: [
-                            "00-为什么要学习大模型",
-                            "01-大语言模型发展",
-                            "02-国内外LLM的多模型，强应用",
-                            "03-为啥LLM还没能完全替代你？",
-                            "04-产业拆解",
-                            "05-应用级开发者 AI 时代破局点",
-                            "06-智能体(agent)命理大师虚拟项目（需求分析、技术选型、技术分解）",
-                            "01-LangChain的Hello World项目",
-                        ]
-                    },
-                    {
-                        title: "RAG",
-                        collapsable: false,
-                        sidebarDepth: 0,
-                        children: [
-                            "00-“消灭”LLM幻觉的利器 - RAG介绍",
-                            "01-RAG应用框架和解析器",
-                            "02-相似性检索的关键 - Embedding",
-                            "03-RAG的核心 -结果召回和重排序",
-                        ]
-                    },
-                
-                    ],                    
-                    "/md/design/": [
-                        {
+                    "/md/design/": [{
                             title: "重构",
                             collapsable: false,
                             sidebarDepth: 0,
@@ -1400,9 +1390,8 @@ module.exports = {
                             ]
                         },
                     ],
-                    
-                    "/md/spark/": [
-                        {
+
+                    "/md/spark/": [{
                             title: "Spark",
                             collapsable: false,
                             sidebarDepth: 0,
@@ -1445,13 +1434,13 @@ module.exports = {
                             ]
                         },
                     ],
-                    
+
                     "/md/security/": [{
                             title: "常见攻击手段",
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
-                                
+
                             ]
                         },
                         {
