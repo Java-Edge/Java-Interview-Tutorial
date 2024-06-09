@@ -741,6 +741,15 @@ module.exports = {
                                 "mianjing/05.携程暑期实习一面.md",
                                 "mianjing/06.携程暑期实习二面.md",
                             ]
+                        },
+                        {
+                            title: "架构设计",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "jiagou/01-B站评论系统架构设计.md",
+                                "jiagou/02-该从哪些方面提升系统的吞吐量？.md"
+                            ]
                         }
                     ],
                     "/md/biz-arch/": [{
