@@ -1323,6 +1323,7 @@ module.exports = {
                             children: [
                                 "Claude3到底多强",
                                 "GPTs推荐",
+                                "ChatGPT为啥不用Websocket而是EventSource？",
                             ]
                         },
                         {
@@ -1346,7 +1347,7 @@ module.exports = {
                                 "03-为啥LLM还没能完全替代你？",
                                 "04-产业拆解",
                                 "05-应用级开发者 AI 时代破局点",
-                                "06-智能体(agent)命理大师虚拟项目",
+                                "06-智能体项目案例",
                             ]
                         },
                         {
@@ -1359,6 +1360,8 @@ module.exports = {
                                 "02-LangChain实战：用prompts模板调教LLM的输入出",
                                 "03-示例选择器",
                                 "04-LLMs和Chat Models",
+                                "05-Loader机制",
+                                "06-文档转换实战",
                             ]
                         },
                         {
@@ -1396,6 +1399,7 @@ module.exports = {
                                 "模板方法设计模式（Template Pattern）",
                                 "策略模式Strategy Pattern",
                                 "建造者模式",
+                                "代理模式Proxy Pattern",
                             ]
                         },
                     ],
