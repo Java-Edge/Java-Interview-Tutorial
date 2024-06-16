@@ -289,16 +289,36 @@ module.exports = {
                     },
 
                     {
-                        text: 'MQ',
+                        text: '中间件',
                         items: [{
+                                text: 'RPC',
+                                items: [{
+                                    text: '熔断限流',
+                                    link: '/md/rpc/熔断限流.md'
+                                }, ]
+                            },
+
+                            {
+                                text: 'Netty',
+                                items: [{
+                                    text: 'Netty入门',
+                                    link: '/md/netty/ChannelPipeline接口.md'
+                                }, ]
+                            },
+
+                            {
+                                text: 'ShardingSphere',
+                                items: [{
+                                    text: 'ShardingSphere',
+                                    link: '/md/ShardingSphere/14-ShardingSphere的分布式主键实现.md'
+                                }]
+                            },
+
+                            {
                                 text: 'Kafka',
                                 items: [{
-                                        text: 'Kafka门派知多少',
-                                        link: '/md/kafka/Kafka门派知多少.md'
-                                    },
-                                    {
-                                        text: '08-全网最全图解Kafka适用场景',
-                                        link: '/md/kafka/08-全网最全图解Kafka适用场景.md'
+                                        text: '00-Kafka专栏大纲.md',
+                                        link: '/md/kafka/00-Kafka专栏大纲.md'
                                     },
                                 ]
                             },
@@ -335,27 +355,6 @@ module.exports = {
                     },
 
                     {
-                        text: '中间件',
-                        items: [{
-                                text: 'RPC',
-                                items: [{
-                                    text: '熔断限流',
-                                    link: '/md/rpc/熔断限流.md'
-                                }, ]
-                            },
-
-                            {
-                                text: 'ShardingSphere',
-                                items: [{
-                                    text: 'ShardingSphere',
-                                    link: '/md/ShardingSphere/14-ShardingSphere的分布式主键实现.md'
-                                }]
-                            },
-                        ]
-                    },
-
-
-                    {
                         text: 'Java',
                         items: [{
                                 text: '并发',
@@ -380,16 +379,17 @@ module.exports = {
                                     link: '/md/java/JDK22新特性.md'
                                 }, ]
                             },
-
+                            
                             {
-                                text: 'Netty',
+                                text: 'Tomcat',
                                 items: [{
-                                    text: 'Netty入门',
-                                    link: '/md/netty/ChannelPipeline接口.md'
+                                    text: 'Tomcat网络编程',
+                                    link: '/md/tomcat/00-不知道这些Servlet规范、容器，还敢说自己是Java程序员.md'
                                 }, ]
                             },
                         ]
                     },
+
                     {
                         text: '微服务',
                         items: [{
@@ -497,7 +497,7 @@ module.exports = {
                                 text: '分布式数据库',
                                 items: [{
                                     text: '查询执行引擎：如何让聚合计算加速？',
-                                    link: '/md/distdb/查询执行引擎：如何让聚合计算加速？.md'
+                                    link: '/md/distdb/21-查询执行引擎：加速聚合计算加速.md'
                                 }]
                             },
                         ]
@@ -621,6 +621,15 @@ module.exports = {
                             }
                         ]
                     },
+
+                    {
+                        text: 'Spring',
+                        items: [{
+                            text: 'SpringMVC拦截处理器',
+                            link: '/md/spring/03-SpringMVC拦截处理器.md'
+                        }, ]
+                    },
+
                     // {
                     //     text: 'Vue',
                     //     items: [{
@@ -630,7 +639,7 @@ module.exports = {
                     // },
 
                     {
-                        text: 'AI前沿',
+                        text: 'AI',
                         items: [{
                                 text: 'Python基础',
                                 link: '/md/python/00-macOS和Linux安装和管理多个Python版本'
@@ -956,6 +965,7 @@ module.exports = {
                             "00-操作系统专栏大纲",
                             "01-Linux命令",
                             "02-进程管理",
+                            "04-还记得纸带编程吗？",
                             "超线程（Hyper-Threading），单指令多数据流（SIMD）技术"
                         ]
                     }],
@@ -1032,6 +1042,27 @@ module.exports = {
                             "00-数据结构与算法专栏大纲",
                             "【图解数据结构与算法】LRU缓存淘汰算法面试时到底该怎么写",
                             "【图解数据结构】外行人也能看懂的哈希表",
+                        ]
+                    }],
+
+                    "/md/spring/": [{
+                        title: "Spring",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "01-SpringMVC的AsyncHandlerInterceptor异步的处理器拦截器",
+                            "02-实现http请求的异步长轮询",
+                            "03-SpringMVC拦截处理器",
+                        ]
+                    }],
+
+                    "/md/tomcat/": [{
+                        title: "Tomcat",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "00-不知道这些Servlet规范、容器，还敢说自己是Java程序员",
+                            "01-Jetty架构设计之Connector、Handler组件",
                         ]
                     }],
 
@@ -1143,6 +1174,7 @@ module.exports = {
                             "03-Loki 日志监控",
                         ]
                     }],
+
                     "/md/netty/": [{
                         title: "Netty",
                         collapsable: false,
@@ -1151,19 +1183,24 @@ module.exports = {
                             "ChannelPipeline接口",
                             "(06-1)-ChannelHandler 家族",
                             "(08)-学习Netty BootStrap的核心知识，成为网络编程高手！",
-                            "(18)-检测新连接"
+                            "11-4-解码基于分隔符的协议和基于长度的协议",
+                            "18-检测新连接",
                         ]
                     }],
+
                     "/md/kafka": [{
                         title: "Kafka",
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
-                            // "Kafka门派知多少",
+                            "00-Kafka专栏大纲",
+                            "Kafka门派知多少",
                             "08-全网最全图解Kafka适用场景",
-                            // "15-基于kafka实现延迟队列"
+                            "09-消息队列的消息大量积压怎么办？",
+                            "15-基于kafka实现延迟队列"
                         ]
                     }],
+
                     "/md/RocketMQ/": [{
                         title: "RocketMQ",
                         collapsable: false,
@@ -1196,7 +1233,8 @@ module.exports = {
                             "02-Redisson可重入锁加锁源码分析.md",
                             "03-Redisson公平锁加锁源码分析.md",
                             "04-Redisson读写锁加锁机制分析.md",
-                            "缓存读写策略模式详解"
+                            "缓存读写策略模式详解",
+                            "06-如何快速定位 Redis 热 key"
                         ]
                     }],
                     "/md/es/": [{
@@ -1228,8 +1266,9 @@ module.exports = {
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
-                            "查询执行引擎：如何让聚合计算加速？",
                             "18-分布式数据库的HTAP能统一OLTP和 OLAP吗？",
+                            "21-查询执行引擎：加速聚合计算加速",
+                            
                         ]
                     }],
                     "/md/12306/": [{

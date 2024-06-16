@@ -1,6 +1,6 @@
 # 18-分布式数据库的HTAP能统一OLTP和 OLAP吗？
 
-![](https://javaedge-1256172393.cos.ap-shanghai.myqcloud.com/382508db9c5e251760d2eb443ebcc41a.jpg)
+!![](https://my-img.javaedge.com.cn/javaedge-blog/2024/06/7d6d7bee87413076a0f0e33b1d5da975.jpg)
 
 OLAP和OLTP通过ETL衔接。为提升OLAP性能，需在ETL过程进行大量预计算，包括：
 
@@ -26,7 +26,7 @@ HTAP要解决的就是OLAP时效性问题，不过它也不是唯一的选择，
 
 重视数据加工的时效性，近年大数据技术主要发展方向。Kappa架构就是新体系代表，最早由LinkedIn的Jay Kreps在2014年[一篇文章](https://www.oreilly.com/radar/questioning-the-lambda-architecture/)提出：
 
-![](https://javaedge-1256172393.cos.ap-shanghai.myqcloud.com/6b204f3de97cdf4b75dd197672db2452.jpg)
+![](https://my-img.javaedge.com.cn/javaedge-blog/2024/06/940e335118bca3acb5a75c70a8b1f324.jpg)
 
 原来的批量文件传输方式完全被Kafka替代，通过流计算系统完成数据快速加工，数据最终落地Serving DB中提供查询服务。Serving DB泛指各种类型存储如HBase、Redis或MySQL。
 
@@ -54,19 +54,19 @@ NewSQL初步解决OLTP场景的高并发、强一致性等问题后，能否再�
 - 厂商官宣的HTAP至少包括TiDB和TBase
 - OceanBase也宣布在近期版本中推出OLAP场景的特性
 
-基于商业策略考虑，未来还会有更多分布式数据库竖起HTAP的大旗。
+考虑商业策略，未来还有更多分布式数据库起HTAP大旗。
 
-## 2 HTAP的存储设计
+## 2 HTAP存储设计
 
-OLTP和OLAP架构差异在于：
+### 2.0 OLTP和OLAP架构差异
 
-- 计算
+#### 计算
 
-  计算引擎的差异，目标都是调度多节点的计算资源，做到最大程度地并行处理。因为OLAP是海量数据要追求高吞吐量，而OLTP是少量数据更重视低延迟，所以它们计算引擎的侧重点不同
+计算引擎的差异，目标都是调度多节点的计算资源，做到最大程度并行处理。因为OLAP是海量数据要追求高吞吐量，而OLTP是少量数据更重视低延迟，所以它们计算引擎的侧重点不同
 
-- 存储
+#### 存储
 
-  数据在磁盘上的组织方式不同，而组织方式直接决定了数据的访问效率。OLTP和OLAP的存储格式分别为行式存储和列式存储，它们的区别我稍后会详细说明。
+数据在磁盘上的组织方式不同，而组织方式直接决定了数据的访问效率。OLTP和OLAP的存储格式分别为行式存储和列式存储。
 
 分布式数据库的流设计理念是计算与存储分离，计算就比较容易实现无状态化，所以在一个HTAP系统内构建多个计算引擎不太困难，而真要将HTAP概念落地为可运行系统，根本性挑战是存储。面对这挑战，业界解决思路：
 
@@ -75,7 +75,7 @@ OLTP和OLAP架构差异在于：
 
 ### 2.1 Spanner：存储合一
 
-Spanner2017论文“Spanner: Becoming a SQL System”介绍它新一代存储Ressi，使用类似PAX方式。这PAX并不是Spanner的创新，早在VLDB2002的论文 “[Data Page Layouts for Relational Databases on Deep Memory Hierarchies](http://research.cs.wisc.edu/multifacet/papers/vldbj02_pax.pdf)” 就提出。论文从CPU缓存友好性的角度，对不同存储方式进行探讨，涉及NSM、DSM、PAX存储格式。
+Spanner2017论文“Spanner: Becoming a SQL System”介绍它新一代存储Ressi，使用类似PAX方式。这PAX并不是Spanner的创新，早在VLDB2002的论文 “[Data Page Layouts for Relational Databases on Deep Memory Hierarchies](http://research.cs.wisc.edu/multifacet/papers/vldbj02_pax.pdf)” 就提出。论文从CPU缓存友好性角度，探讨不同存储方式，涉及NSM、DSM、PAX存储格式。
 
 #### NSM （行式存储）
 
@@ -90,9 +90,11 @@ NSM（N-ary Storage Model）就是行式存储，OLTP数据库默认存储方式
 - 而用户一次查询通常只访问少量字段，如以行为单位读取数据，查询出多数字段无用，大量I/O操作无效
 - 大量无效数据读取，又造成CPU缓存失效，加剧降低系统性能
 
-![](https://javaedge-1256172393.cos.ap-shanghai.myqcloud.com/b61bac48bd1d05f8fe58b7ae4904932b.jpg)
 
-图中显示CPU缓存的处理情况，我们可以看到很多无效数据被填充到缓存中，挤掉了那些原本有机会复用的数据。
+
+![](https://my-img.javaedge.com.cn/javaedge-blog/2024/06/2563e98bdae858fe114c90be35925ea7.jpg)
+
+图示CPU缓存处理情况，可见很多无效数据被填充到缓存，挤掉那些原本有机会复用的数据。
 
 #### DSM（列式存储）
 
@@ -102,13 +104,13 @@ DSM（Decomposition Storage Model），出现晚于行式存储。典型代表�
 
 列式存储的问题是写开销更大，因为根据关系模型，在逻辑上数据的组织单元仍是行，改为列式存储后，同样的数据量会被写入到更多的数据页（page），而数据页直接对应物理扇区，磁盘I/O开销自然增大。
 
-![](https://javaedge-1256172393.cos.ap-shanghai.myqcloud.com/bd96a2edb8bfe131bf0ec5aa91509596.jpg)
+![](https://my-img.javaedge.com.cn/javaedge-blog/2024/06/6fbd31f124c650e1970449a5bec7af9f.jpg)
 
 列式存储的第二个问题，难将不同列高效关联。毕竟在多数应用场景中，不只是使用单列或单表数据，数据分散后，关联成本更高。
 
 #### PAX
 
-![](https://javaedge-1256172393.cos.ap-shanghai.myqcloud.com/70c94c6aef3d1d8d27d263d52e6e2c08.jpg)
+![](https://my-img.javaedge.com.cn/javaedge-blog/2024/06/f69ae8b9053817145daf03113cf28cdd.jpg)
 
 PAX新增minipage概念，是原有的数据页下的二级单位，这样一行数据记录在数据页的基本分布不会被破坏，而相同列的数据又集中存储。PAX更接近行存储，但它也在努力平衡记录内局部性和记录间局部性，提升了OLAP性能。
 
@@ -120,7 +122,7 @@ PAX新增minipage概念，是原有的数据页下的二级单位，这样一行
 
 TiDB是在较早的版本中就提出了HTAP这个目标，并增加了TiSpark作为OLAP的计算引擎，但仍然共享OLTP的数据存储TiKV，所以两种任务之间的资源竞争依旧不可避免。直到近期的4.0版本中，TiDB正式推出了TiFlash作为OLAP的专用存储。
 
-![](https://javaedge-1256172393.cos.ap-shanghai.myqcloud.com/7fd1f6b5fe9fa85bf85da382fec68083.jpg)
+![](https://my-img.javaedge.com.cn/javaedge-blog/2024/06/143953cfcf49d890137174900ff180fc.jpg)
 
 我们的关注点集中在TiFlash与TiKV之间的同步机制上。其实，这个同步机制仍然是基于Raft协议的。TiDB在Raft协议原有的Leader和Follower上增加了一个角色Learner。这个Learner和Paxos协议中的同名角色，有类似的职责，就是负责学习已经达成一致的状态，但不参与投票。这就是说，Raft Group在写入过程中统计多数节点时，并没有包含Learner，这样的好处是Learner不会拖慢写操作，但带来的问题是Learner的数据更新必然会落后于Leader。
 
@@ -145,7 +147,7 @@ TiFlash是OLAP系统，首要目标保证读性能，因此写入无论多重要
 
 当然HTAP也具有相对优势，那就是通过全家桶方案避免了用户集成多个技术产品，整体技术复杂度有所降低。最后，TiDB给出的解决方案很有新意，但是能否覆盖足够大的OLAP场景，仍有待观察。
 
-![](https://javaedge-1256172393.cos.ap-shanghai.myqcloud.com/4e114e5969594dbf86e53145a8de4bec.png)
+![](https://my-img.javaedge.com.cn/javaedge-blog/2024/06/d6ce49bfe9f4e2a13f13accabd00eaa8.png)
 
 ## FAQ
 

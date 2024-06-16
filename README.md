@@ -1,8 +1,8 @@
 # 编程严选网
 
 ## 0 本地启动项目
-1. 检查node是否有安装
-2. 下载资源包：npm install
+1. 安装Node.js
+2. 下载依赖：npm install
 3. 启动服务： npm run dev -- --port 8081
 
 https://www.bilibili.com/video/BV1vb411m7NY

@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /images/system/logo.jpg
+# heroImage: /images/system/logo.jpg
 actionLinks:
 - link: /md/other/guide-to-reading.md
   text: 开始阅读 →
@@ -9,7 +9,7 @@ actionLinks:
   text: 知识星球
   class: secondary  
 - link: http://www.javaedge.cn:3000/#/article/76
-  text: 后端技术专家P7学习路线 👣
+  text: 后端技术专家学习路线 👣
   class: secondary   
 - link: http://www.javaedge.cn:3000/#/index
   text: 网站 💐
