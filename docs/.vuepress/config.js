@@ -391,7 +391,7 @@ module.exports = {
                     },
 
                     {
-                        text: '微服务',
+                        text: '分布式',
                         items: [{
                                 text: 'Dubbo',
                                 items: [{
@@ -1228,12 +1228,12 @@ module.exports = {
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
-                            "00-数据结构的最佳实践.md",
-                            "01-Redis和ZK分布式锁优缺点对比以及生产环境使用建议.md",
-                            "02-Redisson可重入锁加锁源码分析.md",
-                            "03-Redisson公平锁加锁源码分析.md",
-                            "04-Redisson读写锁加锁机制分析.md",
-                            "缓存读写策略模式详解",
+                            "00-数据结构的最佳实践",
+                            "01-Redis和ZK分布式锁优缺点对比以及生产环境使用建议",
+                            "02-Redisson可重入锁加锁源码分析",
+                            "03-Redisson公平锁加锁源码分析",
+                            "04-Redisson读写锁加锁机制分析",
+                            "05-缓存读写策略模式详解",
                             "06-如何快速定位 Redis 热 key"
                         ]
                     }],
@@ -1300,6 +1300,7 @@ module.exports = {
                                 "死磕设计模式之抽象策略模式.md",
                                 // "Builder模式在项目设计中的应用.md",
                                 "单例+简单工厂模式在项目设计中的应用.md",
+                                "选择合适的缓存过期策略",
                                 "12306架构设计难点.md"
                             ]
                         }
