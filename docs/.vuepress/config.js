@@ -665,6 +665,10 @@ module.exports = {
                                 link: '/md/AI/00-“消灭”LLM幻觉的利器 - RAG介绍'
                             },
                             {
+                                text: 'Agent',
+                                link: '/md/AI/01-Agents是什么？'
+                            },
+                            {
                                 text: '区块链',
                                 link: '/md/chain/00-区块链专栏概述.md'
                             },
@@ -1301,6 +1305,8 @@ module.exports = {
                                 // "Builder模式在项目设计中的应用.md",
                                 "单例+简单工厂模式在项目设计中的应用.md",
                                 "选择合适的缓存过期策略",
+                                "Redis缓存雪崩、缓存穿透、缓存击穿解决方案详解",
+                                "redisson分布式锁使用",
                                 "12306架构设计难点.md"
                             ]
                         }
@@ -1415,6 +1421,14 @@ module.exports = {
                                 "03-RAG的核心 -结果召回和重排序",
                             ]
                         },
+                        {
+                            title: "Agent",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "01-Agents是什么？",
+                            ]
+                        },
                     ],
                     "/md/design/": [{
                             title: "重构",
@@ -1483,7 +1497,8 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
-                                "基于Spark的机器学习实践(七)-回归算法",
+                                "06-基础统计模块",
+                                "07-回归算法",
                             ]
                         },
                     ],
