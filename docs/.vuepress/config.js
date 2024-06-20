@@ -666,7 +666,7 @@ module.exports = {
                             },
                             {
                                 text: 'Agent',
-                                link: '/md/AI/01-Agents是什么？'
+                                link: '/md/AI/01-what-are-agents'
                             },
                             {
                                 text: '区块链',
@@ -1307,7 +1307,12 @@ module.exports = {
                                 "选择合适的缓存过期策略",
                                 "Redis缓存雪崩、缓存穿透、缓存击穿解决方案详解",
                                 "redisson分布式锁使用",
-                                "12306架构设计难点.md"
+                                "redis-cache-expiry-strategy",
+                                "MySQL深分页调优实战",
+                                "ES深分页问题解决方案",
+                                "SpringBoot统一异常处理流程",
+                                "如何处理消息丢失问题？",
+                                "12306架构设计难点"
                             ]
                         }
                     ],
@@ -1426,7 +1431,16 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
-                                "01-Agents是什么？",
+                                "01-what-are-agents",
+                                "02-how-langchain-agents-are-implemented",
+                                "zero-shot-learning-definition-examples-comparison",
+                                "04-how-to-add-memory-in-langchain-agents",
+                                "05-how-to-enable-memory-sharing-between-agent-and-tool",
+                                "06-how-to-use-langchain-built-in-tools",
+                                "07-lcel-langchain-expression-language",
+                                "08-ali-tongyi-qianwen-openai-compatible-solution",
+                                "09-lcel-chain-and-prompt-implementation",
+                                "10-ali-tongyi-qianwen-status-codes-explanation",
                             ]
                         },
                     ],
