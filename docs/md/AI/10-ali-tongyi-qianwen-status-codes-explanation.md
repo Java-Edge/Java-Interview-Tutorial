@@ -1,4 +1,4 @@
-# 10-ali-tongyi-qianwen-status-codes-explanation
+# 10-阿里通义千问大模型返回状态码说明
 
 ## 状态码参考
 

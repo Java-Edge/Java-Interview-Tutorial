@@ -265,28 +265,6 @@ module.exports = {
                             },
                         ]
                     },
-                    {
-                        text: '安全',
-                        items: [
-
-                            {
-                                text: '常见攻击手段',
-                                items: [{
-                                    text: '常见攻击手段概述',
-                                    link: '/md/security/01-OAuth 2.0实战-为什么要先获取授权码code.md'
-                                }, ]
-                            },
-
-                            {
-                                text: 'Oauth2.0',
-                                items: [{
-                                    text: 'Oauth2.0专栏概述',
-                                    link: '/md/security/01-OAuth 2.0实战-为什么要先获取授权码code.md'
-                                }, ]
-                            },
-
-                        ]
-                    },
 
                     {
                         text: '中间件',
@@ -317,10 +295,9 @@ module.exports = {
                             {
                                 text: 'Kafka',
                                 items: [{
-                                        text: '00-Kafka专栏大纲.md',
-                                        link: '/md/kafka/00-Kafka专栏大纲.md'
-                                    },
-                                ]
+                                    text: '00-Kafka专栏大纲.md',
+                                    link: '/md/kafka/00-Kafka专栏大纲.md'
+                                }, ]
                             },
 
                             {
@@ -351,6 +328,22 @@ module.exports = {
                                     link: '/md/MQTT/07-MQTT发布订阅模式介绍.md'
                                 }, ]
                             },
+
+                            {
+                                text: '常见攻击手段',
+                                items: [{
+                                    text: '常见攻击手段概述',
+                                    link: '/md/security/01-OAuth 2.0实战-为什么要先获取授权码code.md'
+                                }, ]
+                            },
+
+                            {
+                                text: 'Oauth2.0',
+                                items: [{
+                                    text: 'Oauth2.0专栏概述',
+                                    link: '/md/security/01-OAuth 2.0实战-为什么要先获取授权码code.md'
+                                }, ]
+                            },
                         ]
                     },
 
@@ -379,7 +372,7 @@ module.exports = {
                                     link: '/md/java/JDK22新特性.md'
                                 }, ]
                             },
-                            
+
                             {
                                 text: 'Tomcat',
                                 items: [{
@@ -387,6 +380,14 @@ module.exports = {
                                     link: '/md/tomcat/00-不知道这些Servlet规范、容器，还敢说自己是Java程序员.md'
                                 }, ]
                             },
+
+                            {
+                                text: 'Spring',
+                                items: [{
+                                    text: 'SpringMVC拦截处理器',
+                                    link: '/md/spring/03-SpringMVC拦截处理器.md'
+                                }, ]
+                            }
                         ]
                     },
 
@@ -464,8 +465,8 @@ module.exports = {
                         items: [{
                                 text: 'MySQL',
                                 items: [{
-                                    text: '亿级数据量商品系统的SQL调优实战',
-                                    link: '/md/mysql/00-亿级数据量商品系统的SQL调优实战.md'
+                                    text: '00-MySQL专栏大纲',
+                                    link: '/md/mysql/00-MySQL专栏大纲.md'
                                 }]
                             },
 
@@ -600,34 +601,19 @@ module.exports = {
                         link: '/md/zqy/面试题/01-分布式技术面试实战.md'
                     },
                     {
-                        text: '12306',
+                        text: '12306项目实战',
                         items: [{
-                                text: '项目介绍',
+                                text: '12306实战',
                                 link: '/md/12306/项目介绍.md'
                             },
                             {
-                                text: '快速开始',
+                                text: 'DDD电商实战',
                                 items: [{
-                                    text: '环境搭建',
+                                    text: 'TODO敬请期待',
                                     link: '/md/12306/环境搭建.md'
                                 }]
-                            },
-                            {
-                                text: '核心技术文档',
-                                items: [{
-                                    text: '如何生成分布式ID',
-                                    link: '/md/12306/如何生成分布式ID.md'
-                                }, ]
                             }
                         ]
-                    },
-
-                    {
-                        text: 'Spring',
-                        items: [{
-                            text: 'SpringMVC拦截处理器',
-                            link: '/md/spring/03-SpringMVC拦截处理器.md'
-                        }, ]
                     },
 
                     // {
@@ -1132,10 +1118,13 @@ module.exports = {
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
-                            "00-亿级数据量商品系统的SQL调优实战.md",
-                            "MySQL查询优化.md",
-                            "InnoDB架构设计.md",
-                            "为什么临时表可以重名？.md",
+                            "00-MySQL专栏大纲",
+                            "亿级数据量商品系统的SQL调优实战",
+                            "MySQL查询优化",
+                            "how-to-use-indexes-when-grouping-in-sql",
+                            "mysql-architecture-design",
+                            "InnoDB架构设计",
+                            "为什么临时表可以重名？",
                         ]
                     }],
 
@@ -1272,7 +1261,7 @@ module.exports = {
                         children: [
                             "18-分布式数据库的HTAP能统一OLTP和 OLAP吗？",
                             "21-查询执行引擎：加速聚合计算加速",
-                            
+
                         ]
                     }],
                     "/md/12306/": [{
@@ -1366,8 +1355,7 @@ module.exports = {
                         ]
                     }, ],
 
-                    "/md/AI/": [
-                        {
+                    "/md/AI/": [{
                             title: "GPT发展",
                             collapsable: false,
                             sidebarDepth: 0,
@@ -1394,7 +1382,7 @@ module.exports = {
                             children: [
                                 "00-为什么要学习大模型",
                                 "01-大语言模型发展",
-                                "02-国内外LLM的多模型，强应用",
+                                "02-domestic-and-international-llm-multi-model-strong-applications",
                                 "03-为啥LLM还没能完全替代你？",
                                 "04-产业拆解",
                                 "05-应用级开发者 AI 时代破局点",
@@ -1441,6 +1429,9 @@ module.exports = {
                                 "08-ali-tongyi-qianwen-openai-compatible-solution",
                                 "09-lcel-chain-and-prompt-implementation",
                                 "10-ali-tongyi-qianwen-status-codes-explanation",
+                                "11-lcel-memory-addition-method",
+                                "12-lcel-agent-core-components",
+                                "13-最佳开发实践",
                             ]
                         },
                     ],

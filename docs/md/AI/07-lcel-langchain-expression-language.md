@@ -1,4 +1,4 @@
-# 07 LCEL-langchain-expression-language
+# 07-LCEL-LangChain表达式语言
 
 一种在langchain之上封装的高级解释语言，简化链条开发，支持真实生产环境而发明。
 

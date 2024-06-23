@@ -1,4 +1,4 @@
-# 06-how-to-use-langchain-built-in-tools
+# 06-如何使用langchain内置tools
 
 如何加载使用tool？
 

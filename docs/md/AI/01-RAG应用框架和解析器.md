@@ -10,7 +10,7 @@
 - 每种文档多样化选择
 - 与开源框架无缝集成
 
-![](https://javaedge-1256172393.cos.ap-shanghai.myqcloud.com/image-20240411205330424.png)
+![](https://my-img.javaedge.com.cn/javaedge-blog/2024/06/704e6a30d6793c931c5db2a5afe142d5.png)
 
 但有时效果非常差，来内容跟原始的文件内容差别大。
 
@@ -18,7 +18,7 @@
 
 
 
-![](https://javaedge-1256172393.cos.ap-shanghai.myqcloud.com/image-20240411205413747.png)
+![](/Users/javaedge/Downloads/IDEAProjects/java-edge-master/assets/image-20240411205413747-8350717.png)
 
 **复杂多变的文档格式，提高解析效果十分困难**。
 
@@ -48,7 +48,7 @@ PDF解析过程中，同一页它不同段落其实会也会有不同标准的�
 
 
 
-![](https://javaedge-1256172393.cos.ap-shanghai.myqcloud.com/image-20240411215521843.png)
+![](https://my-img.javaedge.com.cn/javaedge-blog/2024/06/03bee575c2ea98f77bf868e5e885539c.png)
 
 ## 5 为什么解析文档后需要做知识片段拆分
 
@@ -99,10 +99,10 @@ PDF解析过程中，同一页它不同段落其实会也会有不同标准的�
 
 
 
-![](https://javaedge-1256172393.cos.ap-shanghai.myqcloud.com/image-20240411220752800.png)
+![](https://my-img.javaedge.com.cn/javaedge-blog/2024/06/4c4273b86a35e31104cc49f4cd8d10d1.png)
 
 ## 8 腾讯云向量数据库AI套件
 
 
 
-![](https://javaedge-1256172393.cos.ap-shanghai.myqcloud.com/image-20240411220851274.png)
+![](https://my-img.javaedge.com.cn/javaedge-blog/2024/06/5120078c65e3e15ae25d08cf1ec11436.png)

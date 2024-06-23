@@ -1,4 +1,4 @@
-# 08-ali-tongyi-qianwen-openai-compatible-solution
+# 08-阿里通义千问和OpenAI接口兼容的解决方案
 
 DashScope提供了与OpenAI兼容的使用方式。如果您之前使用OpenAI SDK或者其他OpenAI兼容接口（例如langchain_openai SDK），以及HTTP方式调用OpenAI的服务，只需在原有框架下调整API-KEY、base_url、model等参数，就可以直接使用DashScope模型服务。
 
