@@ -17,7 +17,7 @@ module.exports = {
         "/": {
             lang: "zh-CN",
             title: "编程严选网",
-            description: "Java、大数据、AI应用开发求职必备技能：计算机基础，大厂设计模式、DDD以及各大中台和业务系统设计真实案例...软件工程师的一站式终身学习网站！"
+            description: "Java、大数据、AI应用开发求职必备技能：计算机基础，设计模式、DDD及各大中台和业务系统设计真实案例...软件开发的一站式终身学习网站！"
         }
     },
     head: [
@@ -640,15 +640,15 @@ module.exports = {
                             },
                             {
                                 text: 'LLM应用开发',
-                                link: '/md/AI/00-为什么要学习大模型'
+                                link: '/md/AI/AI 大模型企业应用实战'
                             },
                             {
                                 text: 'LangChain',
-                                link: '/md/AI/01-LangChain的Hello World项目'
+                                link: '/md/AI/00-introduction-to-langchain'
                             },
                             {
                                 text: 'RAG',
-                                link: '/md/AI/00-“消灭”LLM幻觉的利器 - RAG介绍'
+                                link: '/md/AI/00-rag-introduction-tool-to-eliminate-llm-hallucinations'
                             },
                             {
                                 text: 'Agent',
@@ -1380,12 +1380,13 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
+                                "AI 大模型企业应用实战",
                                 "00-为什么要学习大模型",
                                 "01-大语言模型发展",
                                 "02-domestic-and-international-llm-multi-model-strong-applications",
-                                "03-为啥LLM还没能完全替代你？",
-                                "04-产业拆解",
-                                "05-应用级开发者 AI 时代破局点",
+                                "03-large-language-model-flaws",
+                                "04-ai-ecosystem-industry-analysis",
+                                "05-ai-era-turning-point-for-app-developers",
                                 "06-智能体项目案例",
                             ]
                         },
@@ -1394,8 +1395,8 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
-                                "00-初识LangChain",
-                                "01-LangChain的Hello World项目",
+                                "00-introduction-to-langchain",
+                                "01-langchain-hello-world-project",
                                 "02-LangChain实战：用prompts模板调教LLM的输入出",
                                 "03-示例选择器",
                                 "04-LLMs和Chat Models",
@@ -1408,10 +1409,11 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
-                                "00-“消灭”LLM幻觉的利器 - RAG介绍",
+                                "00-rag-introduction-tool-to-eliminate-llm-hallucinations",
                                 "01-RAG应用框架和解析器",
                                 "02-相似性检索的关键 - Embedding",
-                                "03-RAG的核心 -结果召回和重排序",
+                                "03-core-of-rag-result-retrieval-and-reordering",
+                                "04-prompt-helping-llm-understand-knowledge",
                             ]
                         },
                         {
@@ -1421,7 +1423,7 @@ module.exports = {
                             children: [
                                 "01-what-are-agents",
                                 "02-how-langchain-agents-are-implemented",
-                                "zero-shot-learning-definition-examples-comparison",
+                                "what-is-zero-shot-one-shot-few-shot-learning",
                                 "04-how-to-add-memory-in-langchain-agents",
                                 "05-how-to-enable-memory-sharing-between-agent-and-tool",
                                 "06-how-to-use-langchain-built-in-tools",
