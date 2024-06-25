@@ -1420,29 +1420,28 @@ module.exports = {
                                 "04-prompt-helping-llm-understand-knowledge",
                             ]
                         },
+                        {
+                            title: "Agent",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "01-what-are-agents",
+                                "02-how-langchain-agents-are-implemented",
+                                "what-is-zero-shot-one-shot-few-shot-learning",
+                                "04-how-to-add-memory-in-langchain-agents",
+                                "05-how-to-enable-memory-sharing-between-agent-and-tool",
+                                "06-how-to-use-langchain-built-in-tools",
+                                "07-lcel-langchain-expression-language",
+                                "08-ali-tongyi-qianwen-openai-compatible-solution",
+                                "09-lcel-chain-and-prompt-implementation",
+                                "10-ali-tongyi-qianwen-status-codes-explanation",
+                                "11-lcel-memory-addition-method",
+                                "12-lcel-agent-core-components",
+                                "13-最佳开发实践",
+                            ]
+                        },
                     ],
-
-                    "/md/AI/": [{
-                        title: "Agent",
-                        collapsable: false,
-                        sidebarDepth: 0,
-                        children: [
-                            "01-what-are-agents",
-                            "02-how-langchain-agents-are-implemented",
-                            "what-is-zero-shot-one-shot-few-shot-learning",
-                            "04-how-to-add-memory-in-langchain-agents",
-                            "05-how-to-enable-memory-sharing-between-agent-and-tool",
-                            "06-how-to-use-langchain-built-in-tools",
-                            "07-lcel-langchain-expression-language",
-                            "08-ali-tongyi-qianwen-openai-compatible-solution",
-                            "09-lcel-chain-and-prompt-implementation",
-                            "10-ali-tongyi-qianwen-status-codes-explanation",
-                            "11-lcel-memory-addition-method",
-                            "12-lcel-agent-core-components",
-                            "13-最佳开发实践",
-                        ]
-                    }, ],
-
+                    
                     "/md/design/": [{
                             title: "重构",
                             collapsable: false,
