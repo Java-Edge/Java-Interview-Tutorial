@@ -1108,6 +1108,7 @@ module.exports = {
                             sidebarDepth: 0,
                             children: [
                                 "02-领域驱动设计DDD在B端营销系统的实践",
+                                "04-DDD设计流程，以业务案例解读",
                                 "09-DDD在大厂交易系统演进的应用",
                             ]
                         },
@@ -1356,41 +1357,44 @@ module.exports = {
                     }, ],
 
                     "/md/AI/": [{
-                            title: "GPT发展",
-                            collapsable: false,
-                            sidebarDepth: 0,
-                            children: [
-                                "Claude3到底多强",
-                                "GPTs推荐",
-                                "ChatGPT为啥不用Websocket而是EventSource？",
-                            ]
-                        },
-                        {
-                            title: "机器学习",
-                            collapsable: false,
-                            sidebarDepth: 0,
-                            children: [
-                                "01-人工智能概要",
-                                "MapReduce分治思想",
-                                "05-开发环境安装",
-                            ]
-                        },
-                        {
-                            title: "LLM应用开发",
-                            collapsable: false,
-                            sidebarDepth: 0,
-                            children: [
-                                "AI 大模型企业应用实战",
-                                "00-为什么要学习大模型",
-                                "01-大语言模型发展",
-                                "02-domestic-and-international-llm-multi-model-strong-applications",
-                                "03-large-language-model-flaws",
-                                "04-ai-ecosystem-industry-analysis",
-                                "05-ai-era-turning-point-for-app-developers",
-                                "06-智能体项目案例",
-                            ]
-                        },
-                        {
+                        title: "AI最新发展",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "Claude3到底多强",
+                            "GPTs推荐",
+                            "ChatGPT为啥不用Websocket而是EventSource？",
+                        ]
+                    }, ],
+
+                    "/md/AI/": [{
+                        title: "机器学习",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "01-人工智能概要",
+                            "MapReduce分治思想",
+                            "05-开发环境安装",
+                        ]
+                    }, ],
+
+                    "/md/AI/": [{
+                        title: "LLM应用开发",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "AI 大模型企业应用实战",
+                            "00-为什么要学习大模型",
+                            "01-大语言模型发展",
+                            "02-domestic-and-international-llm-multi-model-strong-applications",
+                            "03-large-language-model-flaws",
+                            "04-ai-ecosystem-industry-analysis",
+                            "05-ai-era-turning-point-for-app-developers",
+                            "06-智能体项目案例",
+                        ]
+                    }, ],
+
+                    "/md/AI/": [{
                             title: "LangChain",
                             collapsable: false,
                             sidebarDepth: 0,
@@ -1416,27 +1420,29 @@ module.exports = {
                                 "04-prompt-helping-llm-understand-knowledge",
                             ]
                         },
-                        {
-                            title: "Agent",
-                            collapsable: false,
-                            sidebarDepth: 0,
-                            children: [
-                                "01-what-are-agents",
-                                "02-how-langchain-agents-are-implemented",
-                                "what-is-zero-shot-one-shot-few-shot-learning",
-                                "04-how-to-add-memory-in-langchain-agents",
-                                "05-how-to-enable-memory-sharing-between-agent-and-tool",
-                                "06-how-to-use-langchain-built-in-tools",
-                                "07-lcel-langchain-expression-language",
-                                "08-ali-tongyi-qianwen-openai-compatible-solution",
-                                "09-lcel-chain-and-prompt-implementation",
-                                "10-ali-tongyi-qianwen-status-codes-explanation",
-                                "11-lcel-memory-addition-method",
-                                "12-lcel-agent-core-components",
-                                "13-最佳开发实践",
-                            ]
-                        },
                     ],
+
+                    "/md/AI/": [{
+                        title: "Agent",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "01-what-are-agents",
+                            "02-how-langchain-agents-are-implemented",
+                            "what-is-zero-shot-one-shot-few-shot-learning",
+                            "04-how-to-add-memory-in-langchain-agents",
+                            "05-how-to-enable-memory-sharing-between-agent-and-tool",
+                            "06-how-to-use-langchain-built-in-tools",
+                            "07-lcel-langchain-expression-language",
+                            "08-ali-tongyi-qianwen-openai-compatible-solution",
+                            "09-lcel-chain-and-prompt-implementation",
+                            "10-ali-tongyi-qianwen-status-codes-explanation",
+                            "11-lcel-memory-addition-method",
+                            "12-lcel-agent-core-components",
+                            "13-最佳开发实践",
+                        ]
+                    }, ],
+
                     "/md/design/": [{
                             title: "重构",
                             collapsable: false,
