@@ -1427,7 +1427,7 @@ module.exports = {
                             children: [
                                 "01-what-are-agents",
                                 "02-how-langchain-agents-are-implemented",
-                                "what-is-zero-shot-one-shot-few-shot-learning",
+                                "03-what-is-zero-shot-one-shot-few-shot-learning",
                                 "04-how-to-add-memory-in-langchain-agents",
                                 "05-how-to-enable-memory-sharing-between-agent-and-tool",
                                 "06-how-to-use-langchain-built-in-tools",
@@ -1437,7 +1437,7 @@ module.exports = {
                                 "10-ali-tongyi-qianwen-status-codes-explanation",
                                 "11-lcel-memory-addition-method",
                                 "12-lcel-agent-core-components",
-                                "13-最佳开发实践",
+                                "13-best-development-practices",
                             ]
                         },
                     ],
