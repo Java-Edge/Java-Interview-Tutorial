@@ -655,6 +655,10 @@ module.exports = {
                                 link: '/md/AI/01-what-are-agents'
                             },
                             {
+                                text: 'Agent项目实战',
+                                link: '/md/AI/01-从0到1搭建一个基于FastAPI的智能聊天机器人应用'
+                            },
+                            {
                                 text: '区块链',
                                 link: '/md/chain/00-区块链专栏概述.md'
                             },
@@ -997,6 +1001,8 @@ module.exports = {
                                 "01-JVM虚拟机-上篇",
                                 "02-JVM虚拟机-下篇",
                                 "高并发BI系统避免频繁Y-GC",
+                                "线上频繁Full GC，原来是外包同学不合理设置JVM参数！",
+                                "Java NIO为何导致堆外内存OOM了？",
                             ]
                         },
                         {
@@ -1438,6 +1444,15 @@ module.exports = {
                                 "11-lcel-memory-addition-method",
                                 "12-lcel-agent-core-components",
                                 "13-best-development-practices",
+                            ]
+                        },
+                        
+                        {
+                            title: "Agent项目实战",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "01-从0到1搭建一个基于FastAPI的智能聊天机器人应用",
                             ]
                         },
                     ],
