@@ -1,4 +1,4 @@
-# 01-从0到1搭建一个基于FastAPI的智能聊天机器人应用
+# 01-三分钟快速搭建基于FastAPI的AI Agent应用！
 
 ```txt
 fastapi==0.108.0

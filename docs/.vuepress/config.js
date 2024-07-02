@@ -656,7 +656,7 @@ module.exports = {
                             },
                             {
                                 text: 'Agent项目实战',
-                                link: '/md/AI/01-从0到1搭建一个基于FastAPI的智能聊天机器人应用'
+                                link: '/md/AI/01-three-minute-fastapi-ai-agent-setup'
                             },
                             {
                                 text: '区块链',
@@ -1452,7 +1452,9 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
-                                "01-从0到1搭建一个基于FastAPI的智能聊天机器人应用",
+                                "01-three-minute-fastapi-ai-agent-setup",
+                                "02-Agent应用对话情感优化",
+                                "03-use-tts-to-make-your-ai-agent-speak",
                             ]
                         },
                     ],
