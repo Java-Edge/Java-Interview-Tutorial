@@ -201,68 +201,24 @@ module.exports = {
                             }, ]
                         }, ]
                     },
-                    {
-                        text: '大数据',
-                        items: [{
-                                text: '大数据平台',
-                                items: [{
-                                        text: '00-互联网大厂的大数据平台架构',
-                                        link: '/md/bigdata/大数据平台架构.md'
-                                    },
-                                    {
-                                        text: '01-对象存储',
-                                        link: '/md/bigdata/对象存储.md'
-                                    },
-                                ]
-                            },
 
+                    {
+                        text: '项目实战',
+                        items: [
                             {
-                                text: 'Hadoop',
+                                text: '12306',
                                 items: [{
-                                    text: '00-安装下载Hadoop',
-                                    link: '/md/bigdata/安装下载Hadoop.md'
+                                    text: '项目介绍',
+                                    link: '/md/12306/项目介绍.md'
                                 }]
                             },
-
                             {
-                                text: 'Hive',
+                                text: 'DDD商城',
                                 items: [{
-                                    text: 'Hive专栏概述',
-                                    link: '/md/bigdata/Hive专栏概述.md'
-                                }, ]
-                            },
-
-                            {
-                                text: '数据仓库',
-                                items: [{
-                                    text: 'Spark+ClickHouse实战企业级数据仓库专栏',
-                                    link: '/md/bigdata/Spark+ClickHouse实战企业级数据仓库专栏.md'
-                                }, ]
-                            },
-
-                            {
-                                text: 'DataX',
-                                items: [{
-                                    text: 'DataX专栏',
-                                    link: '/md/bigdata/阿里云开源离线同步工具DataX3.0介绍.md'
-                                }, ]
-                            },
-
-                            {
-                                text: 'DolphinScheduler',
-                                items: [{
-                                    text: 'DolphinScheduler专栏',
-                                    link: '/md/bigdata/作业帮基于 DolphinScheduler 的数据开发平台实践.md'
-                                }, ]
-                            },
-
-                            {
-                                text: 'Spark',
-                                items: [{
-                                    text: '为啥要学习Spark？',
-                                    link: '/md/spark/为啥要学习Spark？.md'
-                                }, ]
-                            },
+                                    text: '什么是DDD商城',
+                                    link: '/md/ddd-mall/什么是DDD商城.md'
+                                }]
+                            }
                         ]
                     },
 
@@ -356,6 +312,14 @@ module.exports = {
                                     link: '/md/java/并发编程专栏概述.md'
                                 }, ]
                             },
+                            
+                            {
+                                text: '响应式编程',
+                                items: [{
+                                    text: '响应式编程专栏概述',
+                                    link: '/md/reactive/00-Spring响应式编程.md'
+                                }, ]
+                            },
 
                             {
                                 text: 'JVM',
@@ -387,7 +351,24 @@ module.exports = {
                                     text: 'SpringMVC拦截处理器',
                                     link: '/md/spring/03-SpringMVC拦截处理器.md'
                                 }, ]
-                            }
+                            },
+
+                            {
+                                text: 'SpringBoot',
+                                items: [{
+                                    text: '00-可能是全网最全的SpringBoot启动流程源码分析',
+                                    link: '/md/spring/00-可能是全网最全的SpringBoot启动流程源码分析.md'
+                                }, ]
+                            },
+
+
+                            {
+                                text: 'Arthas',
+                                items: [{
+                                    text: 'Arthas使用',
+                                    link: '/md/arthas/Arthas使用.md'
+                                }, ]
+                            },
                         ]
                     },
 
@@ -504,6 +485,72 @@ module.exports = {
                         ]
                     },
 
+
+                    {
+                        text: '大数据',
+                        items: [{
+                                text: '大数据平台',
+                                items: [{
+                                        text: '00-互联网大厂的大数据平台架构',
+                                        link: '/md/bigdata/大数据平台架构.md'
+                                    },
+                                    {
+                                        text: '01-对象存储',
+                                        link: '/md/bigdata/对象存储.md'
+                                    },
+                                ]
+                            },
+
+                            {
+                                text: 'Hadoop',
+                                items: [{
+                                    text: '00-安装下载Hadoop',
+                                    link: '/md/bigdata/安装下载Hadoop.md'
+                                }]
+                            },
+
+                            {
+                                text: 'Hive',
+                                items: [{
+                                    text: 'Hive专栏概述',
+                                    link: '/md/bigdata/Hive专栏概述.md'
+                                }, ]
+                            },
+
+                            {
+                                text: '数据仓库',
+                                items: [{
+                                    text: 'Spark+ClickHouse实战企业级数据仓库专栏',
+                                    link: '/md/bigdata/Spark+ClickHouse实战企业级数据仓库专栏.md'
+                                }, ]
+                            },
+
+                            {
+                                text: 'DataX',
+                                items: [{
+                                    text: 'DataX专栏',
+                                    link: '/md/bigdata/阿里云开源离线同步工具DataX3.0介绍.md'
+                                }, ]
+                            },
+
+                            {
+                                text: 'DolphinScheduler',
+                                items: [{
+                                    text: 'DolphinScheduler专栏',
+                                    link: '/md/bigdata/作业帮基于 DolphinScheduler 的数据开发平台实践.md'
+                                }, ]
+                            },
+
+                            {
+                                text: 'Spark',
+                                items: [{
+                                    text: '为啥要学习Spark？',
+                                    link: '/md/spark/为啥要学习Spark？.md'
+                                }, ]
+                            },
+                        ]
+                    },
+
                     {
                         text: '云原生',
                         items: [{
@@ -562,7 +609,15 @@ module.exports = {
                                 text: '数据结构与算法',
                                 items: [{
                                     text: '数据结构与算法专栏大纲',
-                                    link: '/md/algorithm/logic/basic/00-数据结构与算法专栏大纲.md'
+                                    link: '/md/algorithm/basic/00-数据结构与算法专栏大纲.md'
+                                }, ]
+                            },
+                            
+                            {
+                                text: '算法的工程应用',
+                                items: [{
+                                    text: '哈希算法原来有这么多应用场景！',
+                                    link: '/md/algorithm/practise/哈希算法原来有这么多应用场景！.md'
                                 }, ]
                             },
 
@@ -570,28 +625,8 @@ module.exports = {
                                 text: '大厂算法面试',
                                 items: [{
                                         text: '00-阿里秋招高频算法题汇总-基础篇',
-                                        link: '/md/algorithm/logic/leetcode/00-阿里秋招高频算法题汇总-基础篇.md'
+                                        link: '/md/algorithm/leetcode/00-阿里秋招高频算法题汇总-基础篇.md'
                                     },
-                                    {
-                                        text: '01-阿里秋招高频算法题汇总-中级篇',
-                                        link: '/md/algorithm/logic/leetcode/01-阿里秋招高频算法题汇总-中级篇.md'
-                                    },
-                                    {
-                                        text: '02-阿里秋招高频算法题汇总-进阶篇',
-                                        link: '/md/algorithm/logic/leetcode/02-阿里秋招高频算法题汇总-进阶篇.md'
-                                    },
-                                    {
-                                        text: '03-字节秋招高频算法题汇总-基础篇',
-                                        link: '/md/algorithm/logic/leetcode/03-字节秋招高频算法题汇总-基础篇.md'
-                                    },
-                                    {
-                                        text: '04-字节秋招高频算法题汇总-中级篇',
-                                        link: '/md/algorithm/logic/leetcode/04-字节秋招高频算法题汇总-中级篇.md'
-                                    },
-                                    {
-                                        text: '05-字节秋招高频算法题汇总-进阶篇',
-                                        link: '/md/algorithm/logic/leetcode/05-字节秋招高频算法题汇总-进阶篇.md'
-                                    }
                                 ]
                             }
                         ]
@@ -600,21 +635,8 @@ module.exports = {
                         text: '面试',
                         link: '/md/zqy/面试题/01-分布式技术面试实战.md'
                     },
-                    {
-                        text: '12306项目实战',
-                        items: [{
-                                text: '12306实战',
-                                link: '/md/12306/项目介绍.md'
-                            },
-                            {
-                                text: 'DDD电商实战',
-                                items: [{
-                                    text: 'TODO敬请期待',
-                                    link: '/md/12306/环境搭建.md'
-                                }]
-                            }
-                        ]
-                    },
+
+
 
                     // {
                     //     text: 'Vue',
@@ -669,6 +691,14 @@ module.exports = {
                         items: [{
                             text: '01-Java工程师必读书单',
                             link: '/md/career/01-Java工程师必读书单.md'
+                        }, ]
+                    },
+                    
+                    {
+                        text: '副业',
+                        items: [{
+                            text: '副业',
+                            link: '/md/sideline/16-精益独立开发实践.md'
                         }, ]
                     },
                 ],
@@ -940,6 +970,7 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "14-ShardingSphere的分布式主键实现",
+                            "19-路由引擎：如何在路由过程中集成多种路由策略和路由算法？",
                         ]
                     }],
                     "/md/network/": [{
@@ -1000,9 +1031,13 @@ module.exports = {
                                 "JVM专栏概述",
                                 "01-JVM虚拟机-上篇",
                                 "02-JVM虚拟机-下篇",
+                                "00-JDK为何自己首先破坏双亲委派模型",
+                                "Metadata GC Threshold in Java",
                                 "高并发BI系统避免频繁Y-GC",
                                 "线上频繁Full GC，原来是外包同学不合理设置JVM参数！",
                                 "Java NIO为何导致堆外内存OOM了？",
+                                "一次由热部署导致的OOM排查经历",
+                                "队列积压了百万条消息，线上直接OOM了！",
                             ]
                         },
                         {
@@ -1016,7 +1051,8 @@ module.exports = {
                             ]
                         },
                     ],
-                    "/md/algorithm/logic/leetcode/": [{
+
+                    "/md/algorithm/leetcode/": [{
                         title: "大厂算法面试",
                         collapsable: false,
                         sidebarDepth: 0,
@@ -1030,7 +1066,7 @@ module.exports = {
                         ]
                     }, ],
 
-                    "/md/algorithm/logic/basic/": [{
+                    "/md/algorithm/basic/": [{
                         title: "数据结构与算法",
                         collapsable: false,
                         sidebarDepth: 0,
@@ -1040,17 +1076,40 @@ module.exports = {
                             "【图解数据结构】外行人也能看懂的哈希表",
                         ]
                     }],
-
-                    "/md/spring/": [{
-                        title: "Spring",
+                    
+                    "/md/algorithm/practise/": [{
+                        title: "工程应用",
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
-                            "01-SpringMVC的AsyncHandlerInterceptor异步的处理器拦截器",
-                            "02-实现http请求的异步长轮询",
-                            "03-SpringMVC拦截处理器",
+                            "哈希算法原来有这么多应用场景！",
                         ]
                     }],
+
+                    "/md/spring/": [{
+                            title: "Spring",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "01-SpringMVC的AsyncHandlerInterceptor异步的处理器拦截器",
+                                "02-实现http请求的异步长轮询",
+                                "03-SpringMVC拦截处理器",
+                                "Spring之BeanNameAware和BeanFactoryAware接口",
+                                "别小看Spring过滤器,这些知识点你必须得掌握",
+                            ]
+                        },
+
+                        {
+                            title: "SpringBoot",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "00-可能是全网最全的SpringBoot启动流程源码分析",
+                                "01-HelloSpringBoot应用程序",
+                            ]
+                        },
+                    ],
+
 
                     "/md/tomcat/": [{
                         title: "Tomcat",
@@ -1059,6 +1118,8 @@ module.exports = {
                         children: [
                             "00-不知道这些Servlet规范、容器，还敢说自己是Java程序员",
                             "01-Jetty架构设计之Connector、Handler组件",
+                            "03-Tomcat的生命周期管理",
+                            "04-Tomcat实现热部署、热加载原理解析",
                         ]
                     }],
 
@@ -1132,6 +1193,16 @@ module.exports = {
                             "mysql-architecture-design",
                             "InnoDB架构设计",
                             "为什么临时表可以重名？",
+                            "MySQL深分页调优实战",
+                        ]
+                    }],
+                    
+                    "/md/reactive/": [{
+                        title: "响应式编程",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "00-Spring响应式编程",
                         ]
                     }],
 
@@ -1207,11 +1278,11 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "01-RocketMQ核心内容",
-                            "RocketMQ实战(01)-基本概念",
-                            "RocketMQ实战(02)-下载安装",
-                            "RocketMQ实战(03)-消息的有序性",
-                            "RocketMQ实战(04) - 订阅机制和定时消息",
-                            "RocketMQ实战(05) - 批量消息和事务消息",
+                            "01-基本概念",
+                            "02-下载安装",
+                            "03-消息的有序性",
+                            "04 - 订阅机制和定时消息",
+                            "05 - 批量消息和事务消息",
                             "02-基于电商场景的高并发RocketMQ实战",
                         ]
                     }],
@@ -1220,7 +1291,9 @@ module.exports = {
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
-                            "00-RabbitMQ实战下载与安装.md",
+                            "00-RabbitMQ实战下载与安装",
+                            "RabbitMQ消费端幂等性概念及解决方案",
+                            "用了这么久的RabbitMQ异步编程竟然都是错的",
                         ]
                     }],
                     "/md/redis/": [{
@@ -1266,11 +1339,13 @@ module.exports = {
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
+                            "01-爆火的分布式数据库到底是个啥？",
                             "18-分布式数据库的HTAP能统一OLTP和 OLAP吗？",
                             "21-查询执行引擎：加速聚合计算加速",
 
                         ]
                     }],
+
                     "/md/12306/": [{
                             title: "项目介绍",
                             collapsable: false,
@@ -1312,6 +1387,54 @@ module.exports = {
                             ]
                         }
                     ],
+
+
+                    "/md/ddd-mall/": [
+                        {
+                            title: "项目介绍",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "什么是DDD商城",
+                            ]
+                        },
+
+                        {
+                            title: "电商业务",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "04-BFF 架构简介",
+                                "05-亿级用户如何分库分表",
+                                "06-商品秒杀库存超卖问题",
+                                "07-亿级商品数据同步至ES的高效方案",
+                                "08-订单超时未支付自动取消和库存回滚",
+                                "09-【防止重复下单】分布式系统接口幂等性实现方案",
+                                "10-百万数据量快速导入、导出MySQL",
+                                "11-分库分表平滑上线&快速回滚",
+                            ]
+                        },
+                        
+                        {
+                            title: "组件设计",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "DDD-Mall商城的公共组件设计",
+                                "dddmall-base-spring-boot-starter",
+                                "dddmall-common-spring-boot-starter",
+                                "dddmall-cache-spring-boot-starter",
+                                "dddmall-convention-spring-boot-starter",
+                                "05-dddmall-database-spring-boot-starter",
+                                "06-dddmall-ddd-framework-core",
+                                "07-dddmall-designpattern-spring-boot-starter",
+                                "07-责任链模式",
+                                "07-建造者模式",
+                            ]
+                        },
+                    ],
+
+
                     "/md/career/": [{
                         title: "职业规划",
                         collapsable: false,
@@ -1338,12 +1461,22 @@ module.exports = {
                             "01-Vue开发实战.md",
                         ]
                     }],
+                    
+                    "/md/sideline/": [{
+                        title: "副业",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "16-精益独立开发实践",
+                        ]
+                    }],
                     "/md/chain/": [{
                         title: "区块链",
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
                             "00-区块链专栏概述",
+                            "三分钟，快速了解区块链技术",
                             "01-联盟链入门",
                             "03-联盟链入门讲解+Xuperchain介绍 XuperChain 核心模块",
                             "04-XuperChain核心流程",
@@ -1446,7 +1579,7 @@ module.exports = {
                                 "13-best-development-practices",
                             ]
                         },
-                        
+
                         {
                             title: "Agent项目实战",
                             collapsable: false,
@@ -1458,7 +1591,7 @@ module.exports = {
                             ]
                         },
                     ],
-                    
+
                     "/md/design/": [{
                             title: "重构",
                             collapsable: false,
@@ -1483,6 +1616,7 @@ module.exports = {
                                 "策略模式Strategy Pattern",
                                 "建造者模式",
                                 "代理模式Proxy Pattern",
+                                "适配器模式",
                             ]
                         },
                     ],
