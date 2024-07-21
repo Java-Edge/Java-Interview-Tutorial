@@ -1,51 +1,47 @@
 # JDK21新特性
 
-[ENGINEERING](https://spring.io/blog/category/engineering) | [JOSH LONG](https://spring.io/team/joshlong) | SEPTEMBER 20, 2023 | [18 COMMENTS](https://spring.io/blog/2023/09/20/hello-java-21#disqus_thread)
+## 获取资源
 
-Hi, Spring fans!
+在开始之前，请快速为我做一件事。如果你还没有安装[SKDMAN](https://sdkman.io/)，请先去安装。
 
-## Get the bits
-
-Before we get started, do something for me quickly. If you haven’t already, go [install SKDMAN](https://sdkman.io/).
-
-Then run:
+然后运行以下命令：
 
 ```shell
-COPYsdk install java 21-graalce && sdk default java 21-graalce
+sdk install java 21-graalce && sdk default java 21-graalce
 ```
 
-There you have it. You now have Java 21 and graalvm supporting Java 21 on your machine, ready to go. Java 21 is, in my estimation, the most critical release of Java, perhaps ever, in that it implies a whole new world of opportunities for people using Java. It brings a slew of nice APIs and additions, like pattern matching, culminating years of features slowly and steadily adding to the platform. But the most prominent feature, by far, is the new support for virtual threads project Loom). Virtual threads and GraalVM native images mean that today, you can write code that delivers performance and scalability on par with the likes of C, Rust, or Go while retaining the robust and familiar ecosystem of the JVM.
+这样你就拥有了Java 21和支持Java 21的GraalVM。Java 21在我看来是Java有史以来最重要的版本之一，它为Java用户带来了全新的机会。它引入了许多不错的API和功能，如模式匹配，这些都是多年逐步加入平台的功能的集大成者。但最重要的功能无疑是对虚拟线程（项目Loom）的新支持。虚拟线程和GraalVM本地镜像意味着现在你可以编写出性能和可扩展性堪比C、Rust或Go的代码，同时保留JVM的强大和熟悉的生态系统。
 
-There’s never been a better time to be a JVM developer.
+现在是成为JVM开发者的最佳时机。
 
-I just posted a video exploring new features and opportunities in Java 21 and GraalVM.
+我刚刚发布了一段视频，探索Java 21和GraalVM的新功能和机会。
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8VJ_dSdV3pY?si=D7ecMMusRby85GC4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" style="box-sizing: inherit; margin: 0px; padding: 0px; border: 0px;"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8VJ_dSdV3pY?si=D7ecMMusRby85GC4" title="YouTube视频播放器" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" style="box-sizing: inherit; margin: 0px; padding: 0px; border: 0px;"></iframe>
 
-In this blog, I hope to visit the same things, with some added data that lends itself to text.
+在这篇博客中，我希望探讨相同的内容，并附上适合文本的一些额外数据。
 
-## Why GraalVM instead of plain ol' Java?
+## 为什么选择GraalVM而不是普通的Java？
 
-First things first. If it wasn’t apparent from the above installation, I recommend installing graalvm first. It is OpenJDK, so you get all the OpenJDK bits, but it can also create GraalVM native images.
+首先，如果从上面的安装步骤还不清楚的话，我建议先安装GraalVM。它是OpenJDK，所以你可以获得所有的OpenJDK功能，但它还可以创建GraalVM本地镜像。
 
-Why graalvm native images? well, it’s *fast* and super resource efficient. traditionally, that truism always had a rebuttal: "Yah, well, the JIT is still faster in plain old Java," to which I’d counter, "Yah, well, you can much more readily scale up new instances at a fraction of the footprint to account for whatever lost throughput you had, and *still* be ahead in terms of resource consumption spend!" Which was true.
+为什么选择GraalVM本地镜像？因为它非常快且资源高效。传统上，这个说法总是会被反驳："是的，但JIT在普通的Java中仍然更快"，对此我会反驳："是的，但你可以更容易地扩大新实例的规模，占用的资源更少，并且在资源消耗方面仍然领先！"这是真的。
 
-But now we don’t even have to have that nuanced discussion. Per the [graalvm release blog](https://medium.com/graalvm/graalvm-for-jdk-21-is-here-ee01177dd12d), Oracle’s GraalVM native image with profile-guided optimization performance is now consistently *ahead* of JIT on benchmarks where it was only in some places ahead. Oracle GraalVM isn’t necessarily the same as the open-source GraalVM distribution, but the point is that the higher echelons of performance now exceed the JRE JIT.
+但现在我们甚至不需要进行这种细微的讨论了。根据[graalvm发布博客](https://medium.com/graalvm/graalvm-for-jdk-21-is-here-ee01177dd12d)，Oracle的GraalVM本地镜像通过配置导向的优化性能现在在基准测试中始终领先于JIT，Oracle GraalVM与开源的GraalVM发行版不完全相同，但重点是高性能现在超过了JRE JIT。
 
 ![1*01_HtHD4jfuXOsgDMhkljQ](https://miro.medium.com/v2/resize:fit:4800/format:webp/1*01_HtHD4jfuXOsgDMhkljQ.png)
 
-This excellent post from [10MinuteMail](https://www.digitalsanctuary.com/10minutemail/migrating-10minutemail-from-java-to-graalvm-native.htmlhttps://www.digitalsanctuary.com/10minutemail/migrating-10minutemail-from-java-to-graalvm-native.html) looks at how they used GraalVM and Spring Boot 3 to reduce their startup time from ~30 seconds down to about 3 milliseconds, and memory usage from 6.6GB down to 1GB, with the same throughput and CPU utilization. Amazing.
+这篇来自[10MinuteMail](https://www.digitalsanctuary.com/10minutemail/migrating-10minutemail-from-java-to-graalvm-native.htmlhttps://www.digitalsanctuary.com/10minutemail/migrating-10minutemail-from-java-to-graalvm-native.html)的优秀文章展示了他们如何使用GraalVM和Spring Boot 3将启动时间从约30秒减少到约3毫秒，内存使用量从6.6GB减少到1GB，并保持相同的吞吐量和CPU利用率。惊人。
 
 ## Java 17
 
-So many features in Java 21 build upon features first introduced in Java 17 (and, in some cases, earlier than that!). Let’s review some of those features before examining their final manifestation in Java 21.
+Java 21中的许多功能都是在Java 17中首次引入的功能的基础上构建的（在某些情况下甚至比这更早）。在探讨它们在Java 21中的最终表现之前，让我们回顾一些这些功能。
 
-### Multiline Strings
+### 多行字符串
 
-Do you know that Java supports multiline strings? It’s one of my favorite features, and it has made using JSON, JDBC, JPA QL, etc., more pleasant than ever:
+你知道Java支持多行字符串吗？这是我最喜欢的功能之一，使得使用JSON、JDBC、JPA QL等变得比以往任何时候都更愉快：
 
 ```Java
-COPYpackage bootiful.java21;
+package bootiful.java21;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -78,14 +74,14 @@ class MultilineStringTest {
 }
 ```
 
-Nothing too surprising. Easy to understand. Triple quotes start and stop the multiline string. You can strip the leading, trailing, and indent space, too.
+没有什么太令人惊讶的地方。很容易理解。三重引号开始和结束多行字符串。你也可以去除开头、结尾和缩进的空格。
 
-### Records
+### 记录类（Records）
 
-Records are one of my favorite features of Java! They’re freaking fantastic! Do you have a class whose identity is equivalent to the fields in the class? Sure you do. Think about your basic entities, your events, your DTOs, etc. Whenever you’ve used Lombok’s `@Data`, you could just as easily use a `record`. They have analogs in Kotlin (`data class`) and Scala (`case class`), so plenty of people know about them, too. It’s great that they’re finally in Java.
+记录类是我最喜欢的Java功能之一！它们非常棒！你有没有一个类，其身份等同于类中的字段？当然有。想想你的基本实体、你的事件、你的DTOs等。每当你使用Lombok的`@Data`时，你就可以同样轻松地使用`record`。它们在Kotlin（`data class`）和Scala（`case class`）中都有类似的实现，所以很多人也都知道它们。它们终于在Java中出现了，真是太好了。
 
 ```Java
-COPYpackage bootiful.java21;
+package bootiful.java21;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -104,16 +100,16 @@ class RecordTest {
 }
 ```
 
-This concise syntax results in a class with a constructor, associated storage in the course, getters (e.g.: `event.name()`), a valid `equals`, and a good `toString()` implementation.
+这种简洁的语法生成了一个带有构造函数、相关存储、getter（如：`event.name()`）、有效的`equals`和良好的`toString()`实现的类。
 
-### Enhanced Switch
+### 增强的Switch
 
-I rarely used the existing `switch` statement because it was clunky, and usually, there were other patterns, like the [*visitor pattern*](https://en.wikipedia.org/wiki/Visitor_pattern), that got me most of the benefits. Now there’s a new `switch` that is an *expression*, not a statement, so I can assign the results of the `switch` to a variable, or return it.
+我很少使用现有的`switch`语句，因为它很笨重，通常有其他模式，如[*访问者模式*](https://en.wikipedia.org/wiki/Visitor_pattern)，能提供大部分好处。现在有了一个新的`switch`，它是一个*表达式*，而不是语句，所以我可以将`switch`的结果赋值给一个变量或返回它。
 
-Here’s an example of reworking a classic switch to use the new enhanced `switch`:
+下面是一个重新设计的经典`switch`示例，使用了新的增强`switch`：
 
 ```Java
-COPYpackage bootiful.java21;
+package bootiful.java21;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -153,38 +149,40 @@ class EnhancedSwitchTest {
 }
 ```
 
-1. This is a classic implementation with the older, clunkier switch statement
-2. This is the new switch expression
+1. 这是使用较老的、更笨重的`switch`语句的经典实现
+2. 这是新的`switch`表达式
 
-### The Enhanced `instanceof` Check
+### 增强的`instanceof`检查
 
-The new `instanceof` test allows us to avoid the clunky check-and-cast of yore, which looks like this:
+新的`instanceof`测试让我们可以避免过去的笨重的检查和强制转换，如下所示：
 
 ```Java
-COPYvar animal = (Object) new Dog ();
+var animal = (Object) new Dog ();
 if (animal instanceof Dog ){
 var fido  = (Dog) animal;
 fido.bark();
 }
 ```
 
-And replace it with:
+替换为：
 
 ```Java
-COPYvar animal = (Object) new Dog ();
-if (animal instanceof Dog fido ){
+var animal = (Object) new Dog ();
+if
+
+ (animal instanceof Dog fido ){
 fido.bark();
 }
 ```
 
-The smart `instanceof` automatically assigns a downcast variable for use in the scope of the test. There’s no need to specify the class `Dog` twice in the same block. The smart `instanceof` operator usage is the first real taste of pattern matching in the Java platform. The idea behind pattern matching is simple: match types and extract data from those types.
+智能`instanceof`自动分配一个下行转换变量，以便在测试范围内使用。没有必要在同一个块中两次指定类`Dog`。智能`instanceof`操作符的使用是Java平台中模式匹配的第一个实际尝试。模式匹配的思想很简单：匹配类型并从这些类型中提取数据。
 
-### Sealed types
+### 密封类型
 
-Technically sealed types are part of Java 17, too, but they don’t buy you much yet. The basic idea is that, in the olden times, the only way to limit the extensibility of a type was through visibility modifiers (`public`, `private`, etc.). In the `sealed` keyword, you can explicitly permit which classes may subclass another class. This is a fantastic leap forward because it gives the compiler visibility into which type might extend a given type, which allows it to do optimizations and to help us at compile time to understand whether all possible cases say in an enhanced `switch` expression - have been covered. Let’s take a look at it in action.
+技术上来说，密封类型也是Java 17的一部分，但它们目前还没有太大用处。基本思想是，在过去，限制类型扩展性的唯一方法是通过可见性修饰符（`public`、`private`等）。在`sealed`关键字中，你可以明确允许哪些类可以继承另一个类。这是一个巨大的进步，因为它让编译器可以看到哪些类型可能扩展给定类型，这使得它可以进行优化，并在编译时帮助我们理解是否所有可能的情况（如在增强的`switch`表达式中）都已被覆盖。让我们看看它的实际应用。
 
 ```Java
-COPYpackage bootiful.java21;
+package bootiful.java21;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -247,23 +245,23 @@ class SealedTypesTest {
 }
 ```
 
-1. We have an explicitly sealed interactive that only permits three types. The enhanced `switch` expression below will fail if we add a new class.
-2. Classes that implement that sealed interface must either be declared `sealed` and thus declare which classes it permits as subclasses, or it must be declared as `final`.
-3. We could use the new `instance of` check to make shorter work of working with each possible type, but we get no compiler help here.
-4. unless we use the enhahced `switch` *with* pattern matching, as we do here.
+1. 我们有一个显式密封的接口，只允许三种类型。下面的增强`switch`表达式如果我们添加一个新类将会失败。
+2. 实现这个密封接口的类必须声明为`sealed`并明确声明允许哪些类作为子类，或者必须声明为`final`。
+3. 我们可以使用新的`instanceof`检查来缩短处理每种可能类型的代码，但我们在这里没有得到编译器的帮助。
+4. 除非我们使用带有模式匹配的增强`switch`，如这里所示。
 
-Notice how clunky the classic version is. Ugh. I am so glad to be done with that. Another nice thing is that the `switch` expression will now tell us whether we’ve covered all possible cases, like with the `enum`. Thanks, compiler!
+注意经典版本有多么笨重。真是太糟糕了。我很高兴能摆脱它。另一个好处是，现在`switch`表达式会告诉我们是否已经覆盖了所有可能的情况，就像使用`enum`一样。谢谢你，编译器！
 
-## Beyond Java 17
+## 超越Java 17
 
-With all these things combined, we’re starting to wade comfortably into Java 21 land. From here on down, we’ll look at features that have come *since* java 17.
+结合所有这些功能，我们开始舒适地进入Java 21的领域。从这里开始，我们将查看自Java 17以来的新增功能。
 
-### Next Level Pattern Matching with `records`, `switch`, and `if.`
+### 使用`record`、`switch`和`if`实现的高级模式匹配
 
-The enhanced `switch` expression and pattern matching are remarkable, and it makes me wonder how using Akka so many years ago would’ve felt using Java with this excellent new syntax. Pattern matching has an even nicer interaction when taken together with records because records - as discussed earlier - are the resumes of their components, and the compiler knows this. So, it can hoist those components into new variables, too. You can also use this pattern-matching syntax in `if` checks.
+增强的`switch`表达式和模式匹配令人惊叹，让我想知道多年前使用Akka时使用Java会是什么感觉。模式匹配在与记录类一起使用时有更好的交互，因为记录类——如前所述——是其组件的摘要，编译器知道这一点。所以，它也可以将这些组件提升为新的变量。你也可以在`if`检查中使用这种模式匹配语法。
 
 ```Java
-COPYpackage bootiful.java21;
+package bootiful.java21;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -287,11 +285,11 @@ class RecordsTest {
     @Test
     void respondToEvents() throws Exception {
         Assertions.assertEquals(
-                respond(new UserCreatedEvent("jlong")), "the new user with name jlong has been created"
+                respond(new UserCreatedEvent("jlong")), "新用户jlong已创建"
         );
         Assertions.assertEquals(
                 respond(new UserDeletedEvent(new User("jlong", 1))),
-                "the user jlong has been deleted"
+                "用户jlong已删除"
         );
     }
 
@@ -299,13 +297,13 @@ class RecordsTest {
         // ①
         if (o instanceof ShutdownEvent(Instant instant)) {
             System.out.println(
-                "going to to shutdown the system at " + instant.toEpochMilli());
+                "将在" + instant.toEpochMilli() + "关闭系统");
         }
         return switch (o) {
             // ②
-            case UserDeletedEvent(var user) -> "the user " + user.name() + " has been deleted";
+            case UserDeletedEvent(var user) -> "用户" + user.name() + "已删除";
             // ③
-            case UserCreatedEvent(var name) -> "the new user with name " + name + " has been created";
+            case UserCreatedEvent(var name) -> "新用户" + name + "已创建";
             default -> null;
         };
     }
@@ -313,20 +311,20 @@ class RecordsTest {
 }
 ```
 
-1. We have a special case where if we get a particular event, we want to shut down, not produce a `String`, so we’ll use the new pattern matching support with an `if` statement.
-2. Here, we’re matching not just the type but extracting out the `User user` of the `UserDeletedEvent`.
-3. Here, we’re matching not just the type, but we’re extracting out the `String name` of the `UserCreatedEvent`.
+1. 我们有一个特殊情况，如果我们收到特定事件，我们希望关闭系统，而不是生成一个`String`，所以我们将使用带有`if`语句的新模式匹配支持。
+2. 在这里，我们不仅匹配类型，还提取出`UserDeletedEvent`中的`User user`。
+3. 在这里，我们不仅匹配类型，还提取出`UserCreatedEvent`中的`String name`。
 
-All these things started to take root in earlier versions of Java but culminate here in Java 21 in what you might call data-oriented programming. It is not a replacement for object-oriented programming but a compliment to it. You can use things like pattern matching, enhanced switch, and the `instanceof` operator to give your code a new polymorphism without exposing the dispatch point in your public API.
+所有这些功能在Java的早期版本中开始生根发芽，但在Java 21中达到了顶峰，这可以称为面向数据的编程。这不是面向对象编程的替代品，而是它的补充。你可以使用模式匹配、增强的`switch`和`instanceof`操作符为你的代码赋予新的多态性，而不在你的公共API中暴露分派点。
 
-There are so many other features new in Java 21. There’s a bunch of small but nice things and, of course, [project Loom](https://openjdk.org/projects/loom/) or *virtual threads*. (Virtual threads alone are worth the price of admission!) Let’s dive right into some of these fantastic features.
+Java 21中还有许多其他新功能。有很多小但不错的东西，当然还有[项目Loom](https://openjdk.org/projects/loom/)或*虚拟线程*。（仅虚拟线程就值得关注！）让我们深入探讨一些这些令人惊叹的功能。
 
-### Improved mathematics
+### 改进的数学功能
 
-In AI and algorithms, efficient mathematics is more important than ever. The new JDK has some nice improvements here, including parallel multiplication for BigIntegers and various overloads for divisions that throw an exception if there’s an overflow. Not just if there’s a divide-by-zero error.
+在AI和算法中，高效的数学运算比以往任何时候都更重要。新的JDK在这方面有一些不错的改进，包括BigIntegers的并行乘法和各种抛出异常的除法重载，如果有溢出的话。不仅仅是如果有除以零的错误。
 
 ```Java
-COPYpackage bootiful.java21;
+package bootiful.java21;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -338,8 +336,8 @@ class MathematicsTest {
     @Test
     void divisions() throws Exception {
         //<1>
-        var five = Math.divideExact( 10, 2) ;
-        Assertions.assertEquals( five , 5);
+        var five = Math.divideExact(10, 2);
+        Assertions.assertEquals(five, 5);
     }
 
     @Test
@@ -352,15 +350,15 @@ class MathematicsTest {
 }
 ```
 
-1. This first operation is one of several overloads that make division safer and more predictable
-2. There’s new support for parallelized multiplication with `BigInteger` instances. Remember that this is only really useful if the `BigInteger` has thousands of bits...
+1. 这是使除法更安全、更可预测的几个重载之一
+2. 对`BigInteger`实例的新并行乘法支持。请记住，只有在`BigInteger`具有数千位时，这才真正有用...
 
 ### `Future#state`
 
-If you’re doing asynchronous programming (yes, that’s still a thing, even with Project Loom), then you’ll be pleased to know our old friend `Future<T>` now makes available a `state` instance that you can `switch` on to see the status of the ongoing asynchronous operation.
+如果你正在进行异步编程（是的，即使有了项目Loom，这仍然是一个问题），那么你会很高兴知道我们的老朋友`Future<T>`现在提供了一个`state`实例，你可以在`switch`中查看正在进行的异步操作的状态。
 
 ```Java
-COPYpackage bootiful.java21;
+package bootiful.java21;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -377,7 +375,7 @@ class FutureTest {
             Thread.sleep(100);
             // ①
             var result = switch (future.state()) {
-                case CANCELLED, FAILED -> throw new IllegalStateException("couldn't finish the work!");
+                case CANCELLED, FAILED -> throw new IllegalStateException("无法完成工作！");
                 case SUCCESS -> future.resultNow();
                 default -> null;
             };
@@ -387,14 +385,14 @@ class FutureTest {
 }
 ```
 
-1. This returns a `state` object that lets us enumerate the submitted `Thread` states. It pairs nicely with the enhanced `switch` feature.
+1. 这返回一个`state`对象，允许我们枚举提交的`Thread`状态。它与增强的`switch`功能很好地配合。
 
-### AutoCloseable HTTP Client
+### 可自动关闭的HTTP客户端
 
-The HTTP client API is where you might want to wrap async operations in the future and use Project Loom. The HTTP Client API has existed since Java 11, which is now a full ten releases in the distant past! But, now it has this spiffy new auto-closeable API.
+HTTP客户端API是你可能希望在将来包装异步操作并使用项目Loom的地方。HTTP客户端API自Java 11以来一直存在，现在已经是过去十个版本的全新API了！但现在它有了这个新的可自动关闭的API。
 
 ```Java
-COPYpackage bootiful.java21;
+package bootiful.java21;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -409,14 +407,15 @@ class HttpTest {
     @Test
     void http () throws Exception {
 
+
+
         // ①
-        try (var http = HttpClient
-                .newHttpClient()){
+        try (var http = HttpClient.newHttpClient()){
             var request = HttpRequest.newBuilder(URI.create("https://httpbin.org"))
                     .GET()
-                    .build() ;
-            var response = http.send( request, HttpResponse.BodyHandlers.ofString());
-            Assertions.assertEquals( response.statusCode() , 200);
+                    .build();
+            var response = http.send(request, HttpResponse.BodyHandlers.ofString());
+            Assertions.assertEquals(response.statusCode(), 200);
             System.out.println(response.body());
         }
     }
@@ -424,14 +423,14 @@ class HttpTest {
 }
 ```
 
-1. We want to close the `HttpClient` automatically. Note that if you do launch any threads and send HTTP requests in them, you should *not* use auto-closeable unless care is taken only to let it reach the end of the scope *after* all the threads have finished executing.
+1. 我们希望自动关闭`HttpClient`。请注意，如果你确实启动了任何线程并在其中发送HTTP请求，除非确保仅在所有线程执行完毕后才让其达到范围末尾，否则不应使用自动关闭。
 
-### String Enhancements
+### 字符串增强功能
 
-I used `HttpResponse.BodyHandlers.ofString` to get a `String` response in that example. You can get all sorts of objects back, not just `String`. But `String` results are nice because they are a great segue to another fantastic feature in Java 21: the new support for working with `String` instances. This class shows two of my favorites: a `repeat` operation for `StringBuilder` and a way to detect the presence of Emojis in a `String`.
+在上面的示例中，我使用了`HttpResponse.BodyHandlers.ofString`来获取`String`响应。你可以得到各种对象，不仅仅是`String`。但`String`结果很好，因为它们是我们进入Java 21另一个出色功能的绝佳途径：对处理`String`实例的新支持。这个类展示了我最喜欢的两个功能：`StringBuilder`的`repeat`操作和检测`String`中是否存在表情符号的方法。
 
 ```Java
-COPYpackage bootiful.java21;
+package bootiful.java21;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -458,17 +457,17 @@ class StringsTest {
 }
 ```
 
-1. This first example demonstrates using the `StringBuilder` to repeat a `String` (can we all collectively get rid of our various `StringUtils`, yet?)
-2. This second example demonstrates detecting an emoji in a `String`.
+1. 第一个示例演示了使用`StringBuilder`重复一个`String`（我们可以一起摆脱各种`StringUtils`吗？）
+2. 第二个示例演示了在`String`中检测表情符号。
 
-Small quality-of-life improvements, I agree, but nice nonetheless.
+虽然是小的改进，但确实很不错。
 
-### Sequenced Collections
+### 顺序集合
 
-You’ll need an ordered collection to sort those `String` instance. Java offers a few of them, `LinkedHashMap`, `List`, etc., but they didn’t have a common ancestor. Now they do; welcome, `SequencedCollection`! In this example, we work with a simple `ArrayList<String>` and use the fancy new factory methods for things like a `LinkedHashSet`. This new factory method does some math internally to guarantee that it won’t have to rebalance (and thus slowly rehash everything) before you’ve added as many elements as you’ve stipulated in the constructor.
+你需要一个有序集合来排序这些`String`实例。Java提供了一些这样的集合，如`LinkedHashMap`、`List`等，但它们没有共同的祖先。现在它们有了；欢迎使用`SequencedCollection`！在这个示例中，我们使用一个简单的`ArrayList<String>`并使用一些新的工厂方法来处理诸如`LinkedHashSet`之类的东西。这个新的工厂方法在内部进行了一些数学运算，以保证在你添加到构造函数中规定的元素数量之前，它不需要重新平衡（从而缓慢地重新哈希所有内容）。
 
 ```java
-COPYpackage bootiful.java21;
+package bootiful.java21;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -494,19 +493,19 @@ class SequencedCollectionTest {
 }
 ```
 
-1. This overrides the first-place element
-2. This returns the first-place element
+1. 这将覆盖第一个元素
+2. 这将返回第一个元素
 
-There are similar methods for `getLast` and `addLast`, and there’s even support for reversing a collection, with the `reverse` method.
+还有类似`getLast`和`addLast`的方法，甚至还有`reverse`方法支持反转集合。
 
-### Virtual Threads and Project Loom
+### 虚拟线程和项目Loom
 
-Finally, we get to Loom. You’ve no doubt heard a lot about Loom. The basic idea is to make scalable the code you wrote in college! What do I mean by that? Let’s write a simple network service that prints out whatever is given to us. We must read from one `InputStream` and accrue everything into a new buffer (a `ByteArrayOutputStream`). Then, when the request finishes, we’ll print the contents o the `ByteArrayOutputStream`. The problem is we might get a lot of data simultaneously. So, we will use threads to handle more than one request at the same time.
+最后，我们来到了Loom。你无疑已经听过很多关于Loom的事情。基本思想是让你在大学编写的代码具有可扩展性！这是什么意思呢？让我们编写一个简单的网络服务，打印出我们收到的任何内容。我们必须从一个`InputStream`读取数据，并将所有内容积累到一个新的缓冲区（一个`ByteArrayOutputStream`）。然后，当请求完成时，我们将打印`ByteArrayOutputStream`的内容。问题是我们可能会同时收到大量数据。因此，我们将使用线程来处理多个请求。
 
-Here’s the code:
+下面是代码：
 
 ```Java
-COPYpackage bootiful.java21;
+package bootiful.java21;
 
 import java.io.ByteArrayOutputStream;
 import java.net.ServerSocket;
@@ -547,18 +546,18 @@ class NetworkServiceApplication {
 }
 ```
 
-It’s pretty trivial Networking-101 stuff. Create a `ServerSocket`, and wait for new clients (represented by instances of `Socket`) to appear. As each one arrives, hand it off to a thread from a threadpool. Each Thread reads data from the client `Socket` instance’s `InputStream` references. Clients might disconnect, experience latency, or have a large chunk of data to send, all of which is a problem because there are only so many threads available and we must not waste our precious little time on them.
+这是相当简单的网络101内容。创建一个`ServerSocket`，等待新的客户端（由`Socket`实例表示）出现。当每个客户端到达时，将其交给线程池中的一个线程。每个线程从客户端`Socket`实例的`InputStream`引用中读取数据。客户端可能会断开连接、出现延迟或发送大量数据，这都是一个问题，因为我们只有这么多线程可用，我们必须不浪费它们的宝贵时间。
 
-We’re using threads to avoid a pileup of requests we can’t handle fast enough. But here again we’re defeated because, before Java 21, threads were expensive! They cost about two megabytes of RAM for each `Thread`. And so we pool them in a thread pool and reuse them. But even there, if we have too many requests, we’ll end up in a situation where none of the threads in the pool are available. They’re all stuck waiting on some request or another to finish. Well, sort of. Many are just sitting there, waiting for the next `byte` from the `InputStream`, but they’re unavailable for use.
+我们使用线程来避免处理不过来的请求积压。但即便如此，如果我们有太多的请求，我们仍然会遇到线程池中的线程不可用的情况。它们都被卡在等待某个请求完成的状态。好吧，多多少少是这样。许多线程只是坐在那里，等待`InputStream`中的下一个字节，但它们不可用。
 
-The threads are blocked. They’re probably waiting for data from the client. The unfortunate state of things is that the server, waiting on that data, has no choice but to sit there, parked on a thread, not allowing anybody else to use it.
+线程被阻塞了。它们可能正在等待来自客户端的数据。情况不幸的是，服务器在等待这些数据时别无选择，只能坐在那里，停在一个线程上，不允许其他人使用它。
 
-Until *now*, that is. Java 21 introduces a new sort of thread, a *virtual thread*. Now, we can create millions of threads for the heap. It’s easy. But fundamentally, the facts on the ground are that the actual threads, on which virtual threads execute, are expensive. So, how can the JRE let us have millions of threads for actual work? It has a vastly improved runtime that now notices when we block and suspend execution on the Thread until the thing we’re waiting for arrives. Then, it quietly puts us back on another thread. The actual threads act as carriers for virtual threads, allowing us to start millions of threads.
+直到*现在*。Java 21引入了一种新的线程，即*虚拟线程*。现在，我们可以为堆创建数百万个线程。这很简单。但从根本上说，实际的线程（虚拟线程在其上执行）是昂贵的。那么，JRE如何让我们拥有数百万个实际工作的线程呢？它有一个大大改进的运行时，现在注意到我们何时阻塞并暂停线程的执行，直到我们等待的内容到达。然后，它悄悄地将我们放在另一个线程上。实际的线程充当虚拟线程的载体，允许我们启动数百万个线程。
 
-Java 21 has improvements in all the places that historically block threads, like blocking IO with `InputStream` and `OutputStream`, and `Thread.sleep`, so now they correctly signal to the runtime that it is ok to reclaim the Thread and repurpose it for other virtual threads, allowing work to progress even when a virtual thread is 'blocked'. You can see that in this example, which I shamelessly stole from [José Paumard](https://twitter.com/JosePaumard), one of the Java Developer Advocates at Oracle whose work I love.
+Java 21在所有历史上阻塞线程的地方都有改进，如阻塞IO的`InputStream`和`OutputStream`，以及`Thread.sleep`，现在它们正确地向运行时发出信号，表明可以回收线程并将其重新用于其他虚拟线程，允许工作在虚拟线程“阻塞”时继续。你可以在这个示例中看到这一点，我无耻地从[José Paumard](https://twitter.com/JosePaumard)那里偷来了，他是Oracle的Java开发者倡导者之一，我非常喜欢他的工作。
 
 ```Java
-COPYpackage bootiful.java21;
+package bootiful.java21;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -627,36 +626,38 @@ class LoomTest {
 }
 ```
 
-1. We’re using a new factory method in Java 21 to create a virtual thread. There’s an alternative factory method to create a `factory` method.
+1. 我们使用Java 21中的新工
 
-This example launches a lot of threads, to the point where it creates contention and will need to share the operating system carrier threads. Then it causes the threads to `sleep`. Sleeping would typically block, but not in virtual threads.
+厂方法创建一个虚拟线程。还有一个替代的工厂方法来创建一个`factory`方法。
 
-We’ll sample one of the threads (the first one launched) before and after each sleep to note the name of the carrier thread on which our virtual thread is running before and after each sleep. Notice that they’ve changed! The runtime has moved our virtual thread on and off different carrier threads with no changes to our code! That’s the magic of Project Loom. *Virtually* (pardon the pun) no code changes, and much improved scalability (thread reuse), on par with what you might otherwise only be able to get with something like reactive programming.
+这个示例启动了许多线程，导致竞争，并且需要共享操作系统载体线程。然后它使线程进入`sleep`状态。通常情况下，`sleep`会阻塞，但在虚拟线程中不会。
 
-What about our network service? We do require *one* change. But it’s a basic one. Swap out the thread pool, like this:
+我们将在每次`sleep`前后采样一个线程（第一个启动的线程），以记录我们的虚拟线程在`sleep`前后的载体线程名称。注意它们变了！运行时将我们的虚拟线程在不同的载体线程之间移动，而我们的代码没有任何变化！这就是项目Loom的魔力。*几乎*（不好意思用了双关语）没有代码变化，极大地提高了可扩展性（线程重用），与您可能仅在使用反应式编程时才能获得的可扩展性相当。
+
+我们的网络服务呢？我们确实需要进行*一个*更改。但这是一个基本的更改。像这样交换线程池：
 
 ```Java
-COPYtry (var executor = Executors.newVirtualThreadPerTaskExecutor()) {
+try (var executor = Executors.newVirtualThreadPerTaskExecutor()) {
 ...
 }
 ```
 
-Everything else remains the same, and now we get unparalleled scale! Spring Boot applications typically have a lot of `Executor` instances in play for all sorts of things, like integration, messaging, web services, etc. If you’re using Spring Boot 3.2, coming out in November 2023, and Java 21, then you can use this new property, and Spring Boot will automatically plug in virtual thread pools for you! Neat.
+其他一切保持不变，现在我们获得了无与伦比的可扩展性！Spring Boot应用程序通常在各种事情上都有很多`Executor`实例，如集成、消息传递、Web服务等。如果你使用的是Spring Boot 3.2（2023年11月发布）和Java 21，那么你可以使用这个新属性，Spring Boot会自动为你插入虚拟线程池！很酷。
 
 ```properties
-COPYspring.threads.virtual.enabled=true
+spring.threads.virtual.enabled=true
 ```
 
-## Conclusion
+## 结论
 
-Java 21 is a huge deal. It offers syntax on par with many more modern languages and scalability that’s as good or better than many modern languages without complicating the code with things like async/await, reactive programming, etc.
+Java 21是一个重大版本。它提供了与许多现代语言相当的语法和与许多现代语言同等甚至更好的可扩展性，而不会使代码复杂化，比如async/await、反应式编程等。
 
-If you want a native image, there is also the GraalVM project, which provides an ahead-of-time (AOT) compiler for Java 21. You can GraalVM to compile your highly scalable Boot applications into GraalVM native images that start in no time and take a tiny fraction of the RAM they took on the JVM. These applications also benefit from the beauty of Project Loom, blessing them with the unparalleled scale.
+如果你想要一个本地镜像，还有GraalVM项目，它为Java 21提供了一个提前编译（AOT）编译器。你可以使用GraalVM将高度可扩展的Boot应用程序编译成GraalVM本地镜像，启动时间极短，所需RAM仅为JVM的一小部分。这些应用程序还受益于项目Loom的优势，赋予它们无与伦比的可扩展性。
 
 ```Java
-COPY./gradlew nativeCompile
+./gradlew nativeCompile
 ```
 
-Nice! We’ve now got a small binary that starts up in a small fraction of time, takes a tiny fraction of the RAM, and scales as well as the most scalable runtimes. Congrats! You’re a Java developer, and there’s never been a better time to be a Java developer!
+太棒了！我们现在有了一个启动时间极短，占用RAM极少，并且可扩展性极佳的小二进制文件。恭喜你！你是一名Java开发者，现在是成为Java开发者的最佳时机！
 
 https://spring.io/blog/2023/09/20/hello-java-21

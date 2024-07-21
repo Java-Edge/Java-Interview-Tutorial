@@ -110,7 +110,29 @@ module.exports = {
                     },
                     {
                         text: '架构',
-                        items: [{
+                        items: [
+                            {
+                                text: '设计原则',
+                                items: [{
+                                    text: '设计原则概述',
+                                    link: '/md/kafka/Kafka门派知多少.md'
+                                }, ]
+                            },
+                            {
+                                text: '设计模式',
+                                items: [{
+                                    text: '模板方法设计模式（Template Pattern）',
+                                    link: '/md/design/模板方法设计模式（Template Pattern）.md'
+                                }, ]
+                            },
+                            {
+                                text: '重构',
+                                items: [{
+                                    text: '00-软件架构权衡-我们为什么以及如何进行权衡？',
+                                    link: '/md/design/00-软件架构权衡-我们为什么以及如何进行权衡？.md'
+                                }, ]
+                            },
+                            {
                                 text: '业务架构',
                                 items: [{
                                     text: '00-聚合支付架构',
@@ -160,32 +182,6 @@ module.exports = {
                                 items: [{
                                     text: '01-DMP系统简介.md',
                                     link: '/md/biz-arch/01-DMP系统简介.md'
-                                }, ]
-                            },
-                        ]
-                    },
-
-                    {
-                        text: '重构',
-                        items: [{
-                                text: '重构',
-                                items: [{
-                                    text: '00-软件架构权衡-我们为什么以及如何进行权衡？',
-                                    link: '/md/design/00-软件架构权衡-我们为什么以及如何进行权衡？.md'
-                                }, ]
-                            },
-                            {
-                                text: '设计原则',
-                                items: [{
-                                    text: '设计原则概述',
-                                    link: '/md/kafka/Kafka门派知多少.md'
-                                }, ]
-                            },
-                            {
-                                text: '设计模式',
-                                items: [{
-                                    text: '模板方法设计模式（Template Pattern）',
-                                    link: '/md/design/模板方法设计模式（Template Pattern）.md'
                                 }, ]
                             },
                         ]
@@ -332,8 +328,8 @@ module.exports = {
                             {
                                 text: 'JDK',
                                 items: [{
-                                    text: 'JDK22新特性',
-                                    link: '/md/java/JDK22新特性.md'
+                                    text: 'Oracle Java SE（标准版）支持路线图',
+                                    link: '/md/java/java-se-support-roadmap.md'
                                 }, ]
                             },
 
@@ -369,12 +365,9 @@ module.exports = {
                                     link: '/md/arthas/Arthas使用.md'
                                 }, ]
                             },
-                        ]
-                    },
 
-                    {
-                        text: '分布式',
-                        items: [{
+
+                            {
                                 text: 'Dubbo',
                                 items: [{
                                     text: '01-互联网架构的发展历程',
@@ -437,7 +430,6 @@ module.exports = {
                                     link: '/md/spring/spring-cloud/practise/01-Segment为何永别微服务了？.md'
                                 }, ]
                             },
-
                         ]
                     },
 
@@ -472,6 +464,14 @@ module.exports = {
                                 items: [{
                                     text: 'clickhouse概述',
                                     link: '/md/ck/clickhouse概述.md'
+                                }]
+                            },
+
+                            {
+                                text: 'Neo4j',
+                                items: [{
+                                    text: 'Neo4j：图数据库的革命性力量',
+                                    link: '/md/neo4j/neo4j-revolutionary-power-of-graph-databases.md'
                                 }]
                             },
 
@@ -1032,7 +1032,9 @@ module.exports = {
                                 "01-JVM虚拟机-上篇",
                                 "02-JVM虚拟机-下篇",
                                 "00-JDK为何自己首先破坏双亲委派模型",
+                                "00-G1垃圾收集器的日志格式",
                                 "Metadata GC Threshold in Java",
+                                "对象内存分配及Minor GC和Full GC全过程",
                                 "高并发BI系统避免频繁Y-GC",
                                 "线上频繁Full GC，原来是外包同学不合理设置JVM参数！",
                                 "Java NIO为何导致堆外内存OOM了？",
@@ -1045,6 +1047,8 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
+                                "java-se-support-roadmap",
+                                "jdk14-new-features-complete-guide",
                                 "JDK21新特性",
                                 "JDK22新特性",
                                 "IntelliJ IDEA 2024.1 最新变化",
@@ -1334,6 +1338,16 @@ module.exports = {
                             "为啥适合OLAP？",
                         ]
                     }],
+                    
+                    "/md/neo4j/": [{
+                        title: "Neo4j",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "neo4j-revolutionary-power-of-graph-databases",
+                        ]
+                    }],
+
                     "/md/distdb/": [{
                         title: "分布式数据库",
                         collapsable: false,
@@ -1483,6 +1497,7 @@ module.exports = {
                             "05-账本模型",
                             "06-智能合约",
                             "07-网络与共识",
+                            "blockchain-smart-contract-helloworld-project",
                         ]
                     }],
 
@@ -1617,6 +1632,7 @@ module.exports = {
                                 "建造者模式",
                                 "代理模式Proxy Pattern",
                                 "适配器模式",
+                                "门面模式",
                             ]
                         },
                     ],
