@@ -186,18 +186,6 @@ module.exports = {
                             },
                         ]
                     },
-
-                    {
-                        text: '管理',
-                        items: [{
-                            text: '项目管理',
-                            items: [{
-                                text: '00-如何学习项目管理专栏',
-                                link: '/md/mgr/00-如何学习项目管理专栏.md'
-                            }, ]
-                        }, ]
-                    },
-
                     {
                         text: '项目实战',
                         items: [
@@ -688,10 +676,17 @@ module.exports = {
                     },
                     {
                         text: '职业规划',
-                        items: [{
-                            text: '01-Java工程师必读书单',
-                            link: '/md/career/01-Java工程师必读书单.md'
-                        }, ]
+                        items: [
+                            {
+                                text: '01-Java工程师必读书单',
+                                link: '/md/career/01-Java工程师必读书单.md'
+                            },
+                            {
+                                text: '00-如何学习项目管理专栏',
+                                link: '/md/mgr/00-如何学习项目管理专栏.md'
+                            },
+                        
+                        ]
                     },
                     
                     {
