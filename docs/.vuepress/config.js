@@ -1492,6 +1492,7 @@ module.exports = {
                             "05-账本模型",
                             "06-智能合约",
                             "07-网络与共识",
+                            "08-工作量证明",
                             "blockchain-smart-contract-helloworld-project",
                         ]
                     }],
