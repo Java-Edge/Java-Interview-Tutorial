@@ -115,7 +115,7 @@ module.exports = {
                                 text: '设计原则',
                                 items: [{
                                     text: '设计原则概述',
-                                    link: '/md/kafka/Kafka门派知多少.md'
+                                    link: '/md/design/阿里P8架构师都是怎么分析软件模型的？.md'
                                 }, ]
                             },
                             {
@@ -166,6 +166,14 @@ module.exports = {
                                 items: [{
                                     text: '00-新一代数据栈将逐步替代国内单一“数据中台”',
                                     link: '/md/biz-arch/00-新一代数据栈将逐步替代国内单一“数据中台”.md'
+                                }, ]
+                            },
+                            
+                            {
+                                text: '交易中台',
+                                items: [{
+                                    text: '00-如何防止订单二次重复支付？',
+                                    link: '/md/trade/00-如何防止订单二次重复支付？.md'
                                 }, ]
                             },
 
@@ -624,16 +632,6 @@ module.exports = {
                         link: '/md/zqy/面试题/01-分布式技术面试实战.md'
                     },
 
-
-
-                    // {
-                    //     text: 'Vue',
-                    //     items: [{
-                    //         text: '01-Vue开发实战',
-                    //         link: '/md/vue/01-Vue开发实战.md'
-                    //     }, ]
-                    // },
-
                     {
                         text: 'AI',
                         items: [{
@@ -674,6 +672,15 @@ module.exports = {
                             },
                         ]
                     },
+
+                    {
+                        text: 'Vue',
+                        items: [{
+                            text: '01-Vue开发实战',
+                            link: '/md/vue/01-Vue开发实战.md'
+                        }, ]
+                    },
+
                     {
                         text: '职业规划',
                         items: [
@@ -854,7 +861,9 @@ module.exports = {
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
-                            "00-如何防止订单二次重复支付？.md",
+                            "00-如何防止订单二次重复支付？",
+                            "01-扫码支付后都发生了啥？",
+                            "02-大厂的第三方支付业务架构设计",
                         ]
                     }],
 
@@ -1095,6 +1104,7 @@ module.exports = {
                                 "03-SpringMVC拦截处理器",
                                 "Spring之BeanNameAware和BeanFactoryAware接口",
                                 "别小看Spring过滤器,这些知识点你必须得掌握",
+                                "Spring框架使用了哪些设计模式",
                             ]
                         },
 
@@ -1231,6 +1241,7 @@ module.exports = {
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
+                            "00-Kubernetes的基本架构",
                             "kubectl命令",
                         ]
                     }],
@@ -1468,6 +1479,7 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "01-Vue开发实战.md",
+                            "05-教你快速搭建Vue3工程化项目.md",
                         ]
                     }],
                     
@@ -1507,7 +1519,7 @@ module.exports = {
                     }, ],
 
                     "/md/AI/": [{
-                        title: "AI最新发展",
+                        title: "GPT发展",
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
@@ -1525,6 +1537,7 @@ module.exports = {
                             "01-人工智能概要",
                             "MapReduce分治思想",
                             "05-开发环境安装",
+                            "一文看懂AI的Transformer架构",
                         ]
                     }, ],
 
