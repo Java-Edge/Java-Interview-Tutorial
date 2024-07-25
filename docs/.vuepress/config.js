@@ -286,9 +286,9 @@ module.exports = {
                             },
 
                             {
-                                text: 'Oauth2.0',
+                                text: 'OAuth2.0',
                                 items: [{
-                                    text: 'Oauth2.0专栏概述',
+                                    text: 'OAuth2.0专栏概述',
                                     link: '/md/security/01-OAuth 2.0实战-为什么要先获取授权码code.md'
                                 }, ]
                             },
@@ -322,7 +322,7 @@ module.exports = {
                             },
 
                             {
-                                text: 'JDK',
+                                text: 'JDK新特性',
                                 items: [{
                                     text: 'Oracle Java SE（标准版）支持路线图',
                                     link: '/md/java/java-se-support-roadmap.md'
@@ -1053,6 +1053,7 @@ module.exports = {
                             children: [
                                 "java-se-support-roadmap",
                                 "jdk14-new-features-complete-guide",
+                                "understanding-java17-new-features-sealed-classes",
                                 "JDK21新特性",
                                 "JDK22新特性",
                                 "IntelliJ IDEA 2024.1 最新变化",
@@ -1505,6 +1506,7 @@ module.exports = {
                             "06-智能合约",
                             "07-网络与共识",
                             "08-工作量证明",
+                            "09-一文看懂以太坊智能合约！",
                             "blockchain-smart-contract-helloworld-project",
                         ]
                     }],
@@ -1535,6 +1537,7 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "01-人工智能概要",
+                            "what-is-neural-network",
                             "MapReduce分治思想",
                             "05-开发环境安装",
                             "一文看懂AI的Transformer架构",
