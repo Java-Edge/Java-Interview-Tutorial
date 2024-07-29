@@ -2,9 +2,9 @@ module.exports = {
     port: "8080",
     dest: "./dist",
     base: "/",
-    // 是否开启默认预加载js
+    // 开启默认预加载js
     shouldPrefetch: (file, type) => {
-        return false;
+        return true;
     },
     markdown: {
         lineNumbers: true,
@@ -17,7 +17,7 @@ module.exports = {
         "/": {
             lang: "zh-CN",
             title: "编程严选网",
-            description: "Java、大数据、AI应用开发求职必备技能：计算机基础，设计模式、DDD及各大中台和业务系统设计真实案例...软件开发的一站式终身学习网站！"
+            description: "Java、前端、大数据、区块链、AI应用开发求职必备技能：计算机基础，设计模式、DDD及各大中台和业务系统设计真实案例...软件开发的一站式终身学习网站！"
         }
     },
     head: [
@@ -93,7 +93,7 @@ module.exports = {
         docsRepo: "Java-Edge/Java-Interview-Tutorial",
         // 编辑文档的所在目录
         docsDir: 'docs',
-        // 文档放在一个特定的分支下：
+        // 文档放在特定分支：
         docsBranch: 'main',
         editLinks: true,
         sidebarDepth: 0,
@@ -110,8 +110,7 @@ module.exports = {
                     },
                     {
                         text: '架构',
-                        items: [
-                            {
+                        items: [{
                                 text: '设计原则',
                                 items: [{
                                     text: '设计原则概述',
@@ -168,7 +167,7 @@ module.exports = {
                                     link: '/md/biz-arch/00-新一代数据栈将逐步替代国内单一“数据中台”.md'
                                 }, ]
                             },
-                            
+
                             {
                                 text: '交易中台',
                                 items: [{
@@ -196,8 +195,7 @@ module.exports = {
                     },
                     {
                         text: '项目实战',
-                        items: [
-                            {
+                        items: [{
                                 text: '12306',
                                 items: [{
                                     text: '项目介绍',
@@ -304,7 +302,7 @@ module.exports = {
                                     link: '/md/java/并发编程专栏概述.md'
                                 }, ]
                             },
-                            
+
                             {
                                 text: '响应式编程',
                                 items: [{
@@ -552,8 +550,8 @@ module.exports = {
                         items: [{
                                 text: 'Go',
                                 items: [{
-                                    text: '00-Go实战(一)-概述',
-                                    link: '/md/go/00-Go实战(一)-概述.md'
+                                    text: '00-Go概述',
+                                    link: '/md/go/00-Go概述.md'
                                 }]
                             },
 
@@ -608,7 +606,7 @@ module.exports = {
                                     link: '/md/algorithm/basic/00-数据结构与算法专栏大纲.md'
                                 }, ]
                             },
-                            
+
                             {
                                 text: '算法的工程应用',
                                 items: [{
@@ -620,10 +618,9 @@ module.exports = {
                             {
                                 text: '大厂算法面试',
                                 items: [{
-                                        text: '00-阿里秋招高频算法题汇总-基础篇',
-                                        link: '/md/algorithm/leetcode/00-阿里秋招高频算法题汇总-基础篇.md'
-                                    },
-                                ]
+                                    text: '00-阿里秋招高频算法题汇总-基础篇',
+                                    link: '/md/algorithm/leetcode/00-阿里秋招高频算法题汇总-基础篇.md'
+                                }, ]
                             }
                         ]
                     },
@@ -666,10 +663,6 @@ module.exports = {
                                 text: 'Agent项目实战',
                                 link: '/md/AI/01-three-minute-fastapi-ai-agent-setup'
                             },
-                            {
-                                text: '区块链',
-                                link: '/md/chain/00-区块链专栏概述.md'
-                            },
                         ]
                     },
 
@@ -682,9 +675,30 @@ module.exports = {
                     },
 
                     {
-                        text: '职业规划',
-                        items: [
+                        text: '区块链',
+                        items: [{
+                                text: '区块链核心概念',
+                                link: '/md/chain/00-区块链专栏概述.md'
+                            },
                             {
+                                text: '百度联盟链XuperChain',
+                                link: '/md/chain/03-百度联盟链Xuperchain核心概念.md'
+                            },
+                            {
+                                text: 'Flow平台实战',
+                                link: '/md/chain/02-认识Flow Cadence.md'
+                            },
+                            {
+                                text: '以太坊区块链',
+                                link: '/md/chain/01-以太坊智能合约与高级语言.md'
+                            },
+
+                        ]
+                    },
+
+                    {
+                        text: '职业规划',
+                        items: [{
                                 text: '01-Java工程师必读书单',
                                 link: '/md/career/01-Java工程师必读书单.md'
                             },
@@ -692,10 +706,10 @@ module.exports = {
                                 text: '00-如何学习项目管理专栏',
                                 link: '/md/mgr/00-如何学习项目管理专栏.md'
                             },
-                        
+
                         ]
                     },
-                    
+
                     {
                         text: '副业',
                         items: [{
@@ -1052,6 +1066,7 @@ module.exports = {
                             sidebarDepth: 0,
                             children: [
                                 "java-se-support-roadmap",
+                                "Java9新特性概述",
                                 "jdk14-new-features-complete-guide",
                                 "understanding-java17-new-features-sealed-classes",
                                 "JDK21新特性",
@@ -1085,7 +1100,7 @@ module.exports = {
                             "【图解数据结构】外行人也能看懂的哈希表",
                         ]
                     }],
-                    
+
                     "/md/algorithm/practise/": [{
                         title: "工程应用",
                         collapsable: false,
@@ -1206,7 +1221,7 @@ module.exports = {
                             "MySQL深分页调优实战",
                         ]
                     }],
-                    
+
                     "/md/reactive/": [{
                         title: "响应式编程",
                         collapsable: false,
@@ -1221,7 +1236,7 @@ module.exports = {
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
-                            "00-Go实战(一)-概述",
+                            "00-Go概述",
                             "01-macOS 安装go配置GOROOT GOPATH",
                             "02-Go基本语法",
                             "03-Go的数组array和切片slice语法详解",
@@ -1345,7 +1360,7 @@ module.exports = {
                             "为啥适合OLAP？",
                         ]
                     }],
-                    
+
                     "/md/neo4j/": [{
                         title: "Neo4j",
                         collapsable: false,
@@ -1410,8 +1425,7 @@ module.exports = {
                     ],
 
 
-                    "/md/ddd-mall/": [
-                        {
+                    "/md/ddd-mall/": [{
                             title: "项目介绍",
                             collapsable: false,
                             sidebarDepth: 0,
@@ -1435,7 +1449,7 @@ module.exports = {
                                 "11-分库分表平滑上线&快速回滚",
                             ]
                         },
-                        
+
                         {
                             title: "组件设计",
                             collapsable: false,
@@ -1446,6 +1460,7 @@ module.exports = {
                                 "dddmall-common-spring-boot-starter",
                                 "dddmall-cache-spring-boot-starter",
                                 "dddmall-convention-spring-boot-starter",
+                                "dddmall-idempotent-spring-boot-starter",
                                 "05-dddmall-database-spring-boot-starter",
                                 "06-dddmall-ddd-framework-core",
                                 "07-dddmall-designpattern-spring-boot-starter",
@@ -1474,16 +1489,18 @@ module.exports = {
                             "11-计师能去哪些央国企？",
                         ]
                     }],
+
                     "/md/vue/": [{
                         title: "Vue",
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
-                            "01-Vue开发实战.md",
-                            "05-教你快速搭建Vue3工程化项目.md",
+                            "01-Vue开发实战",
+                            "05-教你快速搭建Vue3工程化项目",
+                            "Vuex设计Vue3项目的数据流",
                         ]
                     }],
-                    
+
                     "/md/sideline/": [{
                         title: "副业",
                         collapsable: false,
@@ -1492,24 +1509,59 @@ module.exports = {
                             "16-精益独立开发实践",
                         ]
                     }],
+
                     "/md/chain/": [{
-                        title: "区块链",
-                        collapsable: false,
-                        sidebarDepth: 0,
-                        children: [
-                            "00-区块链专栏概述",
-                            "三分钟，快速了解区块链技术",
-                            "01-联盟链入门",
-                            "03-联盟链入门讲解+Xuperchain介绍 XuperChain 核心模块",
-                            "04-XuperChain核心流程",
-                            "05-账本模型",
-                            "06-智能合约",
-                            "07-网络与共识",
-                            "08-工作量证明",
-                            "09-一文看懂以太坊智能合约！",
-                            "blockchain-smart-contract-helloworld-project",
-                        ]
-                    }],
+                            title: "区块链核心概念",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "00-区块链专栏概述",
+                                "三分钟，快速了解区块链技术",
+                                "01-联盟链入门",
+                                "05-账本模型",
+                                "06-智能合约",
+                                "07-网络与共识",
+                                "08-工作量证明",
+                                "09-一文看懂以太坊智能合约！",
+                                "blockchain-smart-contract-helloworld-project",
+                            ]
+                        },
+                        {
+                            title: "百度联盟链XuperChain",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "03-百度联盟链Xuperchain核心概念",
+                                "04-XuperChain核心流程",
+                            ]
+                        },
+
+                        {
+                            title: "Flow平台实战",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "02-认识Flow Cadence",
+                                "03-Cadence基础语法",
+                            ]
+                        },
+
+                        {
+                            title: "以太坊区块链",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "01-以太坊智能合约与高级语言",
+                                "02-DAPP",
+                                "03-以太坊的EVM",
+                                "04-Solidity基础语法",
+                                "05-Solidity开发智能合约",
+                                "06-通过web3.js与以太坊客户端进行交互",
+                                "07-Truffle",
+                            ]
+                        },
+
+                    ],
 
                     "/md/python/": [{
                         title: "Python基础",
