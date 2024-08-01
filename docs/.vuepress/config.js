@@ -132,7 +132,7 @@ module.exports = {
                                 }, ]
                             },
                             {
-                                text: '业务架构',
+                                text: '大厂业务架构',
                                 items: [{
                                     text: '00-聚合支付架构',
                                     link: '/md/biz-arch/00-聚合支付架构从零到一'
@@ -195,7 +195,8 @@ module.exports = {
                     },
                     {
                         text: '项目实战',
-                        items: [{
+                        items: [
+                            {
                                 text: '12306',
                                 items: [{
                                     text: '项目介绍',
@@ -208,7 +209,15 @@ module.exports = {
                                     text: '什么是DDD商城',
                                     link: '/md/ddd-mall/什么是DDD商城.md'
                                 }]
-                            }
+                            },
+                            
+                            {
+                                text: '风控系统引擎',
+                                items: [{
+                                    text: '风控引擎架构设计',
+                                    link: '/md/risk-control/risk-control-engine-architecture-design.md'
+                                }]
+                            },
                         ]
                     },
 
@@ -635,10 +644,10 @@ module.exports = {
                                 text: 'Python基础',
                                 link: '/md/python/00-macOS和Linux安装和管理多个Python版本'
                             },
-                            {
-                                text: 'GPT发展',
-                                link: '/md/AI/Claude3到底多强'
-                            },
+                            // {
+                            //     text: 'GPT发展',
+                            //     link: '/md/AI/Claude3到底多强'
+                            // },
                             {
                                 text: '机器学习',
                                 link: '/md/AI/01-人工智能概要'
@@ -802,20 +811,21 @@ module.exports = {
                         }
                     ],
                     "/md/biz-arch/": [{
-                            title: "业务架构",
+                            title: "大厂业务架构",
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
-                                "00-聚合支付架构从零到一.md",
-                                "01-供应链域数据中台设计.md",
-                                "02-供应链采购视角的业务系统架构.md",
-                                "03-客服平台架构实践.md",
-                                "04-数据质量中心系统设计.md",
-                                "05-大厂CRM系统架构优化实战.md",
-                                "06-运营后台系统设计.md",
-                                "07-大厂报价查询系统性能优化之道.md",
-                                "08-视频推荐索引构建.md",
-                                "09-交易中台-如何防止订单二次重复支付？.md",
+                                "00-聚合支付架构从零到一",
+                                "01-供应链域数据中台设计",
+                                "02-供应链采购视角的业务系统架构",
+                                "03-客服平台架构实践",
+                                "04-数据质量中心系统设计",
+                                "05-大厂CRM系统架构优化实战",
+                                "06-运营后台系统设计",
+                                "07-大厂报价查询系统性能优化之道",
+                                "08-视频推荐索引构建",
+                                "09-交易中台-如何防止订单二次重复支付？",
+                                "小游戏的大促实践",
                             ]
                         },
                         {
@@ -824,6 +834,10 @@ module.exports = {
                             sidebarDepth: 0,
                             children: [
                                 "00-优惠券系统设计 Coupon System",
+                                "设计消息通知系统（Notification System）",
+                                "System design: Uber",
+                                "短链系统设计（design tiny url）",
+                                "打造一个高并发的十万用户 IM 聊天系统，你需要了解这些架构设计技巧！",
                             ]
                         },
                         {
@@ -1248,8 +1262,10 @@ module.exports = {
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
-                            "00-Docker基础命令大全.md",
-                            "01-标准化打包技术.md",
+                            "Docker环境搭建",
+                            "00-Docker基础命令大全",
+                            "01-标准化打包技术",
+                            "通俗易懂的图文解密Docker容器网络",
                         ]
                     }],
                     "/md/k8s/": [{
@@ -1258,7 +1274,10 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "00-Kubernetes的基本架构",
+                            "01-一键部署神器kubeadm",
+                            "02-Kubernetes核心组件之kube-proxy实现原理",
                             "kubectl命令",
+                            "Kubernetes容器日志处理方案",
                         ]
                     }],
 
@@ -1425,7 +1444,8 @@ module.exports = {
                     ],
 
 
-                    "/md/ddd-mall/": [{
+                    "/md/ddd-mall/": [
+                        {
                             title: "项目介绍",
                             collapsable: false,
                             sidebarDepth: 0,
@@ -1447,6 +1467,8 @@ module.exports = {
                                 "09-【防止重复下单】分布式系统接口幂等性实现方案",
                                 "10-百万数据量快速导入、导出MySQL",
                                 "11-分库分表平滑上线&快速回滚",
+                                "天天说架构，那CDN到底是什么？",
+                                "building-product-information-caching-system",
                             ]
                         },
 
@@ -1470,6 +1492,16 @@ module.exports = {
                         },
                     ],
 
+                    "/md/risk-control/": [
+                        {
+                            title: "风控引擎架构设计",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "risk-control-engine-architecture-design",
+                            ]
+                        },
+                    ],
 
                     "/md/career/": [{
                         title: "职业规划",
@@ -1507,6 +1539,7 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "16-精益独立开发实践",
+                            "17-用户画像都是怎么产生的？",
                         ]
                     }],
 
@@ -1572,16 +1605,16 @@ module.exports = {
                         ]
                     }, ],
 
-                    "/md/AI/": [{
-                        title: "GPT发展",
-                        collapsable: false,
-                        sidebarDepth: 0,
-                        children: [
-                            "Claude3到底多强",
-                            "GPTs推荐",
-                            "ChatGPT为啥不用Websocket而是EventSource？",
-                        ]
-                    }, ],
+                    // "/md/AI/": [{
+                    //     title: "GPT发展",
+                    //     collapsable: false,
+                    //     sidebarDepth: 0,
+                    //     children: [
+                    //         "Claude3到底多强",
+                    //         "GPTs推荐",
+                    //         "ChatGPT为啥不用Websocket而是EventSource？",
+                    //     ]
+                    // }, ],
 
                     "/md/AI/": [{
                         title: "机器学习",

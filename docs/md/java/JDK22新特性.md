@@ -1,16 +1,12 @@
 # JDK22新特性
 
-- [Spring 工程](https://spring.io/blog/category/engineering) 
+Java 22发布大吉！
 
-- [JOSH LONG](https://spring.io/team/joshlong)
+![](https://my-img.javaedge.com.cn/javaedge-blog/2024/07/7bbb5156bb9aa5b2af3f27216d310f2b.png)
 
-[Java 22](https://blogs.oracle.com/java/post/the-arrival-of-java-22)发布快乐！
+又是一个重大进步，值得升级的版本。有些重大的最终发布功能，如Project Panama及一系列更优秀的预览功能。不可能覆盖全部，但确实想谈谈我最喜爱的。将涉及许多功能。想在家跟着做，代码[在这](https://github.com/Java-Edge/java22.git)。
 
-![](https://codeselect.oss-cn-shanghai.aliyuncs.com/image-20240323221123636.png)
-
-Java 22 是一个*重大的*进步，是一个值得升级版本。有一些重大的最终发布功能，如 Project Panama及一系列更优秀的预览功能。我不可能覆盖它们全部，但我确实想谈谈我最喜爱的一些。我们将会涉及到许多功能。如果你想在家里跟着做，代码[在这](https://github.com/Java-Edge/java22.git)。
-
-我爱Java 22，当然，我也爱 GraalVM，它们都在发布了新版本！Java 当然是我们最喜爱的运行时和语言，而 GraalVM 是一个高性能的 JDK 发行版，它支持更多语言并允许提前编译（它们被称为 GraalVM native images）。GraalVM 包含了 Java 22 新版的所有好东西，还有一些额外的工具，所以我总是推荐下载那个版本。我特别感兴趣的是 GraalVM native image 的能力。生成的二进制文件几乎可以立即启动，并且与它们的 JRE 相比，消耗的 RAM 明显少。GraalVM 不是新事物，但值得记住的是，Spring Boot 有一个很棒的引擎，支持将你的 Spring Boot 应用程序转化为 GraalVM native images。
+我爱Java 22，当然，我也爱 GraalVM，它们都在发布新版本！Java 当然是我们最喜爱的运行时和语言，而 GraalVM 是一个高性能的 JDK 发行版，它支持更多语言并允许提前编译（称 GraalVM native images）。GraalVM 包含了 Java 22 新版的所有好东西，还有一些额外的工具，所以我总是推荐下载那个版本。我特别感兴趣的是 GraalVM native image。生成的二进制文件几乎可以立即启动，并且与它们的 JRE 相比，消耗的 RAM 明显少。GraalVM 不是新事物，但值得记住的是，Spring Boot 有一个很棒的引擎，支持将你的 Spring Boot 应用程序转化为 GraalVM native images。
 
 ## 1 安装
 
@@ -192,7 +188,7 @@ COPY<?xml version="1.0" encoding="UTF-8"?>
 - 添加两个新依赖项：`org.graalvm.sdk:graal-sdk:23.1.2` 和 `org.graalvm.nativeimage:svm:23.1.2`，都是专门为后面我们将需要的 GraalVM `Feature` 实现创建的
 - 在 `native-maven-plugin` 和 `spring-boot-maven-plugin` 的 `<configuration>` 部分添加了配置节
 
-非常快就到了，Spring Boot 3.3 将会正式发布并支持 Java 22，所以可能这个构建文件的一半会消失。（真是*春天的清理*！）
+非常快就到了，Spring Boot 3.3 将会正式发布并支持 Java 22，所以可能这个构建文件的一半会消失。
 
 ## 3 编程快速说明
 
@@ -227,11 +223,9 @@ interface LanguageDemonstrationRunner {
     // ...
 ```
 
-好的，既然我们已经讲过了，那就开始吧！
-
 ## 4 再见，JNI！
 
-此版本终于等待了已久的 [Project Panama](https://openjdk.org/projects/panama) 的发布。我最期待的三个特性之一，另外两个特性是：
+终于等待已久的 [Project Panama](https://openjdk.org/projects/panama) 的发布。最期待的三个特性之一，另外两特性：
 
 - 虚拟线程
 - GraalVM native images
@@ -463,13 +457,13 @@ class Sub extends Super {
 
 ## 9 未命名的变量和模式
 
-另一个提升生活质量的功能。已经交付！
+创建线程或使用 Java 8 的流和收集器时，你将创建很多 lambda。实际上，Spring 中有很多情况你会用 lambdas。只需考虑所有 `*Template` 对象及其以回调为中心的方法。 `JdbcClient` 和 `RowMapper<T>` 跳入脑海！
 
-当你在创建线程或使用 Java 8 的流和收集器时，你将创建很多 lambda。实际上，在 Spring 中有很多情况下你会用 lambdas。只需考虑所有的 `*Template` 对象，及其以回调为中心的方法。 `JdbcClient` 和 `RowMapper<T>` 也跳入脑海！
+Lambda 首次在 2014 年的 Java 8 版本中介绍。但它们的惊人品质是几乎前 20 年的 Java 代码在一夜之间如果方法期望单个方法接口实现即可参与 lambdas。
 
-有趣的事实：Lambda 首次在 2014 年的 Java 8 版本中介绍。但它们的惊人品质是几乎前 20 年的 Java 代码在一夜之间如果方法期望单个方法接口实现就可以参与 lambdas。
+Lambdas 是惊人的。它们在 Java 语言中引入了一个新的复用单元。最棒的是它们被设计为以某种方式嫁接到运行时的现有规则，包括自动将所谓的*功能接口*或 SAMs（单抽象方法）接口适应到 lambdas。
 
-Lambdas 是惊人的。它们在 Java 语言中引入了一个新的重用单元。最棒的部分是它们被设计为以某种方式嫁接到运行时的现有规则，包括自动将所谓的*功能接口*或 SAMs（单抽象方法）接口适应到 lambdas。我唯一的抱怨是，属于包含作用域的 lambda 中引用的东西必须设置为 final。这个问题已修复！现在必须拼出每个 lambda 参数，即使我根本没打算使用它，现在，有了 Java 22，那也得到修复了！这里是一个冗长的例子，仅为展示两处 `_` 字符的使用。
+唯一抱怨是，属于包含作用域的 lambda 中引用的东西须置 final。这问题终于修复！一直以来，必须拼出每个 lambda 参数，即使我根本没打算用它，还好有了 Java 22，这也得到修复了！这是个冗长例子，仅为展示两处 `_` 字符的使用：
 
 ```java
 package com.example.demo;
@@ -494,7 +488,7 @@ class AnonymousLambdaParameters implements LanguageDemonstrationRunner {
     @Override
     public void run() throws Throwable {
         var allCustomers = this.db.sql("select * from customer ")
-                // 这里！ 
+            // 这里！ 
             .query((rs, _) -> new Customer(rs.getInt("id"), rs.getString("name")))
             .list();
         System.out.println("all: " + allCustomers);
@@ -503,7 +497,31 @@ class AnonymousLambdaParameters implements LanguageDemonstrationRunner {
 }
 ```
 
-该类使用 Spring 的 `JdbcClient` 查询底层数据库。它一页一页地翻阅结果，然后涉及我们的 lambda，它符合 `RowMapper<Customer>` 类型，以帮助我们将结果适应到与我的领域模型一致的记录。 `RowMapper<T>` 接口，我们的 lambda 符合它，有一个方法 `T mapRow(ResultSet rs, int rowNum) throws SQLException`，期望两个参数：我将需要的 `ResultSet`及几乎不需要的 `rowNum`。现在，多亏 Java 22，我不需要指定它。就像在 Kotlin、TypeScript 中一样，只需插入 `_` 即可。Good！
+该类使用 Spring 的 `JdbcClient` 查询底层数据库。它分页查询结果，然后涉及 lambda，它符合 `RowMapper<Customer>` 类型，将结果适应到与我的领域模型一致的记录。 `RowMapper<T>` 接口，我们的 lambda 符合它，有一个方法 `T mapRow(ResultSet rs, int rowNum) throws SQLException`，期望两个参数：我将需要的 `ResultSet`及几乎不需要的 `rowNum`。多亏 Java 22，我不需要指定它，只需插入 `_` 即可！
+
+再看个JDK22 才能成功的例子：
+
+会提示：
+
+![](https://my-img.javaedge.com.cn/javaedge-blog/2024/07/3a11a372935c5be056ec09612fa4e72d.png)
+
+自动修改后：
+
+![](https://my-img.javaedge.com.cn/javaedge-blog/2024/07/1d5bee7bca6f11911014d3077eb28eb8.png)
+
+参数 's' 从未被使用
+检查信息：报告未被使用或无法从入口点访问的类、方法或字段。
+入口点可以是 main 方法、测试、指定范围外的类、从 module-info.java 访问的类等。可以通过使用名称模式或注解来配置自定义入口点。
+示例：
+
+```java
+public class Department {
+  private Organization myOrganization;
+}
+```
+
+在这个示例中，Department 明确引用了 Organization，但如果 Department 类本身未被使用，则检查将报告这两个类。
+该检查还会报告其方法未使用的参数，以及所有方法实现和重写者，以及声明但未使用的局部变量。
 
 ## 10 聚集者
 
@@ -557,9 +575,15 @@ class Gatherers implements LanguageDemonstrationRunner {
 
 该段代码的重点在于，这里描述了一个名为 `scan` 的方法，它返回一个 `Gatherer<T,?,R>` 类型的实现。每个 `Gatherer<T,O,R>` 对象都需要一个初始化函数和一个整合函数。虽然这种实现自带默认的合并函数和完成函数，但你也可以自行覆盖它们。它通过读取所有的数字条目，并为每一个条目逐步构造一个字符串，字符串随着数字的增加不断累积。结果就像这样：先是 `1`，然后是 `12`，接着是 `123`，直到 `1234` 等等。 上述例子还展示了 gatherers 是可以组合使用的。在这里，我们实际上操作了两个 `Gatherer` 对象：一个用于执行扫描过程，另一个则把每个元素转成大写，并且这一转换是并发进行的。 如果您还没能完全理解，没关系，对于大多数人而言，这部分内容可能会有些深奥。大多数人可能无需自己编写 Gatherers。但是，如果你想挑战一下，也是可以试试的。我的朋友 [Gunnar Morling](https://www.morling.dev/blog/zipping-gatherer/) 就在前几天完成了这样的工作。Gatherers 方法的巧妙之处在于，它使社区能够根据自己的需求去设计解决方案。我很好奇这对于 Eclipse Collections、Apache Commons Collections 或者 Guava 这样的著名项目会带来什么影响？它们是否会推出 Gatherers？还有其他什么项目会加入这一趋势？我期待看到很多实用的 gatherers 能够聚集到同一个地方。 
 
-## 11 Class Parsing API
+## 11 Class Parsing API（预览）
 
-又一个令人期待的预览性特性，这是 JDK 新增的部分，非常适合框架和基础架构开发人员。它可以解答例如如何构建 `.class` 文件和如何读取 `.class` 文件的问题。目前市场上有很多好用但不兼容，总是稍微有点落后的工具，比如 ASM（这个领域里的重量级解决方案），ByteBuddy，CGLIB 等。JDK 本身在其代码库中就包含了三种此类解决方案！这类库在整个行业中随处可见，并且对于像 Spring 这样的框架的开发来说至关重要，Spring 动态地在运行时创建类来支持业务逻辑。你可以将它看作是一个反射 API，但它作用于 `.class` 文件——硬盘上实际的字节码，而不是加载进 JVM 的对象。 这是一个简单的例子，展示了如何把一个 `.class` 文件加载进一个 `byte[]` 数组，并对其进行分析。
+JDK 新增的部分，适合框架和基础架构开发人员。可解答例如咋构建 `.class` 文件和咋读取 `.class` 文件的问题。
+
+目前市场上有很多好用但不兼容，总是稍微有点落后的工具，如 ASM（领域的重量级解决方案），ByteBuddy，CGLIB 等。JDK 本身在代码库就包含三种此类解决方案！这类库在行业随处可见，且对像 Spring 这样框架开发至关重要，Spring 动态地在运行时创建类来支持业务逻辑。
+
+可将它看作反射 API，但它作用于 `.class` 文件——硬盘上实际的字节码，而非加载进 JVM 的对象。
+
+例展示咋把一个 `.class` 文件加载进一个 `byte[]` 数组，并对其分析：
 
 ```java
 package com.example.demo;
@@ -615,13 +639,13 @@ class ClassParsing implements LanguageDemonstrationRunner {
 }
 ```
 
+涉及到运行时读取资源。为应对这过程，我实现了一个名为 Spring AOT `RuntimeHintsRegistrar` 的组件，它能生成一个 `.json` 文件。这个 JSON 文件记录着我正在读取的资源信息，比如具体来说就是 `DefaultCustomerService.class` 文件的数据。不过，这些都是幕后的技术细节，主要是为了在 GraalVM 上进行本地镜像编译的时候使用。 而代码底部的部分则颇有意思，我们对 `ClassElement` 实例进行了枚举，并通过模式匹配的方法一一提取了各个要素。
 
+## 12 String Templates（预览）
 
-这个例子稍微复杂一些，因为它涉及到了运行时读取资源。为了应对这个过程，我实现了一个名为 Spring AOT `RuntimeHintsRegistrar` 的组件，它能生成一个 `.json` 文件。这个 JSON 文件记录着我正在读取的资源信息，比如具体来说就是 `DefaultCustomerService.class` 文件的数据。不过，这些都是幕后的技术细节，主要是为了在 GraalVM 上进行本地镜像编译的时候使用。 而代码底部的部分则颇有意思，我们对 `ClassElement` 实例进行了枚举，并通过模式匹配的方法一一提取了各个要素。这真是太棒了！ 
+为 Java 带来了字符串插值功能！Java 中的多行字符串（String）已经使用了一段时间。这个新功能允许开发者将编译后字符串中可见的变量直接嵌入到字符串值里面。
 
-## 12 String Templates
-
-又一项预览特性的加入，String templates 为 Java 带来了字符串插值功能！Java 中的多行字符串（String）已经使用了一段时间。这个新功能允许开发者将编译后字符串中可见的变量直接嵌入到字符串值里面。最精彩的部分？从理论上讲，这个机制还可以自定义！不满意现有的语法？你完全可以创造一个属于你自己的版本。
+理论上，这个机制还可以自定义！不满意现有的语法？你完全可以创造一个属于你自己的版本。
 
 ```java
 package com.example.demo;
@@ -645,7 +669,3 @@ class StringTemplates implements LanguageDemonstrationRunner {
 ## 13 总结
 
 作为一名 Java 和 Spring 开发者，现在是一个前所未有的好时机！我一直强调这一点。我们仿佛获得了一个崭新的语言和运行时环境，这一进步奇妙地保持了对历史版本的兼容。这是我目睹 Java 社区所开展的最具雄心壮志的软件项目之一，我们很幸运能够见证其成果的诞生。从现在起，我打算将 Java 22 和支持 Java 22 的 GraalVM 用于我的所有开发工作，我希望您也能跟我一起。
-
-- [讲解 Java 22 以及其他更多精彩内容](https://bit.ly/spring-tips-playlist)。 
-
-- [GraalVM 开发者倡导者 Alina Yurenko](http://twitter.com/alina_yurenko/status/1587102593851052032?s=61&t=ahaeq7OhMUteRPzmYqDtKA)
