@@ -195,8 +195,7 @@ module.exports = {
                     },
                     {
                         text: '项目实战',
-                        items: [
-                            {
+                        items: [{
                                 text: '12306',
                                 items: [{
                                     text: '项目介绍',
@@ -210,7 +209,7 @@ module.exports = {
                                     link: '/md/ddd-mall/什么是DDD商城.md'
                                 }]
                             },
-                            
+
                             {
                                 text: '风控系统引擎',
                                 items: [{
@@ -250,7 +249,7 @@ module.exports = {
                             {
                                 text: 'Kafka',
                                 items: [{
-                                    text: '00-Kafka专栏大纲.md',
+                                    text: '00-Kafka专栏大纲',
                                     link: '/md/kafka/00-Kafka专栏大纲.md'
                                 }, ]
                             },
@@ -549,6 +548,14 @@ module.exports = {
                                 items: [{
                                     text: '为啥要学习Spark？',
                                     link: '/md/spark/为啥要学习Spark？.md'
+                                }, ]
+                            },
+
+                            {
+                                text: 'Flink',
+                                items: [{
+                                    text: 'Flink实战-概述',
+                                    link: '/md/flink/01-Flink实战-概述.md'
                                 }, ]
                             },
                         ]
@@ -1112,6 +1119,7 @@ module.exports = {
                             "00-数据结构与算法专栏大纲",
                             "【图解数据结构与算法】LRU缓存淘汰算法面试时到底该怎么写",
                             "【图解数据结构】外行人也能看懂的哈希表",
+                            "dag-directed-acyclic-graph",
                         ]
                     }],
 
@@ -1231,6 +1239,7 @@ module.exports = {
                             "how-to-use-indexes-when-grouping-in-sql",
                             "mysql-architecture-design",
                             "InnoDB架构设计",
+                            "mysql-read-write-splitting",
                             "为什么临时表可以重名？",
                             "MySQL深分页调优实战",
                         ]
@@ -1444,8 +1453,7 @@ module.exports = {
                     ],
 
 
-                    "/md/ddd-mall/": [
-                        {
+                    "/md/ddd-mall/": [{
                             title: "项目介绍",
                             collapsable: false,
                             sidebarDepth: 0,
@@ -1492,16 +1500,19 @@ module.exports = {
                         },
                     ],
 
-                    "/md/risk-control/": [
-                        {
-                            title: "风控引擎架构设计",
-                            collapsable: false,
-                            sidebarDepth: 0,
-                            children: [
-                                "risk-control-engine-architecture-design",
-                            ]
-                        },
-                    ],
+                    "/md/risk-control/": [{
+                        title: "风控引擎架构设计",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "flink-real-time-risk-control-system-overview",
+                            "coupon-fraud-grey-market-chain",
+                            "coupon-distribution-risk-control-challenges",
+                            "risk-control-rules-thresholds-for-coupon-scenarios",
+                            "risk-control-engine-architecture-design",
+                            "reasons-for-choosing-groovy-for-risk-control-engine",
+                        ]
+                    }, ],
 
                     "/md/career/": [{
                         title: "职业规划",
@@ -1778,6 +1789,20 @@ module.exports = {
                             ]
                         },
                     ],
+
+                    "/md/flink/": [{
+                        title: "基础",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "01-Flink实战-概述",
+                            "flink-beginner-case-study",
+                            "flink-programming-paradigms-core-concepts",
+                            "flink-architecture",
+                            "flink-state-management",
+                            "05-Flink实战DataStream API编程",
+                        ]
+                    }, ],
 
                     "/md/security/": [{
                             title: "常见攻击手段",
