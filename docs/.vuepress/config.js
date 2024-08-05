@@ -1287,6 +1287,8 @@ module.exports = {
                             "02-Kubernetes核心组件之kube-proxy实现原理",
                             "kubectl命令",
                             "Kubernetes容器日志处理方案",
+                            "23-0-声明式API",
+                            "23-1-Envoy",
                         ]
                     }],
 
