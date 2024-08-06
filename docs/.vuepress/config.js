@@ -1803,6 +1803,8 @@ module.exports = {
                             "flink-architecture",
                             "flink-state-management",
                             "05-Flink实战DataStream API编程",
+                            "flink-data-latency-solution",
+                            "flink-cep",
                         ]
                     }, ],
 
