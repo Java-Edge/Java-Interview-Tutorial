@@ -17,7 +17,7 @@ module.exports = {
         "/": {
             lang: "zh-CN",
             title: "编程严选网",
-            description: "Java、前端、大数据、区块链、AI应用开发求职必备技能：计算机基础，设计模式、DDD及各大中台和业务系统设计真实案例...软件开发的一站式终身学习网站！"
+            description: "Java、前端、大数据、云原生、区块链、AI大模型应用开发求职必备技能：计算机基础，设计模式、DDD及各大中台和业务系统设计真实案例...软件开发的一站式终身学习网站！"
         }
     },
     head: [
@@ -582,8 +582,8 @@ module.exports = {
                             {
                                 text: 'k8s',
                                 items: [{
-                                    text: 'kubectl命令',
-                                    link: '/md/k8s/kubectl命令.md'
+                                    text: 'Kubernetes的基本架构',
+                                    link: '/md/k8s/00-Kubernetes的基本架构.md'
                                 }]
                             },
 
@@ -1141,6 +1141,7 @@ module.exports = {
                                 "02-实现http请求的异步长轮询",
                                 "03-SpringMVC拦截处理器",
                                 "Spring之BeanNameAware和BeanFactoryAware接口",
+                                "这次彻底搞懂IoC容器依赖注入的源码",
                                 "别小看Spring过滤器,这些知识点你必须得掌握",
                                 "Spring框架使用了哪些设计模式",
                             ]
@@ -1278,19 +1279,49 @@ module.exports = {
                         ]
                     }],
                     "/md/k8s/": [{
-                        title: "Kubernetes",
-                        collapsable: false,
-                        sidebarDepth: 0,
-                        children: [
-                            "00-Kubernetes的基本架构",
-                            "01-一键部署神器kubeadm",
-                            "02-Kubernetes核心组件之kube-proxy实现原理",
-                            "kubectl命令",
-                            "Kubernetes容器日志处理方案",
-                            "23-0-声明式API",
-                            "23-1-Envoy",
-                        ]
-                    }],
+                            title: "Kubernetes安装和使用",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "01-一键部署神器kubeadm",
+                                "快速搭建Kubernetes集群",
+                                "kubectl命令",
+                                "Kubernetes容器日志处理方案",
+                            ]
+                        },
+
+                        {
+                            title: "Kubernetes核心组件",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "00-Kubernetes的基本架构",
+                                "nature-of-kubernetes",
+                                "02-Kubernetes核心组件之kube-proxy实现原理",
+                                "pod-in-kubernetes",
+                                "23-0-声明式API",
+                                "23-1-Envoy",
+                            ]
+                        },
+
+                        {
+                            title: "Kubernetes部署应用",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "使用 Kubernetes 部署 Nginx 应用",
+                            ]
+                        },
+                        
+                        {
+                            title: "Kubernetes云平台KubeSphere",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "00-为啥选择 kubesphere",
+                            ]
+                        },
+                    ],
 
                     "/md/monitor/": [{
                         title: "监控",
@@ -1805,6 +1836,7 @@ module.exports = {
                             "05-Flink实战DataStream API编程",
                             "flink-data-latency-solution",
                             "flink-cep",
+                            "flink-checkpoint",
                         ]
                     }, ],
 
