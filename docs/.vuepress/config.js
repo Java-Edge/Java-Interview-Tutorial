@@ -164,7 +164,7 @@ module.exports = {
                                 text: '数据中台',
                                 items: [{
                                     text: '00-新一代数据栈将逐步替代国内单一“数据中台”',
-                                    link: '/md/biz-arch/00-新一代数据栈将逐步替代国内单一“数据中台”.md'
+                                    link: '/md/bigdata/00-新一代数据栈将逐步替代国内单一“数据中台”.md'
                                 }, ]
                             },
 
@@ -468,6 +468,14 @@ module.exports = {
                                     link: '/md/ck/clickhouse概述.md'
                                 }]
                             },
+                            
+                            {
+                                text: 'HBase',
+                                items: [{
+                                    text: 'HBase概述',
+                                    link: '/md/hbase/hbase-scan.md'
+                                }]
+                            },
 
                             {
                                 text: 'Neo4j',
@@ -503,6 +511,14 @@ module.exports = {
                                 ]
                             },
 
+                            {
+                                text: '数据中台',
+                                items: [{
+                                    text: '01-大数据的尽头是数据中台吗？',
+                                    link: '/md/bigdata/01-大数据的尽头是数据中台吗？.md'
+                                }]
+                            },
+                            
                             {
                                 text: 'Hadoop',
                                 items: [{
@@ -847,17 +863,6 @@ module.exports = {
                                 "打造一个高并发的十万用户 IM 聊天系统，你需要了解这些架构设计技巧！",
                             ]
                         },
-                        {
-                            title: "数据中台",
-                            collapsable: false,
-                            sidebarDepth: 0,
-                            children: [
-                                "00-新一代数据栈将逐步替代国内单一“数据中台”",
-                                "01-大数据的尽头是数据中台吗？",
-                                "03-构建数据中台的三要素：方法论、组织和技术",
-                                "05-如何统一管理纷繁杂乱的数据指标？",
-                            ]
-                        },
 
                         {
                             title: "用户画像",
@@ -921,6 +926,17 @@ module.exports = {
                                 "大数据平台架构",
                                 "对象存储",
                                 "02-分布式对象存储设计原理",
+                            ]
+                        },
+                        {
+                            title: "数据中台",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "00-新一代数据栈将逐步替代国内单一“数据中台”",
+                                "01-大数据的尽头是数据中台吗？",
+                                "03-构建数据中台的三要素：方法论、组织和技术",
+                                "05-如何统一管理纷繁杂乱的数据指标？",
                             ]
                         },
                         {
@@ -1834,6 +1850,7 @@ module.exports = {
                             "flink-architecture",
                             "flink-state-management",
                             "05-Flink实战DataStream API编程",
+                            "streaming-connectors-programming",
                             "flink-data-latency-solution",
                             "flink-cep",
                             "flink-checkpoint",

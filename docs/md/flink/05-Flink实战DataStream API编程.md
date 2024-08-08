@@ -560,7 +560,6 @@ public static void map(StreamExecutionEnvironment env) {
             return new Access(time, domain, traffic);
         }
     });
-
     mapStream.print();
 }
 ```
@@ -630,14 +629,14 @@ public class JavaDataStreamTransformationApp {
 
 ### 5.3 split拆分
 
-DataStream→SplitStream
-根据某些标准将流拆分为两个或更多个流。
-![](https://img-blog.csdnimg.cn/2019072023312897.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_SmF2YUVkZ2U=,size_16,color_FFFFFF,t_70)
+DataStream→SplitStream。按标准将流拆分为两个或更多个流：
+
+![](https://my-img.javaedge.com.cn/javaedge-blog/2024/08/024431d0d5640d04b46a5d1799540e68.png)
 
 ### 5.4 select
 
-SplitStream→DataStream
-从拆分流中选择一个或多个流。
+SplitStream→DataStream。从拆分流中选择一个或多个流：
+
 ![](https://img-blog.csdnimg.cn/20190720234320281.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_SmF2YUVkZ2U=,size_16,color_FFFFFF,t_70)
 
 ```scala
@@ -669,6 +668,24 @@ public static void splitSelectFunction(StreamExecutionEnvironment env) {
 3
 ...
 ```
+
+### FlatMap
+
+DataStream → DataStream。接收一个元素并产生0、1或多个元素。 将句子分割成单词的平面映射函数：
+
+```java
+dataStream.flatMap(new FlatMapFunction<String, String>() {
+    @Override
+    public void flatMap(String value, Collector<String> out)
+        throws Exception {
+        for(String word: value.split(" ")){
+            out.collect(word);
+        }
+    }
+});
+```
+
+
 
 ## 6 Data Sinks
 
@@ -760,15 +777,19 @@ public class JavaCustomSinkToMySQL {
 
 ### 自定义Sink总结
 
-- RichSinkFunction<T>
-  T就是你想要写入对象的类型
-- 重写方法
-  open/ close
-  生命周期方法
-  invoke
-  每条记录执行一次
-  数据接收器使用DataStream并将它们转发到文件，套接字，外部系统或打印它们。Flink带有各种内置输出格式，这些格式封装在DataStreams上的 算子操作后面：
+```java
+RichSinkFunction<T>
+```
 
+T就是你想要写入对象的类型
+
+重写方法：open/ close 生命周期方法
+
+invoke：每条记录执行一次
+
+数据接收器使用DataStream并将它们转发到文件，套接字，外部系统或打印它们。Flink带有各种内置输出格式，这些格式封装在DataStreams上的 算子操作后面：
+
+```
 writeAsText()/ TextOutputFormat- 按字符串顺序写入元素。通过调用每个元素的toString（）方法获得字符串。
 
 writeAsCsv(...)/ CsvOutputFormat- 将元组写为逗号分隔值文件。行和字段分隔符是可配置的。每个字段的值来自对象的toString（）方法。
@@ -782,5 +803,6 @@ writeToSocket - 根据a将元素写入套接字 SerializationSchema
 addSink - 调用自定义接收器函数。Flink捆绑了其他系统（如Apache Kafka）的连接器，这些系统实现为接收器函数。
 
 write*()方法DataStream主要用于调试目的。他们没有参与Flink的检查点，这意味着这些函数通常具有至少一次的语义。刷新到目标系统的数据取决于OutputFormat的实现。这意味着并非所有发送到OutputFormat的数据元都会立即显示在目标系统中。此外，在失败的情况下，这些记录可能会丢失。
+```
 
 要将流可靠，准确地一次传送到文件系统，请使用flink-connector-filesystem。此外，通过该.addSink(...)方法的自定义实现可以参与Flink的精确一次语义检查点。
