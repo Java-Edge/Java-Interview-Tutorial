@@ -468,7 +468,7 @@ module.exports = {
                                     link: '/md/ck/clickhouse概述.md'
                                 }]
                             },
-                            
+
                             {
                                 text: 'HBase',
                                 items: [{
@@ -518,7 +518,7 @@ module.exports = {
                                     link: '/md/bigdata/01-大数据的尽头是数据中台吗？.md'
                                 }]
                             },
-                            
+
                             {
                                 text: 'Hadoop',
                                 items: [{
@@ -695,6 +695,10 @@ module.exports = {
                                 text: 'Agent项目实战',
                                 link: '/md/AI/01-three-minute-fastapi-ai-agent-setup'
                             },
+                            {
+                                text: 'LangGraph',
+                                link: '/md/AI/00-introduce-to-LangGraph'
+                            },
                         ]
                     },
 
@@ -849,6 +853,7 @@ module.exports = {
                                 "08-视频推荐索引构建",
                                 "09-交易中台-如何防止订单二次重复支付？",
                                 "小游戏的大促实践",
+                                "事件中心架构概述",
                             ]
                         },
                         {
@@ -1109,6 +1114,7 @@ module.exports = {
                                 "JDK21新特性",
                                 "JDK22新特性",
                                 "IntelliJ IDEA 2024.1 最新变化",
+                                "What’s-New-in-IntelliJ-IDEA-2024.2",
                             ]
                         },
                     ],
@@ -1233,6 +1239,15 @@ module.exports = {
 
                             ]
                         },
+
+                        {
+                            title: "事件驱动",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "integrating-event-driven-microservices-with-request-response-APIs",
+                            ]
+                        },
                         {
                             title: "DDD大厂实践",
                             collapsable: false,
@@ -1268,6 +1283,7 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "00-Spring响应式编程",
+                            "05-流式操作：如何使用 Flux 和 Mono 高效构建响应式数据流？",
                         ]
                     }],
 
@@ -1315,6 +1331,7 @@ module.exports = {
                                 "nature-of-kubernetes",
                                 "02-Kubernetes核心组件之kube-proxy实现原理",
                                 "pod-in-kubernetes",
+                                "kubernetes-workloads-controllers-deployment",
                                 "23-0-声明式API",
                                 "23-1-Envoy",
                             ]
@@ -1328,7 +1345,7 @@ module.exports = {
                                 "使用 Kubernetes 部署 Nginx 应用",
                             ]
                         },
-                        
+
                         {
                             title: "Kubernetes云平台KubeSphere",
                             collapsable: false,
@@ -1354,6 +1371,7 @@ module.exports = {
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
+                            "netty-basic-components",
                             "ChannelPipeline接口",
                             "(06-1)-ChannelHandler 家族",
                             "(08)-学习Netty BootStrap的核心知识，成为网络编程高手！",
@@ -1369,6 +1387,7 @@ module.exports = {
                         children: [
                             "00-Kafka专栏大纲",
                             "Kafka门派知多少",
+                            "kafka-versions",
                             "08-全网最全图解Kafka适用场景",
                             "09-消息队列的消息大量积压怎么办？",
                             "15-基于kafka实现延迟队列"
@@ -1435,6 +1454,7 @@ module.exports = {
                             "客户端基本操作",
                             "为啥要学习ClickHouse",
                             "为啥适合OLAP？",
+                            "clickhouse-jdbc",
                         ]
                     }],
 
@@ -1760,6 +1780,15 @@ module.exports = {
                                 "01-three-minute-fastapi-ai-agent-setup",
                                 "02-Agent应用对话情感优化",
                                 "03-use-tts-to-make-your-ai-agent-speak",
+                            ]
+                        },
+
+                        {
+                            title: "LangGraph",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "00-introduce-to-LangGraph",
                             ]
                         },
                     ],
