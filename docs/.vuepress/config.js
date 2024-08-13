@@ -152,6 +152,11 @@ module.exports = {
                                         text: '00-DDD专栏规划',
                                         link: '/md/DDD/00-DDD专栏规划.md'
                                     },
+
+                                    {
+                                        text: '事件驱动',
+                                        link: '/md/DDD/integrating-event-driven-microservices-with-request-response-APIs.md'
+                                    },
                                     {
                                         text: '00-大厂实践',
                                         link: '/md/DDD/02-领域驱动设计DDD在B端营销系统的实践.md'
@@ -1170,6 +1175,16 @@ module.exports = {
                         },
 
                         {
+                            title: "SpringMVC",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "SpringMVC-service-doDispatch",
+                                "SpringMVC-DispatcherServlet-doDispatch",
+                            ]
+                        },
+                        
+                        {
                             title: "SpringBoot",
                             collapsable: false,
                             sidebarDepth: 0,
@@ -1246,6 +1261,7 @@ module.exports = {
                             sidebarDepth: 0,
                             children: [
                                 "integrating-event-driven-microservices-with-request-response-APIs",
+                                "decouple-event-retrieval-from-processing",
                             ]
                         },
                         {
@@ -1875,9 +1891,11 @@ module.exports = {
                         children: [
                             "01-Flink实战-概述",
                             "flink-beginner-case-study",
+                            "Flink部署及任务提交",
                             "flink-programming-paradigms-core-concepts",
                             "flink-architecture",
                             "flink-state-management",
+                            "flink-state-backend",
                             "05-Flink实战DataStream API编程",
                             "streaming-connectors-programming",
                             "flink-data-latency-solution",
