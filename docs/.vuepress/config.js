@@ -2,7 +2,7 @@ module.exports = {
     port: "8080",
     dest: "./dist",
     base: "/",
-    // 开启默认预加载js
+    // 预加载js
     shouldPrefetch: (file, type) => {
         return true;
     },
@@ -60,6 +60,38 @@ module.exports = {
                 src: 'https://my.openwrite.cn/js/readmore.js'
             },
         ],
+        // 添加 google 分析代码（国内无法访问）
+        // [
+        //     'script',
+        //     {
+        //         charset: 'utf-8',
+        //         src: 'https://www.googletagmanager.com/gtag/js?id=G-3ZNNG02JRB'
+        //     },
+        // ],
+
+        // [
+        //     'script',{},
+        //     `
+        //     window.dataLayer = window.dataLayer || [];
+        //     function gtag(){dataLayer.push(arguments);}
+        //     gtag('js', new Date());
+
+        //     gtag('config', 'G-3ZNNG02JRB');
+        //     `
+        // ],
+        // 百度统计代码（不生效，暂时弃用）  
+        // [
+        //     'script',{},
+        //     `
+        //     var _hmt = _hmt || [];
+        //     (function() {
+        //     var hm = document.createElement("script");
+        //     hm.src = "https://hm.baidu.com/hm.js?d6bf16d55ae32b3e91abf80026997d55";
+        //     var s = document.getElementsByTagName("script")[0]; 
+        //     s.parentNode.insertBefore(hm, s);
+        //     })();
+        //     `
+        // ],
     ],
     plugins: [
         [{
@@ -93,7 +125,6 @@ module.exports = {
         docsRepo: "Java-Edge/Java-Interview-Tutorial",
         // 编辑文档的所在目录
         docsDir: 'docs',
-        // 文档放在特定分支：
         docsBranch: 'main',
         editLinks: true,
         sidebarDepth: 0,
@@ -104,6 +135,7 @@ module.exports = {
                 selectText: "Languages",
                 editLinkText: "关注GitHub知识库",
                 lastUpdated: "上次更新",
+                logo: `/favicon.ico`,
                 nav: [{
                         text: '导读',
                         link: '/md/other/guide-to-reading.md'
@@ -238,8 +270,13 @@ module.exports = {
                             {
                                 text: 'Netty',
                                 items: [{
-                                    text: 'Netty入门',
-                                    link: '/md/netty/ChannelPipeline接口.md'
+                                    text: 'Netty基础',
+                                    link: '/md/netty/Netty基本组件.md'
+                                },
+                                
+                                {
+                                    text: 'Netty实战',
+                                    link: '/md/netty/Netty堆外内存泄露排查.md'
                                 }, ]
                             },
 
@@ -256,17 +293,27 @@ module.exports = {
                                 items: [{
                                     text: '00-Kafka专栏大纲',
                                     link: '/md/kafka/00-Kafka专栏大纲.md'
+                                },
+                                
+                                {
+                                    text: '消息队列基础',
+                                    link: '/md/kafka/消息队列面试必问解析.md'
                                 }, ]
                             },
 
                             {
                                 text: 'RocketMQ',
                                 items: [{
-                                        text: '01-RocketMQ核心内容',
+                                        text: 'RocketMQ基础',
                                         link: '/md/RocketMQ/01-RocketMQ核心内容.md'
                                     },
                                     {
-                                        text: '02-基于电商场景的高并发RocketMQ实战',
+                                        text: 'RocketMQ存储设计',
+                                        link: '/md/RocketMQ/核心概念.md'
+                                    },
+                                    
+                                    {
+                                        text: 'RocketMQ业务实战',
                                         link: '/md/RocketMQ/02-基于电商场景的高并发RocketMQ实战.md'
                                     },
                                 ]
@@ -682,7 +729,7 @@ module.exports = {
                             },
                             {
                                 text: 'LLM应用开发',
-                                link: '/md/AI/AI 大模型企业应用实战'
+                                link: '/md/AI/AI大模型企业应用实战'
                             },
                             {
                                 text: 'LangChain',
@@ -1183,7 +1230,7 @@ module.exports = {
                                 "SpringMVC-DispatcherServlet-doDispatch",
                             ]
                         },
-                        
+
                         {
                             title: "SpringBoot",
                             collapsable: false,
@@ -1205,6 +1252,7 @@ module.exports = {
                             "01-Jetty架构设计之Connector、Handler组件",
                             "03-Tomcat的生命周期管理",
                             "04-Tomcat实现热部署、热加载原理解析",
+                            "05-Tomcat如何打破双亲委派机制实现隔离Web应用的？",
                         ]
                     }],
 
@@ -1262,6 +1310,9 @@ module.exports = {
                             children: [
                                 "integrating-event-driven-microservices-with-request-response-APIs",
                                 "decouple-event-retrieval-from-processing",
+                                "use-circuit-breaker-to-pause-event-retrieval",
+                                "rate-limit-event-processing",
+                                "event-versioning",
                             ]
                         },
                         {
@@ -1290,6 +1341,8 @@ module.exports = {
                             "mysql-read-write-splitting",
                             "为什么临时表可以重名？",
                             "MySQL深分页调优实战",
+                            "为什么阿里不推荐使用MySQL分区表？",
+                            "一文看懂这篇MySQL的锁机制",
                         ]
                     }],
 
@@ -1383,7 +1436,7 @@ module.exports = {
                     }],
 
                     "/md/netty/": [{
-                        title: "Netty",
+                        title: "Netty基础",
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
@@ -1394,7 +1447,16 @@ module.exports = {
                             "11-4-解码基于分隔符的协议和基于长度的协议",
                             "18-检测新连接",
                         ]
-                    }],
+                    },
+                    
+                    {
+                        title: "Netty实战",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "Netty堆外内存泄露排查",
+                        ]
+                    },],
 
                     "/md/kafka": [{
                         title: "Kafka",
@@ -1408,22 +1470,54 @@ module.exports = {
                             "09-消息队列的消息大量积压怎么办？",
                             "15-基于kafka实现延迟队列"
                         ]
-                    }],
-
-                    "/md/RocketMQ/": [{
-                        title: "RocketMQ",
+                    },
+                    
+                    {
+                        title: "消息队列基础",
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
-                            "01-RocketMQ核心内容",
-                            "01-基本概念",
-                            "02-下载安装",
-                            "03-消息的有序性",
-                            "04 - 订阅机制和定时消息",
-                            "05 - 批量消息和事务消息",
-                            "02-基于电商场景的高并发RocketMQ实战",
+                            "消息队列面试必问解析",
                         ]
-                    }],
+                    },],
+
+                    "/md/RocketMQ/": [{
+                            title: "RocketMQ基础",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "01-RocketMQ核心内容",
+                                "RocketMQ各版本新特性",
+                                "01-基本概念",
+                                "02-下载安装",
+                                "03-消息的有序性",
+                                "04 - 订阅机制",
+                                "RocketMQ的延时消息",
+                                "RocketMQ 5.x任意时间延时消息原理",
+                                "05 - 批量消息和事务消息",
+                            ]
+                        },
+
+                        {
+                            title: "RocketMQ存储设计",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "核心概念",
+                            ]
+                        },
+                        
+                        {
+                            title: "RocketMQ业务实战",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "02-基于电商场景的高并发RocketMQ实战",
+                                "RocketMQ在基金大厂的分布式事务实践",
+                            ]
+                        },
+
+                    ],
                     "/md/rabbitmq": [{
                         title: "RabbitMQ",
                         collapsable: false,
@@ -1730,7 +1824,7 @@ module.exports = {
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
-                            "AI 大模型企业应用实战",
+                            "AI大模型企业应用实战",
                             "00-为什么要学习大模型",
                             "01-大语言模型发展",
                             "02-domestic-and-international-llm-multi-model-strong-applications",
@@ -1805,6 +1899,7 @@ module.exports = {
                             sidebarDepth: 0,
                             children: [
                                 "00-introduce-to-LangGraph",
+                                "langgraph-studio",
                             ]
                         },
                     ],
@@ -1824,6 +1919,16 @@ module.exports = {
                                 "阿里P8架构师都是怎么分析软件模型的？",
                             ]
                         },
+                        {
+                            title: "设计原则",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "阿里P8架构师都是怎么分析软件模型的？",
+                                "rest-api-design-resource-modeling",
+                            ]
+                        },
+
                         {
                             title: "设计模式",
                             collapsable: false,
@@ -1894,6 +1999,7 @@ module.exports = {
                             "Flink部署及任务提交",
                             "flink-programming-paradigms-core-concepts",
                             "flink-architecture",
+                            "flink-broadcast-state",
                             "flink-state-management",
                             "flink-state-backend",
                             "05-Flink实战DataStream API编程",

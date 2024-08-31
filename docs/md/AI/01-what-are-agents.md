@@ -2,22 +2,24 @@
 
 ## 0 前言
 
-![](https://my-img.javaedge.com.cn/javaedge-blog/2024/06/c21f39493b86912da7fdb049694e5b9b.png)
+"Agents are not only going to change how everyone interacts with computers. They're also going to upend the software industry, bringing about the biggest revolution in computing since we went from typing commands to tapping on icons." — Bill Gates
+
+智能体（Agent）不仅会改变每个人与计算机交互的方式。它们还将颠覆软件行业，带来自我们从键入命令到点击图标以来最大的计算革命。
+
+-- 比尔盖茨
 
 - 无需为不同任务使用单独软件
 - 使用日常语言来命令你的设备
 - “代理”是人工智能的高级形式
 - 未来五年将成为现实
 - 人人都有的私人助理Agent
-- 应用在干行百业之中(医疗、教育、娱乐....)
+- 应用在干行百业之中（医疗、教育、娱乐....）
 
-## 1 Agents 是什么？
+## 1 Agents是啥？
 
-Al Agents是基于LLM的能够自主理解、自主规划决策、执行复杂任务的智能体，Agents不是chatGPT的升级版,它不仅告诉你“如何做”,更会帮你去做,如果各种Copilot是副驾驶，那么Agents就是主驾驶。
+Al Agents是基于LLM的能够自主理解、自主规划决策、执行复杂任务的智能体，Agents不是ChatGPT的升级版,它不仅告诉你“如何做”，更会帮你去做。若各种Copilot是副驾驶，那Agents就是主驾驶。
 
-Agents = LLM +规划技能+记忆 + 工具使用
-
-本质上Agents是一个LLM的编排与执行系统：
+Agents = LLM +规划技能+记忆 + 工具使用。本质上Agents是一个LLM的编排与执行系统：
 
 ![](https://my-img.javaedge.com.cn/javaedge-blog/2024/06/56daeed79e2fb6bbd2d9e4c0347a782f.png)
 
@@ -25,7 +27,7 @@ Agents = LLM +规划技能+记忆 + 工具使用
 
 ![](https://my-img.javaedge.com.cn/javaedge-blog/2024/06/fea623b624eddc2e7b1ee3f60d0f7b5a.png)
 
-## 2 LangChain 中的 Agents 如何实现
+## 2 LangChain 中的 Agents 咋实现？
 
 
 
@@ -47,9 +49,11 @@ Agents = LLM +规划技能+记忆 + 工具使用
 ### 3.0 需求
 
 - 会做数学题
-- 不知道答案的时候可以搜索
+- 不知道答案时，可搜索
 
-### 3.1 安装通义千问
+### 3.1 安装LLM
+
+使用通义千问模型：
 
 ```python
 !pip install langchain==0.2.1  # 安装langchain
@@ -60,7 +64,7 @@ Agents = LLM +规划技能+记忆 + 工具使用
 
 ![](https://my-img.javaedge.com.cn/javaedge-blog/2024/06/761d6829d32ea4e43bb6146394ced29c.png)
 
-定义.env文件，里面配置你的API-KEY：
+定义.env文件，配置API-KEY：
 
 ![](https://my-img.javaedge.com.cn/javaedge-blog/2024/06/1020b35cc89abc89e50578568590b9f3.png)
 
@@ -82,8 +86,8 @@ llm = QwenTurboTongyi(temperature=1)
 
 ### 3.2 搭建工具
 
-- serpai是一个聚合搜索引擎，需要安装谷歌搜索包以及申请账号 https://serpapi.com/manage-api-key
-- llm-math是一个封装好的数学计算链
+- serpai是一个聚合搜索引擎，需安装谷歌搜索包及申请账号 https://serpapi.com/manage-api-key
+- llm-math，封装好的数学计算链
 
 ```python
 # 安装谷歌搜索包

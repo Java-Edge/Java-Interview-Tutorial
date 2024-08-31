@@ -1,6 +1,6 @@
 ---
 home: true
-# heroImage: /images/system/logo.jpg
+heroImage: /images/system/logo.jpg
 actionLinks:
 - link: /md/other/guide-to-reading.md
   text: 开始阅读 →
@@ -14,7 +14,11 @@ actionLinks:
 - link: http://www.javaedge.cn:3000/#/index
   text: 网站 💐
   class: secondary 
-footer:  
+footer:
+  <img src="https://www.beian.gov.cn/img/new/gongan.png" >
+  <a href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=****" target="_blank" >公安网备*****号</a></br>
+  <a href="https://beian.miit.gov.cn/" target="_blank">皖ICP备2024059525号</a> | Copyright © JavaEdge
+footerHtml: true
 ---
 
 ---
