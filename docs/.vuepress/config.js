@@ -270,14 +270,15 @@ module.exports = {
                             {
                                 text: 'Netty',
                                 items: [{
-                                    text: 'Netty基础',
-                                    link: '/md/netty/Netty基本组件.md'
-                                },
-                                
-                                {
-                                    text: 'Netty实战',
-                                    link: '/md/netty/Netty堆外内存泄露排查.md'
-                                }, ]
+                                        text: 'Netty基础',
+                                        link: '/md/netty/Netty基本组件.md'
+                                    },
+
+                                    {
+                                        text: 'Netty实战',
+                                        link: '/md/netty/netty-off-heap-memory-leak-detection.md'
+                                    },
+                                ]
                             },
 
                             {
@@ -288,16 +289,20 @@ module.exports = {
                                 }]
                             },
 
+
+                            {
+                                text: '消息队列基础',
+                                items: [{
+                                    text: '消息队列基础',
+                                    link: '/md/mq/消息队列面试必问解析.md'
+                                }]
+                            },
+
                             {
                                 text: 'Kafka',
                                 items: [{
-                                    text: '00-Kafka专栏大纲',
+                                    text: 'Kafka基础',
                                     link: '/md/kafka/00-Kafka专栏大纲.md'
-                                },
-                                
-                                {
-                                    text: '消息队列基础',
-                                    link: '/md/kafka/消息队列面试必问解析.md'
                                 }, ]
                             },
 
@@ -311,7 +316,7 @@ module.exports = {
                                         text: 'RocketMQ存储设计',
                                         link: '/md/RocketMQ/核心概念.md'
                                     },
-                                    
+
                                     {
                                         text: 'RocketMQ业务实战',
                                         link: '/md/RocketMQ/02-基于电商场景的高并发RocketMQ实战.md'
@@ -1162,6 +1167,7 @@ module.exports = {
                                 "java-se-support-roadmap",
                                 "Java9新特性概述",
                                 "jdk14-new-features-complete-guide",
+                                "JDK16新特性",
                                 "understanding-java17-new-features-sealed-classes",
                                 "JDK21新特性",
                                 "JDK22新特性",
@@ -1436,30 +1442,31 @@ module.exports = {
                     }],
 
                     "/md/netty/": [{
-                        title: "Netty基础",
-                        collapsable: false,
-                        sidebarDepth: 0,
-                        children: [
-                            "netty-basic-components",
-                            "ChannelPipeline接口",
-                            "(06-1)-ChannelHandler 家族",
-                            "(08)-学习Netty BootStrap的核心知识，成为网络编程高手！",
-                            "11-4-解码基于分隔符的协议和基于长度的协议",
-                            "18-检测新连接",
-                        ]
-                    },
-                    
-                    {
-                        title: "Netty实战",
-                        collapsable: false,
-                        sidebarDepth: 0,
-                        children: [
-                            "Netty堆外内存泄露排查",
-                        ]
-                    },],
+                            title: "Netty基础",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "netty-basic-components",
+                                "ChannelPipeline接口",
+                                "(06-1)-ChannelHandler 家族",
+                                "(08)-学习Netty BootStrap的核心知识，成为网络编程高手！",
+                                "11-4-解码基于分隔符的协议和基于长度的协议",
+                                "18-检测新连接",
+                            ]
+                        },
+
+                        {
+                            title: "Netty实战",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "netty-off-heap-memory-leak-detection",
+                            ]
+                        },
+                    ],
 
                     "/md/kafka": [{
-                        title: "Kafka",
+                        title: "Kafka基础",
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
@@ -1468,18 +1475,20 @@ module.exports = {
                             "kafka-versions",
                             "08-全网最全图解Kafka适用场景",
                             "09-消息队列的消息大量积压怎么办？",
-                            "15-基于kafka实现延迟队列"
+                            "15-基于kafka实现延迟队列",
+                            "kafka-transaction-implementation"
                         ]
-                    },
-                    
-                    {
+                    }, ],
+
+                    "/md/mq": [{
                         title: "消息队列基础",
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
                             "消息队列面试必问解析",
+                            "消息队列的事务消息",
                         ]
-                    },],
+                    }, ],
 
                     "/md/RocketMQ/": [{
                             title: "RocketMQ基础",
@@ -1495,6 +1504,7 @@ module.exports = {
                                 "RocketMQ的延时消息",
                                 "RocketMQ 5.x任意时间延时消息原理",
                                 "05 - 批量消息和事务消息",
+                                "RocketMQ如何实现事务？",
                             ]
                         },
 
@@ -1506,7 +1516,7 @@ module.exports = {
                                 "核心概念",
                             ]
                         },
-                        
+
                         {
                             title: "RocketMQ业务实战",
                             collapsable: false,
