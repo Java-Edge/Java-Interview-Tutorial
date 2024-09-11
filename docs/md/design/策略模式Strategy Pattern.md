@@ -17,6 +17,8 @@
 Define a family of algorithms,encapsulate each one,and make them interchangeable.
 定义一组算法，将每个算法都封装起来，并且使它们之间可互换。
 
+每种算法可以根据当前场景相互替换，从而使算法的变化独立于使用它们的客户端（即算法的调用者）。
+
 常见 if/else 结构。
 
 ### 1.2 类型
@@ -124,6 +126,8 @@ Define a family of algorithms,encapsulate each one,and make them interchangeable
 策略：是一种经验的总结
 
 ## 6 实战
+
+### 价格策略
 
 
 
@@ -245,38 +249,201 @@ PromotionActivity promotionActivity = new PromotionActivity(
 promotionActivity.executePromotionStrategy();
 ```
 
-## 7 源码应用解析
+### 支付方式策略
 
-### 7.1 JDK中的比较器接口
+支付时，可根据实际选择不同支付方式（微信支付、支付宝、银行卡支付等），这些支付方式即是不同策略。通常看到如下实现：
+
+```java
+Order order = 订单信息
+if (payType == 微信支付) {
+    ...
+} else if (payType == 支付宝) {
+    支付宝支付流程
+} else if (payType == 银行卡) {
+    银行卡支付流程
+} else {
+    暂不支持的支付方式
+}
+```
+
+虽写着简单，但违反面向对象2个基本原则：
+
+- 单一职责原则：一个类只有1个发生变化的原因。之后修改任何逻辑，当前方法都会被修改
+- 开闭原则：对扩展开放，对修改关闭。当需要增加、减少某种支付方式(积分支付/组合支付)或增加优惠券等功能时，不可避免要修改代码
+
+特别当 if-else 块中的代码量比较大时，后续的扩展和维护会变得非常复杂且容易出错。在阿里《Java开发手册》中，有这样的规则：超过3层的 if-else 的逻辑判断代码可以使用卫语句、策略模式、状态模式等来实现。
+
+策略模式是解决过多 if-else（或者 switch-case） 代码块的方法之一，提高代码的可维护性、可扩展性和可读性。从策略的定义、创建和使用这三个方面以上述网购支付为示例来分别进行说明。
+
+策略的定义
+策略接口的定义，通常包含两个方法：获取策略类型的方法和处理策略业务逻辑的方法。
+
+```java
+// 第三方支付
+public interface Payment {
+
+	// 获取支付方式
+  PayTypeEnum getPayType();
+
+  /**
+    * 支付调用
+    * 
+    * @param order 订单信息
+    * @return 响应，支付结果
+    */
+  PayResult pay(Order order);
+}
+```
+
+策略接口的实现，每种支付类都实现了上述接口（基于接口而非实现编程），这样我们可以灵活的替换不同的支付方式。
+
+每种支付方式的实现：
+
+```java
+@Component
+public class WxPayment implements Payment {
+
+@Override
+public PayTypeEnum getPayType() {
+   return PayTypeEnum.WX;
+}
+
+@Override
+public PayResult pay(Order order) {
+   // 调用微信支付
+   if (成功) {
+       return PayResult.SUCCESS;
+   } else {
+       return PayResult.FAIL;
+   }
+}
+```
+
+```java
+// 支付宝支付
+@Component
+public class AlipayPayment implements Payment {
+
+@Override
+public PayTypeEnum getPayType() {
+   return PayTypeEnum.ALIPAY;
+}
+
+@Override
+public PayResult pay(Order order) {
+   // 调用支付宝支付
+   if (成功) {
+       return PayResult.SUCCESS;
+   } else {
+       return PayResult.FAIL;
+   }
+}
+
+}
+```
+
+```java
+// 银行卡支付
+@Component
+public class BankCardPayment implements Payment {
+
+@Override
+public PayTypeEnum getPayType() {
+   return PayTypeEnum.BANK_CARD;
+}
+
+@Override
+public PayResult pay(Order order) {
+   // 调用银行卡支付
+   if (成功) {
+       return PayResult.SUCCESS;
+   } else {
+       return PayResult.FAIL;
+   }
+}
+}
+```
+
+## 7 框架应用
+
+### 7.1 JDK的比较器
 
 策略比较器：
-![](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy80Njg1OTY4LTMwNzY2Njg5NmMzZDE4MDAucG5n?x-oss-process=image/format,png)
-![具体策略](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWQtaW1hZ2VzLmppYW5zaHUuaW8vdXBsb2FkX2ltYWdlcy80Njg1OTY4LWQ5MjhkZDE2YmVhNDRhNjAucG5n?x-oss-process=image/format,png)
 
-如Arrays类中的 sort 方法通过传入不同比较接口器的实现达到不同排序策略：
+```java
+ * @param <T> the type of objects that may be compared by this comparator
+ *
+ * @author  Josh Bloch
+ * @author  Neal Gafter
+ * @see Comparable
+ * @see java.io.Serializable
+ * @since 1.2
+ */
+@FunctionalInterface
+public interface Comparator<T> {
+     boolean equals(Object obj);
+}
+```
 
-![](https://codeselect.oss-cn-shanghai.aliyuncs.com/format%252Cpng.png)
+具体策略：
 
-### 7.2 JDK中的TreeMap
+![](https://my-img.javaedge.com.cn/javaedge-blog/2024/09/5164f272a4ffe415b36d676ebab13c84.png)
+
+如Arrays类中的 sort 方法通过传入不同比较器实现达到不同排序策略：
+
+```java
+public final class Arrays {
+
+  public static <T> void sort(T[] a, Comparator<? super T> c) {
+      if (c == null) {
+          sort(a);
+      } else {
+          if (LegacyMergeSort.userRequested)
+              legacyMergeSort(a, c);
+          else
+              TimSort.sort(a, 0, a.length, c, null, 0, 0);
+      }
+  }
+}
+```
+
+### 7.2 JDK的TreeMap
 
 类似于促销活动中有促销策略对象，在T reeMap 中也有比较器对象
 
-![](https://codeselect.oss-cn-shanghai.aliyuncs.com/format%252Cpng-20240320122203514.png)
+```java
+public class TreeMap<K,V>
+    extends AbstractMap<K,V>
+    implements NavigableMap<K,V>, Cloneable, java.io.Serializable
+{
+    /**
+     * The comparator used to maintain order in this tree map, or
+     * null if it uses the natural ordering of its keys.
+     *
+     * @serial
+     */
+    @SuppressWarnings("serial") // Conditionally serializable
+    private final Comparator<? super K> comparator;
+```
 
 compare 方法进步加工：
 
 ![](https://codeselect.oss-cn-shanghai.aliyuncs.com/format%252Cpng-20240320122215980.png)
 
-### 7.3 Spring 中的Resource
+### 7.3 Spring的Resource
 
 不同访问策略：
 
-![](https://codeselect.oss-cn-shanghai.aliyuncs.com/format%252Cpng-20240320122225193.png)
+```java
+// 资源描述符的接口，该描述符从基础资源的实际类型（如文件或类路径资源）中抽象出来
+// 若 InputStream 以物理形式存在，则可为每个资源打开它，但只能为某些资源返回 URL 或 File 句柄
+public interface Resource extends InputStreamSource {
+```
 
+![](https://codeselect.oss-cn-shanghai.aliyuncs.com/image-20240320131536330.png)
 
+### 7.4 Spring bean初始化InstantiationStrategy
 
-### 7.4 Spring bean 初始化InstantiationStrategy
-
-两种 bean 的初始化策略：
+两种 bean 初始化策略：
 
 ![](https://codeselect.oss-cn-shanghai.aliyuncs.com/image-20240320121809393.png)

@@ -254,6 +254,14 @@ module.exports = {
                                     link: '/md/risk-control/risk-control-engine-architecture-design.md'
                                 }]
                             },
+
+                            {
+                                text: 'Go微服务网关专栏概述',
+                                items: [{
+                                    text: 'Go微服务网关专栏概述',
+                                    link: '/md/go-gateway/00-Go微服务网关专栏概述.md'
+                                }]
+                            },
                         ]
                     },
 
@@ -289,26 +297,21 @@ module.exports = {
                                 }]
                             },
 
-
                             {
-                                text: '消息队列基础',
+                                text: 'kafka',
                                 items: [{
-                                    text: '消息队列基础',
-                                    link: '/md/mq/消息队列面试必问解析.md'
-                                }]
-                            },
-
-                            {
-                                text: 'Kafka',
-                                items: [{
-                                    text: 'Kafka基础',
+                                    text: 'kafka',
                                     link: '/md/kafka/00-Kafka专栏大纲.md'
-                                }, ]
+                                }]
                             },
 
                             {
                                 text: 'RocketMQ',
                                 items: [{
+                                        text: '消息队列基础',
+                                        link: '/md/RocketMQ/消息队列面试必问解析.md'
+                                    },
+                                    {
                                         text: 'RocketMQ基础',
                                         link: '/md/RocketMQ/01-RocketMQ核心内容.md'
                                     },
@@ -327,7 +330,7 @@ module.exports = {
                             {
                                 text: 'RabbitMQ',
                                 items: [{
-                                    text: '00-RabbitMQ',
+                                    text: 'RabbitMQ',
                                     link: '/md/rabbitmq/00-RabbitMQ实战下载与安装.md'
                                 }, ]
                             },
@@ -908,7 +911,6 @@ module.exports = {
                                 "06-运营后台系统设计",
                                 "07-大厂报价查询系统性能优化之道",
                                 "08-视频推荐索引构建",
-                                "09-交易中台-如何防止订单二次重复支付？",
                                 "小游戏的大促实践",
                                 "事件中心架构概述",
                             ]
@@ -966,6 +968,7 @@ module.exports = {
                             "00-如何防止订单二次重复支付？",
                             "01-扫码支付后都发生了啥？",
                             "02-大厂的第三方支付业务架构设计",
+                            "wechat-pay-development-guide-avoid-pitfalls",
                         ]
                     }],
 
@@ -1078,6 +1081,7 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "熔断限流",
+                            "11-RPC的负载均衡",
                         ]
                     }],
 
@@ -1116,7 +1120,8 @@ module.exports = {
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
-                            "07-MQTT发布订阅模式介绍.md"
+                            "MQTT与Kafka在物联网消息与流数据集成实践",
+                            "07-MQTT发布订阅模式介绍"
                         ]
                     }],
                     "/md/spider/": [{
@@ -1217,13 +1222,11 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
-                                "01-SpringMVC的AsyncHandlerInterceptor异步的处理器拦截器",
-                                "02-实现http请求的异步长轮询",
-                                "03-SpringMVC拦截处理器",
                                 "Spring之BeanNameAware和BeanFactoryAware接口",
                                 "这次彻底搞懂IoC容器依赖注入的源码",
                                 "别小看Spring过滤器,这些知识点你必须得掌握",
                                 "Spring框架使用了哪些设计模式",
+                                "阿里四面：你知道Spring AOP创建Proxy的过程吗？",
                             ]
                         },
 
@@ -1232,6 +1235,9 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
+                                "01-SpringMVC的AsyncHandlerInterceptor异步的处理器拦截器",
+                                "02-实现http请求的异步长轮询",
+                                "03-SpringMVC拦截处理器",
                                 "SpringMVC-service-doDispatch",
                                 "SpringMVC-DispatcherServlet-doDispatch",
                             ]
@@ -1244,6 +1250,7 @@ module.exports = {
                             children: [
                                 "00-可能是全网最全的SpringBoot启动流程源码分析",
                                 "01-HelloSpringBoot应用程序",
+                                "SpringBoot默认线程池",
                             ]
                         },
                     ],
@@ -1358,6 +1365,9 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "00-Spring响应式编程",
+                            "响应式编程的适用场景",
+                            "01-想让系统更具有弹性？了解背压机制和响应式流的秘密！",
+                            "04-Spring为何偏爱Reactor响应式编程框架",
                             "05-流式操作：如何使用 Flux 和 Mono 高效构建响应式数据流？",
                         ]
                     }],
@@ -1465,32 +1475,35 @@ module.exports = {
                         },
                     ],
 
-                    "/md/kafka": [{
-                        title: "Kafka基础",
+                    "/md/kafka/": [{
+                        title: "kafka",
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
                             "00-Kafka专栏大纲",
+                            "01-为何大厂都选择Kafka作为消息队列",
                             "Kafka门派知多少",
-                            "kafka-versions",
                             "08-全网最全图解Kafka适用场景",
                             "09-消息队列的消息大量积压怎么办？",
                             "15-基于kafka实现延迟队列",
-                            "kafka-transaction-implementation"
-                        ]
-                    }, ],
-
-                    "/md/mq": [{
-                        title: "消息队列基础",
-                        collapsable: false,
-                        sidebarDepth: 0,
-                        children: [
-                            "消息队列面试必问解析",
-                            "消息队列的事务消息",
+                            "kafka-transaction-implementation",
+                            "kafka-versions",
                         ]
                     }, ],
 
                     "/md/RocketMQ/": [{
+                            title: "消息队列基础",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "消息队列面试必问解析",
+                                "消息队列的事务消息",
+                                "避免无法克服的队列积压",
+                                "消息恰好被消费一次",
+                            ]
+                        },
+
+                        {
                             title: "RocketMQ基础",
                             collapsable: false,
                             sidebarDepth: 0,
@@ -1526,18 +1539,22 @@ module.exports = {
                                 "RocketMQ在基金大厂的分布式事务实践",
                             ]
                         },
-
                     ],
-                    "/md/rabbitmq": [{
+
+                    "/md/rabbitmq/": [{
                         title: "RabbitMQ",
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
                             "00-RabbitMQ实战下载与安装",
+                            "04-RabbitMQ & Spring整合开发",
                             "RabbitMQ消费端幂等性概念及解决方案",
                             "用了这么久的RabbitMQ异步编程竟然都是错的",
+                            "RabbitMQ的 RPC 消息模式你会了吗？",
+                            "12-RabbitMQ实战-消费端ACK、NACK及重回队列机制",
                         ]
-                    }],
+                    }, ],
+
                     "/md/redis/": [{
                         title: "Redis",
                         collapsable: false,
@@ -1549,7 +1566,8 @@ module.exports = {
                             "03-Redisson公平锁加锁源码分析",
                             "04-Redisson读写锁加锁机制分析",
                             "05-缓存读写策略模式详解",
-                            "06-如何快速定位 Redis 热 key"
+                            "06-如何快速定位 Redis 热 key",
+                            "12-Redis 闭源？",
                         ]
                     }],
                     "/md/es/": [{
@@ -1703,6 +1721,16 @@ module.exports = {
                         ]
                     }, ],
 
+                    "/md/go-gateway/": [{
+                        title: "Go微服务网关",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "00-Go微服务网关专栏概述",
+                            "open-systems-interconnection-model",
+                        ]
+                    }, ],
+
                     "/md/career/": [{
                         title: "职业规划",
                         collapsable: false,
@@ -1740,6 +1768,8 @@ module.exports = {
                         children: [
                             "16-精益独立开发实践",
                             "17-用户画像都是怎么产生的？",
+                            "20-个人支付解决方案",
+                            "21-处理用户反馈和增长优化",
                         ]
                     }],
 

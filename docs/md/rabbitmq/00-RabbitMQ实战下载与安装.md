@@ -145,7 +145,7 @@ wget下载即可。
 
 ![](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWRmaWxlcy5ub3djb2Rlci5jb20vZmlsZXMvMjAxOTA2MjkvNTA4ODc1NV8xNTYxNzY3OTM4OTg1XzQ2ODU5NjgtMjdlNzc5ZTJlZjc5Zjc4YS5wbmc?x-oss-process=image/format,png)
 
-再安装 rebbitmq：
+再安装 rabbitmq：
 
 ![](https://imgconvert.csdnimg.cn/aHR0cHM6Ly91cGxvYWRmaWxlcy5ub3djb2Rlci5jb20vZmlsZXMvMjAxOTA2MjkvNTA4ODc1NV8xNTYxNzY3OTM5MjA2XzQ2ODU5NjgtMWY5ODcwNWYxZTMzNWVmMi5wbmc?x-oss-process=image/format,png)
 
