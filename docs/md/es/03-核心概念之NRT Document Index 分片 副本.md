@@ -1,9 +1,6 @@
 # 03-核心概念之NRT Document Index 分片 副本
 
 ## 1 Lucene 基本概念
-
-
-
 ![](https://my-img.javaedge.com.cn/javaedge-blog/2024/06/02f9274a0dc9f34de786593c63a09a6f.png)
 
 ### segment file（Lucene）
@@ -40,32 +37,21 @@
 
 集群中的一个节点，节点也有一个名称（默认随机分配），节点名称很重要（在执行运维管理操作的时候），默认节点会去加入一个名称为“elasticsearch”的集群，如果直接启动一堆节点，那么它们会自动组成一个ES集群，当然一个节点也能组成一个ES集群。
 
-### 2.4 索引-Index(表)
+### 2.4 索引-Index（表）
 
-由具有相同字段的文档列表组成，包含一堆相似结构的文档数据。
+具有相同字段的文档列表组成，一堆相似结构的文档的集合。如有一个客户索引，商品分类索引，订单索引。索引有一个名称，一个index包含很多document，一个index代表一类相似/相同的document。
 
-如可以有一个客户索引，商品分类索引，订单索引。索引有一个名称，
-一个index包含很多document，一个index就代表一类类似/相同的document。
-
-如建立一个product index（商品索引），里面可能就存放所有的商品数据（商品document）。
-
-索引中存储具有相同结构的文档(Document)
-
-每个索引都有自己的`mapping`定义（类似MySQL的schema），以定义字段名和类型。
-
-一个集群能有多个索引，如nginx日志存储时，可按日期每天生成一个索引存储：
+如建立一个product index（商品索引），里面可能就存放所有商品数据（商品document）。索引中存储具有相同结构的文档(Document)。每个索引都有自己的`mapping`定义（类似MySQL的schema），以定义字段名和类型。一个集群能有多个索引，如nginx日志存储时，可按日期每天生成一个索引存储：
 
 - nginx-log-2020-01-01
 - nginx-log-2020-01-02
 - nginx-log-2020-01-03
 
-### 2.5 Document & field（行&列）
+### 2.5 Document & field（数据行&列）
 
 #### 2.5.1 document
 
-JSON结构，用户存储在ES中的数据文档。一个document可以是一条客户数据，一条商品分类数据，一条订单数据。由字段 Filed 组成。
-
-每个文档有唯一id标识：
+JSON结构，用户存储在ES中的数据。一个document可以是一条客户数据，一条商品分类数据，一条订单数据。由字段 Filed 组成。每个文档有唯一id标识：
 
 - 自行指定
 - ES自动生成
@@ -94,9 +80,9 @@ JSON结构，用户存储在ES中的数据文档。一个document可以是一条
 - _source：文档原始JSON数据，存储了文档的完整原始数据，可从这里获取每个字段内容
 - _all：整合所有字段内容到该字段，默认禁用，因其针对所有字段内容分词，很占磁盘空间
 
-#### field
+#### 2.5.4 field
 
-每个index下的type，都可以存储多个document。一个document里面有多个field，每个field就是一个数据字段列。
+每个index下的type，都可以存储多个document。一个document里面有多个field，每个field就是一个数据字段列。也就是 JSON 文档中的字段：
 
 ```json
 product document
@@ -108,6 +94,10 @@ product document
   "category_name": "技术追求"
 }
 ```
+
+#### 2.5.5 mapping
+
+索引中文档的约束，如字段的类型约束，类似 MySQL 中的表结构的定义。
 
 ### 2.6 shard
 

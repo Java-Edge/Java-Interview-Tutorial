@@ -748,7 +748,7 @@ module.exports = {
                                 link: '/md/AI/00-rag-introduction-tool-to-eliminate-llm-hallucinations'
                             },
                             {
-                                text: 'Agent',
+                                text: 'Agent基础',
                                 link: '/md/AI/01-what-are-agents'
                             },
                             {
@@ -1550,6 +1550,7 @@ module.exports = {
                             "04-RabbitMQ & Spring整合开发",
                             "RabbitMQ消费端幂等性概念及解决方案",
                             "用了这么久的RabbitMQ异步编程竟然都是错的",
+                            "08-RabbitMQ的七种队列模式",
                             "RabbitMQ的 RPC 消息模式你会了吗？",
                             "12-RabbitMQ实战-消费端ACK、NACK及重回队列机制",
                         ]
@@ -1580,6 +1581,8 @@ module.exports = {
                             "02-MacOS下载安装启动ES和Kibana",
                             "03-核心概念之NRT Document Index 分片 副本",
                             "04-Kibana常见RESTful API操作",
+                            "05-倒排索引与分词",
+                            "07-整合进 SpringBoot 项目",
                         ]
                     }],
                     "/md/ck/": [{
@@ -1902,7 +1905,7 @@ module.exports = {
                             ]
                         },
                         {
-                            title: "Agent",
+                            title: "Agent基础",
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
@@ -1940,6 +1943,9 @@ module.exports = {
                             children: [
                                 "00-introduce-to-LangGraph",
                                 "langgraph-studio",
+                                "methods-adapting-large-language-models",
+                                "to-fine-tune-or-not-to-fine-tune-llm",
+                                "effective-datasets-fine-tuning",
                             ]
                         },
                     ],
