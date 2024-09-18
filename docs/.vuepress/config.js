@@ -231,7 +231,7 @@ module.exports = {
                         ]
                     },
                     {
-                        text: '项目实战',
+                        text: '项目',
                         items: [{
                                 text: '12306',
                                 items: [{
@@ -266,7 +266,7 @@ module.exports = {
                     },
 
                     {
-                        text: '中间件',
+                        text: '框架',
                         items: [{
                                 text: 'RPC',
                                 items: [{
@@ -362,7 +362,7 @@ module.exports = {
                     },
 
                     {
-                        text: 'Java',
+                        text: '后端',
                         items: [{
                                 text: '并发',
                                 items: [{
@@ -383,7 +383,7 @@ module.exports = {
                                 text: 'JVM',
                                 items: [{
                                     text: 'JVM专栏概述',
-                                    link: '/md/java/JVM专栏概述.md'
+                                    link: '/md/jvm/JVM专栏概述.md'
                                 }, ]
                             },
 
@@ -392,6 +392,14 @@ module.exports = {
                                 items: [{
                                     text: 'Oracle Java SE（标准版）支持路线图',
                                     link: '/md/java/java-se-support-roadmap.md'
+                                }, ]
+                            },
+                            
+                            {
+                                text: 'IDEA新功能',
+                                items: [{
+                                    text: 'IntelliJ IDEA 2024.1 最新变化',
+                                    link: '/md/java/IntelliJ IDEA 2024.1 最新变化'
                                 }, ]
                             },
 
@@ -674,7 +682,7 @@ module.exports = {
                     },
 
                     {
-                        text: '计基',
+                        text: '计算机基础',
                         items: [{
                                 text: '计算机网络',
                                 items: [{
@@ -1099,6 +1107,8 @@ module.exports = {
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
+                            "TCP协议详解",
+                            "天天说架构，那CDN到底是什么？",
                             "计算机网络-网络层原理",
                         ]
                     }],
@@ -1115,6 +1125,7 @@ module.exports = {
                             "超线程（Hyper-Threading），单指令多数据流（SIMD）技术"
                         ]
                     }],
+
                     "/md/MQTT/": [{
                         title: "MQTT",
                         collapsable: false,
@@ -1124,6 +1135,7 @@ module.exports = {
                             "07-MQTT发布订阅模式介绍"
                         ]
                     }],
+
                     "/md/spider/": [{
                         title: "爬虫",
                         collapsable: false,
@@ -1132,6 +1144,7 @@ module.exports = {
                             "00-爬虫基础.md"
                         ]
                     }],
+
                     "/md/java/": [{
                             title: "并发",
                             collapsable: false,
@@ -1146,25 +1159,6 @@ module.exports = {
                             ]
                         },
                         {
-                            title: "JVM",
-                            collapsable: false,
-                            sidebarDepth: 0,
-                            children: [
-                                "JVM专栏概述",
-                                "01-JVM虚拟机-上篇",
-                                "02-JVM虚拟机-下篇",
-                                "00-JDK为何自己首先破坏双亲委派模型",
-                                "00-G1垃圾收集器的日志格式",
-                                "Metadata GC Threshold in Java",
-                                "对象内存分配及Minor GC和Full GC全过程",
-                                "高并发BI系统避免频繁Y-GC",
-                                "线上频繁Full GC，原来是外包同学不合理设置JVM参数！",
-                                "Java NIO为何导致堆外内存OOM了？",
-                                "一次由热部署导致的OOM排查经历",
-                                "队列积压了百万条消息，线上直接OOM了！",
-                            ]
-                        },
-                        {
                             title: "JDK新特性",
                             collapsable: false,
                             sidebarDepth: 0,
@@ -1176,12 +1170,51 @@ module.exports = {
                                 "understanding-java17-new-features-sealed-classes",
                                 "JDK21新特性",
                                 "JDK22新特性",
+                                "JDK23新特性",
+                            ]
+                        },
+                        
+                        {
+                            title: "IDEA新功能",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
                                 "IntelliJ IDEA 2024.1 最新变化",
                                 "What’s-New-in-IntelliJ-IDEA-2024.2",
+                                "What’s-New-in-IntelliJ-IDEA-2024.3",
                             ]
                         },
                     ],
 
+                    "/md/jvm/": [{
+                        title: "JVM基础",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "JVM专栏概述",
+                            "01-JVM虚拟机-上篇",
+                            "02-JVM虚拟机-下篇",
+                            "00-JDK为何自己首先破坏双亲委派模型",
+                            "00-G1垃圾收集器的日志格式",
+                            "Metadata GC Threshold in Java",
+                            "对象内存分配及Minor GC和Full GC全过程",
+                            "Java 性能调优：优化 GC 线程设置",
+                        ]
+                    },
+                    
+                    {
+                        title: "JVM调优",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "高并发BI系统避免频繁Y-GC",
+                            "线上频繁Full GC，原来是外包同学不合理设置JVM参数！",
+                            "Java NIO为何导致堆外内存OOM了？",
+                            "一次由热部署导致的OOM排查经历",
+                            "队列积压了百万条消息，线上直接OOM了！",
+                        ]
+                    }, ],
+                    
                     "/md/algorithm/leetcode/": [{
                         title: "大厂算法面试",
                         collapsable: false,
@@ -1341,23 +1374,42 @@ module.exports = {
                     ],
 
                     "/md/mysql/": [{
-                        title: "MySQL",
-                        collapsable: false,
-                        sidebarDepth: 0,
-                        children: [
-                            "00-MySQL专栏大纲",
-                            "亿级数据量商品系统的SQL调优实战",
-                            "MySQL查询优化",
-                            "how-to-use-indexes-when-grouping-in-sql",
-                            "mysql-architecture-design",
-                            "InnoDB架构设计",
-                            "mysql-read-write-splitting",
-                            "为什么临时表可以重名？",
-                            "MySQL深分页调优实战",
-                            "为什么阿里不推荐使用MySQL分区表？",
-                            "一文看懂这篇MySQL的锁机制",
-                        ]
-                    }],
+                            title: "MySQL基础",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "00-MySQL专栏大纲",
+                                "how-to-use-indexes-when-grouping-in-sql",
+                                "mysql-architecture-design",
+                                "InnoDB架构设计",
+                                "mysql-read-write-splitting",
+                                "为什么临时表可以重名？",
+                                "为什么阿里不推荐使用MySQL分区表？",
+                                "一文看懂这篇MySQL的锁机制",
+                            ]
+                        },
+
+                        {
+                            title: "MySQL实战",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "亿级数据量商品系统的SQL调优实战",
+                                "MySQL查询优化",
+                                "MySQL深分页调优实战",
+                            ]
+                        },
+
+                        {
+                            title: "MySQL新特性",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "MySQL新特性",
+                                "what-is-new-in-mysql9",
+                            ]
+                        },
+                    ],
 
                     "/md/reactive/": [{
                         title: "响应式编程",
