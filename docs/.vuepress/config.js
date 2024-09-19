@@ -382,7 +382,7 @@ module.exports = {
                             {
                                 text: 'JVM',
                                 items: [{
-                                    text: 'JVM专栏概述',
+                                    text: 'JVM基础',
                                     link: '/md/jvm/JVM专栏概述.md'
                                 }, ]
                             },
@@ -394,7 +394,7 @@ module.exports = {
                                     link: '/md/java/java-se-support-roadmap.md'
                                 }, ]
                             },
-                            
+
                             {
                                 text: 'IDEA新功能',
                                 items: [{
@@ -735,13 +735,9 @@ module.exports = {
                                 text: 'Python基础',
                                 link: '/md/python/00-macOS和Linux安装和管理多个Python版本'
                             },
-                            // {
-                            //     text: 'GPT发展',
-                            //     link: '/md/AI/Claude3到底多强'
-                            // },
                             {
                                 text: '机器学习',
-                                link: '/md/AI/01-人工智能概要'
+                                link: '/md/AI/ml/01-人工智能概要'
                             },
                             {
                                 text: 'LLM应用开发',
@@ -767,7 +763,20 @@ module.exports = {
                                 text: 'LangGraph',
                                 link: '/md/AI/00-introduce-to-LangGraph'
                             },
+
+                            {
+                                text: 'LangChain4j',
+                                link: '/md/AI/langchain4j/01-intro'
+                            },
                         ]
+                    },
+
+                    {
+                        text: '大模型',
+                        items: [{
+                            text: 'GPT发展',
+                            link: '/md/llm/GPTs推荐'
+                        }, ]
                     },
 
                     {
@@ -1173,7 +1182,7 @@ module.exports = {
                                 "JDK23新特性",
                             ]
                         },
-                        
+
                         {
                             title: "IDEA新功能",
                             collapsable: false,
@@ -1187,34 +1196,36 @@ module.exports = {
                     ],
 
                     "/md/jvm/": [{
-                        title: "JVM基础",
-                        collapsable: false,
-                        sidebarDepth: 0,
-                        children: [
-                            "JVM专栏概述",
-                            "01-JVM虚拟机-上篇",
-                            "02-JVM虚拟机-下篇",
-                            "00-JDK为何自己首先破坏双亲委派模型",
-                            "00-G1垃圾收集器的日志格式",
-                            "Metadata GC Threshold in Java",
-                            "对象内存分配及Minor GC和Full GC全过程",
-                            "Java 性能调优：优化 GC 线程设置",
-                        ]
-                    },
-                    
-                    {
-                        title: "JVM调优",
-                        collapsable: false,
-                        sidebarDepth: 0,
-                        children: [
-                            "高并发BI系统避免频繁Y-GC",
-                            "线上频繁Full GC，原来是外包同学不合理设置JVM参数！",
-                            "Java NIO为何导致堆外内存OOM了？",
-                            "一次由热部署导致的OOM排查经历",
-                            "队列积压了百万条消息，线上直接OOM了！",
-                        ]
-                    }, ],
-                    
+                            title: "JVM基础",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "JVM专栏概述",
+                                "01-JVM虚拟机-上篇",
+                                "02-JVM虚拟机-下篇",
+                                "00-JDK为何自己首先破坏双亲委派模型",
+                                "00-G1垃圾收集器的日志格式",
+                                "Metadata GC Threshold in Java",
+                                "对象内存分配及Minor GC和Full GC全过程",
+                                "Java 性能调优：优化 GC 线程设置",
+                                "JDK性能调优神器",
+                            ]
+                        },
+
+                        {
+                            title: "JVM调优",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "高并发BI系统避免频繁Y-GC",
+                                "线上频繁Full GC，原来是外包同学不合理设置JVM参数！",
+                                "Java NIO为何导致堆外内存OOM了？",
+                                "一次由热部署导致的OOM排查经历",
+                                "队列积压了百万条消息，线上直接OOM了！",
+                            ]
+                        },
+                    ],
+
                     "/md/algorithm/leetcode/": [{
                         title: "大厂算法面试",
                         collapsable: false,
@@ -1299,6 +1310,7 @@ module.exports = {
                             "03-Tomcat的生命周期管理",
                             "04-Tomcat实现热部署、热加载原理解析",
                             "05-Tomcat如何打破双亲委派机制实现隔离Web应用的？",
+                            "Tomcat进程占用CPU过高怎么办？",
                         ]
                     }],
 
@@ -1537,6 +1549,7 @@ module.exports = {
                             "Kafka门派知多少",
                             "08-全网最全图解Kafka适用场景",
                             "09-消息队列的消息大量积压怎么办？",
+                            "13-KafkaAdminClient",
                             "15-基于kafka实现延迟队列",
                             "kafka-transaction-implementation",
                             "kafka-versions",
@@ -1890,23 +1903,25 @@ module.exports = {
                         ]
                     }, ],
 
-                    // "/md/AI/": [{
-                    //     title: "GPT发展",
-                    //     collapsable: false,
-                    //     sidebarDepth: 0,
-                    //     children: [
-                    //         "Claude3到底多强",
-                    //         "GPTs推荐",
-                    //         "ChatGPT为啥不用Websocket而是EventSource？",
-                    //     ]
-                    // }, ],
+                    "/md/llm/": [{
+                        title: "GPT发展",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "00-免费大模型API",
+                            "Claude3到底多强",
+                            "GPTs推荐",
+                            "ChatGPT为啥不用Websocket而是EventSource",
+                        ]
+                    }, ],
 
-                    "/md/AI/": [{
+                    "/md/AI/ml/": [{
                         title: "机器学习",
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
                             "01-人工智能概要",
+                            "02-MR 算法分类",
                             "what-is-neural-network",
                             "MapReduce分治思想",
                             "05-开发环境安装",
@@ -1914,23 +1929,32 @@ module.exports = {
                         ]
                     }, ],
 
-                    "/md/AI/": [{
-                        title: "LLM应用开发",
+                    "/md/AI/langchain4j/": [{
+                        title: "LangChain4j基础",
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
-                            "AI大模型企业应用实战",
-                            "00-为什么要学习大模型",
-                            "01-大语言模型发展",
-                            "02-domestic-and-international-llm-multi-model-strong-applications",
-                            "03-large-language-model-flaws",
-                            "04-ai-ecosystem-industry-analysis",
-                            "05-ai-era-turning-point-for-app-developers",
-                            "06-智能体项目案例",
+                            "01-intro",
+                            "04-最新发布功能",
                         ]
                     }, ],
 
                     "/md/AI/": [{
+                            title: "LLM应用开发",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "AI大模型企业应用实战",
+                                "00-为什么要学习大模型",
+                                "01-大语言模型发展",
+                                "02-domestic-and-international-llm-multi-model-strong-applications",
+                                "03-large-language-model-flaws",
+                                "04-ai-ecosystem-industry-analysis",
+                                "05-ai-era-turning-point-for-app-developers",
+                                "06-智能体项目案例",
+                            ]
+                        },
+                        {
                             title: "LangChain",
                             collapsable: false,
                             sidebarDepth: 0,

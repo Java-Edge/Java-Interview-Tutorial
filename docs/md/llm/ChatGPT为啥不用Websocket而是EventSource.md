@@ -1,4 +1,4 @@
-# ChatGPT为啥不用Websocket而是EventSource？
+# ChatGPT为啥不用Websocket而是EventSource
 
 ## 1 前言
 
