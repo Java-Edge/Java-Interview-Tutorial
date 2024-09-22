@@ -6,7 +6,7 @@ IntelliJ IDEA 2024.3 第一个 EAP 版本已发布，提前体验
 
 下一个重大版本的一部分改进。
 
-![](/Users/javaedge/Downloads/IDEAProjects/java-edge-master/assets/image-20240917213459861.png)
+![](https://my-img.javaedge.com.cn/javaedge-blog/2024/09/550786d43cef4bce118c52abb4272334.png)
 
 持续关注 EAP 更新，未来几周内将推出更多 IntelliJ IDEA 新功能。尝试这些新功能，分享您的反馈，共同完善 IDE。
 
@@ -61,3 +61,33 @@ IntelliJ IDEA 2024.3 第一个 EAP 版本已发布，提前体验
 该功能仍处于早期开发阶段：
 
 ![](https://blog.jetbrains.com/wp-content/uploads/2024/09/image-2.png)
+
+## 4 Debugger
+
+### 增强版 HotSwap 功能
+
+使其更加易用和直观。HotSwap 机制允许您在调试会话期间重新加载已修改的类，而无需重新启动应用程序。现在，当您在激活的调试器会话中编辑代码时，IntelliJ IDEA 会自动检测到更改，并通过编辑器中的便捷按钮提示您重新加载这些更改。
+
+这简化了开发过程，使代码更新可实时进行。
+
+> HotSwap 具有一些限制，特别是在结构性更改方面。了解更多信息，请参见[此处](https://www.jetbrains.com/help/idea/altering-the-program-s-execution-flow.html#hotswap-limitations)。
+
+![img](https://blog.jetbrains.com/wp-content/uploads/2024/09/HotSwap.gif)
+
+## 5 Build tools
+
+### 多模块项目中的编译加速
+
+在以前的 IntelliJ IDEA 版本中，项目模块是逐个编译的，对于大型项目来说，这并不是最快的方式。尽管并行编译已经作为选项存在了一段时间，但由于担心高 CPU 和内存使用，它一直未成为默认设置。
+
+随着更多人使用现代化且更强大的硬件，决定在 IntelliJ IDEA 2024.3 中将并行编译设置为默认选项。这意味着所有基于 Maven 的项目在 IDE 中的编译速度将显著提升。通过自动模式，IDE 还确保不会消耗过多资源。
+
+![](https://blog.jetbrains.com/wp-content/uploads/2024/09/MultiModuleCompilation.png)
+
+### 无缝处理不受信任的 SSL 证书
+
+从 IntelliJ IDEA 2024.3 EAP 2 开始，IDE 会在 Maven 同步或构建过程中自动检测到 SSL 相关问题。如果问题是由不受信任的证书引起的，IntelliJ IDEA 将提供解决方案，帮助您信任该证书——无需手动干预。
+
+这一更新消除了在日志中排查 SSL 错误的猜测工作，免去在 JDK 的受信任存储中手动管理证书的繁琐步骤。
+
+![img](https://blog.jetbrains.com/wp-content/uploads/2024/09/image-16.png)

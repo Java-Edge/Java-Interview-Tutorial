@@ -752,18 +752,13 @@ module.exports = {
                                 link: '/md/AI/00-rag-introduction-tool-to-eliminate-llm-hallucinations'
                             },
                             {
-                                text: 'Agent基础',
+                                text: 'Agent',
                                 link: '/md/AI/01-what-are-agents'
-                            },
-                            {
-                                text: 'Agent项目实战',
-                                link: '/md/AI/01-three-minute-fastapi-ai-agent-setup'
                             },
                             {
                                 text: 'LangGraph',
                                 link: '/md/AI/00-introduce-to-LangGraph'
                             },
-
                             {
                                 text: 'LangChain4j',
                                 link: '/md/AI/langchain4j/01-intro'
@@ -1117,6 +1112,7 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "TCP协议详解",
+                            "TCP连接的建立和断开受哪些系统配置影响？",
                             "天天说架构，那CDN到底是什么？",
                             "计算机网络-网络层原理",
                         ]
@@ -1904,16 +1900,26 @@ module.exports = {
                     }, ],
 
                     "/md/llm/": [{
-                        title: "GPT发展",
-                        collapsable: false,
-                        sidebarDepth: 0,
-                        children: [
-                            "00-免费大模型API",
-                            "Claude3到底多强",
-                            "GPTs推荐",
-                            "ChatGPT为啥不用Websocket而是EventSource",
-                        ]
-                    }, ],
+                            title: "GPT发展",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "00-免费大模型API",
+                                "Claude3到底多强",
+                                "GPTs推荐",
+                                "ChatGPT为啥不用Websocket而是EventSource",
+                            ]
+                        },
+                        {
+                            title: "Prompt工程",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "01-Prompt网站",
+                                "02-常用Prompt",
+                            ]
+                        },
+                    ],
 
                     "/md/AI/ml/": [{
                         title: "机器学习",
@@ -1930,31 +1936,35 @@ module.exports = {
                     }, ],
 
                     "/md/AI/langchain4j/": [{
-                        title: "LangChain4j基础",
-                        collapsable: false,
-                        sidebarDepth: 0,
-                        children: [
-                            "01-intro",
-                            "04-最新发布功能",
-                        ]
-                    }, ],
-
-                    "/md/AI/": [{
-                            title: "LLM应用开发",
+                            title: "LangChain4j基础",
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
-                                "AI大模型企业应用实战",
-                                "00-为什么要学习大模型",
-                                "01-大语言模型发展",
-                                "02-domestic-and-international-llm-multi-model-strong-applications",
-                                "03-large-language-model-flaws",
-                                "04-ai-ecosystem-industry-analysis",
-                                "05-ai-era-turning-point-for-app-developers",
-                                "06-智能体项目案例",
+                                "01-intro",
+                                "get-started",
+                                "spring-boot-integration",
+                                "chat-and-language-models",
+                                "chat-memory",
+                                "response-streaming",
+                                "ai-services",
+                                "tools",
                             ]
                         },
+
                         {
+                            title: "LangChain4j新特性",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "04-0-最新发布功能",
+                                "04-1-最新发布功能",
+                                "04-2-最新发布功能",
+                                "04-3-最新发布功能",
+                            ]
+                        },
+                    ],
+
+                    "/md/AI/": [{
                             title: "LangChain",
                             collapsable: false,
                             sidebarDepth: 0,
@@ -1978,6 +1988,21 @@ module.exports = {
                                 "02-相似性检索的关键 - Embedding",
                                 "03-core-of-rag-result-retrieval-and-reordering",
                                 "04-prompt-helping-llm-understand-knowledge",
+                            ]
+                        },
+                        {
+                            title: "LLM应用开发",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "AI大模型企业应用实战",
+                                "00-为什么要学习大模型",
+                                "01-大语言模型发展",
+                                "02-domestic-and-international-llm-multi-model-strong-applications",
+                                "03-large-language-model-flaws",
+                                "04-ai-ecosystem-industry-analysis",
+                                "05-ai-era-turning-point-for-app-developers",
+                                "06-智能体项目案例",
                             ]
                         },
                         {
