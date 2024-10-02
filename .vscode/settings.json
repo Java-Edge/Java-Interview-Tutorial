@@ -8,5 +8,6 @@
         "rabbitmq",
         "Servlet",
         "springframework"
-    ]
+    ],
+    "Codegeex.RepoIndex": true
 }

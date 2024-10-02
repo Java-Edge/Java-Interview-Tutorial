@@ -146,7 +146,7 @@ module.exports = {
                                 text: '设计原则',
                                 items: [{
                                     text: '设计原则概述',
-                                    link: '/md/design/阿里P8架构师都是怎么分析软件模型的？.md'
+                                    link: '/md/design/01-单一职责原则.md'
                                 }, ]
                             },
                             {
@@ -682,6 +682,17 @@ module.exports = {
                     },
 
                     {
+                        text: '数据分析',
+                        items: [{
+                            text: '数分基础',
+                            items: [{
+                                text: '为啥要学习数据分析？',
+                                link: '/md/data-analysis/basic/为啥要学习数据分析？.md'
+                            }]
+                        }, ]
+                    },
+
+                    {
                         text: '计算机基础',
                         items: [{
                                 text: '计算机网络',
@@ -771,6 +782,10 @@ module.exports = {
                         items: [{
                             text: 'GPT发展',
                             link: '/md/llm/GPTs推荐'
+                        },
+                        {
+                            text: 'Prompt工程',
+                            link: '/md/llm/01-Prompt网站'
                         }, ]
                     },
 
@@ -1003,6 +1018,9 @@ module.exports = {
                                 "大数据平台架构",
                                 "对象存储",
                                 "02-分布式对象存储设计原理",
+                                "AB测试与灰度发布",
+                                "当大数据遇上物联网",
+                                "移动计算",
                             ]
                         },
                         {
@@ -1106,6 +1124,7 @@ module.exports = {
                             "19-路由引擎：如何在路由过程中集成多种路由策略和路由算法？",
                         ]
                     }],
+
                     "/md/network/": [{
                         title: "计算机网络",
                         collapsable: false,
@@ -1147,6 +1166,16 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "00-爬虫基础.md"
+                        ]
+                    }],
+
+                    "/md/data-analysis/basic/": [{
+                        title: "数分基础",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "为啥要学习数据分析？",
+                            "01-数据分析的正确学习方法"
                         ]
                     }],
 
@@ -1402,6 +1431,8 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
+                                "Java生态中性能最强数据库连接池HikariCP",
+                                "Java业务系统是怎么和MySQL交互的？",
                                 "亿级数据量商品系统的SQL调优实战",
                                 "MySQL查询优化",
                                 "MySQL深分页调优实战",
@@ -1502,14 +1533,25 @@ module.exports = {
                     ],
 
                     "/md/monitor/": [{
-                        title: "监控",
-                        collapsable: false,
-                        sidebarDepth: 0,
-                        children: [
-                            "00-你居然还去服务器上捞日志，搭个日志收集系统难道不香么！",
-                            "03-Loki 日志监控",
-                        ]
-                    }],
+                            title: "监控",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "00-你居然还去服务器上捞日志，搭个日志收集系统难道不香么！",
+                                "03-Loki 日志监控",
+                            ]
+                        },
+
+                        {
+                            title: "性能分析",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "并发用户、RPS、TPS的解读",
+                                "01-性能分析思路",
+                            ]
+                        },
+                    ],
 
                     "/md/netty/": [{
                             title: "Netty基础",
@@ -1834,6 +1876,7 @@ module.exports = {
                             "17-用户画像都是怎么产生的？",
                             "20-个人支付解决方案",
                             "21-处理用户反馈和增长优化",
+                            "22-大纲的注意点",
                         ]
                     }],
 
@@ -1900,7 +1943,7 @@ module.exports = {
                     }, ],
 
                     "/md/llm/": [{
-                            title: "GPT发展",
+                            title: "大模型发展",
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
@@ -1908,6 +1951,9 @@ module.exports = {
                                 "Claude3到底多强",
                                 "GPTs推荐",
                                 "ChatGPT为啥不用Websocket而是EventSource",
+                                "携手阿里云：JetBrains AI Assistant 正式发布！",
+                                "中国大陆用户如何使用Jetbrains内置的AI插件AI Assistant",
+                                "contextual-retrieval",
                             ]
                         },
                         {
@@ -1926,6 +1972,7 @@ module.exports = {
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
+                            "软件工程师如何进入人工智能领域？",
                             "01-人工智能概要",
                             "02-MR 算法分类",
                             "what-is-neural-network",
@@ -1948,6 +1995,8 @@ module.exports = {
                                 "response-streaming",
                                 "ai-services",
                                 "tools",
+                                "rag",
+                                "observability",
                             ]
                         },
 
@@ -2027,13 +2076,14 @@ module.exports = {
                         },
 
                         {
-                            title: "Agent项目实战",
+                            title: "Agent应用开发",
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
                                 "01-three-minute-fastapi-ai-agent-setup",
                                 "02-Agent应用对话情感优化",
                                 "03-use-tts-to-make-your-ai-agent-speak",
+                                "AI Agent应用出路到底在哪？",
                             ]
                         },
 
@@ -2061,6 +2111,7 @@ module.exports = {
                                 "02-软件架构权衡-架构特性",
                                 "代码的坏味道",
                                 "分离关注点的意义",
+                                "如何了解一个软件的设计？",
                                 "架构之美：教你如何分析一个接口？",
                                 "业务代码如何才能不再写出大串的if else？",
                                 "阿里P8架构师都是怎么分析软件模型的？",
@@ -2071,7 +2122,7 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
-                                "阿里P8架构师都是怎么分析软件模型的？",
+                                "01-单一职责原则",
                                 "rest-api-design-resource-modeling",
                             ]
                         },
@@ -2081,6 +2132,7 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
+                                "【Java设计模式实战】单例模式",
                                 "模板方法设计模式（Template Pattern）",
                                 "策略模式Strategy Pattern",
                                 "建造者模式",

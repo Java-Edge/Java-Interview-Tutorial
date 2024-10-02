@@ -1,29 +1,25 @@
 # Kafka门派知多少
 
-Kafka不是一个单纯的消息引擎系统，而是能够实现精确一次（Exactly-once）处理语义的实时流处理平台
-
-Storm/Spark Streaming/Flink，在大规模流处理领域主流，Kafka经长期迭代，现已能稍稍比肩这些框架：
+Kafka不是一个单纯的消息引擎系统，而是能实现Exactly-once处理语义的实时流处理平台。Storm/Spark Streaming/Flink，在大规模流处理领域主流，Kafka经长期迭代，已能稍比肩：
 
 - Kafka社区对这些框架心存敬意
-- 目前国内鲜有大厂将Kafka用于流处理的尴尬境地，毕竟Kafka是从消息引擎“半路出家”转型成流处理平台的，它在流处理方面的表现还需要经过时间的检验。
+- 目前国内鲜有大厂将Kafka用于流处理的尴尬境地，毕竟Kafka是从消息引擎“半路出家”转型成流处理平台，在流处理方面表现还需检验
 
-从流处理平台扩展到流处理生态圈，Kafka更是还有很长的路要走
-Kafka Streams提供了Kafka实时处理流数据的能力
-但是其实还有一个重要的组件**Kafka Connect**
+从流处理平台扩展到流处理生态圈，Kafka更是还有很长的路要走，Kafka Streams提供了Kafka实时处理流数据的能力，但是其实还有一个重要的组件**Kafka Connect**。
 
-在评估流处理平台时，框架本身的性能、所提供操作算子（Operator）的丰富程度固然是重要的评判指标，**但框架与上下游交互的能力也是非常重要的**
-能够与之进行数据传输的外部系统越多，围绕它打造的生态圈就越牢固，因而也就有更多的人愿意去使用它，从而形成正向反馈，不断地促进该生态圈的发展。
-就Kafka而言，Kafka Connect通过一个个具体的连接器（Connector），串联起上下游的外部系统。
+在评估流处理平台时，框架本身的性能、所提供操作算子（Operator）的丰富度固然重要，**但框架与上下游交互的能力也很重要**。能与之数据传输的外部系统越多，围绕打造的生态圈越牢固，因而也就有更多人愿意用，形成正反馈促进生态圈发展。
+
+就Kafka而言，Kafka Connect通过一个个具体连接器（Connector），串联上下游的外部系统。
 
 Kafka生态圈：
 
-![](https://codeselect.oss-cn-shanghai.aliyuncs.com/watermark%252Ctype_ZmFuZ3poZW5naGVpdGk%252Cshadow_10%252Ctext_SmF2YUVkZ2U%253D%252Csize_16%252Ccolor_FFFFFF%252Ct_70-0841199.png)
-外部系统只是Kafka Connect组件支持的一部分而已
-使用Kafka Connect组件的用户越来越多，相信在未来会有越来越多的人开发自己的连接器
+![](https://my-img.javaedge.com.cn/javaedge-blog/2024/08/3acd4c24db3299a38bee83f802f51fad.png)
 
-清晰地了解Kafka的发展脉络和生态圈现状，对于指导我们选择合适的Kafka版本大有裨益
+外部系统只是Kafka Connect组件支持的一部分而已，使用Kafka Connect组件的用户越来越多，相信在未来会有越来越多的人开发自己的连接器。
 
-# Kafka门派几何?
+清晰了解Kafka的发展脉络和生态圈现状，指导我们选择合适的Kafka版本大有裨益。
+
+## Kafka门派几何?
 
 不是指版本，而是指存在多个组织或公司发布不同的Kafka
 
@@ -52,9 +48,9 @@ Confluent公司主要从事商业化Kafka工具开发，并在此基础发布Con
 
 ## Cloudera/Hortonworks Kafka
 
-Cloudera提供的CDH和Hortonworks提供的HDP是非常著名的大数据平台，里面集成了目前主流的大数据框架，能够帮助用户实现从分布式存储、集群调度、流处理到机器学习、实时数据库等全方位的数据处理
-很多创业公司在搭建数据平台时首选就是这两个产品。不管是CDH还是HDP里面都集成了Apache Kafka
-2018年10月两家公司宣布合并，共同打造世界领先的数据平台，也许以后CDH和HDP也会合并成一款产品，但能肯定的是Apache Kafka依然会包含其中，并作为新数据平台的一部分对外提供服务。
+Cloudera的CDH和Hortonworks的HDP是著名大数据平台，集成目前主流的大数据框架，帮助用户实现从分布式存储、集群调度、流处理到机器学习、实时数据库等全方位的数据处理。很多创业公司搭建数据平台时首选这俩产品。都集成了Apache Kafka。
+
+2018年10月两家公司合并，共同打造世界领先的数据平台，也许以后CDH和HDP也会合并成一款产品，但能肯定Apache Kafka依然包含其中，并作为新数据平台的一部分对外提供服务。
 
 ## 特点比较
 
@@ -73,12 +69,10 @@ Apache Kafka没有提供任何监控框架或工具。显然在线上环境不�
 
 Confluent Kafka分免费版和企业版，前者和Apache Kafka像，除常规组件外，免费版还包含
 
-- Schema注册中心
-  集中管理Kafka消息格式以实现数据前向/后向兼容
-- REST proxy
-  开放HTTP接口方式，允许你通过网络访问Kafka各种功能
+- Schema注册中心：集中管理Kafka消息格式以实现数据前向/后向兼容
+- REST proxy：开放HTTP接口方式，允许你通过网络访问Kafka各种功能
 
-这两个都是Apache Kafka没有的。
+这两个Apache Kafka都没。
 
 免费版包含更多连接器，都是Confluent公司开发并认证过的，可免费使用它。企业版功能更多，最有用的当属跨数据中心备份和集群监控。多IDC间数据同步及对集群的监控历来是Kafka痛点。
 
@@ -116,7 +110,3 @@ CDH/HDP Kafka，大数据云公司提供的Kafka，内嵌Apache Kafka
 
 - 优势在于操作简单，节省运维成本
 - 缺陷在于把控度低，演进速度较慢。
-
-参考
-
-- Apache Kafka实战

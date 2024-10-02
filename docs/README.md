@@ -16,7 +16,6 @@ actionLinks:
   class: secondary 
 footer:
   <img src="https://www.beian.gov.cn/img/new/gongan.png" >
-  <a href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=****" target="_blank" >公安网备*****号</a></br>
   <a href="https://beian.miit.gov.cn/" target="_blank">皖ICP备2024059525号</a> | Copyright © JavaEdge
 footerHtml: true
 ---
