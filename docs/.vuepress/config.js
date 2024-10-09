@@ -1175,7 +1175,11 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "为啥要学习数据分析？",
-                            "01-数据分析的正确学习方法"
+                            "correct-data-analysis-learning-methods",
+                            "02-数据挖掘的学习路径",
+                            "企业如何利用数据打造精准用户画像？",
+                            "如何自动化采集数据",
+                            "how-to-use-octoparse-for-data-scraping",
                         ]
                     }],
 
