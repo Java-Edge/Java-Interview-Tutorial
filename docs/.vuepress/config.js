@@ -516,9 +516,17 @@ module.exports = {
                             {
                                 text: 'Redis',
                                 items: [{
-                                    text: 'Redis数据结构的最佳实践',
+                                    text: '基础',
                                     link: '/md/redis/00-数据结构的最佳实践.md'
-                                }]
+                                },
+                                {
+                                    text: '源码',
+                                    link: '/md/redis/00-数据结构的最佳实践.md'
+                                },
+                                {
+                                    text: '业务',
+                                    link: '/md/redis/00-数据结构的最佳实践.md'
+                                },]
                             },
 
                             {
@@ -1110,6 +1118,7 @@ module.exports = {
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
+                            "04-RPC框架在网络通信的网络IO模型选型",
                             "熔断限流",
                             "11-RPC的负载均衡",
                         ]
@@ -1176,7 +1185,7 @@ module.exports = {
                         children: [
                             "为啥要学习数据分析？",
                             "correct-data-analysis-learning-methods",
-                            "02-数据挖掘的学习路径",
+                            "learning-path-data-mining",
                             "企业如何利用数据打造精准用户画像？",
                             "如何自动化采集数据",
                             "how-to-use-octoparse-for-data-scraping",
@@ -1194,6 +1203,7 @@ module.exports = {
                                 "03-ReentrantLock与AQS.md",
                                 "04-线程池以及生产环境使用.md",
                                 "05-京东并行框架asyncTool如何针对高并发场景进行优化？.md",
+                                "java21-virtual-threads-where-did-my-lock-go",
                             ]
                         },
                         {
@@ -1562,6 +1572,7 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
+                                "01-Netty源码面试实战+原理(一)-鸿蒙篇",
                                 "netty-basic-components",
                                 "ChannelPipeline接口",
                                 "(06-1)-ChannelHandler 家族",
@@ -1664,20 +1675,34 @@ module.exports = {
                     }, ],
 
                     "/md/redis/": [{
-                        title: "Redis",
+                        title: "基础",
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
-                            "00-数据结构的最佳实践",
                             "01-Redis和ZK分布式锁优缺点对比以及生产环境使用建议",
-                            "02-Redisson可重入锁加锁源码分析",
-                            "03-Redisson公平锁加锁源码分析",
-                            "04-Redisson读写锁加锁机制分析",
                             "05-缓存读写策略模式详解",
                             "06-如何快速定位 Redis 热 key",
                             "12-Redis 闭源？",
                         ]
-                    }],
+                    },
+                    {
+                        title: "源码",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "02-Redisson可重入锁加锁源码分析",
+                            "03-Redisson公平锁加锁源码分析",
+                            "04-Redisson读写锁加锁机制分析",
+                        ]
+                    },
+                    {
+                        title: "业务",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "00-数据结构的最佳实践",
+                        ]
+                    },],
                     "/md/es/": [{
                         title: "ElasticSearch",
                         collapsable: false,
@@ -2076,6 +2101,7 @@ module.exports = {
                                 "11-lcel-memory-addition-method",
                                 "12-lcel-agent-core-components",
                                 "13-best-development-practices",
+                                "local-large-model-deployment",
                             ]
                         },
 
@@ -2087,6 +2113,9 @@ module.exports = {
                                 "01-three-minute-fastapi-ai-agent-setup",
                                 "02-Agent应用对话情感优化",
                                 "03-use-tts-to-make-your-ai-agent-speak",
+                                "langserve-revolutionizes-llm-app-deployment",
+                                "customizing-a-tool-for-your-ai-agent",
+                                "Complex-SQL-Joins-with-LangGraph-and-Waii",
                                 "AI Agent应用出路到底在哪？",
                             ]
                         },
@@ -2098,6 +2127,7 @@ module.exports = {
                             children: [
                                 "00-introduce-to-LangGraph",
                                 "langgraph-studio",
+                                "multi_agent",
                                 "methods-adapting-large-language-models",
                                 "to-fine-tune-or-not-to-fine-tune-llm",
                                 "effective-datasets-fine-tuning",
