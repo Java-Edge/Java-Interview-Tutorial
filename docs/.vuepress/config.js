@@ -227,7 +227,17 @@ module.exports = {
                                     text: '01-DMP系统简介.md',
                                     link: '/md/biz-arch/01-DMP系统简介.md'
                                 }, ]
+                            },                            
+                            
+                            {
+                                text: '低代码',
+                                items: [{
+                                    text: '为什么“低代码”是未来趋势？.md',
+                                    link: '/md/low-code/为什么“低代码”是未来趋势？.md'
+                                }, ]
                             },
+
+
                         ]
                     },
                     {
@@ -701,7 +711,7 @@ module.exports = {
                     },
 
                     {
-                        text: '计算机基础',
+                        text: '计科基础',
                         items: [{
                                 text: '计算机网络',
                                 items: [{
@@ -782,19 +792,15 @@ module.exports = {
                                 text: 'LangChain4j',
                                 link: '/md/AI/langchain4j/01-intro'
                             },
+                            {
+                                text: 'GPT发展',
+                                link: '/md/AI/llm/GPTs推荐'
+                            },
+                            {
+                                text: 'Prompt工程',
+                                link: '/md/AI/llm/01-Prompt网站'
+                            }, 
                         ]
-                    },
-
-                    {
-                        text: '大模型',
-                        items: [{
-                            text: 'GPT发展',
-                            link: '/md/llm/GPTs推荐'
-                        },
-                        {
-                            text: 'Prompt工程',
-                            link: '/md/llm/01-Prompt网站'
-                        }, ]
                     },
 
                     {
@@ -972,6 +978,16 @@ module.exports = {
                                 "05-用户画像是什么？",
                                 "06-构建高质量的用户画像",
                                 "07-用户画像和特征工程",
+                            ]
+                        },
+                        
+                        {
+                            title: "低代码",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "为什么“低代码”是未来趋势？",
+                                "01-低代码平台到底是什么样的？",
                             ]
                         },
                     ],
@@ -1450,6 +1466,7 @@ module.exports = {
                                 "亿级数据量商品系统的SQL调优实战",
                                 "MySQL查询优化",
                                 "MySQL深分页调优实战",
+                                "online-sql-deadlock-incident-how-to-prevent-deadlocks",
                             ]
                         },
 
@@ -1675,6 +1692,24 @@ module.exports = {
                     }, ],
 
                     "/md/redis/": [{
+                        title: "数据结构",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "Redis的整数数组和压缩列表",
+                            "Sorted sets、zset数据结构详解",
+                            "Redis Quicklist",
+                        ]
+                    },
+                    {
+                        title: "持久化",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "Redis的RDB源码解析",
+                        ]
+                    },
+                    {
                         title: "基础",
                         collapsable: false,
                         sidebarDepth: 0,
@@ -1682,6 +1717,7 @@ module.exports = {
                             "01-Redis和ZK分布式锁优缺点对比以及生产环境使用建议",
                             "05-缓存读写策略模式详解",
                             "06-如何快速定位 Redis 热 key",
+                            "Redis异步子线程原理详解",
                             "12-Redis 闭源？",
                         ]
                     },
@@ -1971,7 +2007,7 @@ module.exports = {
                         ]
                     }, ],
 
-                    "/md/llm/": [{
+                    "/md/AI/llm/": [{
                             title: "大模型发展",
                             collapsable: false,
                             sidebarDepth: 0,
@@ -2149,6 +2185,8 @@ module.exports = {
                                 "架构之美：教你如何分析一个接口？",
                                 "业务代码如何才能不再写出大串的if else？",
                                 "阿里P8架构师都是怎么分析软件模型的？",
+                                "cell-based-architecture-distributed-systems",
+                                "cell-based-architecture-resilient-fault-tolerant-systems",
                             ]
                         },
                         {
