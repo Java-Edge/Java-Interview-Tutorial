@@ -346,6 +346,14 @@ module.exports = {
                             },
 
                             {
+                                text: '工作流引擎',
+                                items: [{
+                                    text: '00-Activiti7',
+                                    link: '/md/activiti/activiti7-introduction.md'
+                                }, ]
+                            },
+                            
+                            {
                                 text: 'MQTT',
                                 items: [{
                                     text: '00-MQTT',
@@ -1182,6 +1190,15 @@ module.exports = {
                         children: [
                             "MQTT与Kafka在物联网消息与流数据集成实践",
                             "07-MQTT发布订阅模式介绍"
+                        ]
+                    }],
+                    
+                    "/md/activiti/": [{
+                        title: "Activiti7",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "activiti7-introduction",
                         ]
                     }],
 
@@ -2185,6 +2202,7 @@ module.exports = {
                                 "架构之美：教你如何分析一个接口？",
                                 "业务代码如何才能不再写出大串的if else？",
                                 "阿里P8架构师都是怎么分析软件模型的？",
+                                "evolution-software-architecture-mainframes-to-distributed-computing",
                                 "cell-based-architecture-distributed-systems",
                                 "cell-based-architecture-resilient-fault-tolerant-systems",
                             ]
