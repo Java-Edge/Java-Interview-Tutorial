@@ -11,15 +11,17 @@
 
 ## TCP连接的建立过程会受哪些配置项的影响？
 
-![TCP建连过程](https://static001.geekbang.org/resource/image/af/44/afc841ee3822fyye3ec186b28ee93744.jpg)
+TCP建连过程：
+
+![](https://my-img.javaedge.com.cn/javaedge-blog/2024/11/a2a9f173a63042fedeabba3db35ba1c5.jpg)
 
 TCP连接建立过程。从Client侧调用connect()，到Server侧accept()成功返回的过程。整个TCP建立连接的过程中，各个行为都有配置选项控制。
 
 Client调用connect()后，Linux内核开始三次握手。
 
-Client会给Server发个SYN包，但该SYN包可能会在传输过程中丢失或因为其他原因导致Server无法处理，此时Client侧就会触发超时重传机制。但也不能一直重传，重传次数有限制，即tcp_syn_retries。假设tcp_syn_retires为3，则SYN包重传策略如下：
+Client会给Server发个SYN包，但该SYN包可能会在传输过程中丢失或因为其他原因导致Server无法处理，此时Client侧就会触发超时重传机制。但也不能一直重传，重传次数有限制，即tcp_syn_retries。假设tcp_syn_retires为3，则SYN包重传策略如下：tcp_syn_retries示意图
 
-![tcp_syn_retries示意图](https://static001.geekbang.org/resource/image/01/e4/012b9bf3e59f3abd5c5588a968e354e4.jpg)
+![](https://my-img.javaedge.com.cn/javaedge-blog/2024/11/647ec1ad08e80b3f441a0b9757ae217d.jpg)
 
 - Client发出SYN后，若过1s ，还没收到Server响应，就会进行第一次重传
 - 经过2s还没收到Server响应，就会进行第二次重传
@@ -79,15 +81,15 @@ Client收到Serve的SYNACK包后，就会发出ACK，Server收到该ACK后，三
 
 accept()成功返回后，一个新的TCP连接就建立完成，TCP连接进入到了ESTABLISHED状态：
 
-![TCP状态转换](https://static001.geekbang.org/resource/image/e0/3c/e0ea3232fccf6bba8bace54d3f5d8d3c.jpg)
+![](https://my-img.javaedge.com.cn/javaedge-blog/2024/10/aaef3d15b5845546e98df17a106d92f6.jpg)
 
 上图就是从Client调用connect()，到Server侧accept()成功返回这一过程中的TCP状态转换。这些状态可netstat或ss查看。
 
 至此，Client和Server两边就可以正常通信了。
 
-## TCP连接的断开过程会受哪些配置项的影响？
+## TCP连接的断开过程受啥配置影响？
 
-![TCP的四次挥手](https://static001.geekbang.org/resource/image/1c/cf/1cf68d3eb4f07113ba13d84124f447cf.jpg)
+![](https://my-img.javaedge.com.cn/javaedge-blog/2024/10/ce480d906725468da48efffefcaa83a3.jpg)
 
 当应用程序调用close()时，会向对端发送FIN包，然后会接收ACK；对端也会调用close()来发送FIN，然后本端也会向对端回ACK，这就是TCP的四次挥手过程。
 
@@ -130,7 +132,9 @@ Client关闭跟Server的连接后，也有可能很快再次跟Server之间建�
 
 ## 总结
 
-![](https://static001.geekbang.org/resource/image/3d/de/3d60be2523528f511dec0fbc88ce1ede.jpg)
+
+
+![](https://my-img.javaedge.com.cn/javaedge-blog/2024/11/a3247256b2e8983c29de265ab10ba6e6.jpg)
 
 有些配置项也可根据服务器负载及CPU和内存大小做灵活配置，如tcp_max_syn_backlog、somaxconn、tcp_max_tw_buckets这三项，若你的物理内存足够大、CPU核数足够多，你可以适当地增大这些值，这些往往都是经验值。
 

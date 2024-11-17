@@ -227,8 +227,8 @@ module.exports = {
                                     text: '01-DMP系统简介.md',
                                     link: '/md/biz-arch/01-DMP系统简介.md'
                                 }, ]
-                            },                            
-                            
+                            },
+
                             {
                                 text: '低代码',
                                 items: [{
@@ -352,7 +352,7 @@ module.exports = {
                                     link: '/md/activiti/activiti7-introduction.md'
                                 }, ]
                             },
-                            
+
                             {
                                 text: 'MQTT',
                                 items: [{
@@ -465,49 +465,20 @@ module.exports = {
 
                             {
                                 text: 'SpringCloud',
-                                items: [{
+                                items: [
+                                    {
                                         text: 'SpringCloudAlibaba',
                                         link: '/md/spring/spring-cloud/SpringCloudAlibaba介绍.md'
-                                    }, {
+                                    },
+                                    {
                                         text: 'SpringCloudGateway工作原理与链路图',
                                         link: '/md/spring/spring-cloud/SpringCloudGateway工作原理与链路图.md'
                                     },
+                                    
                                     {
-                                        text: 'SpringCloudGateway组件',
-                                        items: [{
-                                                text: 'SpringCloudGateway工作原理与链路图',
-                                                link: '/md/spring/spring-cloud/SpringCloudGateway工作原理与链路图.md'
-                                            },
-                                            {
-                                                text: 'SpringCloudGateway核心之Predicate',
-                                                link: '/md/spring/spring-cloud/SpringCloudGateway核心之Predicate.md'
-                                            },
-                                            {
-                                                text: 'SpringCloudGateway之Filter多过程介绍',
-                                                link: '/md/spring/spring-cloud/SpringCloudGateway之Filter多过程介绍.md'
-                                            },
-                                            {
-                                                text: 'SpringCloudGateway之熔断集成篇',
-                                                link: '/md/spring/spring-cloud/SpringCloudGateway之熔断集成篇.md'
-                                            },
-                                            {
-                                                text: 'SpringCloudGateway之限流集成篇',
-                                                link: '/md/spring/spring-cloud/SpringCloudGateway之限流集成篇.md'
-                                            },
-                                            {
-                                                text: 'SpringCloudGateway之统一鉴权篇',
-                                                link: '/md/spring/spring-cloud/SpringCloudGateway之统一鉴权篇.md'
-                                            },
-                                            {
-                                                text: 'SpringCloudGateway之灰度发布篇',
-                                                link: '/md/spring/spring-cloud/SpringCloudGateway之灰度发布篇.md'
-                                            },
-                                            {
-                                                text: 'SpringCloudGateway之高性能篇',
-                                                link: '/md/spring/spring-cloud/SpringCloudGateway之高性能篇.md'
-                                            }
-                                        ]
-                                    }
+                                        text: 'Seata',
+                                        link: '/md/seata/01-Seata客户端依赖坐标引入与踩坑排雷.md'
+                                    },
                                 ]
                             },
 
@@ -534,17 +505,18 @@ module.exports = {
                             {
                                 text: 'Redis',
                                 items: [{
-                                    text: '基础',
-                                    link: '/md/redis/00-数据结构的最佳实践.md'
-                                },
-                                {
-                                    text: '源码',
-                                    link: '/md/redis/00-数据结构的最佳实践.md'
-                                },
-                                {
-                                    text: '业务',
-                                    link: '/md/redis/00-数据结构的最佳实践.md'
-                                },]
+                                        text: '基础',
+                                        link: '/md/redis/00-数据结构的最佳实践.md'
+                                    },
+                                    {
+                                        text: '源码',
+                                        link: '/md/redis/00-数据结构的最佳实践.md'
+                                    },
+                                    {
+                                        text: '业务',
+                                        link: '/md/redis/00-数据结构的最佳实践.md'
+                                    },
+                                ]
                             },
 
                             {
@@ -708,7 +680,18 @@ module.exports = {
                     },
 
                     {
-                        text: '数据分析',
+                        text: '音视频',
+                        items: [{
+                            text: '基础',
+                            items: [{
+                                text: '音视频小白秒变大神？看完这条学习路线就够了！',
+                                link: '/md/ffmpeg/audio-video-roadmap.md'
+                            }]
+                        }, ]
+                    },
+
+                    {
+                        text: '数分',
                         items: [{
                             text: '数分基础',
                             items: [{
@@ -719,7 +702,7 @@ module.exports = {
                     },
 
                     {
-                        text: '计科基础',
+                        text: '计科',
                         items: [{
                                 text: '计算机网络',
                                 items: [{
@@ -801,13 +784,17 @@ module.exports = {
                                 link: '/md/AI/langchain4j/01-intro'
                             },
                             {
-                                text: 'GPT发展',
+                                text: 'Spring AI Alibaba',
+                                link: '/md/AI/spring-ai-alibaba/why-choose-spring-ai-alibaba-for-smart-customer-service'
+                            },
+                            {
+                                text: '大模型发展',
                                 link: '/md/AI/llm/GPTs推荐'
                             },
                             {
                                 text: 'Prompt工程',
                                 link: '/md/AI/llm/01-Prompt网站'
-                            }, 
+                            },
                         ]
                     },
 
@@ -842,7 +829,7 @@ module.exports = {
                     },
 
                     {
-                        text: '职业规划',
+                        text: '职业',
                         items: [{
                                 text: '01-Java工程师必读书单',
                                 link: '/md/career/01-Java工程师必读书单.md'
@@ -974,6 +961,7 @@ module.exports = {
                                 "System design: Uber",
                                 "短链系统设计（design tiny url）",
                                 "打造一个高并发的十万用户 IM 聊天系统，你需要了解这些架构设计技巧！",
+                                "netflixs-distributed-counter-abstraction",
                             ]
                         },
 
@@ -988,7 +976,7 @@ module.exports = {
                                 "07-用户画像和特征工程",
                             ]
                         },
-                        
+
                         {
                             title: "低代码",
                             collapsable: false,
@@ -1048,11 +1036,13 @@ module.exports = {
                             sidebarDepth: 0,
                             children: [
                                 "大数据平台架构",
+                                "中小企业参考的商业大数据平台",
                                 "对象存储",
                                 "02-分布式对象存储设计原理",
                                 "AB测试与灰度发布",
                                 "当大数据遇上物联网",
                                 "移动计算",
+                                "大数据基准测试",
                             ]
                         },
                         {
@@ -1153,8 +1143,12 @@ module.exports = {
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
+                            "10-顶级企业如何用数据脱敏保护用户隐私！",
+                            "11-动态配置管理背后的编排治理真相！",
                             "14-ShardingSphere的分布式主键实现",
                             "19-路由引擎：如何在路由过程中集成多种路由策略和路由算法？",
+                            "ShardingSphere 如何完美驾驭分布式事务与 XA 协议？",
+                            "ShardingSphere 如何轻松驾驭 Seata 柔性分布式事务？",
                         ]
                     }],
 
@@ -1192,7 +1186,7 @@ module.exports = {
                             "07-MQTT发布订阅模式介绍"
                         ]
                     }],
-                    
+
                     "/md/activiti/": [{
                         title: "Activiti7",
                         collapsable: false,
@@ -1208,6 +1202,16 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "00-爬虫基础.md"
+                        ]
+                    }],
+
+                    "/md/ffmpeg/": [{
+                        title: "音视频基础",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "audio-video-roadmap",
+                            "video-basic",
                         ]
                     }],
 
@@ -1386,6 +1390,20 @@ module.exports = {
                         ]
                     }],
 
+
+                    "/md/seata/": [{
+                        title: "Seata",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "01-Seata客户端依赖坐标引入与踩坑排雷",
+                            "02-Seata客户端全局事务配置与实现",
+                            "03-Seata柔性事务",
+                            "04-Seata是什么?",
+                            "05-开始",
+                        ]
+                    }],
+
                     "/md/spring/spring-cloud/": [{
                             title: "SpringCloudAlibaba",
                             collapsable: false,
@@ -1429,7 +1447,7 @@ module.exports = {
                                 "基于电商履约场景的DDD实战",
                                 "11-上下文映射",
                                 "13-DDD分层架构及代码目录结构",
-
+                                "23-理解领域事件（Domain Event）",
                             ]
                         },
 
@@ -1709,53 +1727,54 @@ module.exports = {
                     }, ],
 
                     "/md/redis/": [{
-                        title: "数据结构",
-                        collapsable: false,
-                        sidebarDepth: 0,
-                        children: [
-                            "Redis的整数数组和压缩列表",
-                            "Sorted sets、zset数据结构详解",
-                            "Redis Quicklist",
-                        ]
-                    },
-                    {
-                        title: "持久化",
-                        collapsable: false,
-                        sidebarDepth: 0,
-                        children: [
-                            "Redis的RDB源码解析",
-                        ]
-                    },
-                    {
-                        title: "基础",
-                        collapsable: false,
-                        sidebarDepth: 0,
-                        children: [
-                            "01-Redis和ZK分布式锁优缺点对比以及生产环境使用建议",
-                            "05-缓存读写策略模式详解",
-                            "06-如何快速定位 Redis 热 key",
-                            "Redis异步子线程原理详解",
-                            "12-Redis 闭源？",
-                        ]
-                    },
-                    {
-                        title: "源码",
-                        collapsable: false,
-                        sidebarDepth: 0,
-                        children: [
-                            "02-Redisson可重入锁加锁源码分析",
-                            "03-Redisson公平锁加锁源码分析",
-                            "04-Redisson读写锁加锁机制分析",
-                        ]
-                    },
-                    {
-                        title: "业务",
-                        collapsable: false,
-                        sidebarDepth: 0,
-                        children: [
-                            "00-数据结构的最佳实践",
-                        ]
-                    },],
+                            title: "数据结构",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "Redis的整数数组和压缩列表",
+                                "Sorted sets、zset数据结构详解",
+                                "Redis Quicklist",
+                            ]
+                        },
+                        {
+                            title: "持久化",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "Redis的RDB源码解析",
+                            ]
+                        },
+                        {
+                            title: "基础",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "01-Redis和ZK分布式锁优缺点对比以及生产环境使用建议",
+                                "05-缓存读写策略模式详解",
+                                "06-如何快速定位 Redis 热 key",
+                                "Redis异步子线程原理详解",
+                                "12-Redis 闭源？",
+                            ]
+                        },
+                        {
+                            title: "源码",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "02-Redisson可重入锁加锁源码分析",
+                                "03-Redisson公平锁加锁源码分析",
+                                "04-Redisson读写锁加锁机制分析",
+                            ]
+                        },
+                        {
+                            title: "业务",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "00-数据结构的最佳实践",
+                            ]
+                        },
+                    ],
                     "/md/es/": [{
                         title: "ElasticSearch",
                         collapsable: false,
@@ -2036,6 +2055,8 @@ module.exports = {
                                 "携手阿里云：JetBrains AI Assistant 正式发布！",
                                 "中国大陆用户如何使用Jetbrains内置的AI插件AI Assistant",
                                 "contextual-retrieval",
+                                "lm-studio-transform-mac-into-ai-tool",
+                                "计算机使用功能",
                             ]
                         },
                         {
@@ -2054,7 +2075,7 @@ module.exports = {
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
-                            "软件工程师如何进入人工智能领域？",
+                            "软件工程师转型AI的全攻略",
                             "01-人工智能概要",
                             "02-MR 算法分类",
                             "what-is-neural-network",
@@ -2094,6 +2115,15 @@ module.exports = {
                             ]
                         },
                     ],
+
+                    "/md/AI/spring-ai-alibaba/": [{
+                        title: "Spring AI Alibaba",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "why-choose-spring-ai-alibaba-for-smart-customer-service",
+                        ]
+                    }, ],
 
                     "/md/AI/": [{
                             title: "LangChain",

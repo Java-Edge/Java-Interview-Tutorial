@@ -34,5 +34,3 @@ Kafka 是 LinkedIn 开发并开源的一套分布式的高性能消息引擎服�
 第五部分，**管理与监控**。这部分涵盖 Kafka 运维与监控的内容，将讨论如何高效运维 Kafka 集群，并分享有效监控 Kafka 的实战经验。
 
 第六部分，**高级 Kafka 应用之流处理**。最后这一部分将会介绍 Kafka 流处理组件 Kafka Streams 的实战应用，并带你从头开发一个 demo 项目。
-
-![](https://static001.geekbang.org/resource/image/36/23/36cae542caa6d3117a844d8218812c23.jpg)

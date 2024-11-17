@@ -30,6 +30,7 @@ Hadoop社区构建数仓的核心组件，提供丰富的用户接口，接收�
 - Driver（3）
 
 不论元数据库（4）、存储系统（5），还是计算引擎（6），Hive都外包、可插拔式交给第三方独立组件，即专事专人做：
+
 ![](https://img-blog.csdnimg.cn/08372347e10241a982c6ba481b63fe02.png)
 
 User Interface为开发者提供SQL接入服务，具体接入途径：
@@ -57,6 +58,30 @@ User Interface为开发者提供SQL接入服务，具体接入途径：
 - Hadoop MapReduce
 - Tez
 - Spark
+
+Hive的元数据存储（Metastore）是Hive架构的一个关键组件，用于存放与Hive表和数据库相关的元数据信息。这些信息包括：
+
+- 表的名称
+- 表的字段名称和字段类型
+- 表的数据存储位置（HDFS路径）
+- 表分区和分桶的信息
+- 表的属性（如serde信息、文件格式等）
+
+Hive Metastore是一个关系数据库，可以使用MySQL、PostgreSQL、Oracle、Microsoft SQL Server等作为其底层数据库存储系统。通过存储关于Hive数据仓库所有对象的详细元数据定义，Metastore允许用户通过Hive查询语言（HiveQL）来管理和查询数据。
+
+Metastore为Hive的执行引擎（Driver）提供了必要的元数据来形成执行计划。当执行一个查询时，Hive会首先查询Metastore以获取如何读取和解释数据的相关信息。这允许Hive知晓每个表的结构，如何读取数据，以及它存储在哪里。
+
+#### Metastore提供两种模式
+
+##### 内嵌Metastore
+
+Derby Metastore，也称为本地Metastore：这是Hive的默认设置，Metastore数据库运行在同一个JVM中作为Hive服务，通常用于开发和测试。内嵌Metastore的缺点是它不支持多个用户并发访问。
+
+##### 远程Metastore服务器
+
+在生产环境中，Metastore通常配置为远程服务，用于支持多用户并发执行查询。在这种部署模式下，Metastore server运行在一个独立的进程中，与Hive服务分离，任何需要元数据信息的Hive客户端或者应用可以通过Thrift API与Metastore通信。
+
+考虑到扩展性和稳定性，大型或生产环境下常常采用远程Metastore服务，并使用MySQL这类的外部数据库来保持元数据的高可用性和一致性。在配置文件`hive-site.xml`中，可以对Metastore的相关设置进行配置。
 
 ## 3 Hive工作流程
 
@@ -134,17 +159,15 @@ SparkSession + Hive Metastore这种集成，Spark对Hive的访问，仅涉及Met
 
 ![](https://p.ipic.vip/bi817b.jpg)
 
-
-
-在第一种集成方式下，通过sql API，可直接提交复杂SQL，也可以在创建DataFrame之后，再使用各种算子实现业务逻辑。
+第一种集成方式，通过sql API，可直接提交复杂SQL，也可在创建DataFrame后，用各种算子实现业务逻辑。
 
 ### spark-sql CLI + Hive Metastore
 
 “既然是搭建数仓，能不能像用普通数据库，直接输入SQL查询，绕过SparkSession的sql API？”肯定的，Spark with Hive的第二种集成方式：spark-sql CLI + Hive Metastore。
 
-与spark-shell、spark-submit类似，spark-sql也是Spark内置的系统命令。将配置好hive.metastore.uris参数的hive-site.xml文件放到Spark安装目录的conf下，我们即可在spark-sql中直接使用SQL语句来查询或是处理Hive表。
+类似spark-shell、spark-submit，spark-sql也是Spark内置系统命令。将配置好hive.metastore.uris参数的hive-site.xml文件放到Spark安装目录的conf，即可在spark-sql中直接使用SQL语句来查询或是处理Hive表。
 
-显然，在这种集成模式下，Spark和Hive的关系，与刚刚讲的SparkSession + Hive Metastore一样，本质上都是Spark通过Hive Metastore来扩充数据源。
+这种集成模式下，Spark、Hive关系与SparkSession + Hive Metastore一样，都是Spark通过Hive Metastore扩充数据源。
 
 不过，相比前者，spark-sql CLI的集成方式多了一层限制，那就是在部署上，spark-sql CLI与Hive Metastore必须安装在同一个计算节点。换句话说，spark-sql CLI只能在本地访问Hive Metastore，而没有办法通过远程的方式来做到这一点。
 
@@ -164,7 +187,9 @@ Beeline原是Hive客户端，通过JDBC接入Hive Server 2。Hive Server 2可同
 
 Spark Thrift Server脱胎于Hive Server 2，在接收查询、多租户服务、权限管理等方面，这两个服务端的实现逻辑几乎一模一样。它们最大的不同，在于SQL查询接入之后的解析、规划、优化与执行。
 
-我们刚刚说过，Hive Server 2的“后台”是Hive的那套基础架构。而SQL查询在接入到Spark Thrift Server之后，它首先会交由Spark SQL优化引擎进行一系列的优化。在第14讲我们提过，借助于Catalyst与Tungsten这对“左膀右臂”，Spark SQL对SQL查询语句先后进行语法解析、语法树构建、逻辑优化、物理优化、数据结构优化、以及执行代码优化，等等。然后，Spark SQL将优化过后的执行计划，交付给Spark Core执行引擎付诸运行。
+Hive Server 2的“后台”是Hive那套基础架构。而SQL查询在接入Spark Thrift Server后，它先会交由Spark SQL优化引擎进行一系列优化。
+
+借助Catalyst与Tungsten，Spark SQL对SQL查询语句先后进行语法解析、语法树构建、逻辑优化、物理优化、数据结构优化及执行代码优化等。然后，Spark SQL将优化过后的执行计划，交付给Spark Core执行引擎付诸运行。
 
 ![](https://img-blog.csdnimg.cn/a7e7891f0ba34f669c47fc3ebd521372.png)
 
@@ -208,17 +233,19 @@ beeline -u “jdbc:hive2://hostname:10000”
 
 ### 基本原理
 
-在这一讲的开头，我们简单介绍了Hive的基础架构。Hive的松耦合设计，使得它的Metastore、底层文件系统、以及执行引擎都是可插拔、可替换的。
+Hive的松耦合设计，使其Metastore、底层文件系统及执行引擎都可插拔、可替换。
 
-在执行引擎方面，Hive默认搭载的是Hadoop MapReduce，但它同时也支持Tez和Spark。所谓的“Hive on Spark”，实际上指的就是Hive采用Spark作为其后端的分布式执行引擎，如下
+执行引擎，Hive默认搭载Hadoop MapReduce，也支持Tez和Spark。Hive on Spark指Hive采用Spark作为其后端的分布式执行引擎：
 
-![](https://p.ipic.vip/mfduo6.jpg)从用户的视角来看，使用Hive on MapReduce或是Hive on Tez与使用Hive on Spark没有任何区别，执行引擎的切换对用户来说是完全透明的。不论Hive选择哪一种执行引擎，引擎仅仅负责任务的分布式计算，SQL语句的解析、规划与优化，通通由Hive的Driver来完成。
+![](https://my-img.javaedge.com.cn/javaedge-blog/2024/11/088b113505613f03d41d0a509210b954.jpg)
+
+从用户的视角来看，使用Hive on MapReduce或是Hive on Tez与使用Hive on Spark没有任何区别，执行引擎的切换对用户来说是完全透明的。不论Hive选择哪一种执行引擎，引擎仅仅负责任务的分布式计算，SQL语句的解析、规划与优化，通通由Hive的Driver来完成。
 
 为了搭载不同的执行引擎，Hive还需要做一些简单的适配，从而把优化过的执行计划“翻译”成底层计算引擎的语义。
 
-举例来说，在Hive on Spark的集成方式中，Hive在将SQL语句转换为执行计划之后，还需要把执行计划“翻译”成RDD语义下的DAG，然后再把DAG交付给Spark Core付诸执行。从第14讲到现在，我们一直在强调，Spark SQL除了扮演数据分析子框架的角色之外，还是Spark新一代的优化引擎。
+举例来说，在Hive on Spark的集成方式中，Hive在将SQL语句转换为执行计划之后，还需要把执行计划“翻译”成RDD语义下的DAG，再把DAG交付给Spark Core付诸执行。从14到现在一直强调，Spark SQL除扮演数据分析子框架的角色之外，还是Spark新一代优化引擎。
 
-**在Hive on Spark这种集成模式下，Hive与Spark衔接的部分是Spark Core，而不是Spark SQL**。这也是为什么，相比Hive on Spark，Spark with Hive的集成在执行性能更胜。毕竟，Spark SQL + Spark Core这种原装组合，相比Hive Driver + Spark Core这种适配组合，契合度更高。
+Hive on Spark集成模式，Hive与Spark衔接部分是Spark Core，而非Spark SQL。这也是为啥，相比Hive on Spark，Spark with Hive在执行性能更胜。毕竟，Spark SQL + Spark Core原装组合相比Hive Driver + Spark Core这种适配组合，契合度更高。
 
 ### 集成实现
 
@@ -228,7 +255,7 @@ beeline -u “jdbc:hive2://hostname:10000”
 
 Spark集群准备好之后，我们就可以通过修改hive-site.xml中相关的配置项，来轻松地完成Hive on Spark的集成，如下表所示。
 
-![9060fdf6-e125-44d6-8d51-fbfe615799db](https://p.ipic.vip/mu56ri.jpg)
+![](https://p.ipic.vip/mu56ri.jpg)
 
 其中，hive.execution.engine用于指定Hive后端执行引擎，可选值有“mapreduce”、“tez”和“spark”，显然，将该参数设置为“spark”，即表示采用Hive on Spark的集成方式。
 
@@ -236,11 +263,11 @@ Spark集群准备好之后，我们就可以通过修改hive-site.xml中相关�
 
 配置好这3个参数之后，我们就可以用Hive SQL向Hive提交查询请求，而Hive则是先通过访问Metastore在Driver端完成执行计划的制定与优化，然后再将其“翻译”为RDD语义下的DAG，最后把DAG交给后端的Spark去执行分布式计算。
 
-当你在终端看到“Hive on Spark”的字样时，就证明Hive后台的执行引擎确实是Spark，如下图所示。
+当你在终端看到“Hive on Spark”的字样时，就证明Hive后台的执行引擎确实是Spark：
 
-![图片](https://static001.geekbang.org/resource/image/3c/c5/3c0c988d1c4049fe82b270015a67e3c5.jpeg?wh=1558x832)
+![](https://my-img.javaedge.com.cn/javaedge-blog/2024/11/b7ab79f6c00758e865e29c69013e98af.jpeg)
 
-当然，除了上述3个配置项以外，Hive还提供了更多的参数，用于微调它与Spark之间的交互。对于这些参数，你可以通过访问[Hive on Spark配置项列表](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=82903061#ConfigurationProperties-Spark)来查看。不仅如此，在第12讲，我们详细介绍了Spark自身的基础配置项，这些配置项都可以配置到hive-site.xml中，方便你更细粒度地控制Hive与Spark之间的集成。
+Hive还提供更多参数，以微调与Spark之间交互，[Hive on Spark配置项列表](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=82903061#ConfigurationProperties-Spark)。12讲详细介绍Spark自身基础配置项，都可配置到hive-site.xml，细粒度控制Hive与Spark之间集成。
 
 ## 7 总结
 

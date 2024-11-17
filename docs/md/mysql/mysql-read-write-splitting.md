@@ -24,7 +24,9 @@
 
 典型读写分离架构：
 
-![img](https://static001.geekbang.org/resource/image/40/db/40e195c130d45dcdf25a273cb8835ddb.jpg)
+
+
+![](https://my-img.javaedge.com.cn/javaedge-blog/2024/11/151ad72bb4a8b5d7c25bdee1a8fbaf45.jpg)
 
 主库负责执行应用程序发来的所有数据更新请求，然后异步将数据变更实时同步到所有的从库中去，这样，主库和所有从库中的数据是完全一样的。多个从库共同分担应用的查询请求。
 
