@@ -321,19 +321,6 @@ module.exports = {
                                         text: '消息队列基础',
                                         link: '/md/RocketMQ/消息队列面试必问解析.md'
                                     },
-                                    {
-                                        text: 'RocketMQ基础',
-                                        link: '/md/RocketMQ/01-RocketMQ核心内容.md'
-                                    },
-                                    {
-                                        text: 'RocketMQ存储设计',
-                                        link: '/md/RocketMQ/核心概念.md'
-                                    },
-
-                                    {
-                                        text: 'RocketMQ业务实战',
-                                        link: '/md/RocketMQ/02-基于电商场景的高并发RocketMQ实战.md'
-                                    },
                                 ]
                             },
 
@@ -362,18 +349,18 @@ module.exports = {
                             },
 
                             {
-                                text: '常见攻击手段',
+                                text: 'OAuth2.0',
                                 items: [{
-                                    text: '常见攻击手段概述',
+                                    text: 'OAuth2.0专栏概述',
                                     link: '/md/security/01-OAuth 2.0实战-为什么要先获取授权码code.md'
                                 }, ]
                             },
 
                             {
-                                text: 'OAuth2.0',
+                                text: 'Arthas',
                                 items: [{
-                                    text: 'OAuth2.0专栏概述',
-                                    link: '/md/security/01-OAuth 2.0实战-为什么要先获取授权码code.md'
+                                    text: 'Arthas使用',
+                                    link: '/md/arthas/Arthas使用.md'
                                 }, ]
                             },
                         ]
@@ -445,16 +432,6 @@ module.exports = {
                                 }, ]
                             },
 
-
-                            {
-                                text: 'Arthas',
-                                items: [{
-                                    text: 'Arthas使用',
-                                    link: '/md/arthas/Arthas使用.md'
-                                }, ]
-                            },
-
-
                             {
                                 text: 'Dubbo',
                                 items: [{
@@ -506,14 +483,6 @@ module.exports = {
                                 text: 'Redis',
                                 items: [{
                                         text: '基础',
-                                        link: '/md/redis/00-数据结构的最佳实践.md'
-                                    },
-                                    {
-                                        text: '源码',
-                                        link: '/md/redis/00-数据结构的最佳实践.md'
-                                    },
-                                    {
-                                        text: '业务',
                                         link: '/md/redis/00-数据结构的最佳实践.md'
                                     },
                                 ]
@@ -569,10 +538,6 @@ module.exports = {
                                 items: [{
                                         text: '00-互联网大厂的大数据平台架构',
                                         link: '/md/bigdata/大数据平台架构.md'
-                                    },
-                                    {
-                                        text: '01-对象存储',
-                                        link: '/md/bigdata/对象存储.md'
                                     },
                                 ]
                             },
@@ -668,6 +633,14 @@ module.exports = {
                                     link: '/md/k8s/00-Kubernetes的基本架构.md'
                                 }]
                             },
+                            
+                            {
+                                text: 'ServerLess',
+                                items: [{
+                                    text: 'serverless-is-a-scam',
+                                    link: '/md/serverless/serverless-is-a-scam.md'
+                                }]
+                            },
 
                             {
                                 text: '监控',
@@ -741,7 +714,15 @@ module.exports = {
                                     text: '00-阿里秋招高频算法题汇总-基础篇',
                                     link: '/md/algorithm/leetcode/00-阿里秋招高频算法题汇总-基础篇.md'
                                 }, ]
-                            }
+                            },
+
+                            {
+                                text: '常见攻击手段',
+                                items: [{
+                                    text: '常见攻击手段概述',
+                                    link: '/md/security/01-OAuth 2.0实战-为什么要先获取授权码code.md'
+                                }, ]
+                            },
                         ]
                     },
                     {
@@ -949,6 +930,7 @@ module.exports = {
                                 "08-视频推荐索引构建",
                                 "小游戏的大促实践",
                                 "事件中心架构概述",
+                                "高性能排名系统的核心架构原理，架构师必看！",
                             ]
                         },
                         {
@@ -962,6 +944,8 @@ module.exports = {
                                 "短链系统设计（design tiny url）",
                                 "打造一个高并发的十万用户 IM 聊天系统，你需要了解这些架构设计技巧！",
                                 "netflixs-distributed-counter-abstraction",
+                                "data-gateway-a-platform-for-growing-and-protecting-the-data-tier",
+                                "enhancing-netflix-reliability-with-service-level-prioritized-load-shedding",
                             ]
                         },
 
@@ -1373,6 +1357,15 @@ module.exports = {
                                 "SpringBoot默认线程池",
                             ]
                         },
+                        
+                        {
+                            title: "SpringBoot新特性",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "SpringBoot3.4-release",
+                            ]
+                        },
                     ],
 
 
@@ -1401,6 +1394,7 @@ module.exports = {
                             "03-Seata柔性事务",
                             "04-Seata是什么?",
                             "05-开始",
+                            "docker-install-configure-seata-server",
                         ]
                     }],
 
@@ -1660,6 +1654,15 @@ module.exports = {
                             "kafka-versions",
                         ]
                     }, ],
+                    
+                    "/md/serverless/": [{
+                        title: "serverLess",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "serverless-is-a-scam",
+                        ]
+                    }, ],
 
                     "/md/RocketMQ/": [{
                             title: "消息队列基础",
@@ -1818,6 +1821,7 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "01-爆火的分布式数据库到底是个啥？",
+                            "03-BASE 还能撑多久？强一致性才是事务处理的终极奥义！",
                             "18-分布式数据库的HTAP能统一OLTP和 OLAP吗？",
                             "21-查询执行引擎：加速聚合计算加速",
 
@@ -1954,6 +1958,7 @@ module.exports = {
                             "09-程序员的“三步走”发展战略",
                             "10-为何我建议你学会抄代码",
                             "11-计师能去哪些央国企？",
+                            "mastering-architecture-diagrams",
                         ]
                     }],
 
@@ -2057,6 +2062,10 @@ module.exports = {
                                 "contextual-retrieval",
                                 "lm-studio-transform-mac-into-ai-tool",
                                 "计算机使用功能",
+                                "navigating-llm-deployment-tips-tricks-and-techniques",
+                                "goodbye-cursor-hello-windsurf",
+                                "qwen-QwQ",
+                                "only-ai-flow-can-do",
                             ]
                         },
                         {
@@ -2235,6 +2244,8 @@ module.exports = {
                                 "evolution-software-architecture-mainframes-to-distributed-computing",
                                 "cell-based-architecture-distributed-systems",
                                 "cell-based-architecture-resilient-fault-tolerant-systems",
+                                "架构师教你kill祖传石山代码重复&大量ifelse",
+                                "measuring-technical-debt",
                             ]
                         },
                         {
