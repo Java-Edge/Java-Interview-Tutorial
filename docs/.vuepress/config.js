@@ -4,7 +4,7 @@ module.exports = {
     base: "/",
     // 预加载js
     shouldPrefetch: (file, type) => {
-        return true;
+        return false;
     },
     markdown: {
         lineNumbers: true,
@@ -318,10 +318,9 @@ module.exports = {
                             {
                                 text: 'RocketMQ',
                                 items: [{
-                                        text: '消息队列基础',
-                                        link: '/md/RocketMQ/消息队列面试必问解析.md'
-                                    },
-                                ]
+                                    text: '消息队列基础',
+                                    link: '/md/RocketMQ/消息队列面试必问解析.md'
+                                }, ]
                             },
 
                             {
@@ -442,8 +441,7 @@ module.exports = {
 
                             {
                                 text: 'SpringCloud',
-                                items: [
-                                    {
+                                items: [{
                                         text: 'SpringCloudAlibaba',
                                         link: '/md/spring/spring-cloud/SpringCloudAlibaba介绍.md'
                                     },
@@ -451,7 +449,7 @@ module.exports = {
                                         text: 'SpringCloudGateway工作原理与链路图',
                                         link: '/md/spring/spring-cloud/SpringCloudGateway工作原理与链路图.md'
                                     },
-                                    
+
                                     {
                                         text: 'Seata',
                                         link: '/md/seata/01-Seata客户端依赖坐标引入与踩坑排雷.md'
@@ -482,10 +480,9 @@ module.exports = {
                             {
                                 text: 'Redis',
                                 items: [{
-                                        text: '基础',
-                                        link: '/md/redis/00-数据结构的最佳实践.md'
-                                    },
-                                ]
+                                    text: '基础',
+                                    link: '/md/redis/00-数据结构的最佳实践.md'
+                                }, ]
                             },
 
                             {
@@ -536,10 +533,9 @@ module.exports = {
                         items: [{
                                 text: '大数据平台',
                                 items: [{
-                                        text: '00-互联网大厂的大数据平台架构',
-                                        link: '/md/bigdata/大数据平台架构.md'
-                                    },
-                                ]
+                                    text: '00-互联网大厂的大数据平台架构',
+                                    link: '/md/bigdata/大数据平台架构.md'
+                                }, ]
                             },
 
                             {
@@ -633,7 +629,7 @@ module.exports = {
                                     link: '/md/k8s/00-Kubernetes的基本架构.md'
                                 }]
                             },
-                            
+
                             {
                                 text: 'ServerLess',
                                 items: [{
@@ -812,9 +808,19 @@ module.exports = {
                     {
                         text: '职业',
                         items: [{
-                                text: '01-Java工程师必读书单',
+                                text: '职业规划',
                                 link: '/md/career/01-Java工程师必读书单.md'
                             },
+                            {
+                                text: '晋升',
+                                link: '/md/career/p6-promotion-guide'
+                            },
+
+                            {
+                                text: '职场',
+                                link: '/md/career/经常被压缩开发时间，延期还要背锅，如何破局？'
+                            },
+
                             {
                                 text: '00-如何学习项目管理专栏',
                                 link: '/md/mgr/00-如何学习项目管理专栏.md'
@@ -946,6 +952,10 @@ module.exports = {
                                 "netflixs-distributed-counter-abstraction",
                                 "data-gateway-a-platform-for-growing-and-protecting-the-data-tier",
                                 "enhancing-netflix-reliability-with-service-level-prioritized-load-shedding",
+                                "title-launch-observability-at-netflix-scale",
+                                "cloud-efficiency-at-netflix",
+                                "linkedin-architecture-which-enables-searching-a-message-within-150ms",
+                                "how-meta-improved-their-cache-consistency-to-99-99999999",
                             ]
                         },
 
@@ -1240,6 +1250,7 @@ module.exports = {
                                 "JDK21新特性",
                                 "JDK22新特性",
                                 "JDK23新特性",
+                                "java2024",
                             ]
                         },
 
@@ -1357,7 +1368,7 @@ module.exports = {
                                 "SpringBoot默认线程池",
                             ]
                         },
-                        
+
                         {
                             title: "SpringBoot新特性",
                             collapsable: false,
@@ -1609,6 +1620,7 @@ module.exports = {
                             children: [
                                 "并发用户、RPS、TPS的解读",
                                 "01-性能分析思路",
+                                "performance-optimization-guide",
                             ]
                         },
                     ],
@@ -1654,7 +1666,7 @@ module.exports = {
                             "kafka-versions",
                         ]
                     }, ],
-                    
+
                     "/md/serverless/": [{
                         title: "serverLess",
                         collapsable: false,
@@ -1943,24 +1955,49 @@ module.exports = {
                     }, ],
 
                     "/md/career/": [{
-                        title: "职业规划",
-                        collapsable: false,
-                        sidebarDepth: 0,
-                        children: [
-                            "01-Java工程师必读书单",
-                            "02-为什么中国的程序员有35岁危机",
-                            "03-新人程序员入行忠告",
-                            "04-外企也半夜发布上线吗？",
-                            "05-中外程序员到底有啥区别？",
-                            "06-全球顶级架构师推荐的书单",
-                            "07-经常被压缩开发时间，延期还要背锅，如何破局？",
-                            "08-程序员为何一直被唱衰？",
-                            "09-程序员的“三步走”发展战略",
-                            "10-为何我建议你学会抄代码",
-                            "11-计师能去哪些央国企？",
-                            "mastering-architecture-diagrams",
-                        ]
-                    }],
+                            title: "职业规划",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "01-Java工程师必读书单",
+                                "02-为什么中国的程序员有35岁危机",
+                                "03-新人程序员入行忠告",
+                                "04-外企也半夜发布上线吗？",
+                                "05-中外程序员到底有啥区别？",
+                                "06-全球顶级架构师推荐的书单",
+                                "08-程序员为何一直被唱衰？",
+                                "09-程序员的“三步走”发展战略",
+                                "10-为何我建议你学会抄代码",
+                                "11-计师能去哪些央国企？",
+                                "mastering-architecture-diagrams",
+                                "how-i-tricked-my-brain-to-be-addicted-to-coding",
+                                "转型传统行业避坑指南",
+                                "workplace-jargon",
+                                "workplace-rule",
+                                "big-company-work-style",
+                            ]
+                        },
+
+                        {
+                            title: "晋升",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "p6-promotion-guide",
+                                "why-hard-work-didnt-get-you-promoted-the-overlooked-truth",
+                            ]
+                        },
+
+                        {
+                            title: "职场",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "经常被压缩开发时间，延期还要背锅，如何破局？",
+                            ]
+                        },
+
+                    ],
 
                     "/md/vue/": [{
                         title: "Vue",
@@ -1968,8 +2005,11 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "01-Vue开发实战",
+                            "vue2-to-vue3",
                             "05-教你快速搭建Vue3工程化项目",
                             "Vuex设计Vue3项目的数据流",
+                            "router",
+                            "table",
                         ]
                     }],
 
@@ -2054,18 +2094,35 @@ module.exports = {
                             sidebarDepth: 0,
                             children: [
                                 "00-免费大模型API",
-                                "Claude3到底多强",
                                 "GPTs推荐",
                                 "ChatGPT为啥不用Websocket而是EventSource",
                                 "携手阿里云：JetBrains AI Assistant 正式发布！",
                                 "中国大陆用户如何使用Jetbrains内置的AI插件AI Assistant",
                                 "contextual-retrieval",
                                 "lm-studio-transform-mac-into-ai-tool",
-                                "计算机使用功能",
                                 "navigating-llm-deployment-tips-tricks-and-techniques",
                                 "goodbye-cursor-hello-windsurf",
                                 "qwen-QwQ",
                                 "only-ai-flow-can-do",
+                                "chatgpt-canva",
+                            ]
+                        },
+                        {
+                            title: "Gemini",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "00-免费大模型API",
+                            ]
+                        },
+
+                        {
+                            title: "Claude",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "Claude3到底多强",
+                                "计算机使用功能",
                             ]
                         },
                         {
@@ -2209,6 +2266,7 @@ module.exports = {
                                 "customizing-a-tool-for-your-ai-agent",
                                 "Complex-SQL-Joins-with-LangGraph-and-Waii",
                                 "AI Agent应用出路到底在哪？",
+                                "building-effective-agents",
                             ]
                         },
 
@@ -2244,6 +2302,7 @@ module.exports = {
                                 "evolution-software-architecture-mainframes-to-distributed-computing",
                                 "cell-based-architecture-distributed-systems",
                                 "cell-based-architecture-resilient-fault-tolerant-systems",
+                                "cell-based-architecture-adoption-guidelines",
                                 "架构师教你kill祖传石山代码重复&大量ifelse",
                                 "measuring-technical-debt",
                             ]
@@ -2354,6 +2413,8 @@ module.exports = {
                             sidebarDepth: 0,
                             children: [
                                 "01-OAuth 2.0实战-为什么要先获取授权码code.md",
+                                "03-OAuth2.0实战-轻松学会使用JWT，让你的OAuth2.0实现更加安全高效！",
+                                "07-你确定懂OAuth 2.0的三方软件和受保护资源服务？",
                             ]
                         },
                     ],
