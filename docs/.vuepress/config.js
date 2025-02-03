@@ -809,7 +809,7 @@ module.exports = {
                         text: '职业',
                         items: [{
                                 text: '职业规划',
-                                link: '/md/career/01-Java工程师必读书单.md'
+                                link: '/md/career/为什么中国的程序员有35岁危机'
                             },
                             {
                                 text: '晋升',
@@ -819,6 +819,11 @@ module.exports = {
                             {
                                 text: '职场',
                                 link: '/md/career/经常被压缩开发时间，延期还要背锅，如何破局？'
+                            },
+
+                            {
+                                text: '书单',
+                                link: '/md/career/Java-reading-list'
                             },
 
                             {
@@ -1959,8 +1964,7 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
-                                "01-Java工程师必读书单",
-                                "02-为什么中国的程序员有35岁危机",
+                                "为什么中国的程序员有35岁危机",
                                 "03-新人程序员入行忠告",
                                 "04-外企也半夜发布上线吗？",
                                 "05-中外程序员到底有啥区别？",
@@ -1975,6 +1979,11 @@ module.exports = {
                                 "workplace-jargon",
                                 "workplace-rule",
                                 "big-company-work-style",
+                                "研发的立足之本到底是啥？",
+                                "must-have-soft-skills-for-rd",
+                                "no-tech-no-future-for-rd",
+                                "moat-of-rd",
+                                "life-beyond-career-growth",
                             ]
                         },
 
@@ -1985,6 +1994,7 @@ module.exports = {
                             children: [
                                 "p6-promotion-guide",
                                 "why-hard-work-didnt-get-you-promoted-the-overlooked-truth",
+                                "performance-review-guideline",
                             ]
                         },
 
@@ -1994,6 +2004,17 @@ module.exports = {
                             sidebarDepth: 0,
                             children: [
                                 "经常被压缩开发时间，延期还要背锅，如何破局？",
+                            ]
+                        },
+
+
+                        {
+                            title: "书单",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "Java-reading-list",
+                                "efficient-professional-reading-list",
                             ]
                         },
 
@@ -2132,6 +2153,16 @@ module.exports = {
                             children: [
                                 "01-Prompt网站",
                                 "02-常用Prompt",
+                            ]
+                        },
+                        
+                        {
+                            title: "Dify",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "what-is-llmops",
+                                "integrate-dify-and-aws-services-to-enable-more-flexible-translation-workflows",
                             ]
                         },
                     ],
