@@ -1134,6 +1134,7 @@ module.exports = {
                             "04-RPC框架在网络通信的网络IO模型选型",
                             "熔断限流",
                             "11-RPC的负载均衡",
+                            "RPC-Traffic-Replay",
                         ]
                     }],
 
@@ -2162,6 +2163,7 @@ module.exports = {
                             sidebarDepth: 0,
                             children: [
                                 "what-is-llmops",
+                                "Build-App-with-Dify",
                                 "integrate-dify-and-aws-services-to-enable-more-flexible-translation-workflows",
                             ]
                         },
