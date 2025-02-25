@@ -11,7 +11,8 @@ module.exports = {
         externalLinks: {
             target: '_blank',
             rel: 'noopener noreferrer'
-        }
+        },
+        mermaid: true,
     },
     locales: {
         "/": {
@@ -111,6 +112,7 @@ module.exports = {
             color: '#3eaf7c',
             successText: '@JavaEdge: 代码已经复制到剪贴板'
         }],
+        'vuepress-plugin-mermaidjs',
         // // see: https://github.com/tolking/vuepress-plugin-img-lazy
         // ['img-lazy', {}],
         // ["vuepress-plugin-tags", {
@@ -733,39 +735,15 @@ module.exports = {
                                 link: '/md/python/00-macOS和Linux安装和管理多个Python版本'
                             },
                             {
-                                text: '机器学习',
+                                text: 'AI理论',
                                 link: '/md/AI/ml/01-人工智能概要'
                             },
                             {
-                                text: 'LLM应用开发',
+                                text: 'AIGC应用开发框架',
                                 link: '/md/AI/AI大模型企业应用实战'
                             },
                             {
-                                text: 'LangChain',
-                                link: '/md/AI/00-introduction-to-langchain'
-                            },
-                            {
-                                text: 'RAG',
-                                link: '/md/AI/00-rag-introduction-tool-to-eliminate-llm-hallucinations'
-                            },
-                            {
-                                text: 'Agent',
-                                link: '/md/AI/01-what-are-agents'
-                            },
-                            {
-                                text: 'LangGraph',
-                                link: '/md/AI/00-introduce-to-LangGraph'
-                            },
-                            {
-                                text: 'LangChain4j',
-                                link: '/md/AI/langchain4j/01-intro'
-                            },
-                            {
-                                text: 'Spring AI Alibaba',
-                                link: '/md/AI/spring-ai-alibaba/why-choose-spring-ai-alibaba-for-smart-customer-service'
-                            },
-                            {
-                                text: '大模型发展',
+                                text: '大模型平台',
                                 link: '/md/AI/llm/GPTs推荐'
                             },
                             {
@@ -1458,6 +1436,7 @@ module.exports = {
                                 "基于电商履约场景的DDD实战",
                                 "11-上下文映射",
                                 "13-DDD分层架构及代码目录结构",
+                                "domain-service",
                                 "23-理解领域事件（Domain Event）",
                             ]
                         },
@@ -2115,7 +2094,7 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
-                                "00-免费大模型API",
+                                "llm-api-platform",
                                 "GPTs推荐",
                                 "ChatGPT为啥不用Websocket而是EventSource",
                                 "携手阿里云：JetBrains AI Assistant 正式发布！",
@@ -2130,11 +2109,11 @@ module.exports = {
                             ]
                         },
                         {
-                            title: "Gemini",
+                            title: "DeepSeek",
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
-                                "00-免费大模型API",
+                                "deepseek-r1-detail",
                             ]
                         },
 
@@ -2145,6 +2124,7 @@ module.exports = {
                             children: [
                                 "Claude3到底多强",
                                 "计算机使用功能",
+                                "claude-3-7-sonnet",
                             ]
                         },
                         {
@@ -2165,6 +2145,7 @@ module.exports = {
                                 "what-is-llmops",
                                 "Build-App-with-Dify",
                                 "integrate-dify-and-aws-services-to-enable-more-flexible-translation-workflows",
+                                "llm-knowledge-base-segmentation-data-cleaning",
                             ]
                         },
                     ],
@@ -2181,6 +2162,17 @@ module.exports = {
                             "MapReduce分治思想",
                             "05-开发环境安装",
                             "一文看懂AI的Transformer架构",
+                            "what-is-tensor",
+                        ]
+                    },
+                    
+                    {
+                        title: "PyTorch",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "building-neural-networks-with-pytorch",
+                            "pytorch-cifar10-image-classifier-tutorial",
                         ]
                     }, ],
 

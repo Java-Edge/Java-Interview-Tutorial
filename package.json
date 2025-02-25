@@ -10,6 +10,7 @@
     "@vuepress/plugin-back-to-top": "^1.8.2",
     "@vuepress/plugin-google-analytics": "^1.8.2",
     "@vuepress/plugin-medium-zoom": "^1.8.2",
+    "mermaid": "^7.1.2",
     "vuepress": "^1.9.10",
     "vuepress-plugin-seo": "^0.1.4",
     "vuepress-plugin-sitemap": "^2.3.1",
@@ -29,6 +30,7 @@
     "vuepress-plugin-code-copy": "^1.0.6",
     "vuepress-plugin-copyright": "^1.0.2",
     "vuepress-plugin-img-lazy": "^1.0.4",
+    "vuepress-plugin-mermaidjs": "^2.0.0-beta.2",
     "vuepress-plugin-table-of-contents": "^1.1.7"
   }
 }
