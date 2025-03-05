@@ -248,7 +248,7 @@ module.exports = {
                                 text: '12306',
                                 items: [{
                                     text: '项目介绍',
-                                    link: '/md/12306/项目介绍.md'
+                                    link: '/md/12306/12306-basic-info.md'
                                 }]
                             },
                             {
@@ -1830,7 +1830,7 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
-                                "项目介绍.md",
+                                "12306-basic-info",
                             ]
                         },
                         {
@@ -2292,6 +2292,8 @@ module.exports = {
                                 "Complex-SQL-Joins-with-LangGraph-and-Waii",
                                 "AI Agent应用出路到底在哪？",
                                 "building-effective-agents",
+                                "ai-agent-is-coming",
+                                "software-development-in-AI2",
                             ]
                         },
 
@@ -2397,7 +2399,7 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
-                                "06-基础统计模块",
+                                "spark-ml-basic-statistics",
                                 "07-回归算法",
                             ]
                         },

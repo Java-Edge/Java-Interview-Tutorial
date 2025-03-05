@@ -8,16 +8,13 @@
 
 ### 1.1 基础统计学知识
 
-#### 1.1.1 常用的统计学知识
+#### 1.1.1 常用统计学知识
 
-◆ 描述性统计
-平均数、方差、众数、中位数...
+描述性统计：平均数、方差、众数、中位数...
 
-◆ 相关性度量
-spark提供了皮尔逊和斯皮尔曼相关系数，反映变量间相关关系密切程度
+相关性度量：spark提供皮尔逊和斯皮尔曼相关系数，反映变量间相关关系密切程度
 
-◆ 假设检验
-根据一定假设条件，由样本推断总体的一种统计学方法,spark提供了皮尔森卡方检测
+假设检验：根据一定假设条件，由样本推断总体的一种统计学方法，spark提供了皮尔森卡方检测
 
 ## 2 实战统计汇总
 
@@ -84,41 +81,39 @@ data.take(10)
 ![](https://upload-images.jianshu.io/upload_images/16782311-0515c66172fd86ff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 相关系数值：
+
 ![](https://upload-images.jianshu.io/upload_images/16782311-80f9f273b374ba99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## 4 学习假设检验
 
 ### 4.1 假设检验
 
-◆ 根据一定假设条件，由样本推断总体的一种统计学方法。基本思路是先提出假设(虚无假设),使用统计学方法进行计算,根据计算结果判断是否`拒绝`假设
+根据一定假设条件，由样本推断总体的一种统计学方法。基本思路：
 
-◆ 假设检验的统计方法有很多,如卡方检验，T检验等
+- 先提出假设(虚无假设)，使用统计学方法进行计算
+- 再根据计算结果判断是否`拒绝`假设
 
-◆ spark实现的是皮尔森卡方检验,它可以实现适配度检测和独立性检测
+假设检验的统计方法有很多：卡方检验，T检验等。
+
+spark实现的是皮尔森卡方检验，可实现适配度检测和独立性检测。
 
 ### 4.2 皮尔森卡方检验
 
-最常用的卡方检验,可以分为适配度检验和独立性检验
+最常用的卡方检验，可分为：
 
-◆ 适配度检验:验证观察值的次数分配与理论值是否相等
+- 适配度检验：验证观察值的次数分配与理论值是否相等
+- 独立性检验：两个变量抽样到的观察值是否相互独立
 
-◆ 独立性检验:两个变量抽样到的观察值是否相互独立
-
-### 4.3 实战 : 判断性别与左撇子是否存在关系
+### 4.3 实战：判断性别与左撇子是否存在关系
 
 ![](https://upload-images.jianshu.io/upload_images/16782311-a531b613d399495e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-- 导入数据
-  ![](https://upload-images.jianshu.io/upload_images/16782311-0655a04dea30e153.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-- 计算
-  ![](https://upload-images.jianshu.io/upload_images/16782311-d2c6ce572c7ab032.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+导入数据
+
+![](https://upload-images.jianshu.io/upload_images/16782311-0655a04dea30e153.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+计算
+
+![](https://upload-images.jianshu.io/upload_images/16782311-d2c6ce572c7ab032.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 否定了假设检验，所以性别与左撇子是有关！
-
-- [基于Spark的机器学习实践 (一) - 初识机器学习](https://zhuanlan.zhihu.com/p/61667559)
-- [基于Spark的机器学习实践 (二) - 初识MLlib](https://zhuanlan.zhihu.com/p/61784371)
-- [基于Spark的机器学习实践 (三) - 实战环境搭建](https://zhuanlan.zhihu.com/p/61848834)
-- [基于Spark的机器学习实践 (四) - 数据可视化
-  
-  ](https://zhuanlan.zhihu.com/p/61868232)
-- [基于Spark的机器学习实践 (六) - 基础统计模块](
