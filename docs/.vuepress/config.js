@@ -993,6 +993,7 @@ module.exports = {
                             "01-扫码支付后都发生了啥？",
                             "02-大厂的第三方支付业务架构设计",
                             "wechat-pay-development-guide-avoid-pitfalls",
+                            "high-avail-payments",
                         ]
                     }],
 
@@ -2174,7 +2175,21 @@ module.exports = {
                             "building-neural-networks-with-pytorch",
                             "pytorch-cifar10-image-classifier-tutorial",
                         ]
-                    }, ],
+                    },
+                    
+                    {
+                        title: "NLP",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "basic-of-nlp",
+                            "text-preprocessing-overview",
+                            "text-vectorization-guide",
+                            "text-data-analysis-practical-guide",
+                        ]
+                    },
+                
+                ],
 
                     "/md/AI/langchain4j/": [{
                             title: "LangChain4j基础",
@@ -2294,6 +2309,7 @@ module.exports = {
                                 "building-effective-agents",
                                 "ai-agent-is-coming",
                                 "software-development-in-AI2",
+                                "overcoming-fear-uncertainty-and-doubt-in-the-era-of-ai-transformation",
                             ]
                         },
 
