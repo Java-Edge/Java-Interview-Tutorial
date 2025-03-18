@@ -2186,6 +2186,18 @@ module.exports = {
                             "text-preprocessing-overview",
                             "text-vectorization-guide",
                             "text-data-analysis-practical-guide",
+                            "key-path-from-feature-enhancement-to-dimensional-norm",
+                            "text-data-augmentation-back-translation-guide",
+                        ]
+                    },
+                    
+                    {
+                        title: "RNN",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "what-is-rnn",
+                            "neural-memory-engine-for-sequence-modeling",
                         ]
                     },
                 
