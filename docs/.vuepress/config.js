@@ -353,7 +353,7 @@ module.exports = {
                                 text: 'OAuth2.0',
                                 items: [{
                                     text: 'OAuth2.0专栏概述',
-                                    link: '/md/security/01-OAuth 2.0实战-为什么要先获取授权码code.md'
+                                    link: '/md/security/OAuth 2.0实战-为什么要先获取授权码code.md'
                                 }, ]
                             },
 
@@ -718,7 +718,7 @@ module.exports = {
                                 text: '常见攻击手段',
                                 items: [{
                                     text: '常见攻击手段概述',
-                                    link: '/md/security/01-OAuth 2.0实战-为什么要先获取授权码code.md'
+                                    link: '/md/security/OAuth 2.0实战-为什么要先获取授权码code.md'
                                 }, ]
                             },
                         ]
@@ -2107,6 +2107,9 @@ module.exports = {
                                 "qwen-QwQ",
                                 "only-ai-flow-can-do",
                                 "chatgpt-canva",
+                                "mcp-fad-or-fixture",
+                                "mcp-and-the-future-of-ai-tooling",
+                                "llm-reasoning-limitations",
                             ]
                         },
                         {
@@ -2198,6 +2201,17 @@ module.exports = {
                         children: [
                             "what-is-rnn",
                             "neural-memory-engine-for-sequence-modeling",
+                            "long-short-term-memory",
+                            "gated-recurrent-unit-model",
+                        ]
+                    },
+                    
+                    {
+                        title: "Transformer",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "mask-tensor",
                         ]
                     },
                 
@@ -2467,7 +2481,7 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
-                                "01-OAuth 2.0实战-为什么要先获取授权码code.md",
+                                "OAuth 2.0实战-为什么要先获取授权码code.md",
                                 "03-OAuth2.0实战-轻松学会使用JWT，让你的OAuth2.0实现更加安全高效！",
                                 "07-你确定懂OAuth 2.0的三方软件和受保护资源服务？",
                             ]
