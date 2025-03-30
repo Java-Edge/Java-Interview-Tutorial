@@ -744,7 +744,7 @@ module.exports = {
                             },
                             {
                                 text: '大模型平台',
-                                link: '/md/AI/llm/GPTs推荐'
+                                link: '/md/AI/llm/GPTs'
                             },
                             {
                                 text: 'Prompt工程',
@@ -1113,6 +1113,7 @@ module.exports = {
                             "04-RPC框架在网络通信的网络IO模型选型",
                             "熔断限流",
                             "11-RPC的负载均衡",
+                            "rpc-retry-mechanism",
                             "RPC-Traffic-Replay",
                         ]
                     }],
@@ -2096,7 +2097,7 @@ module.exports = {
                             sidebarDepth: 0,
                             children: [
                                 "llm-api-platform",
-                                "GPTs推荐",
+                                "GPTs",
                                 "ChatGPT为啥不用Websocket而是EventSource",
                                 "携手阿里云：JetBrains AI Assistant 正式发布！",
                                 "中国大陆用户如何使用Jetbrains内置的AI插件AI Assistant",
@@ -2110,6 +2111,7 @@ module.exports = {
                                 "mcp-fad-or-fixture",
                                 "mcp-and-the-future-of-ai-tooling",
                                 "llm-reasoning-limitations",
+                                "making-an-llm-that-sees-and-reasons",
                             ]
                         },
                         {
@@ -2321,7 +2323,7 @@ module.exports = {
                         },
 
                         {
-                            title: "Agent应用开发",
+                            title: "Agent应用",
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
@@ -2336,6 +2338,7 @@ module.exports = {
                                 "ai-agent-is-coming",
                                 "software-development-in-AI2",
                                 "overcoming-fear-uncertainty-and-doubt-in-the-era-of-ai-transformation",
+                                "aigc-app-in-e-commerce-review",
                             ]
                         },
 
