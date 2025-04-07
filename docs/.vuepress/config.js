@@ -735,20 +735,20 @@ module.exports = {
                                 link: '/md/python/00-macOS和Linux安装和管理多个Python版本'
                             },
                             {
-                                text: 'AI理论',
+                                text: 'AI算法',
                                 link: '/md/AI/ml/01-人工智能概要'
                             },
                             {
-                                text: 'AIGC应用开发框架',
+                                text: 'AIGC应用开发',
                                 link: '/md/AI/AI大模型企业应用实战'
                             },
                             {
-                                text: '大模型平台',
+                                text: '大模型平台和Prompt工程',
                                 link: '/md/AI/llm/GPTs'
                             },
                             {
-                                text: 'Prompt工程',
-                                link: '/md/AI/llm/01-Prompt网站'
+                                text: 'AI Agent',
+                                link: '/md/AI/agent/changelog-cursor'
                             },
                         ]
                     },
@@ -2104,7 +2104,6 @@ module.exports = {
                                 "contextual-retrieval",
                                 "lm-studio-transform-mac-into-ai-tool",
                                 "navigating-llm-deployment-tips-tricks-and-techniques",
-                                "goodbye-cursor-hello-windsurf",
                                 "qwen-QwQ",
                                 "only-ai-flow-can-do",
                                 "chatgpt-canva",
@@ -2133,6 +2132,15 @@ module.exports = {
                                 "claude-3-7-sonnet",
                             ]
                         },
+
+                        {
+                            title: "llama",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "llama-4-multimodal-intelligence",
+                            ]
+                        },
                         {
                             title: "Prompt工程",
                             collapsable: false,
@@ -2142,7 +2150,7 @@ module.exports = {
                                 "02-常用Prompt",
                             ]
                         },
-                        
+
                         {
                             title: "Dify",
                             collapsable: false,
@@ -2157,67 +2165,67 @@ module.exports = {
                     ],
 
                     "/md/AI/ml/": [{
-                        title: "机器学习",
-                        collapsable: false,
-                        sidebarDepth: 0,
-                        children: [
-                            "软件工程师转型AI的全攻略",
-                            "01-人工智能概要",
-                            "02-MR 算法分类",
-                            "what-is-neural-network",
-                            "MapReduce分治思想",
-                            "05-开发环境安装",
-                            "一文看懂AI的Transformer架构",
-                            "what-is-tensor",
-                        ]
-                    },
-                    
-                    {
-                        title: "PyTorch",
-                        collapsable: false,
-                        sidebarDepth: 0,
-                        children: [
-                            "building-neural-networks-with-pytorch",
-                            "pytorch-cifar10-image-classifier-tutorial",
-                        ]
-                    },
-                    
-                    {
-                        title: "NLP",
-                        collapsable: false,
-                        sidebarDepth: 0,
-                        children: [
-                            "basic-of-nlp",
-                            "text-preprocessing-overview",
-                            "text-vectorization-guide",
-                            "text-data-analysis-practical-guide",
-                            "key-path-from-feature-enhancement-to-dimensional-norm",
-                            "text-data-augmentation-back-translation-guide",
-                        ]
-                    },
-                    
-                    {
-                        title: "RNN",
-                        collapsable: false,
-                        sidebarDepth: 0,
-                        children: [
-                            "what-is-rnn",
-                            "neural-memory-engine-for-sequence-modeling",
-                            "long-short-term-memory",
-                            "gated-recurrent-unit-model",
-                        ]
-                    },
-                    
-                    {
-                        title: "Transformer",
-                        collapsable: false,
-                        sidebarDepth: 0,
-                        children: [
-                            "mask-tensor",
-                        ]
-                    },
-                
-                ],
+                            title: "机器学习",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "软件工程师转型AI的全攻略",
+                                "01-人工智能概要",
+                                "02-MR 算法分类",
+                                "what-is-neural-network",
+                                "MapReduce分治思想",
+                                "05-开发环境安装",
+                                "一文看懂AI的Transformer架构",
+                                "what-is-tensor",
+                            ]
+                        },
+
+                        {
+                            title: "PyTorch",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "building-neural-networks-with-pytorch",
+                                "pytorch-cifar10-image-classifier-tutorial",
+                            ]
+                        },
+
+                        {
+                            title: "NLP",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "basic-of-nlp",
+                                "text-preprocessing-overview",
+                                "text-vectorization-guide",
+                                "text-data-analysis-practical-guide",
+                                "key-path-from-feature-enhancement-to-dimensional-norm",
+                                "text-data-augmentation-back-translation-guide",
+                            ]
+                        },
+
+                        {
+                            title: "RNN",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "what-is-rnn",
+                                "neural-memory-engine-for-sequence-modeling",
+                                "long-short-term-memory",
+                                "gated-recurrent-unit-model",
+                            ]
+                        },
+
+                        {
+                            title: "Transformer",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "mask-tensor",
+                            ]
+                        },
+
+                    ],
 
                     "/md/AI/langchain4j/": [{
                             title: "LangChain4j基础",
@@ -2246,6 +2254,17 @@ module.exports = {
                                 "04-1-最新发布功能",
                                 "04-2-最新发布功能",
                                 "04-3-最新发布功能",
+                            ]
+                        },
+                    ],
+                    
+                    "/md/AI/agent/": [{
+                            title: "辅助编程",
+                            collapsable: false,
+                            sidebarDepth: 0,
+                            children: [
+                                "changelog-cursor",
+                                "goodbye-cursor-hello-windsurf",
                             ]
                         },
                     ],
@@ -2339,6 +2358,7 @@ module.exports = {
                                 "software-development-in-AI2",
                                 "overcoming-fear-uncertainty-and-doubt-in-the-era-of-ai-transformation",
                                 "aigc-app-in-e-commerce-review",
+                                "ai-trends-disrupting-software-teams",
                             ]
                         },
 
