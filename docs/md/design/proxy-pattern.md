@@ -1,4 +1,4 @@
-# 代理模式Proxy Pattern
+# 代理模式（Proxy Pattern）
 
 ## 1 定义
 

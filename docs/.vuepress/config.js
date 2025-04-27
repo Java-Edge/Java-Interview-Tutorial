@@ -155,7 +155,7 @@ module.exports = {
                         text: '设计模式',
                         items: [{
                             text: '模板方法设计模式（Template Pattern）',
-                            link: '/md/design/模板方法设计模式（Template Pattern）.md'
+                            link: '/md/design/template-pattern'
                         },]
                     },
                     {
@@ -1244,6 +1244,7 @@ module.exports = {
                             "JDK21新特性",
                             "JDK22新特性",
                             "JDK23新特性",
+                            "java24-new-features",
                             "java2024",
                         ]
                     },
@@ -2117,6 +2118,7 @@ module.exports = {
                             "chatgpt-canva",
                             "llm-reasoning-limitations",
                             "making-an-llm-that-sees-and-reasons",
+                            "lmstudio-local-llm-call",
                         ]
                     },
                     {
@@ -2247,7 +2249,10 @@ module.exports = {
                             "ai-services",
                             "tools",
                             "rag",
+                            "structured-outputs",
                             "observability",
+                            "customizable-http-client",
+                            "mcp",
                         ]
                     },
 
@@ -2271,6 +2276,7 @@ module.exports = {
                         children: [
                             "changelog-cursor",
                             "goodbye-cursor-hello-windsurf",
+                            "Junie",
                         ]
                     },
                     ],
@@ -2282,6 +2288,7 @@ module.exports = {
                         children: [
                             "mcp-fad-or-fixture",
                             "mcp-and-the-future-of-ai-tooling",
+                            "mcp-java-sdk",
                         ]
                     },
                     {
@@ -2440,12 +2447,13 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "【Java设计模式实战】单例模式",
-                            "模板方法设计模式（Template Pattern）",
-                            "策略模式Strategy Pattern",
+                            "template-pattern",
+                            "strategy-pattern",
                             "建造者模式",
-                            "代理模式Proxy Pattern",
+                            "proxy-pattern",
                             "适配器模式",
                             "门面模式",
+                            "iterator-pattern",
                         ]
                     },
                     ],

@@ -1,4 +1,4 @@
-# 策略模式Strategy Pattern
+# 策略模式（Strategy Pattern）
 
 ## 1 简介
 
