@@ -751,8 +751,12 @@ module.exports = {
                         link: '/md/AI/mcp/mcp-fad-or-fixture'
                     },
                     {
-                        text: '大模型平台和Prompt工程',
+                        text: '大模型发展',
                         link: '/md/AI/llm/GPTs'
+                    },
+                    {
+                        text: 'Prompt工程',
+                        link: '/md/AI/prompt/01-Prompt网站'
                     },
                     {
                         text: 'AI Agent',
@@ -1832,7 +1836,7 @@ module.exports = {
                             "03-BASE 还能撑多久？强一致性才是事务处理的终极奥义！",
                             "18-分布式数据库的HTAP能统一OLTP和 OLAP吗？",
                             "21-查询执行引擎：加速聚合计算加速",
-
+                            "bank-distributed-database-selection",
                         ]
                     }],
 
@@ -2098,6 +2102,14 @@ module.exports = {
                         children: [
                             "00-macOS和Linux安装和管理多个Python版本",
                         ]
+                    },
+                    {
+                        title: "FAQ",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "Installing packages into 'Python 3.9' requires administrator privileges",
+                        ]
                     },],
 
                     "/md/AI/llm/": [{
@@ -2113,7 +2125,6 @@ module.exports = {
                             "contextual-retrieval",
                             "lm-studio-transform-mac-into-ai-tool",
                             "navigating-llm-deployment-tips-tricks-and-techniques",
-                            "qwen-QwQ",
                             "only-ai-flow-can-do",
                             "chatgpt-canva",
                             "llm-reasoning-limitations",
@@ -2121,6 +2132,16 @@ module.exports = {
                             "lmstudio-local-llm-call",
                         ]
                     },
+                    {
+                        title: "Qwen",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "qwen-QwQ",
+                            "qwen3",
+                        ]
+                    },
+
                     {
                         title: "DeepSeek",
                         collapsable: false,
@@ -2147,15 +2168,6 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "llama-4-multimodal-intelligence",
-                        ]
-                    },
-                    {
-                        title: "Prompt工程",
-                        collapsable: false,
-                        sidebarDepth: 0,
-                        children: [
-                            "01-Prompt网站",
-                            "02-常用Prompt",
                         ]
                     },
 
@@ -2310,6 +2322,16 @@ module.exports = {
                         ]
                     },],
 
+                    "/md/AI/prompt/": [{
+                        title: "Prompt工程",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "01-Prompt网站",
+                            "02-常用Prompt",
+                        ]
+                    }, ,],
+
                     "/md/AI/": [{
                         title: "LangChain",
                         collapsable: false,
@@ -2334,6 +2356,7 @@ module.exports = {
                             "02-相似性检索的关键 - Embedding",
                             "03-core-of-rag-result-retrieval-and-reordering",
                             "04-prompt-helping-llm-understand-knowledge",
+                            "2025-future-rag-trends-four-technologies",
                         ]
                     },
                     {
