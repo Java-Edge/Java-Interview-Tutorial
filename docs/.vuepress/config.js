@@ -291,7 +291,7 @@ module.exports = {
                         text: 'Netty',
                         items: [{
                             text: 'Netty基础',
-                            link: '/md/netty/Netty基本组件.md'
+                            link: '/md/netty/netty-basic-components.md'
                         },
 
                         {
@@ -455,6 +455,11 @@ module.exports = {
                         {
                             text: 'Seata',
                             link: '/md/seata/01-Seata客户端依赖坐标引入与踩坑排雷.md'
+                        },
+
+                        {
+                            text: 'Sentinel',
+                            link: '/md/sentinel/spring-boot-integration-with-sentinel-practical-tutorial-from-dependency-to-custom-flow-control-and-monitoring.md'
                         },
                         ]
                     },
@@ -1273,6 +1278,7 @@ module.exports = {
                             "JVM专栏概述",
                             "01-JVM虚拟机-上篇",
                             "02-JVM虚拟机-下篇",
+                            "deep-dive-into-jvm-runtime-data-areas-from-pc-to-metaspace",
                             "00-JDK为何自己首先破坏双亲委派模型",
                             "00-G1垃圾收集器的日志格式",
                             "Metadata GC Threshold in Java",
@@ -1338,6 +1344,8 @@ module.exports = {
                         children: [
                             "Spring之BeanNameAware和BeanFactoryAware接口",
                             "这次彻底搞懂IoC容器依赖注入的源码",
+                            "farewell-bean-not-found-easily-solve-spring-boot-package-scanning-issues",
+                            "why-spring-bean-difficult-birth-overcome-constructor-injection-dependencies-and-ambiguity",
                             "别小看Spring过滤器,这些知识点你必须得掌握",
                             "Spring框架使用了哪些设计模式",
                             "阿里四面：你知道Spring AOP创建Proxy的过程吗？",
@@ -1349,9 +1357,9 @@ module.exports = {
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
-                            "01-SpringMVC的AsyncHandlerInterceptor异步的处理器拦截器",
+                            "SpringMVC-AsyncHandlerInterceptor",
                             "02-实现http请求的异步长轮询",
-                            "03-SpringMVC拦截处理器",
+                            "SpringMVC-HandlerInterceptor",
                             "SpringMVC-service-doDispatch",
                             "SpringMVC-DispatcherServlet-doDispatch",
                         ]
@@ -1527,10 +1535,22 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "00-Spring响应式编程",
-                            "响应式编程的适用场景",
+                            "applicable-scenarios-for-reactive-programming",
                             "01-想让系统更具有弹性？了解背压机制和响应式流的秘密！",
+                            "spring-5-reactive-programming-high-performance-full-stack-apps",
                             "04-Spring为何偏爱Reactor响应式编程框架",
                             "05-流式操作：如何使用 Flux 和 Mono 高效构建响应式数据流？",
+                        ]
+                    }],
+                    
+                    "/md/sentinel/": [{
+                        title: "Sentinel基础",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "spring-boot-integration-with-sentinel-practical-tutorial-from-dependency-to-custom-flow-control-and-monitoring",
+                            "basic-api-resource-rule",
+                            "origin-authority-control",
                         ]
                     }],
 
@@ -1646,6 +1666,8 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "netty-off-heap-memory-leak-detection",
+                            "java-lock-optimization-practice-netty-examples_boost-concurrency-performance",
+                            "use-netty-to-handle-large-data-efficiently",
                         ]
                     },
                     ],
@@ -1681,6 +1703,7 @@ module.exports = {
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
+                            "message-queues-more-than-app-communication",
                             "消息队列面试必问解析",
                             "消息队列的事务消息",
                             "避免无法克服的队列积压",
@@ -1769,6 +1792,7 @@ module.exports = {
                             "06-如何快速定位 Redis 热 key",
                             "Redis异步子线程原理详解",
                             "12-Redis 闭源？",
+                            "redis-agpl-license",
                         ]
                     },
                     {
@@ -1802,6 +1826,7 @@ module.exports = {
                             "04-Kibana常见RESTful API操作",
                             "05-倒排索引与分词",
                             "07-整合进 SpringBoot 项目",
+                            "building-product-search-system-with-es",
                         ]
                     }],
                     "/md/ck/": [{
@@ -2021,11 +2046,13 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "01-Vue开发实战",
+                            "goodbye-jquery-thinking-create-checklist-apps-with-vue-js-experience-the-charm-of-data-driven",
                             "vue2-to-vue3",
                             "05-教你快速搭建Vue3工程化项目",
                             "Vuex设计Vue3项目的数据流",
                             "router",
                             "table",
+                            "vue-js-vs-axios-practical-guide-from-ajax-requests-to-api-proxy-configuration",
                         ]
                     }],
 
@@ -2159,6 +2186,7 @@ module.exports = {
                             "Claude3到底多强",
                             "计算机使用功能",
                             "claude-3-7-sonnet",
+                            "claude-4",
                         ]
                     },
 
@@ -2180,6 +2208,13 @@ module.exports = {
                             "Build-App-with-Dify",
                             "integrate-dify-and-aws-services-to-enable-more-flexible-translation-workflows",
                             "llm-knowledge-base-segmentation-data-cleaning",
+                            "enhancing-llm-memory-with-conversation-variables-and-variable-assigners",
+                            "accelerating-workflow-processing-with-parallel-branch",
+                            "boost-ai-workflow-resilience-with-error-handling",
+                            "introducing-parent-child-retrieval-for-enhanced-knowledge",
+                            "dify-v1-0-building-a-vibrant-plugin-ecosystem",
+                            "dify-deep-research-workflow-farewell-to-fragmented-search-unlock-ai-driven-insights",
+                            "dify-agent-and-zapier-mcp-unlock-ai-automation",
                         ]
                     },
                     ],
@@ -2282,6 +2317,15 @@ module.exports = {
                     ],
 
                     "/md/AI/agent/": [{
+                        title: "智能体发展",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "ai-agents-dont-security-nightmare",
+                            "improve-quality-gen-ai",
+                        ]
+                    },
+                    {
                         title: "辅助编程",
                         collapsable: false,
                         sidebarDepth: 0,
@@ -2289,6 +2333,7 @@ module.exports = {
                             "changelog-cursor",
                             "goodbye-cursor-hello-windsurf",
                             "Junie",
+                            "introducing-codex",
                         ]
                     },
                     ],
@@ -2351,7 +2396,7 @@ module.exports = {
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
-                            "00-rag-introduction-tool-to-eliminate-llm-hallucinations",
+                            "rag-introduction-tool-to-eliminate-llm-hallucinations",
                             "01-RAG应用框架和解析器",
                             "02-相似性检索的关键 - Embedding",
                             "03-core-of-rag-result-retrieval-and-reordering",
@@ -2414,6 +2459,7 @@ module.exports = {
                             "overcoming-fear-uncertainty-and-doubt-in-the-era-of-ai-transformation",
                             "aigc-app-in-e-commerce-review",
                             "ai-trends-disrupting-software-teams",
+                            "amazon-strands-agents-sdk",
                         ]
                     },
 
@@ -2477,6 +2523,7 @@ module.exports = {
                             "适配器模式",
                             "门面模式",
                             "iterator-pattern",
+                            "flyweight-pattern",
                         ]
                     },
                     ],

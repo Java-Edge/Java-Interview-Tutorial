@@ -9,5 +9,6 @@
         "Servlet",
         "springframework"
     ],
-    "Codegeex.RepoIndex": true
+    "Codegeex.RepoIndex": true,
+    "files.autoSave": "afterDelay"
 }

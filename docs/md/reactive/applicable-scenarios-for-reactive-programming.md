@@ -2,30 +2,30 @@
 
 ## 0 前提
 
-已掌握响应式编程核心概念：响应式流、背压及响应式流规范。
+响应式流、背压及响应式流规范。
 
 ## 1 引言
 
-- 响应式编程能应用到哪些具体场景?
-- 目前有啥框架用到这新技术体系?
+- 响应式编程能应用到啥场景?
+- 目前有啥框架用到这技术体系?
 
-## 2 响应式编程的应用场景分析
+## 2 响应式编程应用场景
 
-可认为响应式编程不仅是一种编程技术，更是一种架构设计的系统方法，因此可应用于任何地方：
+响应式编程不仅是编程技术，更是一种架构设计的系统方法，可应用于任何地方：
 
-- 既可用于简单的 Web 应用系统
-- 也可用于大型企业解决方案
+- 简单的 Web 应用系统
+- 大型企业解决方案
 
-数据流处理是响应式编程的一大应用场景，流式系统主要特点：
+数据流处理是响应式编程一大应用场景，流式系统特点：
 
 - 低延迟
 - 高吞吐量
 
-通过使用非阻塞式通信，可确保资源得到高效利用，实现低延迟和高吞吐量。
+用非阻塞式通信，可确保资源高效利用，实现低延迟、高吞吐量。
 
-高并发流量通常涉及大量 IO 操作，相比传统同步阻塞式 IO 模型，响应式编程所具备的异步非阻塞式IO模型很适合应对处理高并发流量的业务场景。
+高并发通常涉及大量 IO 操作，相比传统同步阻塞式 IO 模型，响应式编程的异步非阻塞式IO模型适合应对。
 
-网关的作用：响应来自前端系统的流量，并将其转发到后端服务。
+网关：响应来自前端系统的流量，并将其转发到后端服务。
 
 ### 核心诉求
 
@@ -35,37 +35,60 @@
 
 ## 3 响应式流规范
 
-### 3.1 Netflix Hystrix 中的滑动窗口
+### 3.1 Hystrix滑动窗口
 
 Spring Cloud Netflix Hystrix 基于 Netflix Hystrix 实现服务熔断功能。Netflix Hystrix，Netflix 开源的一款容错库，使用HystrixCircuitBreaker类实现熔断器。
 
-#### HystrixCircuitBreaker咋动态获取系统运行时的各项数据？
+#### 咋动态获取系统运行时的各项数据？
 
-HealthCountsStream采用滑动窗口 (Rolling Window) 机制，大量采用数据流处理方面技术及 RxJava 响应式编程框架。Hystrix 以秒为单位统计系统中所有请求的处理情况，然后每次取最近 10s 数据计算，如失败率超过一定阈值，就熔断。
+HealthCountsStream采用滑动窗口，大量采用数据流处理方面技术及 RxJava 响应式编程框架。Hystrix 以s为单位统计系统中所有请求的处理情况，再每次取最近 10s 数据计算，如失败率超过阈值，熔断。
 
-#### 咋实现这滑动窗口？
+#### 实现
 
-把系统运行时所产生的所有数据都视为一个个的事件，这样滑动窗口中每个桶的数据都来自源源不断的事件，通常需要对其进行转换以便进行后续的操作。
+把系统运行时产生数据视为一个个事件，滑动窗口中每个桶的数据都来自事件，通常需对其转换以便后续操作。
 
-Hystrix 采用基于响应式编程思想的 RxJava。使用 RxJava 的一大好处，可通过 RxJava 的一系列操作符来实现滑动窗口：
+Hystrix采用RxJava，用其一系列操作符实现滑动窗口：
 
 - window 操作符，把当前流中的元素收集到另外的流序列
 - flatMap 操作符，把流中的每个元素转换成一个流，再把转换之后得到的所有流中的元素进行合并
 - reduce 操作符，对流中包含的所有元素进行累积操作，得到一个包含计算结果的流
 
-![](https://img-blog.csdnimg.cn/36dd9a8c14704de58b5d16f43769698f.png)
+```java
+this.bucketedStream = Observable.defer(new Func0<Observable<Bucket>>() {
 
-![](https://img-blog.csdnimg.cn/d44f7a36d6674dd2a565a8c602d3fab8.png)
+    @Override
+    public Observable<Bucket> call() {
+        return inputEventStream
+            .observe()
+            // 使用 window 操作符收集一个 Bucket 时间内的数据
+            .window(bucketSizeInMs, TimeUnit.MILLISECONDS)
+            // 将每个 window 内聚集起来的事件集合汇总成 Bucket
+            .flatMap(reduceBucketToSummary)
+            .startWith(emptyEventCountsToStart);
+    }
+});
+```
 
-Hystrix 巧妙运用 RxJava 的 window、flatMap等操作符来将单位窗口时间内的事件。以及将一个窗口大小内的 Bucket 聚集到一起形成滑动窗口，并基于滑动窗口集成指标数据。
+```java
+this.sourceStream = bucketedStream
+    // 将 N 个 Bucket 进行汇总
+    .window(numBuckets, 1)
+    // 汇总成一个窗口
+    .flatMap(reduceWindowToSummary)
+    ...
+    // 添加背压控制
+    .onBackpressureDrop();
+```
 
-### 3.2 Spring Cloud Gateway 中的过滤器
+Hystrix 用 RxJava 的 window、flatMap等操作符来将单位窗口时间内的事件。以及将一个窗口大小内的 Bucket 聚集到一起形成滑动窗口，并基于滑动窗口集成指标数据。
 
-Spring 官方自己开发的一款 API 网关，基于最新的Spring5和Spring Boot2以及用于响应式编程的Proiect Reactor框架提供的是响应式、非阻塞式I/0 模型。
+### 3.2 Spring Cloud Gateway中的过滤器
 
-![](https://img-blog.csdnimg.cn/74c2aef3fa26416180377239bc39fb59.png)
+Spring开发的API网关，基于Spring5和Spring Boot2和Proiect Reactor框架提供响应式、非阻塞式I/O模型：
 
-只需实现*GlobalFilter*接口，重写 filter()即可。
+![](https://p.ipic.vip/cgphl2.png)
+
+只需实现GlobalFilter接口，重写 filter()：
 
 ```java
 public class IPLimitFilter implements GlobalFilter
@@ -73,30 +96,30 @@ public class IPLimitFilter implements GlobalFilter
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
 
-        // 1. 获取当前的请求路径
+        // 1 获取当前请求路径
         String url = exchange.getRequest().getURI().getPath();
 
-        // 2. 获得所有的需要进行ip限流校验的url list
+        // 2 获得所有需ip限流校验的url list
         List<String> ipLimitList = excludeUrlProperties.getIpLimitUrls();
 
-        // 3. 校验并且判断
+        // 3 校验并判断
         if (ipLimitList != null && !ipLimitList.isEmpty()) {
             for (String limitUrl : ipLimitList) {
                 if (antPathMatcher.matchStart(limitUrl, url)) {
-                    // 如果匹配到，则表明需要进行ip的拦截校验
+                    // 若匹配到，则表明需进行ip拦截校验
                     log.info("IPLimitFilter - 拦截到需要进行ip限流校验的方法：URL = " + url);
                     return doLimit(exchange, chain);
                 }
             }
         }
 
-        // 4. 默认直接放行
+        // 4 默认放行
         return chain.filter(exchange);
     }
 }
 ```
 
-filter()返回了一个 Mono 对象，它就是在响应式编程框架 Project Reactor 中代表**单个返回值的流式对象**。
+filter()返回的Mono对象，是响应式编程框架 Project Reactor 中代表**单个返回值的流式对象**。
 
 #### 案例
 
@@ -129,25 +152,33 @@ public class PreGatewayFilterFactory extends AbstractGatewayFilterFactory<PreGat
 
 ### 3.3 Spring Webflux 中的请求处理流程
 
-Spring 5 中引入的全新的响应式 Web 服务开发框架。
+Spring 5 中引入的全新的响应式 Web 服务开发框架。针对涉及大量I/O 操作的服务化架构，WebFlux也是解决方案。
 
-针对涉及大量I/O 操作的服务化架构，WebFlux也是一种非常有效的解决方案。
+#### 工作流程
 
-#### 工作流程图
-
-
-
-![](https://img-blog.csdnimg.cn/ec9b9b6147db4626be38f21fc56aa5bd.png)
+![](https://p.ipic.vip/3v94dk.png)
 
 #### 示例
 
-![](https://img-blog.csdnimg.cn/2f138646effd42d39367778265da8566.png)
+```java
+public Mono<Void> handle(ServerWebExchange exchange) {
+    if (this.handlerMappings == null) {
+        return createNotFoundError();
+    }
 
-![](https://img-blog.csdnimg.cn/29467a6ffae544c3ada947880e9ba57d.png)
+    return Flux.fromIterable(this.handlerMappings)
+            .concatMap(mapping -> mapping.getHandler(exchange))
+            .next()
+            // 如果没有找到 HandlerMapping，则抛出异常
+            .switchIfEmpty(createNotFoundError())
+            // 触发 HandlerAdapter 的 handle 方法
+            .flatMap(handler -> invokeHandler(exchange, handler))
+            // 触发HandlerResultHandler的handleResult方法
+            .flatMap(result -> handleResult(exchange, result));
+}
+```
 
-
-
-## 总结
+## 4 总结
 
 通过理论联系实际，讨论了响应式编程的具体应用场景。
 
