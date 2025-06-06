@@ -2205,6 +2205,7 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "what-is-llmops",
+                            "configuring-models-in-dify",
                             "Build-App-with-Dify",
                             "integrate-dify-and-aws-services-to-enable-more-flexible-translation-workflows",
                             "llm-knowledge-base-segmentation-data-cleaning",
@@ -2327,6 +2328,28 @@ module.exports = {
                     },
                     {
                         title: "辅助编程",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "changelog-cursor",
+                            "goodbye-cursor-hello-windsurf",
+                            "Junie",
+                            "introducing-codex",
+                        ]
+                    },
+                    ],
+                    
+                    "/md/AI/agent/dify/": [{
+                        title: "快速上手",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "ai-agents-dont-security-nightmare",
+                            "improve-quality-gen-ai",
+                        ]
+                    },
+                    {
+                        title: "案例",
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [

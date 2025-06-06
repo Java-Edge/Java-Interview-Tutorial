@@ -117,30 +117,3 @@ Rerank：RAG中百尺竿头更进一步
 排序模型目的在于，对召回内容有更合理排序结果，减少提供给模型的上下文长度，长度越长，对模型压力越大。
 
 ![](https://my-img.javaedge.com.cn/javaedge-blog/2024/06/974f3c64951c640dfd26adbf92ab2da1.png)
-
-基于Learning2Rank的思路提升文本语义排序效果：
-
-![](https://my-img.javaedge.com.cn/javaedge-blog/2024/06/46a36f3a3a9dc1600d21025080c63c3d.png)
-
-### Listwise的优化
-
-![](https://my-img.javaedge.com.cn/javaedge-blog/2024/06/d11518137f7d823c5e26a31246a45c06.png)
-
-指示函数做近似：
-
-![](https://my-img.javaedge.com.cn/javaedge-blog/2024/06/bc7a9bb034683c429a791e902c8b34b4.png)
-
-最终loss function：
-
-$$
-\begin{align*}
-\hat{\pi}(x) &= 1 + \sum_{y \in X, y \neq x} \frac{\exp(-\alpha s_{x,y})}{1 + \exp(-\alpha s_{x,y})} \\
-NDCG &= N_n^{-1} \sum_{x \in X} \frac{2^{r(x)} - 1}{\log_2(1 + \hat{\pi}(x))}
-\end{align*}
-$$
- 效果对比：
-
-| model                        | FAQ ACC@5 | 文档 ACC@5 | 混合数据 ACC@5 |
-| ---------------------------- | --------- | ---------- | -------------- |
-| bge-reranker-large(开源SOTA) | 90.26     | 75.98      | 77.17          |
-| Our Model                    | 93.76     | 83.20      | 81.21          |
