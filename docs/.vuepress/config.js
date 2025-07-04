@@ -752,10 +752,6 @@ module.exports = {
                         link: '/md/AI/langchain4j/01-intro'
                     },
                     {
-                        text: 'MCP',
-                        link: '/md/AI/mcp/mcp-fad-or-fixture'
-                    },
-                    {
                         text: '大模型发展',
                         link: '/md/AI/llm/GPTs'
                     },
@@ -766,6 +762,14 @@ module.exports = {
                     {
                         text: 'AI Agent',
                         link: '/md/AI/agent/changelog-cursor'
+                    },
+                    {
+                        text: 'MCP',
+                        link: '/md/AI/mcp/mcp-fad-or-fixture'
+                    },
+                    {
+                        text: 'A2A',
+                        link: '/md/AI/a2a/a2a-a-new-era-of-agent-interoperability'
                     },
                     ]
                 },
@@ -795,6 +799,11 @@ module.exports = {
                     {
                         text: '以太坊区块链',
                         link: '/md/chain/01-以太坊智能合约与高级语言.md'
+                    },
+                    
+                    {
+                        text: '隐私计算',
+                        link: '/md/chain/隐私计算技术原理.md'
                     },
 
                     ]
@@ -1179,8 +1188,9 @@ module.exports = {
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
-                            "MQTT与Kafka在物联网消息与流数据集成实践",
-                            "07-MQTT发布订阅模式介绍"
+                            "mqtt-kafka-iot-message-streaming-integration",
+                            "mqtt-publish-subscribe-intro",
+                            "avoid-bare-parsefrom-mqtt-protobuf-consumption",
                         ]
                     }],
 
@@ -1246,15 +1256,16 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "java-se-support-roadmap",
-                            "Java9新特性概述",
+                            "Java9-new-features",
                             "jdk14-new-features-complete-guide",
-                            "JDK16新特性",
+                            "Java16-new-features",
                             "understanding-java17-new-features-sealed-classes",
-                            "JDK21新特性",
-                            "JDK22新特性",
-                            "JDK23新特性",
+                            "Java21-new-features",
+                            "Java22-new-features",
+                            "Java23-new-features",
                             "java24-new-features",
                             "java2024",
+                            "java-news-roundup-jun02-2025",
                         ]
                     },
 
@@ -1397,7 +1408,7 @@ module.exports = {
                             "03-Tomcat的生命周期管理",
                             "04-Tomcat实现热部署、热加载原理解析",
                             "05-Tomcat如何打破双亲委派机制实现隔离Web应用的？",
-                            "Tomcat进程占用CPU过高怎么办？",
+                            "how-to-solve-high-cpu-usage-in-tomcat-process",
                         ]
                     }],
 
@@ -1501,6 +1512,7 @@ module.exports = {
                             "为什么临时表可以重名？",
                             "为什么阿里不推荐使用MySQL分区表？",
                             "一文看懂这篇MySQL的锁机制",
+                            "mysql-transaction-isolation-mechanism",
                         ]
                     },
 
@@ -1515,6 +1527,7 @@ module.exports = {
                             "MySQL查询优化",
                             "MySQL深分页调优实战",
                             "online-sql-deadlock-incident-how-to-prevent-deadlocks",
+                            "optimize-slow-queries-massive-row-deletions",
                         ]
                     },
 
@@ -1542,7 +1555,7 @@ module.exports = {
                             "05-流式操作：如何使用 Flux 和 Mono 高效构建响应式数据流？",
                         ]
                     }],
-                    
+
                     "/md/sentinel/": [{
                         title: "Sentinel基础",
                         collapsable: false,
@@ -1682,7 +1695,7 @@ module.exports = {
                             "Kafka门派知多少",
                             "08-全网最全图解Kafka适用场景",
                             "09-消息队列的消息大量积压怎么办？",
-                            "13-KafkaAdminClient",
+                            "kafka-operations-tool-exploring-adminclient-principles-and-practices",
                             "15-基于kafka实现延迟队列",
                             "kafka-transaction-implementation",
                             "kafka-versions",
@@ -2153,10 +2166,21 @@ module.exports = {
                             "lm-studio-transform-mac-into-ai-tool",
                             "navigating-llm-deployment-tips-tricks-and-techniques",
                             "only-ai-flow-can-do",
-                            "chatgpt-canva",
                             "llm-reasoning-limitations",
                             "making-an-llm-that-sees-and-reasons",
                             "lmstudio-local-llm-call",
+                            "inference-engine",
+                            "cuda",
+                            "gpullama3-java-gpu-llm",
+                        ]
+                    },
+                    {
+                        title: "ChatGPT",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "chatgpt-canva",
+                            "memory-faq",
                         ]
                     },
                     {
@@ -2214,6 +2238,7 @@ module.exports = {
                             "boost-ai-workflow-resilience-with-error-handling",
                             "introducing-parent-child-retrieval-for-enhanced-knowledge",
                             "dify-v1-0-building-a-vibrant-plugin-ecosystem",
+                            "dify-v1-1-0-filtering-knowledge-retrieval-with-customized-metadata",
                             "dify-deep-research-workflow-farewell-to-fragmented-search-unlock-ai-driven-insights",
                             "dify-agent-and-zapier-mcp-unlock-ai-automation",
                         ]
@@ -2327,29 +2352,37 @@ module.exports = {
                         ]
                     },
                     {
-                        title: "辅助编程",
+                        title: "cursor",
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
                             "changelog-cursor",
-                            "goodbye-cursor-hello-windsurf",
-                            "Junie",
-                            "introducing-codex",
                         ]
                     },
-                    ],
-                    
-                    "/md/AI/agent/dify/": [{
-                        title: "快速上手",
+
+                    {
+                        title: "windsurf",
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
-                            "ai-agents-dont-security-nightmare",
-                            "improve-quality-gen-ai",
+                            "goodbye-cursor-hello-windsurf",
+                            "windsurf-update",
                         ]
                     },
                     {
-                        title: "案例",
+                        title: "Dify基础",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "what-is-llmops",
+                            "configuring-models-in-dify",
+                            "Build-App-with-Dify",
+                            "integrate-dify-and-aws-services-to-enable-more-flexible-translation-workflows",
+                            "llm-knowledge-base-segmentation-data-cleaning",
+                        ]
+                    },
+                    {
+                        title: "Dify案例",
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
@@ -2357,6 +2390,15 @@ module.exports = {
                             "goodbye-cursor-hello-windsurf",
                             "Junie",
                             "introducing-codex",
+                        ]
+                    },
+
+                    {
+                        title: "Perplexity",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "perplexity-labs",
                         ]
                     },
                     ],
@@ -2377,6 +2419,16 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "resources",
+                        ]
+                    },
+                    ],
+
+                    "/md/AI/a2a/": [{
+                        title: "A2A",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "a2a-a-new-era-of-agent-interoperability",
                         ]
                     },
                     ],
@@ -2529,6 +2581,7 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "01-单一职责原则",
+                            "open-close-principle",
                             "rest-api-design-resource-modeling",
                         ]
                     },

@@ -28,11 +28,15 @@ java -Xss256k -jar demo-0.0.1-SNAPSHOT.jar
 
 线程栈大小指定256KB。对于测试程序，os默认值8192KB过大，因为需要创建4096个线程。
 
-top看到Java进程CPU使用率达961.6%，注意进程ID 55790：
+#### top
+
+见Java进程CPU使用率爆表：
 
 ![](https://img-blog.csdnimg.cn/ccc4bf66ef604b20a0875593d571c134.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_SmF2YUVkZ2U=,size_16,color_FFFFFF,t_70)
 
-精细化top查看这Java进程中各线程使用CPU情况：
+#### top细查
+
+这进程的各线程使用CPU情况：
 
 ```java
 $ top -H -p 55790
@@ -40,13 +44,17 @@ $ top -H -p 55790
 
 ![](https://img-blog.csdnimg.cn/513921500f344102b8857b0cf937b6f4.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_SmF2YUVkZ2U=,size_16,color_FFFFFF,t_70)
 
-有个“scheduling-1”线程占用较多CPU。下一步就找出这个线程在做啥。jstack生成线程快照。jstack输出较大，一般将其写入文件：
+“scheduling-1”线程占较多CPU。找这线程在做啥。
+
+#### jstack生成线程快照
+
+jstack输出较大，一般将其写入文件：
 
 ```java
 jstack 55790 > 55790.log
 ```
 
-打开55790.log，定位到第4步中找到的名为 **scheduling-1** 的线程，其线程栈：
+打开log并定位到第4步中找到的名为 **scheduling-1** 的线程，其线程栈：
 
 ![](https://img-blog.csdnimg.cn/fa069dc8e34e4c209d72b5b9a6fa8c40.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_SmF2YUVkZ2U=,size_16,color_FFFFFF,t_70)
 
@@ -89,5 +97,6 @@ grep -o 'pool-2-thread' 55790.log | wc -l
 
 ## 总结
 
-遇到CPU过高，首先定位哪个进程导致，之后可通过top -H -p pid命令定位到具体的线程。
-其次还要通jstack查看线程的状态，看看线程的个数或者线程的状态，如果线程数过多，可以怀疑是线程上下文切换的开销，我们可以通过vmstat和pidstat这两个工具进行确认。
+CPU过高，先定位啥进程导致，之后top -H -p pid定位具体线程。
+
+还要jstack查看线程状态，看线程个数或线程状态，若线程数过多，可怀疑是线程上下文切换开销，可通过vmstat和pidstat确认。
