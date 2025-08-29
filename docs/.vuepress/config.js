@@ -800,7 +800,7 @@ module.exports = {
                         text: '以太坊区块链',
                         link: '/md/chain/01-以太坊智能合约与高级语言.md'
                     },
-                    
+
                     {
                         text: '隐私计算',
                         link: '/md/chain/隐私计算技术原理.md'
@@ -1513,6 +1513,7 @@ module.exports = {
                             "为什么阿里不推荐使用MySQL分区表？",
                             "一文看懂这篇MySQL的锁机制",
                             "mysql-transaction-isolation-mechanism",
+                            "mysql-index-left-most-matching-rule",
                         ]
                     },
 
@@ -1692,6 +1693,7 @@ module.exports = {
                         children: [
                             "00-Kafka专栏大纲",
                             "01-为何大厂都选择Kafka作为消息队列",
+                            "kafka-core-components",
                             "Kafka门派知多少",
                             "08-全网最全图解Kafka适用场景",
                             "09-消息队列的消息大量积压怎么办？",
@@ -2181,6 +2183,7 @@ module.exports = {
                         children: [
                             "chatgpt-canva",
                             "memory-faq",
+                            "GPT-5",
                         ]
                     },
                     {
@@ -2190,6 +2193,7 @@ module.exports = {
                         children: [
                             "qwen-QwQ",
                             "qwen3",
+                            "qwen3-coder",
                         ]
                     },
 
@@ -2199,6 +2203,16 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "deepseek-r1-detail",
+                        ]
+                    },
+
+                    {
+                        title: "Kimi",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "Kimi-K2",
+                            "kimi-k2-whats-fuss-whats-like-use",
                         ]
                     },
 
@@ -2361,12 +2375,50 @@ module.exports = {
                     },
 
                     {
+                        title: "kiro",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "kiro",
+                        ]
+                    },
+
+                    {
+                        title: "trae",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "trae",
+                            "solo",
+                            "trae-update",
+                        ]
+                    },
+
+                    {
+                        title: "CodeBuddy",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "codebuddy",
+                        ]
+                    },
+
+                    {
                         title: "windsurf",
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
                             "goodbye-cursor-hello-windsurf",
                             "windsurf-update",
+                        ]
+                    },
+
+                    {
+                        title: "qoder",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "qoder",
                         ]
                     },
                     {
@@ -2477,6 +2529,7 @@ module.exports = {
                             "03-core-of-rag-result-retrieval-and-reordering",
                             "04-prompt-helping-llm-understand-knowledge",
                             "2025-future-rag-trends-four-technologies",
+                            "why-vector-embeddings-are-here-to-stay",
                         ]
                     },
                     {

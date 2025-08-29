@@ -10,5 +10,6 @@
         "springframework"
     ],
     "Codegeex.RepoIndex": true,
-    "files.autoSave": "afterDelay"
+    "files.autoSave": "afterDelay",
+    "codingcopilot.httpProxySettings": "system"
 }

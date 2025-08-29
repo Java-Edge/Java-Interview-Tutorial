@@ -2,6 +2,578 @@
 
 旨在让你获得超凡的生产力， Cursor 是使用 AI 编写代码的最佳方式。
 
+## 1.4 - 更强大的 Agent 工具、可控性和使用情况可视化
+
+2025 年 8 月 6 日
+
+### 更强的 Agent 可控性
+
+当 Cursor 正在运行时发送消息，现可更有效地引导 Agent 行为。发送的消息将在下一个合适的时机执行，通常在调用工具之后，而非等到生成完成才执行。
+
+- ⌥+Enter（Windows 为 Alt+Enter）可像以前一样排队发消息
+- ⌘+Enter（Windows 为 Ctrl+Enter）则立即中断当前操作并发送消息
+
+可在 Cursor 设置中调整默认行为：设置 -> 聊天 -> 消息排队。
+
+![](https://p.ipic.vip/6w3l6l.png)
+
+### 改进的 Agent 工具
+
+处理大型代码库时，Agent 表现显著提升。上下文选择更相关，token 使用更高效，编辑质量更优：
+
+- **读取文件：** 现在在合适的情况下可以读取完整文件，并取消了 2MB 的大小限制。
+- **列出文件：** 一次调用就能浏览整个目录树，并显示文件数量、类型等元数据。
+- **代码库搜索：** 排名和索引方式更优，返回的上下文更相关
+- **网页搜索：** 使用轻量本地模型，返回更简洁、更精准的搜索结果
+
+### 不同 Agent 可选用不同模型
+
+可为不同tab或编辑器中的 Agent 指定不同的模型。如果你复制了一个 Agent，其所用模型也会一并保留。
+
+### 使用量和价格可视化
+
+可在聊天界面查看使用情况。不论是总使用量 or 当你超过套餐配额 50% 时，都可以看到清晰统计信息。
+
+这个使用情况摘要可以在设置中开启或关闭。团队和企业用户将在 9 月获得此功能的访问权限。
+
+![](https://cursor.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fusage.825e2a35.png&w=1440&q=75&dpl=dpl_4o5qNHhtmP3xvXqF9XQ3chKDyAdk)
+
+### 紧凑聊天模式
+
+会隐藏工具图标、默认折叠差异内容（diffs），并在闲置时自动隐藏输入框。
+
+对有大量工具调用、终端操作和差异查看的长时间会话，该模式更实用。可在设置中开启或关闭该模式。
+
+开启状态：
+
+![](https://cursor.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcompact-on.aaadef84.png&w=3840&q=75&dpl=dpl_4o5qNHhtmP3xvXqF9XQ3chKDyAdk)
+
+关闭状态：
+
+![](https://cursor.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcompact-off.cc914ec6.png&w=3840&q=75&dpl=dpl_4o5qNHhtmP3xvXqF9XQ3chKDyAdk)
+
+### GitHub 支持后台 Agent
+
+可在 GitHub 的 Pull Request 中直接使用 Agent。只需在评论中 @Cursor，Agent 就会读取提示内容、进行修复，并提交代码。
+
+后台 Agent 还会通过评论和待办事项（todo）更新你任务的执行进度。
+
+GitHub PR 中的后台 Agent：
+
+![](https://cursor.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fgh-bga.6ef9d0da.png&w=3840&q=75&dpl=dpl_4o5qNHhtmP3xvXqF9XQ3chKDyAdk)
+
+### 所有 Agent 的侧边栏管理
+
+可在左侧边栏查看和管理所有 Agent，包括前台和后台的。点击某个后台 Agent，就能查看它在远程机器上的执行状态。
+
+![](https://p.ipic.vip/yxmfl4.png)
+
+### 更快的后台 Agent 启动速度
+
+对后台 Agent 大量优化，启动速度提升一倍。
+
+![](https://cursor.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fstartup-time.f409006a.png&w=3840&q=75&dpl=dpl_4o5qNHhtmP3xvXqF9XQ3chKDyAdk)
+
+### 企业功能
+
+- [AI 代码追踪 API](https://docs.cursor.com/en/account/teams/ai-code-tracking-api)：以提交为单位，追踪 AI 使用情况和被接受的更改
+- [屏蔽列表管理 API](https://docs.cursor.com/en/account/teams/admin-api#repo-blocklists-api)：禁止特定文件或目录被索引或用于上下文
+- [成员导出](https://cursor.com/dashboard?tab=members)：从控制台将工作区的所有成员导出为 CSV 文件
+
+## 1.3-与Agent共享终端、聊天中上下文使用情况查看、编辑更快
+
+2025年7月29日
+
+### 与Agent共享终端
+
+现在Agent可用你的本地终端。若当前没有打开终端，系统会自动创建一个新的，并在后台运行。点击“Focus”可将终端前置，可查看Agent正在执行的命令，也可随时接管操作。
+
+![](https://p.ipic.vip/dgvmdt.png)
+
+### 聊天中查看上下文使用情况
+
+在一次对话结束后，现可看到上下文窗口的使用情况。
+
+![](https://cursor.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcontext-usage.265155b5.png&w=2880&q=75&dpl=dpl_6tLMRE3otYxZF9cKuG5WFHMGpnrT)
+
+### 编辑速度更快
+
+通过懒加载代码检查错误，现在Agent的编辑速度更快了。搜索替换的延迟减少了25%，应用编辑的速度提升了近11%。
+
+![](https://cursor.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffaster-edits.ad752036.png&w=3840&q=75&dpl=dpl_6tLMRE3otYxZF9cKuG5WFHMGpnrT)
+
+改进：
+
+- 聊天窗口支持激活标签页
+- 右键目录后可直接发送到聊天中
+- 检查点功能可用于Notebooks
+- 提升安全性：用白名单替代黑名单进行自动运行控制
+- 聊天中移除“手动”（*Manual*）模式
+- 启用后，可通过命令面板访问新的扩展监控功能
+
+修复：
+
+- 扩展市场支持自定义 URL
+
+企业版更新：
+
+- 支持团队管理员配置扩展白名单
+
+## 1.2—Agent规划、更好上下文支持 & 更快的 Tab 补全
+
+![](https://p.ipic.vip/yruxdu.png)
+
+2025年7月3日
+
+### Agent To-dos
+
+Agent可提前规划任务，使用结构化的待办清单，让需要长时间完成的任务清晰、易追踪。
+
+Agent会将大型任务拆分为多个子任务，展示其依赖关系，这些都可在对话中看到，并在需要时同步到 Slack。任务推进时，它也会实时更新待办列表，保持上下文清晰、互动流程可控。
+
+![](https://p.ipic.vip/l0mglm.png)
+
+如设置 Slack 集成，也可在 Slack 中查看这些待办事项！
+
+### 消息排队
+
+可为Agent排队发送后续指令，只需输入你的指令并发送即可。当当前任务完成后，它就会继续执行排队中的指令。你也可随时调整任务顺序，无需等待。
+
+![](https://p.ipic.vip/fixo2s.png)
+
+### 记忆（正式发布）
+
+自 1.0 版本以来，我们提升了记忆内容的生成质量，优化了编辑器中的界面，并加入了“用户审核”机制，以确保由后台生成的记忆信息值得信赖。
+
+![](https://p.ipic.vip/dsnof5.png)
+
+### PR 索引与搜索
+
+Cursor 会像处理文件一样对 PR 进行索引与摘要。可用语义搜索查找旧的 PR，或显式地将某个 PR、Issue、提交记录或分支添加到当前上下文中。
+
+![](https://p.ipic.vip/8u9ih7.png)
+
+相关的 GitHub 评论、BugBot 审查信息和 Slack 中的Agent支持内容也会一并整合进来，让事故分析和问题追踪更迅速。
+
+### 更强的语义搜索嵌入
+
+更新了嵌入模型，使代码库的语义搜索更加准确。同时也重新优化了提示词，使搜索结果更清晰、更加聚焦。
+
+![](https://cursor.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fembedding-chart.12ec382f.png&w=3840&q=75&dpl=dpl_5CfM7gTCEccBPuxVESC7e173874p)
+
+### 更快的 Tab 补全
+
+Tab 补全现在速度提升了约 100 毫秒，首字节时间（TTFT）缩短了 30%。这得益于我们对内存管理系统的重构和数据传输路径的优化。
+
+![](https://cursor.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ftab-chart.d6f52a69.png&w=3840&q=75&dpl=dpl_5CfM7gTCEccBPuxVESC7e173874p)
+
+### 让Agent处理合并冲突
+
+遇到合并冲突时，Agent可尝试自动解决。点击 *在对话中解决*，相关上下文就会自动加载进来，协助解决冲突。
+
+![](https://p.ipic.vip/yntfry.png)
+
+### 后台Agent功能增强
+
+后台Agent变得更加稳定、可预期，具体改进包括：
+
+- 提交请求（PR）遵循你团队的模板
+- 自动拉取Agent分支的更新
+- 遇到冲突（如 rebase）会自动生成可操作的后续任务
+- 可以直接从侧边栏提交更改
+- 来自 Slack 或网页的深度链接会自动打开相关仓库，即使你本地未打开它
+
+### 改进
+
+- VS Code 升级到 1.99 版本
+- 插件现托管在 Open VSC 
+- “提交更改”集成进界面
+- 后台Agent更好地遵循团队的 PR 模板，合并操作更稳定
+
+### 问题修复
+
+- 使用限制错误信息现在更加清晰，并能显示具体范围
+
+## 1.1-Slack 中的后台Agent
+
+### 启用后台Agent（Background Agents）
+
+后台Agent在云端运行，允许Agent在你的代码库中异步执行任务。
+
+启用此功能有一些重要的安全注意事项。建议查阅我们的文档了解更多详情。
+
+![](/Users/javaedge/Library/Application Support/typora-user-images/image-20250630104739350.png)
+
+![Background Agent in Cursor](https://www.cursor.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbg-agent.349d715a.png&w=3840&q=75)
+
+![img](https://p.ipic.vip/eeuxd3.png)
+
+![](/Users/javaedge/Library/Application Support/typora-user-images/image-20250620133803195.png)
+
+现可直接在 Slack 中通过 @Cursor 启动后台Agent。Agent会读取整个对话线程，理解上下文，并直接在 GitHub 上创建 PR，全程无需离开 Slack。
+
+### 在团队协作中使用 Cursor
+
+只需在 Slack 线程中提到 **@Cursor** 并输入你的指令，例如：
+
+![](https://www.cursor.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fslack-zoomed.4d0262cc.gif&w=3840&q=75)
+
+Agent会在安全的远程环境中运行，并将进展直接通过 Slack 通知你，包括跳转链接至 Cursor 和 GitHub。
+
+### Agent理解上下文
+
+Cursor 会在开始前阅读整个 Slack 线程，这样在引用之前的讨论或问题时，后台Agent可完整理解上下文。
+
+![](https://www.cursor.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fslack-view-pr.05c38101.png&w=3840&q=75)
+
+也可让 Cursor 帮你排查问题并返回结果：
+
+![](https://www.cursor.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fslack-investigate.2320d781.png&w=3840&q=75)
+
+### 快速开始
+
+要在 Slack 中使用后台Agent，需要管理员先完成集成设置。请查阅我们的[设置文档](https://docs.cursor.com/slack)，或让你的管理员通过 [控制台 → 集成](https://cursor.com/dashboard?tab=integrations) 页面连接 Cursor。
+
+连接成功后，在任意频道使用 **@Cursor** 并输入提示词即可。输入 `help` 查看所有命令，或用 `settings` 配置默认模型、代码库和分支。
+
+设置中支持 `Cmd/Ctrl+F` 搜索：
+
+- 服务器进度通知
+- 动态工具注册
+- Roots 支持
+
+**1.1.3**
+
+- 增加 PR 搜索和索引功能
+- 支持更换上游市场服务商
+
+
+ ## 1.0-BugBot、后台Agent全面开放、MCP 一键安装
+
+2025年6月4日
+
+本次更新带来了代码审查助手 BugBot、记忆功能初探、一键配置 MCP、Jupyter 支持，以及后台Agent的全面开放。
+
+### BugBot 自动代码审查
+
+BugBot 会自动审查你的 PR，发现潜在错误或问题。
+
+一旦发现问题，BugBot 会在 GitHub 的 PR 页面留言。点击“***在 Cursor 中修复***”，即可跳转回编辑器，自动填写修复提示。
+
+设置方式请参考 [BugBot 使用文档](https://docs.cursor.com/bugbot)。
+
+<video src="/Users/javaedge/Downloads/bug-bot-web.mp4"></video>
+
+### 后台Agent全面开放
+
+所有用户都可以立即使用后台Agent！点击聊天界面的云朵图标或按下 `Cmd/Ctrl+E` 即可启动（关闭隐私模式的用户）。开启隐私模式的用户也将在不久后获得相应功能。
+
+![](https://www.cursor.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbg-agent.349d715a.png&w=3840&q=75)
+
+### Jupyter Notebook 支持Agent
+
+Cursor 现在支持在 Jupyter Notebook 中直接进行编辑！
+
+Agent可以在 Jupyter 中创建和编辑多个代码单元，非常适合科研与数据科学任务。目前仅支持 Sonnet 模型。
+
+<video src="/Users/javaedge/Downloads/jupyter-notebooks-web.mp4"></video>
+
+### 记忆功能（Memories）
+
+Cursor现可记住你对话中的关键信息，并在未来引用。这些记忆是基于项目的，用户可以在“设置”中进行管理。
+
+该功能目前为测试版，可前往“设置 → 规则”中开启。
+
+<video src="/Users/javaedge/Downloads/memories-web.mp4"></video>
+
+### MCP一键安装与 OAuth 支持
+
+现可一键安装 MCP 服务，并支持 OAuth 认证，极大简化配置流程。
+
+[docs.cursor.com/tools](https://docs.cursor.com/tools) 页面整理了可用的 MCP 服务列表。
+
+开发者还可以通过 [deeplinks 生成器](https://docs.cursor.com/deeplinks) 添加“添加至 Cursor”按钮到文档或 README 中。
+
+<video src="/Users/javaedge/Downloads/mcp-one-click.mp4"></video>
+
+### 更丰富的聊天回复
+
+Cursor 聊天中现在支持可视化渲染，包括 Mermaid 图表与 Markdown 表格。
+
+<video src="/Users/javaedge/Downloads/mermaid-web.mp4"></video>
+
+### 全新设置与控制台界面
+
+设置页和控制台界面迎来视觉更新。
+
+可查看个人或团队的使用统计、修改显示名称，以及按工具或模型查看详细分析。
+
+![](https://www.cursor.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fsettings.2dea9c3d.png&w=3840&q=75)
+
+![](https://www.cursor.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdashboard.2b7002bf.png&w=3840&q=75)
+
+- `Cmd/Ctrl+E` 打开后台Agent控制面板
+- `@Link` 与网页搜索支持 PDF 并纳入上下文
+- 设置中新增网络诊断功能
+- 多工具并行调用提升响应速度
+- 聊天工具调用支持折叠
+- 企业用户仅可访问稳定版本
+- 团队管理员可关闭隐私模式
+- 提供 [团队管理 API](https://docs.cursor.com/account/teams/admin-api) 获取使用与消费数据
+- Gemini 2.5 Flash 支持 Max 模式
+
+## 0.50-简化定价、后台Agent、新版 Inline Edit
+
+统一的请求计费模式，所有顶级模型均可用 Max 模式；上线后台Agent功能，支持多任务并行执行。新增 `@folders` 支持、更快的文件编辑、多根工作区支持及更强大的聊天功能如导出与复制。
+
+### 更简单的统一计费
+
+简化原本复杂的定价结构：
+
+- 所有模型均按请求计费
+- Max 模式按 token 计费（类似模型 API 计费）
+- 去除高级工具调用与长上下文模式，简化体验
+
+各版本（Hobby、Pro、Business）配额不变，慢速请求仍包含在套餐内。所有使用情况可在 [控制台](https://cursor.com/dashboard) 查看。
+
+### Max模式全面开放
+
+极致模式现已支持 Cursor 中所有最先进模型，并采用更简洁的token定价模型。该模式旨在让你在最需要时获得完全控制权。你可从模型选择器中启用该模式，查看哪些模型支持该模式。新模型推出后，我们将从第一天起就通过极致模式充分发挥其功能。
+
+当你需要更多：
+
+- 上下文信息
+
+- 智能分析
+- 工具使用时
+
+它是解决最棘手问题的理想选择。对于其他所有问题，仍建议用正常模式，并保持习惯的功能。定价很简单：根据令牌使用量收费。如果您使用过任何基于命令行的编程工具，那么 Max 模式的感觉会类似——只不过是在 Cursor 中。
+
+注意：如果您使用的是旧版 Cursor，您仍然可以在几周内使用之前的 MAX 版本和长上下文模式。但是，这些功能即将停用，因此我们建议您更新以继续使用这些功能。
+
+更多说明见 [Max 模式文档](https://docs.cursor.com/context/max-mode)
+
+<video src="/Users/javaedge/Downloads/max-mode.mp4"></video>
+
+### 新tab模型
+
+训练了一个新 Tab 模型，可跨多个文件提供修改建议。该模型尤其擅长重构、编辑链、多文件修改以及在相关代码之间跳转。
+
+在完成建议中添加语法突出显示：
+
+![](https://www.cursor.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ftab-jump.d0319f16.png&w=2880&q=75)
+
+### 后台Agent预览
+
+早期预览版正在逐步推出：光标Agent现在可以在后台运行！要试用，请前往“设置”>“测试版”>“后台Agent”。Settings > Beta > Background Agent.
+
+这允许您并行运行多个Agent，并让它们处理更大的任务。这些Agent在各自的远程环境中运行。您可以随时查看状态、发送跟进或接管。
+
+[docs.cursor.com/background-agent](https://docs.cursor.com/background-agent)。
+
+<video src="/Users/javaedge/Downloads/bg.mp4"></video>
+
+### 将整个代码库加入上下文
+
+可用 `@folders` 将整个代码库添加到上下文。设置中启用“完整文件夹内容”。若某文件夹或文件太大无法完整加载，会在上下文标签上显示一个小图标提示。
+
+<video src="/Users/javaedge/Downloads/root.mp4"></video>
+
+### 全新 Inline Edit（Cmd/Ctrl+K）集成Agent功能
+
+Inline Edit（Cmd/Ctrl+K）界面焕然一新，新增功能：
+
+- **全文件编辑**（⌘⇧⏎）：可对整个文件进行结构性修改，无需调用Agent
+- **发送至Agent**（⌘L）：当你需要对多个文件进行修改，或希望由Agent接手复杂逻辑时，可将代码块发送给Agent继续编辑
+
+### Refreshed Inline Edit (Cmd/Ctrl+K) with Agent integration
+
+Inline Edit (Cmd/Ctrl+K) has gotten a UI refresh and new options for full file edits (⌘⇧⏎) and sending to agent (⌘L)
+
+Full file makes it easy to do scope changes to a file without using agent. However, you might come across cases where you're working with a piece of code you want to make multi-file edits to or simply just want more control you can get from agent. That's when you want to send selected codeblock to agent and keep on editing from there.
+
+<video src="/Users/javaedge/Downloads/cmdk.mp4"></video>
+
+### 快速编辑长文件（使用Agent）
+
+Agent新增“查找并替换”工具，使其在编辑大型文件时更高效。无需读取整个文件，Agent现在可以精准定位修改位置，只编辑需要的部分。
+
+在 [Postgres 项目代码](https://github.com/postgres/postgres/blob/master/src/backend/tcop/postgres.c) 中，该工具的编辑速度几乎快一倍。
+
+该功能率先支持 Anthropic 模型。
+
+<video src="/Users/javaedge/Downloads/search-n-replace.mov"></video>
+
+### 多代码库（codebases）工作区（workspaces）支持
+
+现可创建多根目录的工作区（multi-root workspace），让多个项目同时可用于 Cursor。
+
+所有工作区内的内容都会被索引并可调用，适合在多个项目文件夹中协作。
+
+所有添加的文件夹都支持 `.cursor/rules` 配置。
+
+多根目录工作区：
+
+![](https://www.cursor.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fworkspace.90fbcb7b.png&w=3840&q=75)
+
+#### 聊天导出
+
+可将聊天记录导出 Markdown 文件，包含文本和代码块内容，便于保存或分享。
+
+![](https://p.ipic.vip/5q2nty.png)
+
+#### 聊天复制
+
+可复制一段聊天记录并开启新对话，探索不同方向的讨论，同时保留原内容。
+
+在某条消息右上角点击“三点菜单”，选择“复制聊天”即可。
+
+![](https://p.ipic.vip/b273gv.png)
+
+使用 `Cmd/Ctrl+Shift+Enter` 快速进行整个文件编辑
+
+- Inline Edit 中的全文件编辑快捷键： `Cmd/Ctrl+Shift+K`
+
+- Agent现在使用原生终端仿真（非模拟终端）
+- `@folders` 尽量加载所有可纳入上下文的文件
+- 聊天中新增图标，指示文件是否被完整加载或被压缩
+- MCP 工具现可单独禁用（在 MCP 设置中）
+- 市场新增 C# 扩展插件
+- 聊天字体大小可在设置调节
+- 应用内提供详细更新日志页面
+
+### MCP 功能增强
+
+- 远程工作区（WSL、Remote SSH）支持运行 stdio
+- 支持流式 HTTP
+
+> 注：Claude 3 Opus 不再提供每天 10 次的免费请求额度
+
+**0.50.1**
+
+- 启用后台Agent（Background Agent）功能
+
+
+
+**0.50.2**
+
+- 修复与 ZScaler VPN 的兼容问题
+
+**0.50.4**
+
+- 增强多根目录工作区支持
+
+## 0.49.x 版本更新：规则生成、Agent终端优化、MCP 图片支持等
+
+2025 年 4 月 15 日
+
+------
+
+### 1 自动生成和优化的规则
+
+现可通过命令：
+
+```bash
+/Generate Cursor Rules
+```
+
+##### 直接在对话中生成规则。 
+
+时机：希望保留当前对话上下文，以便后续复用。
+
+对于设置了路径模式的 `Auto Attached`（自动附加）规则，Agent现可在读写文件时自动应用正确的规则。
+
+修复问题：`Always`（始终附加）规则现可在更长对话中持续生效。Agent现也可更稳定编辑规则。
+
+<video src="/Users/javaedge/Documents/图片/配图/generate-rules.mp4"></video>
+
+### 2 更便捷的聊天记录访问方式
+
+聊天记录现已整合到命令面板。可通过聊天界面中的 “显示历史” 按钮或使用 `Show Chat History` 命令来查看记录。
+
+![](https://www.cursor.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fchat-history.421e0656.png&w=3840&q=75)
+
+### 3 更轻松的代码审查体验
+
+对话末尾会显示一个内置的差异视图，方便审查Agent生成的代码。每当Agent回复后，可点击底部 `Review changes` 按钮查看改动。
+
+<video src="/Users/javaedge/Documents/图片/配图/review-ui.mp4"></video>
+
+### MCP 支持图片上下文
+
+你现在可以在 MCP 服务器中传入图片作为上下文内容。当你需要引用截图、UI 草图或图示来补充问题时，这会非常有帮助。
+
+<video src="/Users/javaedge/Documents/图片/配图/mcp-image.mp4"></video>
+
+### Agent终端控制能力提升
+
+对agent启动的终端有更多控制权。命令可在执行前编辑，也可选择跳过执行。
+
+将“弹出窗口（Pop-out）”重命名为“后台运行（Move to background）”，以更准确地反映其作用。
+
+<video src="/Users/javaedge/Documents/图片/配图/agent-terminal.mp4"></video>
+
+### 全局忽略文件功能
+
+现可通过用户级设置，定义全局忽略文件规则（[global ignore](https://docs.cursor.com/context/ignore-files)），这些规则适用于所有项目。
+
+避免将构建输出、密钥等干扰性或敏感文件纳入prompts，无需为每个项目单独设置。
+
+![](https://www.cursor.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fignore-files.bcfa33e3.png&w=3840&q=75)
+
+### 新增模型
+
+新增模型，可试用 Gemini 2.5 Pro、Gemini 2.5 Flash、Grok 3、Grok 3 Mini、GPT-4.1、o3及o4-mini：
+
+![](https://www.cursor.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fo3-o4-mini.95f5004d.png&w=3840&q=75)
+
+### 项目结构上下文（Beta）
+
+新功能：将项目结构纳入上下文。
+
+好处：将你的目录结构加入prompt，使agent更好理解项目组织方式，在大型或嵌套 monorepo 项目中提供更准确的建议和导航。
+
+### 快捷键更新
+
+部分 `CMD+K` 快捷键现在可自定义修改
+
+### 界面与功能优化
+
+- Tab 跳转建议界面更新，超出视窗的建议现在也可点击
+- 聊天界面新增模式工具提示
+- 支持通过访问密钥连接 AWS Bedrock
+- Git 中的 `@PR` 功能更名为 `@Branch`
+
+### 错误修复
+
+- “始终附加”规则在总结对话中也能正确保留
+- `.mdc` 文件中的规则现在可由Agent无障碍创建和编辑
+- 修复了 `@mention` 节点在输入框起始位置时的选择问题
+
+### 面向企业和团队的新功能
+
+**全局忽略规则向上查找**
+
+现支持向上遍历目录查找忽略文件（默认关闭，可在管理员设置中开启）
+
+**支持 AWS Bedrock IAM 角色连接**
+
+企业用户现可通过 IAM 角色连接 AWS Bedrock
+
+**用户级使用情况洞察**
+
+管理员可在控制台中查看每位用户的使用和快速请求情况
+
+**团队自动运行控制**
+
+管理员可在控制台中设置全局 MCP 行为
+
+### 补丁更新
+
+**0.49.1**
+
+- 点规则不再在未超出长度限制时错误显示“超长”警告
+
 ## 0.48.x-聊天标签、自定义模式 & 更快的索引
 
 引入**聊天标签**，支持并行对话，并重新设计**模式系统**，允许添加自定义模式。
