@@ -757,7 +757,7 @@ module.exports = {
                     },
                     {
                         text: 'Prompt工程',
-                        link: '/md/AI/prompt/01-Prompt网站'
+                        link: '/md/AI/prompt/prompt-website'
                     },
                     {
                         text: 'AI Agent',
@@ -2225,6 +2225,17 @@ module.exports = {
                             "计算机使用功能",
                             "claude-3-7-sonnet",
                             "claude-4",
+                            "claude-4-5-sonnet",
+                        ]
+                    },
+
+                    {
+                        title: "Grok",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "grok4",
+                            "grok-code-fast",
                         ]
                     },
 
@@ -2421,6 +2432,33 @@ module.exports = {
                             "qoder",
                         ]
                     },
+
+                    {
+                        title: "Cline",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "cline",
+                        ]
+                    },
+
+                    {
+                        title: "Roo Code",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "roocode",
+                        ]
+                    },
+                    
+                    {
+                        title: "Augment",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "augment",
+                        ]
+                    },
                     {
                         title: "Dify基础",
                         collapsable: false,
@@ -2499,8 +2537,8 @@ module.exports = {
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
-                            "01-Prompt网站",
-                            "02-常用Prompt",
+                            "prompt-website",
+                            "prompt-toollist",
                         ]
                     }, ,],
 
