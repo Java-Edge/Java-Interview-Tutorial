@@ -356,7 +356,7 @@ module.exports = {
                             link: '/md/security/OAuth 2.0实战-为什么要先获取授权码code.md'
                         },]
                     },
-
+                    
                     {
                         text: 'Arthas',
                         items: [{
@@ -364,6 +364,15 @@ module.exports = {
                             link: '/md/arthas/Arthas使用.md'
                         },]
                     },
+
+                                        {
+                        text: 'MyBatis',
+                        items: [{
+                            text: 'MyBatis',
+                            link: '/md/mybatis/mybatis-automatic-mapper-implementation-principle.md'
+                        },]
+                    },
+
                     ]
                 },
 
@@ -377,6 +386,8 @@ module.exports = {
                         },]
                     },
 
+                    
+                    
                     {
                         text: '响应式编程',
                         items: [{
@@ -771,6 +782,11 @@ module.exports = {
                         text: 'A2A',
                         link: '/md/AI/a2a/a2a-a-new-era-of-agent-interoperability'
                     },
+                    
+                    {
+                        text: 'Skills',
+                        link: '/md/AI/skills/ovrview'
+                    },
                     ]
                 },
 
@@ -1149,6 +1165,7 @@ module.exports = {
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
+                            "shardingsphere-jdbc-spring-boot-orm-integration-guide",
                             "10-顶级企业如何用数据脱敏保护用户隐私！",
                             "11-动态配置管理背后的编排治理真相！",
                             "14-ShardingSphere的分布式主键实现",
@@ -1242,11 +1259,12 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "00-Java并发编程.md",
-                            "01-synchronized原理.md",
-                            "02-volatile原理.md",
-                            "03-ReentrantLock与AQS.md",
+                            "synchronized",
+                            "volatile",
+                            "reentrantlock",
                             "04-线程池以及生产环境使用.md",
                             "05-京东并行框架asyncTool如何针对高并发场景进行优化？.md",
+                            "forkjoinpool",
                             "java21-virtual-threads-where-did-my-lock-go",
                         ]
                     },
@@ -1264,6 +1282,7 @@ module.exports = {
                             "Java22-new-features",
                             "Java23-new-features",
                             "java24-new-features",
+                            "java25-new-features",
                             "java2024",
                             "java-news-roundup-jun02-2025",
                         ]
@@ -1277,6 +1296,8 @@ module.exports = {
                             "IntelliJ IDEA 2024.1 最新变化",
                             "What’s-New-in-IntelliJ-IDEA-2024.2",
                             "What’s-New-in-IntelliJ-IDEA-2024.3",
+                            "jetbrains-terminal-a-new-architecture",
+                            "What’s-New-in-IntelliJ-IDEA-2025.3",
                         ]
                     },
                     ],
@@ -1336,6 +1357,7 @@ module.exports = {
                             "【图解数据结构与算法】LRU缓存淘汰算法面试时到底该怎么写",
                             "【图解数据结构】外行人也能看懂的哈希表",
                             "dag-directed-acyclic-graph",
+                            "dynamic-programming-how-to-quickly-spot-when-to-use-dp",
                         ]
                     }],
 
@@ -2068,6 +2090,7 @@ module.exports = {
                             "router",
                             "table",
                             "vue-js-vs-axios-practical-guide-from-ajax-requests-to-api-proxy-configuration",
+                            "frontend-ci-cd-automation-deploy-and-instant-rollback-solution",
                         ]
                     }],
 
@@ -2089,7 +2112,7 @@ module.exports = {
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
-                            "00-区块链专栏概述",
+                            "blockchain-column-overview",
                             "三分钟，快速了解区块链技术",
                             "01-联盟链入门",
                             "05-账本模型",
@@ -2097,6 +2120,7 @@ module.exports = {
                             "07-网络与共识",
                             "08-工作量证明",
                             "09-一文看懂以太坊智能合约！",
+                            "oracles-unavoidable-offchain-data-onchain-alternatives-truth",
                             "blockchain-smart-contract-helloworld-project",
                         ]
                     },
@@ -2184,6 +2208,9 @@ module.exports = {
                             "chatgpt-canva",
                             "memory-faq",
                             "GPT-5",
+                            "GPT-5.1",
+                            "GPT-5.2",
+                            "GPT-5-3-codex",
                         ]
                     },
                     {
@@ -2194,6 +2221,7 @@ module.exports = {
                             "qwen-QwQ",
                             "qwen3",
                             "qwen3-coder",
+                            "qwen-coder-qoder",
                         ]
                     },
 
@@ -2226,6 +2254,7 @@ module.exports = {
                             "claude-3-7-sonnet",
                             "claude-4",
                             "claude-4-5-sonnet",
+                            "claude-opus-4-6",
                         ]
                     },
 
@@ -2374,14 +2403,34 @@ module.exports = {
                         children: [
                             "ai-agents-dont-security-nightmare",
                             "improve-quality-gen-ai",
+                            "nextgen-search-ai-opensearch-mcp",
                         ]
                     },
+
                     {
                         title: "cursor",
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
                             "changelog-cursor",
+                        ]
+                    },
+
+                    {
+                        title: "codex",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "codex",
+                        ]
+                    },
+
+                    {
+                        title: "claude-code",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "claude-code-overview",
                         ]
                     },
 
@@ -2430,6 +2479,9 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "qoder",
+                            "quest-autonomous-programming-agent-architecture-loop",
+                            "qoderwork",
+                            "qoder-update",
                         ]
                     },
 
@@ -2439,6 +2491,7 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "cline",
+                            "changelog-cline",
                         ]
                     },
 
@@ -2519,6 +2572,16 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "a2a-a-new-era-of-agent-interoperability",
+                        ]
+                    },
+                    ],
+                    
+                    "/md/AI/skills/": [{
+                        title: "Skills",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "ovrview",
                         ]
                     },
                     ],
@@ -2685,7 +2748,7 @@ module.exports = {
                             "【Java设计模式实战】单例模式",
                             "template-pattern",
                             "strategy-pattern",
-                            "建造者模式",
+                            "builder-pattern",
                             "proxy-pattern",
                             "适配器模式",
                             "门面模式",
