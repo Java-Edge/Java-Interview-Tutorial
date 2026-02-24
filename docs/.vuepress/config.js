@@ -2255,6 +2255,7 @@ module.exports = {
                             "claude-4",
                             "claude-4-5-sonnet",
                             "claude-opus-4-6",
+                            "claude-sonnet-4-6",
                         ]
                     },
 
