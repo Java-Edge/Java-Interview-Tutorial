@@ -2432,6 +2432,7 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "claude-code-overview",
+                            "claude-code-auto-mode",
                         ]
                     },
 
@@ -2574,8 +2575,7 @@ module.exports = {
                         children: [
                             "a2a-a-new-era-of-agent-interoperability",
                         ]
-                    },
-                    ],
+                    }],
                     
                     "/md/AI/skills/": [{
                         title: "Skills",
