@@ -1,18 +1,20 @@
 # 02-LangChain实战：用prompts模板调教LLM的输入出
 
-超越chatGPT:学习使用prompts模板来调教LLM的输入输出，打造自己版本的"贾维斯"
+## 0 前言
+
+使用prompts模板调教LLM的输入输出。
 
 ## 1 Model I/O：LLM的交互接口
 
-任何语言模型应用程序的核心要素都是......模型。LangChain 为您提供了与任何语言模型连接的构件。
+任何语言模型应用程序的核心要素都是模型。LangChain 为你提供了与任何语言模型连接的组件：
 
-![](https://python.langchain.com/v0.1/assets/images/model_io-e6fc0045b7eae0377a4ddeb90dc8cdb8.jpg)
+![](https://p.ipic.vip/g1gzvy.png)
 
-即 Prompts -> Language models -> Output parsers。
+即 Prompts -> LLM -> Output parsers。
 
 ## 2 基于prompts模板的输入工程
 
-prompts模板：更加高级和灵活的提示词工程。
+prompts模板：更高级和灵活的提示词工程。
 
 ![](https://my-img.javaedge.com.cn/javaedge-blog/2024/06/f8d777be29f57cd712861204b0e2c9af.png)
 
@@ -35,10 +37,9 @@ prompts模板：更加高级和灵活的提示词工程。
 
 #### 2.3.1 字符串模板-PromptTemplate
 
-
-
 ```python
-from langchain.prompts import PromptTemplate
+#字符模板
+from langchain_core.prompts import PromptTemplate
 
 prompt = PromptTemplate.from_template("你是一个{name},帮我起1个具有{county}特色的{sex}名字")
 prompt.format(name="算命大师",county="法国",sex="女孩")
@@ -50,7 +51,7 @@ prompt.format(name="算命大师",county="法国",sex="女孩")
 
 ```python
 # 对话模板具有结构，chatmodels
-from langchain.prompts import ChatPromptTemplate
+from langchain_core.prompts import ChatPromptTemplate
 
 chat_template = ChatPromptTemplate.from_messages(
     [
@@ -66,12 +67,12 @@ chat_template = ChatPromptTemplate.from_messages(
 chat_template.format_messages(name="陈大师", user_input="你的爸爸是谁呢?")
 ```
 
-或者一个个构造，最后再合并
+或一个个构造，最后再合并
 
 ```python
-from langchain.schema import SystemMessage
-from langchain.schema import HumanMessage
-from langchain.schema import AIMessage
+from langchain_core.messages import SystemMessage
+from langchain_core.messages import HumanMessage
+from langchain_core.messages import AIMessage
 
 # 直接创建消息
 sy = SystemMessage(
@@ -91,21 +92,17 @@ ai = AIMessage(
 LangChain 已经将这些角色都提供了模板：
 
 ```python
-from langchain.prompts import AIMessagePromptTemplate
-from langchain.prompts import SystemMessagePromptTemplate
-from langchain.prompts import HumanMessagePromptTemplate
-from langchain.prompts import ChatMessagePromptTemplate
-```
+from langchain_core.prompts import AIMessagePromptTemplate
+from langchain_core.prompts import SystemMessagePromptTemplate
+from langchain_core.prompts import HumanMessagePromptTemplate
+from langchain_core.prompts import ChatMessagePromptTemplate
 
-看示例：
-
-```python
-from langchain.prompts import ChatMessagePromptTemplate
-
+# 示例
 prompt = "愿{subject}与你同在！"
 
 chat_message_prompt = AIMessagePromptTemplate.from_template(template=prompt)
 chat_message_prompt.format(subject="原力")
+
 
 chat_message_prompt = ChatMessagePromptTemplate.from_template(role="天行者",template=prompt)
 chat_message_prompt.format(subject="原力")
@@ -114,7 +111,7 @@ chat_message_prompt.format(subject="原力")
 #### 2.3.3 自定义模板
 
 ```python
-##函数大师：根据函数名称，查找函数代码，并给出中文的代码说明
+# 函数大师：根据函数名称，查找函数代码，并给出中文的代码说明
 
 from langchain.prompts import StringPromptTemplate
 
@@ -135,12 +132,11 @@ PROMPT = """\
 
 import inspect
 
-
 def get_source_code(function_name):
     #获得源代码
     return inspect.getsource(function_name)
 
-#自定义的模板class
+# 自定义的模板class
 class CustomPrompt(StringPromptTemplate):
 
     
@@ -159,7 +155,7 @@ pm = a.format(function_name=hello_world)
 
 print(pm)
 
-#和LLM连接起来
+# 和LLM连接起来
 from langchain.llms import OpenAI
 import os
 api_base = os.getenv("OPENAI_PROXY")
@@ -177,10 +173,9 @@ print(msg)
 
 #### 2.3.4 使用jinji2与f-string来实现提示词模板格式化
 
-f-string是python内置的一种模板引擎
-
 ```python
-from langchain.prompts import PromptTemplate
+##f-string是python内置的一种模板引擎
+from langchain_core.prompts import PromptTemplate
 
 fstring_template = """
 给我讲一个关于{name}的{what}故事
@@ -189,6 +184,20 @@ fstring_template = """
 prompt = PromptTemplate.from_template(fstring_template)
 
 prompt.format(name="翠花", what="悲伤")
+```
+
+```bash
+! pip install jinja2
+```
+
+```python
+##Jinja2是一个灵活、高效的Python模板引擎，可以方便地生成各种标记格式的文档。
+from langchain_core.prompts import PromptTemplate
+
+jinja2_template = "给我讲一个关于{{name}}的{{what}}故事"
+prompt = PromptTemplate.from_template(jinja2_template, template_format="jinja2")
+
+prompt.format(name="狗剩", what="高兴")
 ```
 
 #### 2.3.5 组合式提示词模板
@@ -205,6 +214,7 @@ from langchain.prompts.prompt import PromptTemplate
 
 ```python
 # Final Prompt由一系列变量构成
+from langchain_core.prompts import PromptTemplate
 full_template = """{Character}
 {behavior}
 {prohibit}"""
@@ -263,10 +273,6 @@ pm = pipeline_prompt.format(
 print(pm)
 ```
 
-执行结果：
-
-![](https://my-img.javaedge.com.cn/javaedge-blog/2024/06/da45aac257e475ccd99e634d5a5d4775.png)
-
 ### 2.4 序列化：使用文件管理提示词模板
 
 - 便于共享
@@ -304,19 +310,17 @@ from langchain.prompts import load_prompt
 #加载yaml格式的prompt模版
 prompt = load_prompt("simple_prompt.yaml")
 print(prompt.format(name="小黑",what="恐怖的"))
+
+--- 给我讲一个关于小黑的恐怖的故事
 ```
-
-
-
-![](https://my-img.javaedge.com.cn/javaedge-blog/2024/06/c967c952e9f17632703ea36df2ecc4b4.png)
 
 ```python
 #加载json格式的prompt模版
 prompt = load_prompt("simple_prompt.json")
 print(prompt.format(name="小红",what="搞笑的"))
-```
 
-![](https://my-img.javaedge.com.cn/javaedge-blog/2024/06/a1b472fcf0081b52546c673c9f636b19.png)
+--- 给我讲一个关于小红的搞笑的故事
+```
 
 支持加载文件格式的模版，并且对prompt的最终解析结果进行自定义格式化
 
@@ -326,11 +330,3 @@ prompt.output_parser.parse(
     "George Washington was born in 1732 and died in 1799.\nScore: 1/2"
 )
 ```
-
-
-
-![](https://my-img.javaedge.com.cn/javaedge-blog/2024/06/f0df4ca2007c2c6f57ec52f0baba830d.png)
-
-参考：
-
-- https://python.langchain.com/v0.1/docs/modules/model_io/

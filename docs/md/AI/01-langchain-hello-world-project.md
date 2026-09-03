@@ -1,15 +1,9 @@
 # 01-LangChain的Hello World项目
 
-![](https://my-img.javaedge.com.cn/javaedge-blog/2024/05/4289409c19ab0bfa32012d41f58382ce.png)
-
-```python
-pip install --upgrade langchain==0.0.279 -i https://pypi.org/simple
-```
-
 ## 1 创建一个LLM
 
 - 自有算力平台+开源大模型（需要有庞大的GPU资源）企业自己训练数据
-- 第三方大模型API（openai/百度文心/阿里通义千问...）数据无所谓
+- 第三方大模型API（openai/千问...）数据无所谓
 
 让LLM给孩子起具有中国特色的名字。
 
@@ -59,76 +53,81 @@ langchain.schema
 
 ## 4 开始运行
 
+### 4.1 引入openai key
 
-
-```bash
-pip install openai==v0.28.1 -i https://pypi.org/simple
-```
-
-### 引入openai key
+设置环境变量：
 
 ```python
 import os
-os.environ["OPENAI_KEY"] = "sk-ss"
+os.environ["OPENAI_API_KEY"] = "xxx"
 # 为了科学上网，所以需要添加
-os.environ["OPENAI_API_BASE"] = "https://ai-yyds.com/v1"
+os.environ["OPENAI_PROXY"] = "xxx"
 ```
 
-从环境变量中读取：
+从环境变量读取：
 
 ```python
+import openai
 import os
-openai_api_key = os.getenv("OPENAI_KEY")
-openai_api_base = os.getenv("OPENAI_API_BASE")
+openai.api_base =os.environ.get("OPENAI_PROXY")
+openai.api_key = os.environ.get("OPENAI_API_KEY")
 print("OPENAI_API_KEY:", openai_api_key)
 print("OPENAI_PROXY:", openai_api_base)
 ```
 
-### 运行前查看下安装情况
+### 4.2 运行前查看下安装情况
 
-```
+```bash
 ! pip show langchain
 ! pip show openai
+
+3318.50s - pydevd: Sending message related to process being replaced timed-out after 5 seconds
+Name: langchain
+Version: 1.2.7
+Summary: Building applications with LLMs through composability
+Home-page: https://docs.langchain.com/
+Author: 
+Author-email: 
+License: MIT
+Location: /Users/javaedge/soft/PyCharmProjects/AIAgent/.venv/lib/python3.11/site-packages
+Requires: langchain-core, langgraph, pydantic
+Required-by: scrapegraphai
+3323.94s - pydevd: Sending message related to process being replaced timed-out after 5 seconds
+Name: openai
+Version: 2.32.0
+Summary: The official Python library for the openai API
+Home-page: https://github.com/openai/openai-python
+Author: 
+Author-email: OpenAI <support@openai.com>
+License: Apache-2.0
+Location: /Users/javaedge/soft/PyCharmProjects/AIAgent/.venv/lib/python3.11/site-packages
+Requires: anyio, distro, httpx, jiter, pydantic, sniffio, tqdm, typing-extensions
+Required-by: langchain-openai, qwen-agent
 ```
 
-
-
-![](https://my-img.javaedge.com.cn/javaedge-blog/2024/06/cd176fc71b3caed5bae32b3850615448.png)
-
-### openai 官方SDK
+### 4.3 openai 官方SDK
 
 ```python
-#使用openai的官方sdk
-import openai
-import os
-
-openai.api_base = os.getenv("OPENAI_API_BASE")
-openai.api_key = os.getenv("OPENAI_KEY")
-
-messages = [
-{"role": "user", "content": "介绍下你自己"}
-]
-
-res = openai.ChatCompletion.create(
-model="gpt-3.5-turbo",
-messages=messages,
-stream=False,
+llm = create_qwen_model(
+    temperature=1,
+    streaming=True,
 )
+res = llm.generate([[HumanMessage(content="介绍下你自己")]])
 
-print(res['choices'][0]['message']['content'])
+print(res.generations[0][0].text)
 ```
 
-### 使用langchain调用
+### 4.4 使用langchain调用
 
 ```python
-#hello world
 from langchain.llms import OpenAI
 import os
 
-api_base = os.getenv("OPENAI_API_BASE")
-api_key = os.getenv("OPENAI_KEY")
+api_base =os.environ.get("OPENAI_PROXY")
+api_key = os.environ.get("OPENAI_API_KEY")
+
 llm = OpenAI(
-    model="gpt-3.5-turbo-instruct",
+    model="gpt-3.5-turbo",
     temperature=0,
     openai_api_key=api_key,
     openai_api_base=api_base
@@ -136,31 +135,18 @@ llm = OpenAI(
 llm.predict("介绍下你自己")
 ```
 
-### 起名大师
+### 4.5 起名大师
 
 ```python
-#起名大师
-from langchain.llms import OpenAI
-from langchain.prompts import PromptTemplate
-import os
-api_base = os.getenv("OPENAI_API_BASE")
-api_key = os.getenv("OPENAI_KEY")
-llm = OpenAI(
-    model="gpt-3.5-turbo-instruct",
-    temperature=0,
-    openai_api_key=api_key,
-    openai_api_base=api_base
-    )
+llm = create_qwen_model(
+    temperature=1,
+    streaming=True,
+)
 prompt = PromptTemplate.from_template("你是一个起名大师,请模仿示例起3个{county}名字,比如男孩经常被叫做{boy},女孩经常被叫做{girl}")
 message = prompt.format(county="中国特色的",boy="狗蛋",girl="翠花")
 print(message)
-llm.predict(message)
-```
-
-输出：
-
-```
-'\n\n男孩: 龙飞、铁柱、小虎\n女孩: 玉兰、梅香、小红梅'
+res = llm.generate([[HumanMessage(content=message)]])
+print(res.generations[0][0].text)
 ```
 
 ### 格式化输出
@@ -217,7 +203,6 @@ strs = llm.predict(message)
 CommaSeparatedListOutputParser().parse(strs)
 ```
 
-```
+```bash
 ['jack', ' michael', ' jason']
 ```
-

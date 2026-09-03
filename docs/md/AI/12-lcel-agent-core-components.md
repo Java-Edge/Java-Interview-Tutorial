@@ -162,7 +162,7 @@ agent_executor.invoke({"input": "上海今天的天气如何?"})
 ```python
 import os
 
-os.environ["SERPAPI_API_KEY"] = "8a967ed100d1ffd51a6ccf42bdb474deaaa6ef4d727db979d772f93350953e98"
+os.environ["SERPAPI_API_KEY"] = "xxx"
 # Import things that are needed generically
 from langchain.pydantic_v1 import BaseModel, Field
 from langchain.tools import BaseTool, StructuredTool, tool

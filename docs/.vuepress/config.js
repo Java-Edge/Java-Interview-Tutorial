@@ -356,7 +356,7 @@ module.exports = {
                             link: '/md/security/OAuth 2.0实战-为什么要先获取授权码code.md'
                         },]
                     },
-                    
+
                     {
                         text: 'Arthas',
                         items: [{
@@ -365,7 +365,7 @@ module.exports = {
                         },]
                     },
 
-                                        {
+                    {
                         text: 'MyBatis',
                         items: [{
                             text: 'MyBatis',
@@ -386,8 +386,8 @@ module.exports = {
                         },]
                     },
 
-                    
-                    
+
+
                     {
                         text: '响应式编程',
                         items: [{
@@ -782,10 +782,13 @@ module.exports = {
                         text: 'A2A',
                         link: '/md/AI/a2a/a2a-a-new-era-of-agent-interoperability'
                     },
-                    
                     {
                         text: 'Skills',
                         link: '/md/AI/skills/ovrview'
+                    },
+                    {
+                        text: 'Harness',
+                        link: '/md/AI/harness/why-top-agent-teams-focus-on-harness-not-prompts'
                     },
                     ]
                 },
@@ -2222,6 +2225,7 @@ module.exports = {
                             "qwen3",
                             "qwen3-coder",
                             "qwen-coder-qoder",
+                            "qwen3-6",
                         ]
                     },
 
@@ -2256,6 +2260,8 @@ module.exports = {
                             "claude-4-5-sonnet",
                             "claude-opus-4-6",
                             "claude-sonnet-4-6",
+                            "claude-5-1",
+                            "introducing-claude-managed-agents",
                         ]
                     },
 
@@ -2405,6 +2411,7 @@ module.exports = {
                             "ai-agents-dont-security-nightmare",
                             "improve-quality-gen-ai",
                             "nextgen-search-ai-opensearch-mcp",
+                            "multi-agent-platforms-rewrite-memory-systems-multica",
                         ]
                     },
 
@@ -2423,6 +2430,15 @@ module.exports = {
                         sidebarDepth: 0,
                         children: [
                             "codex",
+                        ]
+                    },                    
+                    
+                    {
+                        title: "OpenClaw",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "openclaw2.0.md",
                         ]
                     },
 
@@ -2505,7 +2521,7 @@ module.exports = {
                             "roocode",
                         ]
                     },
-                    
+
                     {
                         title: "Augment",
                         collapsable: false,
@@ -2576,13 +2592,24 @@ module.exports = {
                             "a2a-a-new-era-of-agent-interoperability",
                         ]
                     }],
-                    
+
                     "/md/AI/skills/": [{
                         title: "Skills",
                         collapsable: false,
                         sidebarDepth: 0,
                         children: [
                             "ovrview",
+                            "codex-skills-reference-guide",
+                        ]
+                    },
+                    ],
+
+                    "/md/AI/harness/": [{
+                        title: "Harness",
+                        collapsable: false,
+                        sidebarDepth: 0,
+                        children: [
+                            "why-top-agent-teams-focus-on-harness-not-prompts",
                         ]
                     },
                     ],
