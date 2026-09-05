@@ -2201,6 +2201,8 @@ module.exports = {
                             "inference-engine",
                             "cuda",
                             "gpullama3-java-gpu-llm",
+                        
+                            "26-07-18-1-“思考模式”是怎么来的？看看这些推理模型的技术思路.md"
                         ]
                     },
                     {
@@ -2412,6 +2414,10 @@ module.exports = {
                             "improve-quality-gen-ai",
                             "nextgen-search-ai-opensearch-mcp",
                             "multi-agent-platforms-rewrite-memory-systems-multica",
+                        
+                            "26-04-26-为Agent设计产品.md",
+                        
+                            "26-06-27-GBrain：为AIAgent打造的开源“大脑”.md"
                         ]
                     },
 
