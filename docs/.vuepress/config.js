@@ -2417,7 +2417,9 @@ module.exports = {
                         
                             "26-04-26-为Agent设计产品.md",
                         
-                            "26-06-27-GBrain：为AIAgent打造的开源“大脑”.md"
+                            "26-06-27-GBrain：为AIAgent打造的开源“大脑”.md",
+                        
+                            "loops-and-graphs-agent-approval"
                         ]
                     },
 
