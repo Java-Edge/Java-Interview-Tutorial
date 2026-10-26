@@ -2125,6 +2125,8 @@ module.exports = {
                             "09-一文看懂以太坊智能合约！",
                             "oracles-unavoidable-offchain-data-onchain-alternatives-truth",
                             "blockchain-smart-contract-helloworld-project",
+                        
+                            "fiat-trading-and-coin-to-coin-trading"
                         ]
                     },
                     {
@@ -2508,6 +2510,8 @@ module.exports = {
                             "quest-autonomous-programming-agent-architecture-loop",
                             "qoderwork",
                             "qoder-update",
+                        
+                            "qoder-standalone-desktop-app-release"
                         ]
                     },
 
@@ -2608,6 +2612,8 @@ module.exports = {
                         children: [
                             "ovrview",
                             "codex-skills-reference-guide",
+                        
+                            "typesafe-agent-skill-integration-and-selection"
                         ]
                     },
                     ],
@@ -2653,6 +2659,10 @@ module.exports = {
                             "04-LLMs和Chat Models",
                             "05-Loader机制",
                             "06-文档转换实战",
+                        
+                            "context-management-is-key-to-agent-success",
+                        
+                            "what-does-a-reasoning-engine-do"
                         ]
                     },
                     {
